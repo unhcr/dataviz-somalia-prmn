@@ -1,0 +1,126 @@
+h3{
+    padding-top: 15px; 
+    padding-bottom: 15px; 
+    padding-left: 10px; 
+    margin-bottom: 0px; 
+    background-color: #4C4C4C;
+    color: #FFFFFF;
+}
+
+h6 {
+    margin-top: .5rem;
+}
+h6 a {
+    font-size: 14px;
+    font-weight: normal;
+}
+#dc-choropleth-map g.admin1Name path {
+    stroke: #fff;
+    stroke-width: 1px;
+}
+
+#dc-choropleth-map g.admin1Name path:hover {
+    fill-opacity: .8;
+}
+
+td.dc-table-column._1,
+td.dc-table-column._2
+{
+    text-align: right;
+}
+
+/* change rowChart label color */
+.dc-chart g.row text {
+    fill: black;
+}
+
+.nd {
+    width: 180px;
+    height: 60px;
+    font-size: 40px;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    line-height: normal;
+}
+
+.chart {
+    pointer-events: none;
+}
+
+@media print { 
+    .container {
+        max-width: none!important;
+        width: 100%!important;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .row {
+        margin: -1%;
+    }
+    [class*="col-"] {
+        float: left;
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+    .col-sm-12,
+    .col-md-12,
+    .col-lg-12 {
+        width: 100%
+    }
+    .col-sm-11,
+    .col-md-11,
+    .col-lg-11 {
+        width: 91.66666667%
+    }
+    .col-sm-10,
+    .col-md-10,
+    .col-lg-10 {
+        width: 83.33333333%
+    }
+    .col-sm-9,
+    .col-md-9,
+    .col-lg-9 {
+        width: 75%
+    }
+    .col-sm-8,
+    .col-md-8,
+    .col-lg-8 {
+        width: 66.66666667%
+    }
+    .col-sm-7,
+    .col-md-7,
+    .col-lg-7 {
+        width: 58.33333333%
+    }
+    .col-sm-6,
+    .col-md-6,
+    .col-lg-6 {
+        width: 50%
+    }
+    .col-sm-5,
+    .col-md-5,
+    .col-lg-5 {
+        width: 41.66666667%
+    }
+    .col-sm-4,
+    .col-md-4,
+    .col-lg-4 {
+        width: 33.33333333%
+    }
+    .col-sm-3,
+    .col-md-3,
+    .col-lg-3 {
+        width: 25%
+    }
+    .col-sm-2,
+    .col-md-2,
+    .col-lg-2 {
+        width: 16.66666667%
+    }
+    .col-sm-1,
+    .col-md-1,
+    .col-lg-1 {
+        width: 8.33333333%
+    }
+}
