@@ -225,10 +225,12 @@ d3.csv("data/pcdataset.csv", function (data){
       .dimension(reachTarget)
       .group(reachTargetGroup, "Reached")
       .valueAccessor(function(d){
-        return d.value.reach;
+        console.log(d.value.reach / 4)
+        return d.value.reach / 4;
       })
       .stack(reachTargetGroup, "Targeted", function(d){
-        return d.value.target / 4 - d.value.reach;
+        var diff = (d.value.target / 4) - (d.value.reach / 4);
+        return diff < 0 ? 0 : diff ;
       })
       .title(function(d){
         return "Reached: " + d3.format(",")(d.value.reach / 4) + "\n" + 
