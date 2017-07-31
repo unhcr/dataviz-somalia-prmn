@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>YEMEN: PROTECTION CLUSTER ACHIVEMENTS</title>
+    <title>SOMALIA: PRMN DISPLACEMENTS</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -24,192 +24,127 @@
   </head>
   <body>
     <div class="container" style="font: 12px sans-serif;">
+
       <div class="row">
         <div class="col-md-11">
-          <h3><strong>YEMEN:</strong> PROTECTION CLUSTER ACHIVEMENTS</h3>
+          <h4>
+            <strong>SOMALIA: PRMN DISPLACEMENTS</strong> <small>(1 Nov 2016 - 30 Jun 2017)</small>
+          </h4>
         </div>
         <div class="col-md-1" id="dc-depth-chart">
-          <img src="img/protection_cluster_logo.jpg" 
-            alt="PROTECTION CLUSTER YEMEN" 
+          <img src="img/unhcr-logo-internet.png" 
+            alt="UNHCR" 
             height="70px"
             align="right"
             id="pc-yemen-logo">
         </div>
-      </div> 
-      
-        <div class="row">
-        <form class="form-inline mb-md-3">
-          <div class="form-group mx-md-3">
-            <label class="sr-only">Year</label>
-            <select class="form-control form-control-sm" id="dc-yyyy-select">
-              <option>2016</option>
-            </select>
-          </div>  
-          <div class="form-group">
-            <div class="form-check form-check-inline disabled">
-              <label class="form-check-label disabled">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1" disabled> JAN
-              </label>
-            </div>
-            <div class="form-check form-check-inline disabled">
-              <label class="form-check-label disabled">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2" disabled> FEB
-              </label>
-            </div>
-            <div class="form-check form-check-inline disabled">
-              <label class="form-check-label disabled">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3" disabled> MAR
-              </label>
-            </div>
-            <div class="form-check form-check-inline disabled">
-              <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="4" disabled> APR
-              </label>
-            </div>
-            <div class="form-check form-check-inline disabled">
-              <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="5" disabled> MAY
-              </label>
-            </div>
-            <div class="form-check form-check-inline disabled">
-              <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="6" disabled> JUN
-              </label>
-            </div>
-            <div class="form-check form-check-inline disabled">
-              <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="7" disabled> JUL
-              </label>
-            </div>
-            <div class="form-check form-check-inline disabled">
-              <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="8" disabled> AUG
-              </label>
-            </div>
-            <div class="form-check form-check-inline disabled">
-              <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="9" disabled> SEP
-              </label>
-            </div>
-            <div class="form-check form-check-inline disabled">
-              <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="10" disabled> OCT
-              </label>
-            </div>
-            <div class="form-check form-check-inline disabled">
-              <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="11" disabled> NOV
-              </label>
-            </div>
-            <div class="form-check form-check-inline">
-              <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="12" checked> DEC
-              </label>
-            </div>       
-          </div>
-        </form>
-      </div>
-      
+      </div> <!-- /header -->     
 
       <div class="row">
-        <div class="col-md-5" id="dc-benef-profile-chart">
-          <div class="row">
-            <div class="col-md-12">
-              <h6>
-                BENEFICIARY PROFILE 
-                <a href="javascript:dc.filterAll(); dc.renderAll()">Reset All</a>
-              </h6>
-            </div>
-          </div> <!-- /beneficiary profile heading -->
-          <div class="row" style="height: 200px;">
-            <div class="col-md-6">
 
-                <div class="nd" id="dc-people-reach"></div>
-                <div>PEOPLE REACHED</div>
-                <div>(HIGHEST ACTIVITY)</div>
+        <div class="col-md-3">
+          <h6>
+            TOTAL DISPLACEMENTS 
+            
+          </h6>
+          <div class="nd" id="dc-displace-total-number"></div>
+        </div> <!-- / displacement total -->                     
+        
+        <div class="col-md-9">    
+          <h6>APPLIED FILTERS
+            <a href="javascript:dc.filterAll(); dc.renderAll()">Reset All</a>  
+          </h6>          
+        </div> <!-- / filters -->
+         
+      </div> 
 
-                <div class="nd" id="dc-people-target"></div>
-                <div>PEOPLE TARGET</div>
-                <div>(HIGHEST ACTIVITY)</div>
-
-            </div> <!-- people reached, targeted and in need -->
-            <div class="col-md-6">
-
-                <div class="nd" id="dc-people-in-need"></div>
-                <div>PEOPLE IN NEED</div>
-                <div>&nbsp;</div>
-
-                <div class="nd" id="dc-reach-vs-target"></div>
-                <div>PEOPLE REACHED VS TARGET</div>
-                <div>(HIGHEST ACTIVITY)</div>
-
-            </div> <!-- people reached vs target pie chart -->
-          </div> 
-        </div>
-        <div class="col-md-3"  id="dc-demo-chart">
-          <h6>DEMOGRAPHICS
+      <div class="row" >
+        <div class="col-md-12" id="dc-month-chart">
+          <h6>MONTHLY DISPLACEMENTS
             <a class="reset" 
-              href="javascript:demoChart.filterAll(); dc.redrawAll();" 
+              href="javascript:displaceMonthChart.filterAll(); dc.redrawAll();" 
                 style="display: none">
               reset
             </a>
           </h6>
-          <!--<div class="clearfix"></div>-->
+        </div>                       
+      </div> <!-- / monthly displacement -->      
+
+      <div class="row">          
+        <div class="col-md-12">
+          <div class="row">
+             
+              <div class="col-md-4"  id="dc-displace-reason-chart">
+                <h6>DISPLACEMENTS BY REASON
+                  <a class="reset" 
+                    href="javascript:    displaceReasonChart.width(170).filterAll(); dc.redrawAll();" 
+                      style="display: none">
+                    reset
+                  </a>
+                </h6>
+                <!--<div class="clearfix"></div>-->
+              </div> <!-- / displacement reasons -->
+
+              <div class="col-md-4" id="dc-prev-region-map">
+                <h6>DEPARTURE REGIONS MAP
+                  <a class="reset" 
+                    href="javascript:prevRegionMap.filterAll(); dc.redrawAll();" 
+                      style="display: none">
+                    reset
+                  </a>
+                </h6>
+              </div> <!-- / departure regions map -->          
+
+              <div class="col-md-4" id="dc-curr-region-map">
+                <h6>ARRIVAL REGIONS MAP
+                  <a class="reset" 
+                    href="javascript:currRegionMap.filterAll(); dc.redrawAll();" 
+                      style="display: none">
+                    reset
+                  </a>
+                </h6>
+              </div> <!-- / arrival regions map -->             
+
+          </div>            
         </div>
-        <div class="col-md-4" id="dc-benef-activity-chart">
-          <h6>BENEFICIARY ACTIVITY
-            <a class="reset" 
-              href="javascript:benefActChart.filterAll(); dc.redrawAll();" 
-                style="display: none">
-              reset
-            </a>
-          </h6>             
-        </div>             
+      </div>    
+        
+      
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row" >
+
+            <div class="col-md-4"  id="dc-displace-reason-chart">
+              <h6>ABOUT PRMN</h6>
+              <span>The PRMN (Protection & Return Monitoring Network) is a UNHCR-led project which identifies and reports on displacements (including returns) of populations in Somalia. The network also identifies and reports on protection risks and incidents underlying such movements. Only figures collected by PRMN are reported above. Not all displacements in Somalia are captured. This report should be read in conjunction with the Notes on PRMN Methodology (https://goo.gl/9uP6MJ) which outline the approach and certain limitations.</span>
+            </div> <!-- / about prmn -->
+
+            <div class="col-md-4" id="dc-prev-region-chart">
+              <h6>DEPARTURE REGIONS
+                <a class="reset" 
+                  href="javascript:prevRegionChart.filterAll(); dc.redrawAll();" 
+                    style="display: none">
+                  reset
+                </a>
+              </h6>             
+            </div> <!-- / departure regions -->
+
+            <div class="col-md-4" id="dc-curr-region-chart">
+              <h6>ARRIVAL REGIONS
+                <a class="reset" 
+                  href="javascript:currRegionChart.filterAll(); dc.redrawAll();" 
+                    style="display: none">
+                  reset
+                </a>
+              </h6>             
+            </div>  <!-- / arrival regions --> 
+
+          </div>   
+        </div>            
       </div> 
 
-      <div class="row">
-          <div class="col-md-7">
-            <div class="row" style="height: 350px;">
-              <div class="col-md-12" id="dc-choropleth-map">
-                <h6>BENEFICIARY PER GOVERNORATE
-                  <a class="reset" 
-                    href="javascript:yemChart.filterAll(); dc.redrawAll();" 
-                      style="display: none">
-                    reset
-                  </a>
-                </h6>
-              </div>              
-            </div>
-            <div class="row" >
-              <div class="col-md-12" id="dc-reach-target-chart">
-                <h6>REACHED VS TARGET
-                  <a class="reset" 
-                    href="javascript:reachTargetChart.filterAll(); dc.redrawAll();" 
-                      style="display: none">
-                    reset
-                  </a>
-                </h6>
-              </div>               
-            </div>            
-          </div>
-          <div class="col-md-5">
-            <h6>PARTNERSHIP</h6>
-            <table class="table table-hover" width="300" id="dc-data-table" >
-              <thead>
-                <tr class="header">
-                  <th>GOVERNORATE</th>
-                  <th>REACHED</th>
-                  <th>TARGET</th>
-                  <th>PARTNERS</th>
-                </tr>            
-              </thead>
-            </table>  
-          </div>
-      </div>
-      <!-- footer        -->
-      <div>
-        <strong>Contact:</strong> Mohammed Khan (khanmo@unhcr.org) &emsp; &emsp; <strong>Developer:</strong> David Mugo (mugo@unhcr.org)</div>
-        <hr>
+      </div>        
+      <!-- TODO: Add footer -->    
     </div>
     <script src="main.js"></script>   
   </body>

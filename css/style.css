@@ -1,10 +1,7 @@
-h3{
+h4{
     padding-top: 15px; 
     padding-bottom: 15px; 
-    padding-left: 10px; 
     margin-bottom: 0px; 
-    background-color: #4C4C4C;
-    color: #FFFFFF;
 }
 
 h6 {
@@ -14,6 +11,7 @@ h6 a {
     font-size: 14px;
     font-weight: normal;
 }
+
 #dc-choropleth-map g.admin1Name path {
     stroke: #fff;
     stroke-width: 1px;
