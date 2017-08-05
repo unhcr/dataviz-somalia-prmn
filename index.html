@@ -26,15 +26,15 @@
     <div class="container" style="font: 12px sans-serif;">
 
       <div class="row">
-        <div class="col-md-11">
+        <div class="col-lg-11">
           <h4>
             <strong>SOMALIA: PRMN DISPLACEMENTS</strong> <small>(1 Nov 2016 - 30 Jun 2017)</small>
           </h4>
         </div>
-        <div class="col-md-1" id="dc-depth-chart">
+        <div class="col-lg-1" id="dc-depth-chart">
           <img src="img/unhcr-logo-internet.png" 
             alt="UNHCR" 
-            height="70px"
+            height="55px"
             align="right"
             id="pc-yemen-logo">
         </div>
@@ -42,68 +42,78 @@
 
       <div class="row">
 
-        <div class="col-md-3">
+        <div class="col-lg-3">
           <h6>
-            TOTAL DISPLACEMENTS 
+            DISPLACEMENTS 
             
           </h6>
           <div class="nd" id="dc-displace-total-number"></div>
         </div> <!-- / displacement total -->                     
         
-        <div class="col-md-9">    
-          <h6>APPLIED FILTERS
-            <a href="javascript:dc.filterAll(); dc.renderAll()">Reset All</a>  
+        <div class="col-lg-9">    
+          <h6>
+            <a class="btn btn-primary" 
+              href="javascript:dc.filterAll(); dc.renderAll()">
+              Clear All Filters
+            </a>  
           </h6>          
         </div> <!-- / filters -->
          
       </div> 
 
-      <div class="row" >
-        <div class="col-md-12" id="dc-month-chart">
-          <h6>MONTHLY DISPLACEMENTS
-            <a class="reset" 
-              href="javascript:displaceMonthChart.filterAll(); dc.redrawAll();" 
+      <div class="row">
+
+        <div class="col-lg-3"  id="dc-displace-reason-chart">
+          <h6>REASONS
+            <a class="reset btn btn-info btn-sm" 
+              href="javascript: displaceReasonChart.width(170).filterAll(); dc.redrawAll();" 
                 style="display: none">
-              reset
+              clear
             </a>
           </h6>
-        </div>                       
-      </div> <!-- / monthly displacement -->      
+          <!--<div class="clearfix"></div>-->
+        </div> <!-- / displacement reasons -->                    
+        
+        <div class="col-lg-9" id="dc-month-chart">
+          <h6>MONTHLY DISPLACEMENTS
+            <a class="reset btn btn-info btn-sm" 
+              href="javascript:displaceMonthChart.filterAll(); dc.redrawAll();" 
+                style="display: none">
+              clear
+            </a>
+          </h6>                     
+        </div> <!-- / monthly displacement -->  
+         
+      </div>         
 
       <div class="row">          
-        <div class="col-md-12">
+        <div class="col-lg-12">
           <div class="row">
-             
-              <div class="col-md-4"  id="dc-displace-reason-chart">
-                <h6>DISPLACEMENTS BY REASON
-                  <a class="reset" 
-                    href="javascript:    displaceReasonChart.width(170).filterAll(); dc.redrawAll();" 
-                      style="display: none">
-                    reset
-                  </a>
-                </h6>
-                <!--<div class="clearfix"></div>-->
-              </div> <!-- / displacement reasons -->
 
-              <div class="col-md-4" id="dc-prev-region-map">
+              <div class="col-lg-4" id="dc-prev-region-map">
                 <h6>DEPARTURE REGIONS MAP
-                  <a class="reset" 
+                  <a class="reset btn btn-info btn-sm" 
                     href="javascript:prevRegionMap.filterAll(); dc.redrawAll();" 
                       style="display: none">
-                    reset
+                    clear
                   </a>
                 </h6>
               </div> <!-- / departure regions map -->          
 
-              <div class="col-md-4" id="dc-curr-region-map">
+              <div class="col-lg-4" id="dc-curr-region-map">
                 <h6>ARRIVAL REGIONS MAP
-                  <a class="reset" 
+                  <a class="reset btn btn-info btn-sm" 
                     href="javascript:currRegionMap.filterAll(); dc.redrawAll();" 
                       style="display: none">
-                    reset
+                    clear
                   </a>
                 </h6>
               </div> <!-- / arrival regions map -->             
+             
+              <div class="col-lg-4" id="dc-urgent-need-chart">
+                <!-- <h6>URGENT NEEDS</h6> -->
+                
+              </div> <!-- / urgent needs -->
 
           </div>            
         </div>
@@ -111,33 +121,33 @@
         
       
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-lg-12">
           <div class="row" >
 
-            <div class="col-md-4"  id="dc-displace-reason-chart">
-              <h6>ABOUT PRMN</h6>
-              <span>The PRMN (Protection & Return Monitoring Network) is a UNHCR-led project which identifies and reports on displacements (including returns) of populations in Somalia. The network also identifies and reports on protection risks and incidents underlying such movements. Only figures collected by PRMN are reported above. Not all displacements in Somalia are captured. This report should be read in conjunction with the Notes on PRMN Methodology (https://goo.gl/9uP6MJ) which outline the approach and certain limitations.</span>
-            </div> <!-- / about prmn -->
-
-            <div class="col-md-4" id="dc-prev-region-chart">
+            <div class="col-lg-4" id="dc-prev-region-chart">
               <h6>DEPARTURE REGIONS
-                <a class="reset" 
+                <a class="reset btn btn-info btn-sm" 
                   href="javascript:prevRegionChart.filterAll(); dc.redrawAll();" 
                     style="display: none">
-                  reset
+                  clear
                 </a>
               </h6>             
             </div> <!-- / departure regions -->
 
-            <div class="col-md-4" id="dc-curr-region-chart">
+            <div class="col-lg-4" id="dc-curr-region-chart">
               <h6>ARRIVAL REGIONS
-                <a class="reset" 
+                <a class="reset btn btn-info btn-sm" 
                   href="javascript:currRegionChart.filterAll(); dc.redrawAll();" 
                     style="display: none">
-                  reset
+                  clear
                 </a>
               </h6>             
             </div>  <!-- / arrival regions --> 
+
+            <div class="col-lg-4"  id="dc-displace-reason-chart">
+              <h6>ABOUT PRMN</h6>
+              <span>The PRMN (Protection & Return Monitoring Network) is a UNHCR-led project which identifies and reports on displacements (including returns) of populations in Somalia. The network also identifies and reports on protection risks and incidents underlying such movements. Only figures collected by PRMN are reported above. Not all displacements in Somalia are captured. This report should be read in conjunction with the Notes on PRMN Methodology (https://goo.gl/9uP6MJ) which outline the approach and certain limitations.</span>
+            </div> <!-- / about prmn -->
 
           </div>   
         </div>            

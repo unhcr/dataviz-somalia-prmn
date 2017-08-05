@@ -1,6 +1,6 @@
 h4{
-    padding-top: 15px; 
-    padding-bottom: 15px; 
+    padding-top: 5px; 
+    padding-bottom: 0px; 
     margin-bottom: 0px; 
 }
 
@@ -44,6 +44,18 @@ td.dc-table-column._2
 
 .chart {
     pointer-events: none;
+}
+
+@media screen and (min-width: 1600px) {
+    .container {
+        max-width: (1600px - @grid-gutter-width);
+    }
+}
+
+@media screen and (min-width: 1900px) {
+    .container {
+        max-width: (1900px - @grid-gutter-width);
+    }
 }
 
 @media print { 

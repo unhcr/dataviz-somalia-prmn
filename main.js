@@ -13,6 +13,47 @@ var currRegionMap = dc.geoChoroplethChart("#dc-curr-region-map");
 
 var displaceMonthChart = dc.barChart("#dc-month-chart");
 
+// Implement bookmarking chart filters status
+// Serializing filters values in URL
+function getFiltersValues() {
+    var filters = [
+        { name: 'reason', value: displaceReasonChart.filters()},
+        { name: 'month', value: displaceMonthChart.filters()},
+        { name: 'pregion', value: prevRegionChart.filters()},
+        { name: 'pregionmap', value: prevRegionMap.filters()},
+        { name: 'cregion', value: currRegionChart.filters()},
+        { name: 'cregionmap', value: currRegionMap.filters()}
+    ];
+    var recursiveEncoded = $.param( filters );
+    location.hash = recursiveEncoded;
+}        
+  
+function initFilters() {
+    // Get hash values
+    var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([A-Za-z0-9,_\-\/\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)$/;
+    var parsed = parseHash.exec(decodeURIComponent(location.hash));
+    function filter(chart, rank) {  // for instance chart = sector_chart and rank in URL hash = 1
+        // sector chart
+        if (parsed[rank] == "") {
+            chart.filter(null);
+        }
+        else {
+            var filterValues = parsed[rank].split(",");
+            for (var i = 0; i < filterValues.length; i++ ) {
+                chart.filter(filterValues[i]);
+            }
+        }
+    }
+    if (parsed) {
+        filter(displaceReasonChart, 1);
+        filter(displaceMonthChart, 2);
+        filter(prevRegionChart, 3);
+        filter(prevRegionMap, 4);
+        filter(currRegionChart, 5);
+        filter(currRegionMap, 6);
+    }
+}
+
 // Load data from CSV file
 d3.csv("data/FAO_Dataset.csv", function (data){
   // Load data from JSON file
@@ -53,8 +94,8 @@ d3.csv("data/FAO_Dataset.csv", function (data){
     });
 
     // Configure displacement month bar chart parameters
-    displaceMonthChart.width(1090).height(180)
-      .margins({top:20, right:0, bottom:50, left:50})
+    displaceMonthChart.width(820).height(150)
+      .margins({top:5, right:10, bottom:20, left:50})
       .dimension(displaceMonth)
       .group(displaceMonthGroup, "Year-Month")
       .valueAccessor(function(d){
@@ -65,6 +106,7 @@ d3.csv("data/FAO_Dataset.csv", function (data){
       })
       // .ordering(function(d) { return -d.key; }) // desc
       // .ordering(function(d) { return d.key; }) // asc
+      .on("filtered", getFiltersValues)
       .colors('#4292c6')
       .barPadding(0.1)
       .outerPadding(0.05)
@@ -73,7 +115,7 @@ d3.csv("data/FAO_Dataset.csv", function (data){
       .xUnits(dc.units.ordinal)
       .elasticY(true)
       .renderHorizontalGridLines(true)
-      .yAxis().ticks(5);      
+      .yAxis().ticks(5);   
  
 
     // create displacement reason dimension and group
@@ -87,15 +129,16 @@ d3.csv("data/FAO_Dataset.csv", function (data){
     );  
 
     // configure displacement reason chart parameters
-    displaceReasonChart.width(350)
-      .height(320)
+    displaceReasonChart.width(250)
+      .height(150)
       .margins({top:5, right:10, bottom:20, left:10})
       .dimension(displaceReason)
       .group(displaceReasonGroup)
-      .ordering(function(d){ return -d.value; })
       .valueAccessor(function(d){
         return (d.value);
       })
+      .ordering(function(d){ return -d.value; })
+      .on("filtered", getFiltersValues)
       // .colors(d3.scale.category20())
       // .colors('#4292c6')
       .ordinalColors(['#e5c494','#ffd92f','#fc8d62','#a6d854','#66c2a5','#8da0cb','#e78ac3'])
@@ -107,8 +150,8 @@ d3.csv("data/FAO_Dataset.csv", function (data){
                  + d3.format(",")(d.value);
       })
       .elasticX(true)
-      .xAxis()
-      .ticks(4);
+      .xAxis().ticks(4);
+      
       // .tickFormat(function(v){ return v/1000 + 'K'; });
     
     // // disble mouse click for displaceReasonChart
@@ -132,6 +175,7 @@ d3.csv("data/FAO_Dataset.csv", function (data){
       .valueAccessor(function(d){ return d.value; })
       .group(prevRegionGroup)
       .ordering(function(d){ return -d.value; })
+      .on("filtered", getFiltersValues)
       // .colors(d3.scale.ordinal().range(colorbrewer.Set2[6]))
       .ordinalColors(['#eb5a5e'])
       .label(function(d){
@@ -142,6 +186,7 @@ d3.csv("data/FAO_Dataset.csv", function (data){
       })
       .elasticX(true)
       .xAxis().ticks(4);
+      
 
 
     // create current region dimension and group
@@ -161,6 +206,7 @@ d3.csv("data/FAO_Dataset.csv", function (data){
       .valueAccessor(function(d){ return d.value; })
       .group(currRegionGroup)
       .ordering(function(d){ return -d.value; })
+      .on("filtered", getFiltersValues)
       // .colors(d3.scale.ordinal().range(colorbrewer.Set2[6]))
       .colors('#4292c6')
       .label(function(d){
@@ -171,6 +217,7 @@ d3.csv("data/FAO_Dataset.csv", function (data){
       })
       .elasticX(true)
       .xAxis().ticks(4);
+      
 
 
     // create map dimension and group
@@ -201,6 +248,7 @@ d3.csv("data/FAO_Dataset.csv", function (data){
       )
       .keyAccessor(function(d){ return d.key; })
       .valueAccessor(function(d){ return d.value; })
+      .on("filtered", getFiltersValues)
       // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
       .colors(["#CCC", '#f4a0a2','#f28e91','#f07d80','#ee6b6f','#eb5a5e','#e9484d','#e7373b','#e5252a','#dd1a20'])
       .colorDomain([0, prevRegionGroup.top(1)[0].value / 2]) 
@@ -211,6 +259,7 @@ d3.csv("data/FAO_Dataset.csv", function (data){
       .title(function(d){
         return  d.key + ": " + d3.format(",")(d.value);
       });
+      
 
       
     // create map dimension and group
@@ -233,6 +282,7 @@ d3.csv("data/FAO_Dataset.csv", function (data){
       )
       .keyAccessor(function(d){ return d.key; })
       .valueAccessor(function(d){ return d.value; })
+      .on("filtered", getFiltersValues)
       // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
       .colors(["#CCC", '#E2F2FF','#C4E4FF','#9ED2FF','#81C5FF','#6BBAFF','#51AEFF','#36A2FF','#1E96FF','#0089FF','#0061B5'])
       .colorDomain([0, currRegionGroup.top(1)[0].value / 2]) 
@@ -242,7 +292,10 @@ d3.csv("data/FAO_Dataset.csv", function (data){
       })
       .title(function(d){
         return d.key + ": " + d3.format(",")(d.value);
-      });      
+      });
+            
+    
+    initFilters();
 
     // Render the charts
     dc.renderAll();
