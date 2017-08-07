@@ -95,7 +95,7 @@ d3.csv("data/FAO_Dataset.csv", function (data){
 
     // Configure displacement month bar chart parameters
     displaceMonthChart.width(540).height(150)
-      .margins({top:5, right:10, bottom:50, left:50})
+      .margins({top:5, right:10, bottom:60, left:50})
       .dimension(displaceMonth)
       .group(displaceMonthGroup, "Year-Month")
       .valueAccessor(function(d){
