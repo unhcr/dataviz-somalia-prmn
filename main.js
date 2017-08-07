@@ -94,8 +94,8 @@ d3.csv("data/FAO_Dataset.csv", function (data){
     });
 
     // Configure displacement month bar chart parameters
-    displaceMonthChart.width(820).height(150)
-      .margins({top:5, right:10, bottom:20, left:50})
+    displaceMonthChart.width(540).height(150)
+      .margins({top:5, right:10, bottom:50, left:50})
       .dimension(displaceMonth)
       .group(displaceMonthGroup, "Year-Month")
       .valueAccessor(function(d){
@@ -106,17 +106,25 @@ d3.csv("data/FAO_Dataset.csv", function (data){
       })
       // .ordering(function(d) { return -d.key; }) // desc
       // .ordering(function(d) { return d.key; }) // asc
-      .on("filtered", getFiltersValues)
+      .on("filtered", getFiltersValues) 
       .colors('#4292c6')
       .barPadding(0.1)
       .outerPadding(0.05)
-      .brushOn(false)
+      .brushOn(true)
+      .controlsUseVisibility(true)
       .x(d3.scale.ordinal())
       .xUnits(dc.units.ordinal)
       .elasticY(true)
       .renderHorizontalGridLines(true)
-      .yAxis().ticks(5);   
- 
+      .yAxis().ticks(5);
+    
+    displaceMonthChart.on('renderlet',function(chart){
+      // rotate x-axis labels
+      chart.selectAll('g.x text')
+        .attr('transform', 'translate(-10,10) rotate(270)')
+        .attr('style', 'text-anchor: end;');
+    });
+
 
     // create displacement reason dimension and group
     var displaceReason = facts.dimension(function(d){
@@ -129,8 +137,7 @@ d3.csv("data/FAO_Dataset.csv", function (data){
     );  
 
     // configure displacement reason chart parameters
-    displaceReasonChart.width(250)
-      .height(150)
+    displaceReasonChart.width(540).height(150)
       .margins({top:5, right:10, bottom:20, left:10})
       .dimension(displaceReason)
       .group(displaceReasonGroup)
@@ -168,7 +175,7 @@ d3.csv("data/FAO_Dataset.csv", function (data){
     });
 
     // configure previous region chart parameters
-    prevRegionChart.width(330)
+    prevRegionChart.width(270)
       .height(500)
       .margins({top:5, right:10, bottom:20, left:10})
       .dimension(prevRegion)
@@ -199,7 +206,7 @@ d3.csv("data/FAO_Dataset.csv", function (data){
     });
 
     // configure current region chart parameters
-    currRegionChart.width(330)
+    currRegionChart.width(270)
       .height(500)
       .margins({top:5, right:10, bottom:20, left:10})
       .dimension(currRegion)
@@ -237,14 +244,14 @@ d3.csv("data/FAO_Dataset.csv", function (data){
     // Remember to set the 'stroke' color for the admin1 borders to stand-out,
     // to increase thickness set 'stroke-width' to 2px or more. See 'style.css'.
     prevRegionMap
-      .width(640)
-      .height(320)
+      .width(600)
+      .height(350)
       .transitionDuration(1000)
       .dimension(prevRegion)
       .group(prevRegionGroup)
       .projection(d3.geo.mercator()
-        .scale(1300)
-        .translate([-870, 280])
+        .scale(1350)
+        .translate([-960, 300])
       )
       .keyAccessor(function(d){ return d.key; })
       .valueAccessor(function(d){ return d.value; })
@@ -272,13 +279,13 @@ d3.csv("data/FAO_Dataset.csv", function (data){
 
     currRegionMap
       .width(640)
-      .height(320)
+      .height(350)
       .transitionDuration(1000)
       .dimension(currRegion)
       .group(currRegionGroup)
       .projection(d3.geo.mercator()
-        .scale(1300)
-        .translate([-870, 280])
+        .scale(1350)
+        .translate([-960, 300])
       )
       .keyAccessor(function(d){ return d.key; })
       .valueAccessor(function(d){ return d.value; })
