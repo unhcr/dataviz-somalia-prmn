@@ -9,6 +9,10 @@ h6 {
     font-weight: normal;
 }
 
+.instruct {
+   margin-top: 10px; 
+}
+
 #dc-choropleth-map g.admin1Name path {
     stroke: #fff;
     stroke-width: 1px;
