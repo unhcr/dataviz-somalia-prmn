@@ -26,48 +26,58 @@
     <div class="container" style="font: 12px sans-serif;">
 
       <div class="row">
-        <div class="col-lg-11">
+        <div class="col-lg-10">
           <h4>
             <strong>SOMALIA: INTERNAL DISPLACEMENTS</strong><br/>
           </h4>
           <h6><strong>Displacements Monitored by UNHCR Protection and Return Monitoring Network (PRMN)</strong></h6>
         </div>
-        <div class="col-lg-1" id="dc-depth-chart">
-          <img src="img/UNHCR-visibility-horizontal-Blue-PMS-v2015.svg" 
+        <div class="col-lg-2" id="dc-depth-chart">
+          <img src="img/UNHCR-visibility-horizontal-Blue-PMS-v2015.png" 
             alt="UNHCR" 
             height="45px"
             align="right"
             id="pc-yemen-logo">
         </div>
-      </div> <!-- /header -->     
+      </div> <!-- /header -->
 
       <div class="row">
+        <div class="col-lg">
+          <a class="btn btn-primary btn-sm" style="float: right;"
+            href="javascript:dc.filterAll(); dc.renderAll()">
+            Clear All Filters
+          </a>  
+        </div>
+      </div> <!-- / filters -->     
 
-        <div class="col-lg-3">
-          <h6>
-            DISPLACEMENTS 
-            
-          </h6>
-          <div class="nd" id="dc-displace-total-number"></div>
-        </div> <!-- / displacement total -->                     
-        
-        <div class="col-lg-9">    
-          <h6>
-            <a class="btn btn-primary btn-sm float-right" 
-              href="javascript:dc.filterAll(); dc.renderAll()">
-              Clear All Filters
-            </a>  
-          </h6>          
-        </div> <!-- / filters -->
-         
-      </div> 
+      <div class="row" style="margin-top: 5px;">    
+        <div class="col-lg-6">
 
-      <div class="row">    
-        
-        <div class="col-lg-6"> 
-          
+          <div class="row"> 
+
+            <div class="col-lg-5">
+                <h6>
+                  DISPLACEMENTS 
+                </h6>
+                <div class="nd" id="dc-displace-total-number"></div>
+                <div id="dc-month-sparkline"></div>
+            </div> <!-- / displacement total --> 
+
+            <div class="col-lg-7"  id="dc-displace-reason-chart">
+              <h6>REASONS
+                <a class="reset btn btn-primary btn-sm" 
+                  href="javascript: displaceReasonChart.filterAll(); dc.redrawAll();" 
+                    style="visibility: hidden">
+                  clear
+                </a>
+              </h6>
+              <!--<div class="clearfix"></div>-->
+            </div> <!-- / displacement reasons -->  
+
+          </div>
+
           <div class="row">
-            <div class="col-lg-12" id="dc-month-chart">
+            <div class="col-lg" id="dc-month-chart">
               <h6>MONTHLY DISPLACEMENTS
                 <a class="reset btn btn-primary btn-sm" 
                   href="javascript: displaceMonthChart.filterAll(); dc.redrawAll();" 
@@ -78,26 +88,13 @@
             </div> <!-- / monthly displacement -->  
           </div>
 
-          <div class="row"> 
-            <div class="col-lg-12"  id="dc-displace-reason-chart">
-              <h6>REASONS
-                <a class="reset btn btn-primary btn-sm" 
-                  href="javascript: displaceReasonChart.filterAll(); dc.redrawAll();" 
-                    style="display: none">
-                  clear
-                </a>
-              </h6>
-              <!--<div class="clearfix"></div>-->
-            </div> <!-- / displacement reasons -->    
-          </div>
-
-        </div>
+        </div>          
 
         <div class="col-lg-3" id="dc-prev-region-map">
           <h6>DEPARTURE REGIONS MAP
             <a class="reset btn btn-primary btn-sm" 
               href="javascript:prevRegionMap.filterAll(); dc.redrawAll();" 
-                style="display: none">
+                style="visibility: hidden">
               clear
             </a>
           </h6>
@@ -107,7 +104,7 @@
           <h6>ARRIVAL REGIONS MAP
             <a class="reset btn btn-primary btn-sm" 
               href="javascript:currRegionMap.filterAll(); dc.redrawAll();" 
-                style="display: none">
+                style="visibility: hidden">
               clear
             </a>
           </h6>
@@ -119,51 +116,56 @@
           <div class="row">
 
             <div class="col-lg-6">
-              
               <div class="row">
-                <h6>HOW TO USE</h6>
-                <div>
-                  <ul>
-                    <li>Click on any chart or map element to filter and slice the data, click again on the same element to undo. </li>
-                    <li>To combine multiple filters, click multiple chart or map elements on any chart or map.</li>
-                    <li>Copy the link once you're done to share or tweet.</li>
-                    <li>Use the 'clear' button to clear all filters for a specific chart or map</li>
-                    <li>Use 'Clear All Filters' button to clear all your filters for all charts and maps.   </li>
-                  </ul>
+                <div class="col-lg">
+                
+                  <h6>HOW TO USE</h6>
+                  <div>
+                    <ul>
+                      <li>Click on any chart or map element to filter and slice the data, click again on the same element to undo. </li>
+                      <li>To combine multiple filters, click multiple chart or map elements on any chart or map.</li>
+                      <li>Copy the link once you're done to share or tweet.</li>
+                      <li>Use the 'clear' button to clear all filters for a specific chart or map</li>
+                      <li>Use 'Clear All Filters' button to clear all your filters for all charts and maps.   </li>
+                    </ul>
+                  </div>
+
                 </div>
               </div> <!-- / about prmn --> 
               <!-- <hr/> -->
               <div class="row">
-                <h6>ABOUT PRMN</h6>
-                <p>
-                  The PRMN (Protection & Return Monitoring Network) is a UNHCR-led project which identifies and reports on displacements (including returns) of populations in Somalia. 
-                  The network also identifies and reports on protection risks and incidents underlying such movements. Only figures collected by PRMN are reported above. 
-                  Not all displacements in Somalia are captured. 
-                  This report should be read in conjunction with the <a href="https://goo.gl/8tPfeX">Notes on PRMN Methodology</a> which outline the approach and certain limitations.
-                  More information on Somalia can be found on the 
-                  <a href="https://data2.unhcr.org/en/situations/horn">UNHCR Somalia Data Portal</a>.
-                </p>
-                <p>
-                  UNHCR is grateful for the generous contributions of donors who have directly contributed to the UNHCR Somalia operation in 2017 
-                </p>
-                <p>
-                  <img src="img/Picture1.png" alt="" height="40px">
-                  <img src="img/Picture2.png" alt="" height="40px">
-                  <img src="img/Picture3.png" alt="" height="40px">
-                  <img src="img/Picture4.png" alt="" height="40px">
-                  <img src="img/Picture5.png" alt="" height="40px">
-                  <img src="img/Picture6.png" alt="" height="40px">
-                  <img src="img/Picture7.png" alt="" height="40px">
-                  <img src="img/Picture8.png" alt="" height="40px">
-                  <img src="img/Picture9.png" alt="" height="40px">
-                  <img src="img/Picture10.png" alt="" height="40px">
-                  <img src="img/Picture11.png" alt="" height="40px">
-                  <img src="img/Picture12.png" alt="" height="40px">
-                  <img src="img/Picture13.png" alt="" height="40px">
-                  <img src="img/Picture14.png" alt="" height="40px">
-                  <img src="img/Picture15.png" alt="" height="40px">
-                  <img src="img/Picture16.png" alt="" height="40px">                      
-                </p>
+                <div class="col-lg">
+                  <h6>ABOUT PRMN</h6>
+                  <p>
+                    The PRMN (Protection and Return Monitoring Network) is a UNHCR-led project which identifies and reports on displacements (including returns) of populations in Somalia. 
+                    The network also identifies and reports on protection risks and incidents underlying such movements. Only figures collected by PRMN are reported above. 
+                    Not all displacements in Somalia are captured. 
+                    This report should be read in conjunction with the <a href="https://goo.gl/8tPfeX">Notes on PRMN Methodology</a> which outline the approach and certain limitations.
+                    More information on Somalia can be found on the 
+                    <a href="https://data2.unhcr.org/en/situations/horn">UNHCR Somalia Data Portal</a>.
+                  </p>
+                  <p>
+                    UNHCR is grateful for the generous contributions of donors who have directly contributed to the UNHCR Somalia operation in 2017 
+                  </p>
+                  <p>
+                    <img src="img/Picture1.png" alt="" height="36px">
+                    <img src="img/Picture2.png" alt="" height="36px">
+                    <img src="img/Picture3.png" alt="" height="36px">
+                    <img src="img/Picture4.png" alt="" height="36px">
+                    <img src="img/Picture5.png" alt="" height="36px">
+                    <img src="img/Picture6.png" alt="" height="36px">
+                    <img src="img/Picture7.png" alt="" height="36px">
+                    <img src="img/Picture8.png" alt="" height="36px">
+                    <img src="img/Picture9.png" alt="" height="36px">
+                    <img src="img/Picture10.png" alt="" height="36px">
+                    <img src="img/Picture11.png" alt="" height="36px">
+                    <img src="img/Picture12.png" alt="" height="36px">
+                    <img src="img/Picture13.png" alt="" height="36px">
+                    <img src="img/Picture14.png" alt="" height="36px">
+                    <img src="img/Picture15.png" alt="" height="36px">
+                    <img src="img/Picture16.png" alt="" height="36px">                      
+                  </p>
+                </div>
               </div>
 
             </div> 
@@ -172,7 +174,7 @@
               <h6>DEPARTURE REGIONS
                 <a class="reset btn btn-primary btn-sm" 
                   href="javascript:prevRegionChart.filterAll(); dc.redrawAll();" 
-                    style="display: none">
+                    style="visibility: hidden">
                   clear
                 </a>
               </h6>             
@@ -182,7 +184,7 @@
               <h6>ARRIVAL REGIONS
                 <a class="reset btn btn-primary btn-sm" 
                   href="javascript:currRegionChart.filterAll(); dc.redrawAll();" 
-                    style="display: none">
+                    style="visibility: hidden">
                   clear
                 </a>
               </h6>             

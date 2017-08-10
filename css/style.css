@@ -7,10 +7,19 @@ h4{
 h6 {
     font-size: 14px;
     font-weight: normal;
+    margin-bottom: 0px;
 }
 
-.instruct {
-   margin-top: 10px; 
+img {
+   margin: 2px 2px 2px 2px; 
+}
+
+#dc-month-sparkline {
+    pointer-events: none;
+}
+
+#dc-month-sparkline svg g g.axis.x { 
+    display: none; 
 }
 
 #dc-choropleth-map g.admin1Name path {
@@ -29,9 +38,9 @@ td.dc-table-column._2
 }
 
 .btn-group-sm>.btn, .btn-sm {
-    font-size: .775rem;
-    padding-top: 2px; 
-    padding-bottom: 2px; 
+    font-size: .875rem;
+    padding-top: 3px; 
+    padding-bottom: 3px; 
 }
 
 /* change rowChart label color */
