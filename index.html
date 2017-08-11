@@ -25,7 +25,7 @@
   <body>
     <div class="container" style="font: 12px sans-serif;">
 
-      <div class="row">
+      <div class="row" style="margin-bottom: .5rem">
         <div class="col-lg-10">
           <h4>
             <strong>SOMALIA: INTERNAL DISPLACEMENTS</strong><br/>
@@ -40,41 +40,27 @@
             id="pc-yemen-logo">
         </div>
       </div> <!-- /header -->
-
+      
       <div class="row">
-        <div class="col-lg">
+        
+        <div class="col-lg-3">
+            <h6>
+              DISPLACEMENTS 
+            </h6>
+            <div class="nd" id="dc-displace-total-number"></div>
+        </div> <!-- / displacement total -->  
+
+        <div class="col-lg-9">
           <a class="btn btn-primary btn-sm" style="float: right;"
             href="javascript:dc.filterAll(); dc.renderAll()">
             Clear All Filters
           </a>  
-        </div>
-      </div> <!-- / filters -->     
+        </div> <!-- / filters -->  
+
+      </div>   
 
       <div class="row" style="margin-top: 5px;">    
         <div class="col-lg-6">
-
-          <div class="row"> 
-
-            <div class="col-lg-5">
-                <h6>
-                  DISPLACEMENTS 
-                </h6>
-                <div class="nd" id="dc-displace-total-number"></div>
-                <div id="dc-month-sparkline"></div>
-            </div> <!-- / displacement total --> 
-
-            <div class="col-lg-7"  id="dc-displace-reason-chart">
-              <h6>REASONS
-                <a class="reset btn btn-primary btn-sm" 
-                  href="javascript: displaceReasonChart.filterAll(); dc.redrawAll();" 
-                    style="visibility: hidden">
-                  clear
-                </a>
-              </h6>
-              <!--<div class="clearfix"></div>-->
-            </div> <!-- / displacement reasons -->  
-
-          </div>
 
           <div class="row">
             <div class="col-lg" id="dc-month-chart">
@@ -85,8 +71,20 @@
                   clear
                 </a>
               </h6>                     
-            </div> <!-- / monthly displacement -->  
-          </div>
+            </div> 
+          </div> <!-- / monthly displacement -->  
+
+          <div class="row">
+            <div class="col-lg"  id="dc-displace-reason-chart">
+              <h6>REASONS
+                <a class="reset btn btn-primary btn-sm" 
+                  href="javascript: displaceReasonChart.filterAll(); dc.redrawAll();" 
+                    style="visibility: hidden">
+                  clear
+                </a>
+              </h6>
+            </div>  
+          </div> <!-- / displacement reasons --> 
 
         </div>          
 
@@ -120,15 +118,14 @@
                 <div class="col-lg">
                 
                   <h6>HOW TO USE</h6>
-                  <div>
-                    <ul>
-                      <li>Click on any chart or map element to filter and slice the data, click again on the same element to undo. </li>
-                      <li>To combine multiple filters, click multiple chart or map elements on any chart or map.</li>
-                      <li>Copy the link once you're done to share or tweet.</li>
-                      <li>Use the 'clear' button to clear all filters for a specific chart or map</li>
-                      <li>Use 'Clear All Filters' button to clear all your filters for all charts and maps.   </li>
-                    </ul>
-                  </div>
+                  <ul>
+                    <li>Click on any chart or map element to filter and slice the data, click again on the same element to undo. </li>
+                    <li>To combine multiple filters, click multiple chart or map elements on any chart or map.</li>
+                    <li>Copy the link once you're done to share or tweet.</li>
+                    <li>Use the 'clear' button to clear all filters for a specific chart or map</li>
+                    <li>Use 'Clear All Filters' button to clear all your filters for all charts and maps.   </li>
+                  </ul>
+
 
                 </div>
               </div> <!-- / about prmn --> 
@@ -144,10 +141,14 @@
                     More information on Somalia can be found on the 
                     <a href="https://data2.unhcr.org/en/situations/horn">UNHCR Somalia Data Portal</a>.
                   </p>
+                  <h6>DATASET</h6>
+                  <p>
+                    Internal displacement dataset by month, reason and region is available <a href="/data/FAO_Dataset.csv">here</a> under CC licence by <a href="https://creativecommons.org/licenses/by/3.0/igo/legalcode">here</a>. Please attribute data to "UNHCR-led Protection and Return Monitoring Network (PRMN) Somalia".
+                  </p>
                   <p>
                     UNHCR is grateful for the generous contributions of donors who have directly contributed to the UNHCR Somalia operation in 2017 
                   </p>
-                  <p>
+                  <div>
                     <img src="img/Picture1.png" alt="" height="36px">
                     <img src="img/Picture2.png" alt="" height="36px">
                     <img src="img/Picture3.png" alt="" height="36px">
@@ -164,7 +165,7 @@
                     <img src="img/Picture14.png" alt="" height="36px">
                     <img src="img/Picture15.png" alt="" height="36px">
                     <img src="img/Picture16.png" alt="" height="36px">                      
-                  </p>
+                  </div>
                 </div>
               </div>
 

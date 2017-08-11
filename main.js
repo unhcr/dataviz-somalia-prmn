@@ -12,7 +12,6 @@ var prevRegionMap = dc.geoChoroplethChart("#dc-prev-region-map");
 var currRegionMap = dc.geoChoroplethChart("#dc-curr-region-map");
 
 var displaceMonthChart = dc.barChart("#dc-month-chart");
-var displaceMonthSparkLine = dc.lineChart("#dc-month-sparkline");
 
 // Implement bookmarking chart filters status
 // Serializing filters values in URL
@@ -95,8 +94,8 @@ d3.csv("data/FAO_Dataset.csv", function (data){
     });
 
     // Configure displacement month bar chart parameters
-    displaceMonthChart.width(540).height(150)
-      .margins({top:5, right:10, bottom:60, left:50})
+    displaceMonthChart.width(550).height(150)
+      .margins({top:0, right:10, bottom:60, left:50})
       .dimension(displaceMonth)
       .group(displaceMonthGroup, "Year-Month")
       .valueAccessor(function(d){
@@ -126,18 +125,6 @@ d3.csv("data/FAO_Dataset.csv", function (data){
         .attr('style', 'text-anchor: end;');
     });
 
-    // Configure displacement month spark bar chart parameters
-    displaceMonthSparkLine
-      .width(180)
-      .height(30)
-      .margins({left: 0, top: 0, right: 0, bottom: 0})
-      .x(d3.scale.ordinal())
-      .xUnits(dc.units.ordinal)
-      .elasticY(true)
-      .brushOn(false)
-      .dimension(displaceMonth)
-      .group(displaceMonthGroup);
-
 
     // create displacement reason dimension and group
     var displaceReason = facts.dimension(function(d){
@@ -150,8 +137,8 @@ d3.csv("data/FAO_Dataset.csv", function (data){
     );  
 
     // configure displacement reason chart parameters
-    displaceReasonChart.width(310).height(130)
-      .margins({top:5, right:10, bottom:20, left:10})
+    displaceReasonChart.width(550).height(130)
+      .margins({top:0, right:10, bottom:20, left:10})
       .dimension(displaceReason)
       .group(displaceReasonGroup)
       .valueAccessor(function(d){
@@ -163,7 +150,7 @@ d3.csv("data/FAO_Dataset.csv", function (data){
       // .colors(d3.scale.category20())
       // .colors('#4292c6')
       // .ordinalColors(['#e5c494','#ffd92f','#fc8d62','#a6d854','#66c2a5','#8da0cb','#e78ac3'])
-      .ordinalColors(['#e5c494','#ffd92f','#66c2a5','#8da0cb'])
+      .ordinalColors(['#e5c494','#ffd92f','#66c2a5','#4292c6'])
       .label(function(d){
         return _.upperFirst(d.key);
       })
@@ -192,7 +179,7 @@ d3.csv("data/FAO_Dataset.csv", function (data){
     // configure previous region chart parameters
     prevRegionChart.width(260)
       .height(500)
-      .margins({top:5, right:10, bottom:20, left:10})
+      .margins({top:0, right:10, bottom:20, left:10})
       .dimension(prevRegion)
       .valueAccessor(function(d){ return d.value; })
       .group(prevRegionGroup)
@@ -224,7 +211,7 @@ d3.csv("data/FAO_Dataset.csv", function (data){
     // configure current region chart parameters
     currRegionChart.width(260)
       .height(500)
-      .margins({top:5, right:10, bottom:20, left:10})
+      .margins({top:0, right:10, bottom:20, left:10})
       .dimension(currRegion)
       .valueAccessor(function(d){ return d.value; })
       .group(currRegionGroup)
@@ -261,14 +248,14 @@ d3.csv("data/FAO_Dataset.csv", function (data){
     // Remember to set the 'stroke' color for the admin1 borders to stand-out,
     // to increase thickness set 'stroke-width' to 2px or more. See 'style.css'.
     prevRegionMap
-      .width(600)
+      .width(260)
       .height(320)
       .transitionDuration(1000)
       .dimension(prevRegion)
       .group(prevRegionGroup)
       .projection(d3.geo.mercator()
         .scale(1250)
-        .translate([-880, 270])
+        .translate([-880, 268])
       )
       .keyAccessor(function(d){ return d.key; })
       .valueAccessor(function(d){ return d.value; })
@@ -296,14 +283,14 @@ d3.csv("data/FAO_Dataset.csv", function (data){
     });
 
     currRegionMap
-      .width(640)
+      .width(260)
       .height(320)
       .transitionDuration(1000)
       .dimension(currRegion)
       .group(currRegionGroup)
       .projection(d3.geo.mercator()
         .scale(1250)
-        .translate([-880, 270])
+        .translate([-880, 268])
       )
       .keyAccessor(function(d){ return d.key; })
       .valueAccessor(function(d){ return d.value; })

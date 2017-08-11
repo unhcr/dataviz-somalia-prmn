@@ -14,12 +14,8 @@ img {
    margin: 2px 2px 2px 2px; 
 }
 
-#dc-month-sparkline {
-    pointer-events: none;
-}
-
-#dc-month-sparkline svg g g.axis.x { 
-    display: none; 
+#dc-displace-total-number {
+    padding: 0px;
 }
 
 #dc-choropleth-map g.admin1Name path {
