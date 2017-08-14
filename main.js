@@ -55,7 +55,7 @@ function initFilters() {
 }
 
 // Load data from CSV file
-d3.csv("data/FAO_Dataset.csv", function (data){
+d3.csv("data/PRMNDataset.csv", function (data){
   // Load data from JSON file
   // d3.json("data/admin1.json", function (govtJson){
   d3.json("data/Som_Admbnda_Adm1_UNDP.json", function (govtJson){
