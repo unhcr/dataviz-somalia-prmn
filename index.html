@@ -16,7 +16,8 @@
     <script src="js/colorbrewer.js"></script>  <!-- melt.js -->
 
     <!-- css for dc.js and bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://unpkg.com/dataviz-styleguide/semantic/dist/semantic.min.css">
     <link href="css/dc.css" rel="stylesheet">
     <link href="css/colorbrewer.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -25,14 +26,14 @@
   <body>
     <div class="container" style="font: 12px sans-serif;">
 
-      <div class="row" style="margin-bottom: .5rem">
-        <div class="col-lg-10">
+      <div class="ui grid" style="margin-bottom: .5rem">
+        <div class="twelve wide column">
           <h4>
             <strong>SOMALIA: INTERNAL DISPLACEMENTS</strong><br/>
           </h4>
           <h6><strong>Displacements Monitored by UNHCR Protection and Return Monitoring Network (PRMN)</strong></h6>
         </div>
-        <div class="col-lg-2" id="dc-depth-chart">
+        <div class="four wide column" id="dc-depth-chart">
           <img src="img/UNHCR-visibility-horizontal-Blue-PMS-v2015.png" 
             alt="UNHCR" 
             height="45px"
@@ -41,16 +42,16 @@
         </div>
       </div> <!-- /header -->
       
-      <div class="row">
+      <div class="ui grid">
         
-        <div class="col-lg-3">
+        <div class="four wide column">
             <h6>
               DISPLACEMENTS 
             </h6>
             <div class="nd" id="dc-displace-total-number"></div>
         </div> <!-- / displacement total -->  
 
-        <div class="col-lg-9">
+        <div class="twelve wide column">
           <a class="btn btn-primary btn-sm" style="float: right;"
             href="javascript:dc.filterAll(); dc.renderAll()">
             Clear All Filters
@@ -59,11 +60,11 @@
 
       </div>   
 
-      <div class="row" style="margin-top: 5px;">    
-        <div class="col-lg-6">
+      <div class="ui grid" style="margin-top: 5px;">    
+        <div class="eight wide column">
 
-          <div class="row">
-            <div class="col-lg" id="dc-month-chart">
+          <div class="ui grid">
+            <div class="wide column" id="dc-month-chart">
               <h6>MONTHLY DISPLACEMENTS
                 <a class="reset btn btn-primary btn-sm" 
                   href="javascript: displaceMonthChart.filterAll(); dc.redrawAll();" 
@@ -74,8 +75,8 @@
             </div> 
           </div> <!-- / monthly displacement -->  
 
-          <div class="row">
-            <div class="col-lg"  id="dc-displace-reason-chart">
+          <div class="ui grid">
+            <div class="wide column" id="dc-displace-reason-chart">
               <h6>REASONS
                 <a class="reset btn btn-primary btn-sm" 
                   href="javascript: displaceReasonChart.filterAll(); dc.redrawAll();" 
@@ -88,7 +89,7 @@
 
         </div>          
 
-        <div class="col-lg-3" id="dc-prev-region-map">
+        <div class="four wide column" id="dc-prev-region-map">
           <h6>DEPARTURE REGIONS MAP
             <a class="reset btn btn-primary btn-sm" 
               href="javascript:prevRegionMap.filterAll(); dc.redrawAll();" 
@@ -98,7 +99,7 @@
           </h6>
         </div> <!-- / departure regions map -->          
 
-        <div class="col-lg-3" id="dc-curr-region-map">
+        <div class="four wide column" id="dc-curr-region-map">
           <h6>ARRIVAL REGIONS MAP
             <a class="reset btn btn-primary btn-sm" 
               href="javascript:currRegionMap.filterAll(); dc.redrawAll();" 
@@ -109,13 +110,13 @@
         </div> <!-- / arrival regions map -->                   
       </div>         
 
-      <div class="row">          
-        <div class="col-lg-12">
-          <div class="row">
+      <div class="ui grid">          
+        <div class="sixteen wide column">
+          <div class="ui grid">
 
-            <div class="col-lg-6">
-              <div class="row">
-                <div class="col-lg">
+            <div class="eight wide column">
+              <div class="ui grid">
+                <div class="wide column" >
                 
                   <h6>HOW TO USE</h6>
                   <ul>
@@ -130,8 +131,8 @@
                 </div>
               </div> <!-- / about prmn --> 
               <!-- <hr/> -->
-              <div class="row">
-                <div class="col-lg">
+              <div class="ui grid">
+                <div class="wide column" >
                   <h6>ABOUT PRMN</h6>
                   <p>
                     The PRMN (Protection and Return Monitoring Network) is a UNHCR-led project which identifies and reports on displacements (including returns) of populations in Somalia. 
@@ -171,7 +172,7 @@
 
             </div> 
 
-            <div class="col-lg-3" id="dc-prev-region-chart">
+            <div class="four wide column" id="dc-prev-region-chart">
               <h6>DEPARTURE REGIONS
                 <a class="reset btn btn-primary btn-sm" 
                   href="javascript:prevRegionChart.filterAll(); dc.redrawAll();" 
@@ -181,7 +182,7 @@
               </h6>             
             </div> <!-- / departure regions -->
 
-            <div class="col-lg-3" id="dc-curr-region-chart">
+            <div class="four wide column" id="dc-curr-region-chart">
               <h6>ARRIVAL REGIONS
                 <a class="reset btn btn-primary btn-sm" 
                   href="javascript:currRegionChart.filterAll(); dc.redrawAll();" 
