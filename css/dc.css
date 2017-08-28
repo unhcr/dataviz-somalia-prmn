@@ -92,7 +92,7 @@ div.dc-chart {
   display: none; }
 
 .dc-chart g.row rect {
-  fill-opacity: 0.8;
+  fill-opacity: 1;
   cursor: pointer; }
   .dc-chart g.row rect:hover {
     fill-opacity: 0.6; }
