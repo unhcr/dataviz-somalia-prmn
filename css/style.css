@@ -14,6 +14,11 @@ img {
    margin: 2px 2px 2px 2px; 
 }
 
+svg, 
+svg text {
+    font-family: 'Lato';
+}
+
 #dc-displace-total-number {
     padding: 0px;
 }
