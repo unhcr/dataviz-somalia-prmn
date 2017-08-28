@@ -19,6 +19,14 @@ svg text {
     font-family: 'Lato';
 }
 
+.tick line:not(.grid-line) {
+  display: none;
+}
+
+.domain {
+  display: none;
+}
+
 #dc-displace-total-number {
     padding: 0px;
 }
