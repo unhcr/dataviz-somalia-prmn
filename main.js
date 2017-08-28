@@ -80,7 +80,8 @@ d3.csv("data/PRMNDataset.csv", function (data){
 
     displaceTotalNumber
       .group(peopleGroup)
-      .formatNumber(d3.format(","))
+      .formatNumber(d3.format(",.0f"))
+      .transitionDuration(500)
       .valueAccessor(function(d){ return d });
 
 
