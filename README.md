@@ -3,7 +3,7 @@
 
 https://unhcr.github.io/dataviz-somalia-prmn/index.html
 
-Currently in process of style rebranding. 
+Created using dc.js. Currently in process of style rebranding. 
 
 > mugodavid.github.io
 > TODO:
