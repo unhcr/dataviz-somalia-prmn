@@ -1,9 +1,9 @@
 ## Somalia: Internal Displacement 
-#### Visusalisation by David Mugo, UNHCR Somalia
+#### Interactive visualisation created by David Mugo, UNHCR Somalia
 
 https://unhcr.github.io/dataviz-somalia-prmn/index.html
 
-Created using dc.js. Currently in process of style rebranding. 
+Created using **dc.js**. Currently in process of style rebranding. 
 
 > mugodavid.github.io
 > TODO:
