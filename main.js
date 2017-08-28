@@ -108,7 +108,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
       // .ordering(function(d) { return -d.key; }) // desc
       // .ordering(function(d) { return d.key; }) // asc
       .on("filtered", getFiltersValues) 
-      .colors('#4292c6')
+      .colors('#0072BC')
       .barPadding(0.1)
       .outerPadding(0.05)
       .brushOn(true)
@@ -220,7 +220,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
       .on("filtered", getFiltersValues)
       .controlsUseVisibility(true)
       // .colors(d3.scale.ordinal().range(colorbrewer.Set2[6]))
-      .colors('#4292c6')
+      .colors('#0072BC')
       .label(function(d){
         return d.key;
       })
