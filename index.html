@@ -62,137 +62,139 @@
 
       </div>   
 
-      <div class="ui grid" style="margin-top: 5px;">    
-        <div class="eight wide column">
+      <div class="ui grid stackable" style="margin-top: 5px;">    
+        <div class="eight wide column"><!-- LEFT PANEL -->
 
-          <div class="ui grid">
-            <div class="wide column" id="dc-month-chart">
-              <h4>Monthly displacements
-                <a class="reset ui primary button mini" 
-                  href="javascript: displaceMonthChart.filterAll(); dc.redrawAll();" 
-                    style="visibility: hidden">
-                  Clear
-                </a>
-              </h4>                     
-            </div> 
-          </div> <!-- / monthly displacement -->  
+          <div class="row" id="dc-month-chart">
+            <h4>Monthly displacements
+              <a class="reset ui primary button mini" 
+                href="javascript: displaceMonthChart.filterAll(); dc.redrawAll();" 
+                  style="visibility: hidden">
+                Clear
+              </a>
+            </h4>                     
+          </div>  <!-- / monthly displacement -->  
 
-          <div class="ui grid">
-            <div class="wide column" id="dc-displace-reason-chart">
-              <h4>Reasons
-                <a class="reset ui primary button mini" 
-                  href="javascript: displaceReasonChart.filterAll(); dc.redrawAll();" 
-                    style="visibility: hidden">
-                  Clear
-                </a>
-              </h4>
-            </div>  
-          </div> <!-- / displacement reasons --> 
+          <div class="row" id="dc-displace-reason-chart">
+            <h4>Reasons
+              <a class="reset ui primary button mini" 
+                href="javascript: displaceReasonChart.filterAll(); dc.redrawAll();" 
+                  style="visibility: hidden">
+                Clear
+              </a>
+            </h4>
+          </div><!-- / reasons displacement -->  
 
-        </div>          
+          <div class="row"><!-- text section -->
+                
+              <h4>How to use</h4>
+              <ul>
+                <li>Click on any chart or map element to filter and slice the data, click again on the same element to undo. </li>
+                <li>To combine multiple filters, click multiple chart or map elements on any chart or map.</li>
+                <li>Copy the link once you're done to share or tweet.</li>
+                <li>Use the 'Clear' button to clear all filters for a specific chart or map</li>
+                <li>Use 'Clear All Filters' button to clear all your filters for all charts and maps.   </li>
+              </ul>
 
-        <div class="four wide column" id="dc-prev-region-map">
-          <h4>Departure regions map
-            <a class="reset ui primary button mini" 
-              href="javascript:prevRegionMap.filterAll(); dc.redrawAll();" 
-                style="visibility: hidden">
-              Clear
-            </a>
-          </h4>
-        </div> <!-- / departure regions map -->          
+              <h4>About PRMN</h4>
+              <p>
+                The PRMN (Protection and Return Monitoring Network) is a UNHCR-led project which identifies and reports on displacements (including returns) of populations in Somalia. 
+                The network also identifies and reports on protection risks and incidents underlying such movements. Only figures collected by PRMN are reported above. 
+                Not all displacements in Somalia are captured. 
+                This report should be read in conjunction with the <a href="https://goo.gl/8tPfeX">Notes on PRMN Methodology</a> which outline the approach and certain limitations.
+                More information on Somalia can be found on the 
+                <a href="https://data2.unhcr.org/en/situations/horn">UNHCR Somalia Data Portal</a>.
+              </p>
 
-        <div class="four wide column" id="dc-curr-region-map">
-          <h4>Arrival regions map
-            <a class="reset ui primary button mini" 
-              href="javascript:currRegionMap.filterAll(); dc.redrawAll();" 
-                style="visibility: hidden">
-              Clear
-            </a>
-          </h4>
-        </div> <!-- / arrival regions map -->                   
-      </div>         
+              <h4>Dataset</h4>
+              <p>
+                Internal displacement dataset by month, reason and region is available <a href="/data/PRMNDataset.csv">here</a> under <a href="https://creativecommons.org/licenses/by/3.0/igo/legalcode">CC licence by IGOs</a>. Please attribute data to "UNHCR-led Protection and Return Monitoring Network (PRMN) Somalia".
+              </p>
+              <p>
+                UNHCR is grateful for the generous contributions of donors who have directly contributed to the UNHCR Somalia operation in 2017 
+              </p>
+              <div>
+                <img src="img/Picture1.png" alt="" height="36px">
+                <img src="img/Picture2.png" alt="" height="36px">
+                <img src="img/Picture3.png" alt="" height="36px">
+                <img src="img/Picture4.png" alt="" height="36px">
+                <img src="img/Picture5.png" alt="" height="36px">
+                <img src="img/Picture6.png" alt="" height="36px">
+                <img src="img/Picture7.png" alt="" height="36px">
+                <img src="img/Picture8.png" alt="" height="36px">
+                <img src="img/Picture9.png" alt="" height="36px">
+                <img src="img/Picture10.png" alt="" height="36px">
+                <img src="img/Picture11.png" alt="" height="36px">
+                <img src="img/Picture12.png" alt="" height="36px">
+                <img src="img/Picture13.png" alt="" height="36px">
+                <img src="img/Picture14.png" alt="" height="36px">
+                <img src="img/Picture15.png" alt="" height="36px">
+                <img src="img/Picture16.png" alt="" height="36px">                      
+              </div>
+            </div><!-- / text section -->
+
+        </div><!-- / LEFT PANEL eight wide column --> 
+
+
+        <div class="eight wide column"><!-- RIGHT PANEL -->
+          <div class="ui grid stackable" style="margin-top: 5px;">   
+            <div class="row">
+              <div class="eight wide column" id="dc-prev-region-map">
+                <h4>Departure regions map
+                  <a class="reset ui primary button mini" 
+                    href="javascript:prevRegionMap.filterAll(); dc.redrawAll();" 
+                      style="visibility: hidden">
+                    Clear
+                  </a>
+                </h4>
+              </div> <!-- / departure regions map -->          
+
+              <div class="eight wide column" id="dc-curr-region-map">
+                <h4>Arrival regions map
+                  <a class="reset ui primary button mini" 
+                    href="javascript:currRegionMap.filterAll(); dc.redrawAll();" 
+                      style="visibility: hidden">
+                    Clear
+                  </a>
+                </h4>
+              </div> <!-- / arrival regions map --> 
+            </div><!-- / row -->
+
+            <div class="row">
+              <div class="eight wide column" id="dc-prev-region-chart">
+                <h4>Departure regions
+                  <a class="reset ui primary button mini" 
+                    href="javascript:prevRegionChart.filterAll(); dc.redrawAll();" 
+                      style="visibility: hidden">
+                    Clear
+                  </a>
+                </h4>             
+              </div> <!-- / departure regions -->
+
+              <div class="eight wide column" id="dc-curr-region-chart">
+                <h4>Arrival regions
+                  <a class="reset ui primary button mini" 
+                    href="javascript:currRegionChart.filterAll(); dc.redrawAll();" 
+                      style="visibility: hidden">
+                    Clear
+                  </a>
+                </h4>             
+              </div>  <!-- / arrival regions --> 
+            </div><!-- / row -->
+
+          </div><!-- / ui-grid stackable -->      
+        </div><!-- / RIGHT PANEL eight wide column --> 
+        
+      </div><!-- / ui-grid stackable -->      
+
 
       <div class="ui grid">          
         <div class="sixteen wide column">
-          <div class="ui grid">
-
-            <div class="eight wide column">
-              <div class="ui grid">
-                <div class="wide column" >
-                
-                  <h4>How to use</h4>
-                  <ul>
-                    <li>Click on any chart or map element to filter and slice the data, click again on the same element to undo. </li>
-                    <li>To combine multiple filters, click multiple chart or map elements on any chart or map.</li>
-                    <li>Copy the link once you're done to share or tweet.</li>
-                    <li>Use the 'Clear' button to clear all filters for a specific chart or map</li>
-                    <li>Use 'Clear All Filters' button to clear all your filters for all charts and maps.   </li>
-                  </ul>
+          <div class="ui grid stackable">
 
 
-                </div>
-              </div> <!-- / about prmn --> 
-              <!-- <hr/> -->
-              <div class="ui grid">
-                <div class="wide column" >
-                  <h4>About PRMN</h4>
-                  <p>
-                    The PRMN (Protection and Return Monitoring Network) is a UNHCR-led project which identifies and reports on displacements (including returns) of populations in Somalia. 
-                    The network also identifies and reports on protection risks and incidents underlying such movements. Only figures collected by PRMN are reported above. 
-                    Not all displacements in Somalia are captured. 
-                    This report should be read in conjunction with the <a href="https://goo.gl/8tPfeX">Notes on PRMN Methodology</a> which outline the approach and certain limitations.
-                    More information on Somalia can be found on the 
-                    <a href="https://data2.unhcr.org/en/situations/horn">UNHCR Somalia Data Portal</a>.
-                  </p>
-                  <h4>Dataset</h4>
-                  <p>
-                    Internal displacement dataset by month, reason and region is available <a href="/data/PRMNDataset.csv">here</a> under <a href="https://creativecommons.org/licenses/by/3.0/igo/legalcode">CC licence by IGOs</a>. Please attribute data to "UNHCR-led Protection and Return Monitoring Network (PRMN) Somalia".
-                  </p>
-                  <p>
-                    UNHCR is grateful for the generous contributions of donors who have directly contributed to the UNHCR Somalia operation in 2017 
-                  </p>
-                  <div>
-                    <img src="img/Picture1.png" alt="" height="36px">
-                    <img src="img/Picture2.png" alt="" height="36px">
-                    <img src="img/Picture3.png" alt="" height="36px">
-                    <img src="img/Picture4.png" alt="" height="36px">
-                    <img src="img/Picture5.png" alt="" height="36px">
-                    <img src="img/Picture6.png" alt="" height="36px">
-                    <img src="img/Picture7.png" alt="" height="36px">
-                    <img src="img/Picture8.png" alt="" height="36px">
-                    <img src="img/Picture9.png" alt="" height="36px">
-                    <img src="img/Picture10.png" alt="" height="36px">
-                    <img src="img/Picture11.png" alt="" height="36px">
-                    <img src="img/Picture12.png" alt="" height="36px">
-                    <img src="img/Picture13.png" alt="" height="36px">
-                    <img src="img/Picture14.png" alt="" height="36px">
-                    <img src="img/Picture15.png" alt="" height="36px">
-                    <img src="img/Picture16.png" alt="" height="36px">                      
-                  </div>
-                </div>
-              </div>
 
-            </div> 
-
-            <div class="four wide column" id="dc-prev-region-chart">
-              <h4>Departure regions
-                <a class="reset ui primary button mini" 
-                  href="javascript:prevRegionChart.filterAll(); dc.redrawAll();" 
-                    style="visibility: hidden">
-                  Clear
-                </a>
-              </h4>             
-            </div> <!-- / departure regions -->
-
-            <div class="four wide column" id="dc-curr-region-chart">
-              <h4>Arrival regions
-                <a class="reset ui primary button mini" 
-                  href="javascript:currRegionChart.filterAll(); dc.redrawAll();" 
-                    style="visibility: hidden">
-                  Clear
-                </a>
-              </h4>             
-            </div>  <!-- / arrival regions --> 
+          
 
           </div>            
         </div>
