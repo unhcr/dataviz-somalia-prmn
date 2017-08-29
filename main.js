@@ -13,6 +13,8 @@ var currRegionMap = dc.geoChoroplethChart("#dc-curr-region-map");
 
 var displaceMonthChart = dc.barChart("#dc-month-chart");
 
+
+
 // Implement bookmarking chart filters status
 // Serializing filters values in URL
 function getFiltersValues() {
@@ -58,6 +60,28 @@ function initFilters() {
 
 }
 
+var numberFormat = d3.format(",.0f");
+
+var monthNameFormat = d3.time.format("%b %Y");
+
+var monthBarTip = d3.tip()
+      .attr('class', 'd3-month-tip')
+      .offset([-10, 0])
+      .html(function (d) { return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + monthNameFormat(d.data.key) + "</span> | <span class='dc-tooltip-value'>" + numberFormat(d.y) +"</span></div>";});
+
+var barTip = d3.tip()
+      .attr('class', 'd3-tip')
+      .offset([-10, 0])
+      .html(function (d) { return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + (d.key) + "</span> | <span class='dc-tooltip-value'>" + numberFormat(d.value) +"</span></div>";});
+
+var mapTip = d3.tip()
+      .attr('class', 'd3-map-tip')
+      .offset([-10, 0])
+      .html(function (d) { 
+        var t = d3.select(this).select('title').html(); 
+        var tA = t.split(':')
+        return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + (tA[0]) + "</span> | <span class='dc-tooltip-value'>" + (tA[1]) +"</span></div>";});
+
 // Load data from CSV file
 d3.csv("data/PRMNDataset.csv", function (data){
   // Load data from JSON file
@@ -73,7 +97,6 @@ d3.csv("data/PRMNDataset.csv", function (data){
       // d.yrmonthnum = +d.yrmonthnum;
     });
 
-
     // run the data thru crossfilter
     var facts = crossfilter(data); 
 
@@ -84,10 +107,9 @@ d3.csv("data/PRMNDataset.csv", function (data){
 
     displaceTotalNumber
       .group(peopleGroup)
-      .formatNumber(d3.format(",.0f"))
+      .formatNumber(numberFormat)
       .transitionDuration(500)
       .valueAccessor(function(d){ return d });
-
 
     // configure displacement month dimension and group
     var displaceMonth = facts.dimension(function(d){
@@ -131,7 +153,6 @@ d3.csv("data/PRMNDataset.csv", function (data){
       .renderHorizontalGridLines(true)
       .yAxis().ticks(5);
 
-      var monthNameFormat = d3.time.format("%b %Y");
       displaceMonthChart.xAxis()
       .tickFormat(monthNameFormat)
     
@@ -142,7 +163,15 @@ d3.csv("data/PRMNDataset.csv", function (data){
         .style('text-anchor', 'end')
         .transition()
         .duration(500)
-        .style('opacity', 1)
+        .style('opacity', 1);
+
+
+      chart.selectAll('rect')
+      .attr('data-tooltip', 'hello');
+
+      chart.selectAll(".bar").call(monthBarTip);
+      chart.selectAll(".bar").on('mouseover', monthBarTip.show)
+          .on('mouseout', monthBarTip.hide);  
 
     });
 
@@ -183,12 +212,12 @@ d3.csv("data/PRMNDataset.csv", function (data){
       })
       .elasticX(true)
       .xAxis().ticks(4);
-      
-      // .tickFormat(function(v){ return v/1000 + 'K'; });
-    
-    // // disble mouse click for displaceReasonChart
-    // displaceReasonChart.filter = function(){};
 
+    displaceReasonChart.on('renderlet',function(chart){
+      chart.selectAll(".row").call(barTip);
+      chart.selectAll(".row").on('mouseover', barTip.show)
+          .on('mouseout', barTip.hide);  
+    });
 
     // create previous region dimension and group
     var prevRegion = facts.dimension(function(d){
@@ -220,8 +249,12 @@ d3.csv("data/PRMNDataset.csv", function (data){
       })
       .elasticX(true)
       .xAxis().ticks(3);
-      
 
+    prevRegionChart.on('renderlet',function(chart){
+      chart.selectAll(".row").call(barTip);
+      chart.selectAll(".row").on('mouseover', barTip.show)
+          .on('mouseout', barTip.hide);  
+    });
 
     // create current region dimension and group
     var currRegion = facts.dimension(function(d){
@@ -253,7 +286,12 @@ d3.csv("data/PRMNDataset.csv", function (data){
       })
       .elasticX(true)
       .xAxis().ticks(3);
-      
+
+    currRegionChart.on('renderlet',function(chart){
+      chart.selectAll(".row").call(barTip);
+      chart.selectAll(".row").on('mouseover', barTip.show)
+          .on('mouseout', barTip.hide);  
+    });      
 
 
     // create map dimension and group
@@ -296,8 +334,12 @@ d3.csv("data/PRMNDataset.csv", function (data){
       .title(function(d){
         return  d.key + ": " + d3.format(",")(d.value);
       });
-      
 
+    prevRegionMap.on('renderlet',function(chart){
+      chart.selectAll(".admin1Name").call(mapTip);
+      chart.selectAll(".admin1Name").on('mouseover', mapTip.show)
+          .on('mouseout', mapTip.hide);  
+    });      
       
     // create map dimension and group
     var currRegion = facts.dimension(function(d){
@@ -331,7 +373,12 @@ d3.csv("data/PRMNDataset.csv", function (data){
       .title(function(d){
         return d.key + ": " + d3.format(",")(d.value);
       });
-            
+
+    currRegionMap.on('renderlet',function(chart){
+      chart.selectAll(".admin1Name").call(mapTip);
+      chart.selectAll(".admin1Name").on('mouseover', mapTip.show)
+          .on('mouseout', mapTip.hide);  
+    });               
     
     initFilters();
 
