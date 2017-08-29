@@ -16,6 +16,7 @@ var displaceMonthChart = dc.barChart("#dc-month-chart");
 // Implement bookmarking chart filters status
 // Serializing filters values in URL
 function getFiltersValues() {
+
     var filters = [
         { name: 'reason', value: displaceReasonChart.filters()},
         { name: 'month', value: displaceMonthChart.filters()},
@@ -26,6 +27,7 @@ function getFiltersValues() {
     ];
     var recursiveEncoded = $.param( filters );
     location.hash = recursiveEncoded;
+
 }        
   
 function initFilters() {
@@ -52,6 +54,8 @@ function initFilters() {
         filter(currRegionChart, 5);
         filter(currRegionMap, 6);
     }
+
+
 }
 
 // Load data from CSV file
@@ -95,7 +99,8 @@ d3.csv("data/PRMNDataset.csv", function (data){
     });
 
     // Configure displacement month bar chart parameters
-    displaceMonthChart.width(550).height(150)
+    displaceMonthChart.height(150)
+      .width($('#leftPanel').width())
       .margins({top:0, right:10, bottom:60, left:50})
       .dimension(displaceMonth)
       .group(displaceMonthGroup, "Year-Month")
@@ -108,11 +113,12 @@ d3.csv("data/PRMNDataset.csv", function (data){
       // .ordering(function(d) { return -d.key; }) // desc
       // .ordering(function(d) { return d.key; }) // asc
       .on("filtered", getFiltersValues) 
+
       .colors('#0072BC')
       .barPadding(0.1)
       .outerPadding(0.05)
       .brushOn(true)
-      .controlsUseVisibility(true)
+      .controlsUseVisibility(false)
       .x(d3.scale.ordinal())
       .xUnits(dc.units.ordinal)
       .elasticY(true)
@@ -138,7 +144,9 @@ d3.csv("data/PRMNDataset.csv", function (data){
     );  
 
     // configure displacement reason chart parameters
-    displaceReasonChart.width(550).height(130)
+    displaceReasonChart
+      .width($('#leftPanel').width())
+      .height(130)
       .margins({top:0, right:10, bottom:20, left:10})
       .dimension(displaceReason)
       .group(displaceReasonGroup)
@@ -178,7 +186,8 @@ d3.csv("data/PRMNDataset.csv", function (data){
     });
 
     // configure previous region chart parameters
-    prevRegionChart.width(260)
+    prevRegionChart
+      .width($('#dc-prev-region-chart').width())
       .height(500)
       .margins({top:0, right:10, bottom:20, left:10})
       .dimension(prevRegion)
@@ -210,7 +219,8 @@ d3.csv("data/PRMNDataset.csv", function (data){
     });
 
     // configure current region chart parameters
-    currRegionChart.width(260)
+    currRegionChart
+      .width($('#dc-curr-region-map').width())
       .height(500)
       .margins({top:0, right:10, bottom:20, left:10})
       .dimension(currRegion)
@@ -249,7 +259,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
     // Remember to set the 'stroke' color for the admin1 borders to stand-out,
     // to increase thickness set 'stroke-width' to 2px or more. See 'style.css'.
     prevRegionMap
-      .width(260)
+      .width($('#leftPanel').width())
       .height(320)
       .transitionDuration(1000)
       .dimension(prevRegion)
@@ -284,7 +294,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
     });
 
     currRegionMap
-      .width(260)
+      .width($('#leftPanel').width())
       .height(320)
       .transitionDuration(1000)
       .dimension(currRegion)
@@ -314,6 +324,13 @@ d3.csv("data/PRMNDataset.csv", function (data){
     // Render the charts
     dc.renderAll();
 
+    setResizingSvg();
+
   });
 });
 
+function setResizingSvg(){
+  console.log('resize');
+      // set resizing viewbox
+    // 
+}
