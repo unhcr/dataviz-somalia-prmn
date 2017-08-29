@@ -118,7 +118,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
       .barPadding(0.1)
       .outerPadding(0.05)
       .brushOn(true)
-      .controlsUseVisibility(false)
+      .controlsUseVisibility(true)
       .x(d3.scale.ordinal())
       .xUnits(dc.units.ordinal)
       .elasticY(true)
