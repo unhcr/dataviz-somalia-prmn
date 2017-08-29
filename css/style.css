@@ -43,6 +43,10 @@ td.dc-table-column._2
 /* change rowChart label color */
 .dc-chart g.row text {
     fill: black;
+    text-shadow:
+      0px 0px 2px white,
+      0px 0px 2px white,
+      0px 0px 2px white;
 }
 
 .nd {
