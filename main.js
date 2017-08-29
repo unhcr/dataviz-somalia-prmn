@@ -139,7 +139,11 @@ d3.csv("data/PRMNDataset.csv", function (data){
     displaceMonthChart.on('renderlet',function(chart){
       chart.selectAll('g.x text')
         .attr('transform', 'translate(-10,10) rotate(270)')
-        .attr('style', 'text-anchor: end;');
+        .style('text-anchor', 'end')
+        .transition()
+        .duration(500)
+        .style('opacity', 1)
+
     });
 
 
@@ -169,7 +173,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
       // .colors(d3.scale.category20())
       // .colors('#4292c6')
       // .ordinalColors(['#e5c494','#ffd92f','#fc8d62','#a6d854','#66c2a5','#8da0cb','#e78ac3'])
-      .ordinalColors(['#e5c494','#ffd92f','#66c2a5','#4292c6'])
+      .ordinalColors(['#F5C300','#66D1C1','#72879D','#338EC9'])
       .label(function(d){
         return _.upperFirst(d.key);
       })
