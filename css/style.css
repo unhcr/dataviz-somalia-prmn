@@ -59,6 +59,21 @@ td.dc-table-column._2
     pointer-events: none;
 }
 
+.dc-chart after { 
+   content: "\00a0 ";
+}
+
+g.x text {
+    opacity: 0;
+    text-anchor: end;
+}
+
+.admin1Name path {
+    stroke: #fff;
+    stroke-width: 1;
+    stroke-opacity: 0.5;
+}
+
 @media screen and (min-width: 1600px) {
     .container {
         max-width: (1600px - @grid-gutter-width);

@@ -31,8 +31,8 @@ div.dc-chart {
   opacity: 0.4; }
 
 .dc-chart .selected path, .dc-chart .selected circle {
-  stroke-width: 3;
-  stroke: #ccc;
+  stroke-width: 1;
+  stroke: #FFF;
   fill-opacity: 1; }
 
 .dc-chart .deselected path, .dc-chart .deselected circle {
@@ -86,7 +86,7 @@ div.dc-chart {
     stroke: #fff; }
 
 .dc-chart g.deselected path {
-  fill: #808080; }
+  fill: #dbdbdb; }
 
 .dc-chart g.deselected text {
   display: none; }
