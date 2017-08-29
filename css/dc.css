@@ -207,3 +207,54 @@ div.dc-chart {
 
 .dc-hard .number-display {
   float: none; }
+
+.dc-tooltip {
+  background-color: #FFF;
+  border: 1px solid grey;
+  padding: 3px 7px;
+  font-size: 12px;
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.16);
+  -moz-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.16);
+  box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.16);
+}
+
+.dc-tooltip-title {
+  font-weight: bold;
+  padding-right: 2px;
+}
+
+.dc-tooltip-value {
+  padding-left: 2px;
+}
+
+.dc-tooltip:after,
+.dc-tooltip:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -5px;
+    // margin: auto;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent;
+}
+
+.dc-tooltip:after {
+    left: 50%;
+    bottom: -4px;
+    border-color: #FFF transparent transparent transparent;
+    border-width: 5px 5px 0 5px;
+}
+
+.dc-tooltip:before {
+    left: 50%;
+    margin-left: -6px;
+    // margin-left: 2px;
+    bottom: -5px;
+    border-color: grey transparent transparent transparent;
+    border-width: 6px 6px 0 6px;
+}
+
+

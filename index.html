@@ -8,9 +8,10 @@
     <script src="js/d3.min.js"></script>  <!-- d3.js version 3.x.x with dc.js -->
     <script src="js/crossfilter.min.js"></script>  <!-- crossfilter.js -->
     <script src="js/dc.js"></script>  <!-- dc.js -->
+    <script src="js/d3-tip.js"></script>  <!-- dc.js -->
     <script src="js/jquery.min.js"></script>  <!-- jquery.js cause bootstrap requires it -->
     <script src="js/tether.min.js"></script>  <!-- bootstrap.js requires tether.io error-->
-    <script src="js/bootstrap.min.js"></script>  <!-- bootstrap.js -->
+    <script src="https://unpkg.com/dataviz-styleguide/semantic/dist/semantic.min.js"></script>  <!-- bootstrap.js -->
     <script src="js/lodash.min.js"></script>  <!-- underscore.js -->
     <script src="js/melt.js"></script>  <!-- melt.js -->
     <script src="js/colorbrewer.js"></script>  <!-- melt.js -->
@@ -81,7 +82,7 @@
           </div>  <!-- / monthly displacement -->  
 
           <div class="row" id="dc-displace-reason-chart">
-            <h4 class="ui blue header">Reasons&nbsp;
+            <h4 class="ui blue header">Reasons for displacement&nbsp;
               <a class="reset ui primary button mini" 
                 href="javascript: displaceReasonChart.filterAll(); dc.redrawAll();" 
                   style="visibility: hidden">
