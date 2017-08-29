@@ -53,7 +53,7 @@
 
 
       <div class="ui grid stackable">    
-        <div class="eight wide column"><!-- LEFT PANEL -->
+        <div id="leftPanel" class="eight wide column"><!-- LEFT PANEL -->
 
       <div class="ui grid">
         
@@ -66,7 +66,7 @@
 
         <div class="twelve wide column">
           <a class="ui primary button" style="float: right;"
-            href="javascript:dc.filterAll(); dc.renderAll()">
+            href="javascript:dc.filterAll(); dc.renderAll(); setResizingSvg();">
             Clear All Filters
           </a>  
         </div> <!-- / filters -->  
