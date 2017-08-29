@@ -66,17 +66,17 @@ var monthNameFormat = d3.time.format("%b %Y");
 
 var monthBarTip = d3.tip()
       .attr('class', 'd3-month-tip')
-      .offset([-10, 0])
+      .offset([-5, 0])
       .html(function (d) { return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + monthNameFormat(d.data.key) + "</span> | <span class='dc-tooltip-value'>" + numberFormat(d.y) +"</span></div>";});
 
 var barTip = d3.tip()
       .attr('class', 'd3-tip')
-      .offset([-10, 0])
+      .offset([-5, 0])
       .html(function (d) { return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + (d.key) + "</span> | <span class='dc-tooltip-value'>" + numberFormat(d.value) +"</span></div>";});
 
 var mapTip = d3.tip()
       .attr('class', 'd3-map-tip')
-      .offset([-10, 0])
+      .offset([-5, 0])
       .html(function (d) { 
         var t = d3.select(this).select('title').html(); 
         var tA = t.split(':')
