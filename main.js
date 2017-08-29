@@ -205,7 +205,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
         return d.key + ": " + d3.format(",")(d.value);
       })
       .elasticX(true)
-      .xAxis().ticks(4);
+      .xAxis().ticks(3);
       
 
 
@@ -238,7 +238,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
         return d.key + ": " + d3.format(",")(d.value);
       })
       .elasticX(true)
-      .xAxis().ticks(4);
+      .xAxis().ticks(3);
       
 
 
