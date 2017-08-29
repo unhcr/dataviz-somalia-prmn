@@ -15,37 +15,38 @@
     <script src="js/melt.js"></script>  <!-- melt.js -->
     <script src="js/colorbrewer.js"></script>  <!-- melt.js -->
 
-    <!-- css for dc.js and bootstrap -->
-    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="https://unpkg.com/dataviz-styleguide/semantic/dist/semantic.min.css"> -->
-    <!-- local -->
-    <link rel="stylesheet" href="../dataviz-styleguide/semantic/dist/semantic.min.css">
-    
+    <!-- css for unhcr-semantic-ui -->
+    <link rel="stylesheet" href="https://unpkg.com/dataviz-styleguide/semantic/dist/semantic.min.css">
     <link rel="stylesheet" href="https://unpkg.com/dataviz-styleguide/styles.css">
+    <!-- local-semantic-ui-dev-->
+    <!-- <link rel="stylesheet" href="../dataviz-styleguide/semantic/dist/semantic.min.css"> -->
+    <!-- <link rel="stylesheet" href="../dataviz-styleguide/styles.css"> -->
+
     <link href="css/dc.css" rel="stylesheet">
     <link href="css/colorbrewer.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
 
   </head>
   <body>
     <div class="ui container">
 
-
-      <div class="ui grid" style="margin-bottom: .5rem">
-        <div class="sixteen wide column">
-<div class="unhcr-page-header">
-        <img class="unhcr-logo-small" src="img/unhcr-logo-horizontal.svg">
-        <div class="unhcr-page-title">
-          <strong>SOMALIA</strong>
-          <span>INTERNAL DISPLACEMENT</span>
+      <div class="ui grid unhcr-header unhcr-header-style1">
+        <div class="one wide column">
+          <img class="unhcr-header-logo" src="img/unhcr-logo-horizontal.svg">
         </div>
-        <div class="unhcr-page-subtitle">
-        Displacements Monitored by UNHCR Protection and Return Monitoring Network (PRMN)
+        <div class="fifteen wide column">
+         <div class="unhcr-header-title">
+            <h1 >Somalia</h1>
+            <h2 >Internal displacement</h2>            
+            <h3>Displacements Monitored by UNHCR Protection and Return Monitoring Network (PRMN)</h3>
+          </div>
         </div>
+        <div class="unhcr-header-divider"></div>
       </div>
-        </div>
 
-      </div> <!-- /header -->
+
       
       <div class="ui grid">
         
@@ -69,7 +70,7 @@
         <div class="eight wide column"><!-- LEFT PANEL -->
 
           <div class="row" id="dc-month-chart">
-            <h4>Monthly displacements
+            <h4 class="ui blue header">Monthly displacements
               <a class="reset ui primary button mini" 
                 href="javascript: displaceMonthChart.filterAll(); dc.redrawAll();" 
                   style="visibility: hidden">
@@ -79,7 +80,7 @@
           </div>  <!-- / monthly displacement -->  
 
           <div class="row" id="dc-displace-reason-chart">
-            <h4>Reasons
+            <h4 class="ui blue header">Reasons
               <a class="reset ui primary button mini" 
                 href="javascript: displaceReasonChart.filterAll(); dc.redrawAll();" 
                   style="visibility: hidden">
@@ -143,7 +144,7 @@
           <div class="ui grid stackable" style="margin-top: 5px;">   
             <div class="row">
               <div class="eight wide column" id="dc-prev-region-map">
-                <h4>Departure regions map
+                <h4 class="ui blue header">Departure regions map
                   <a class="reset ui primary button mini" 
                     href="javascript:prevRegionMap.filterAll(); dc.redrawAll();" 
                       style="visibility: hidden">
@@ -153,7 +154,7 @@
               </div> <!-- / departure regions map -->          
 
               <div class="eight wide column" id="dc-curr-region-map">
-                <h4>Arrival regions map
+                <h4 class="ui blue header">Arrival regions map
                   <a class="reset ui primary button mini" 
                     href="javascript:currRegionMap.filterAll(); dc.redrawAll();" 
                       style="visibility: hidden">
@@ -165,7 +166,7 @@
 
             <div class="row">
               <div class="eight wide column" id="dc-prev-region-chart">
-                <h4>Departure regions
+                <h4 class="ui blue header">Departure regions
                   <a class="reset ui primary button mini" 
                     href="javascript:prevRegionChart.filterAll(); dc.redrawAll();" 
                       style="visibility: hidden">
@@ -175,7 +176,7 @@
               </div> <!-- / departure regions -->
 
               <div class="eight wide column" id="dc-curr-region-chart">
-                <h4>Arrival regions
+                <h4 class="ui blue header">Arrival regions
                   <a class="reset ui primary button mini" 
                     href="javascript:currRegionChart.filterAll(); dc.redrawAll();" 
                       style="visibility: hidden">
