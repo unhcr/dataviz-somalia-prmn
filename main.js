@@ -92,13 +92,12 @@ d3.csv("data/PRMNDataset.csv", function (data){
     // configure displacement month dimension and group
     var displaceMonth = facts.dimension(function(d){
       var months = d.yrmonthnum.split('-');
-      var formatMonth = d3.time.format('%b %Y');
       var date = new Date(months[0], months[1], 1);
 
-      return formatMonth(date);
+      return (date);
 
       // console.log(d.yrmonthnum);
-      // return d.yrmonthnum;
+      return d.yrmonthnum;
     });
     var displaceMonthGroup = displaceMonth.group()
     .reduceSum(function(d){
@@ -131,6 +130,10 @@ d3.csv("data/PRMNDataset.csv", function (data){
       .elasticY(true)
       .renderHorizontalGridLines(true)
       .yAxis().ticks(5);
+
+      var monthNameFormat = d3.time.format("%b %Y");
+      displaceMonthChart.xAxis()
+      .tickFormat(monthNameFormat)
     
     // Rotate x-axis labels
     displaceMonthChart.on('renderlet',function(chart){
