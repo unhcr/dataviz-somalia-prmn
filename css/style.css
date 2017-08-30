@@ -47,6 +47,7 @@ td.dc-table-column._2
       0px 0px 2px white,
       0px 0px 2px white,
       0px 0px 2px white;
+    pointer-events: none;
 }
 
 .nd {
