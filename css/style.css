@@ -11,6 +11,10 @@ svg text {
   display: none;
 }
 
+.tick text {
+  fill: #666666;
+}
+
 .domain {
   display: none;
 }
