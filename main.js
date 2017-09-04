@@ -245,7 +245,8 @@ d3.csv("data/PRMNDataset.csv", function (data){
       .title(function(d){
         return d.key + ": " + d3.format(",")(d.value);
       })
-      // .elasticX(true)
+      // .x(d3.scale.linear().domain([0, 300000]))
+      .elasticX(true)
       .xAxis().ticks(3)
 
 
