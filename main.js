@@ -245,8 +245,9 @@ d3.csv("data/PRMNDataset.csv", function (data){
       .title(function(d){
         return d.key + ": " + d3.format(",")(d.value);
       })
-      .elasticX(true)
-      .xAxis().ticks(3);
+      // .elasticX(true)
+      .xAxis().ticks(3)
+
 
     prevRegionChart.on('renderlet',function(chart){
       chart.selectAll(".row").call(barTip);
