@@ -7,6 +7,30 @@ svg text {
     font-family: 'Lato';
 }
 
+.ui.grid+.grid {
+    margin-top: 0px !important;
+}
+
+// .row,
+.ui.grid>.column:not(.row),
+{
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.row { 
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+}
+
+h4 {
+    white-space: nowrap;
+}
+
+.text-section {
+    margin-top: 8px;
+}
+
 .tick line:not(.grid-line) {
   display: none;
 }
