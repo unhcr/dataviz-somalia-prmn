@@ -13,8 +13,6 @@ var currRegionMap = dc.geoChoroplethChart("#dc-curr-region-map");
 
 var displaceMonthChart = dc.barChart("#dc-month-chart");
 
-
-
 // Implement bookmarking chart filters status
 // Serializing filters values in URL
 function getFiltersValues() {
@@ -67,7 +65,10 @@ var monthNameFormat = d3.time.format("%b %Y");
 var monthBarTip = d3.tip()
       .attr('class', 'd3-month-tip')
       .offset([-5, 0])
-      .html(function (d) { return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + monthNameFormat(d.data.key) + "</span> | <span class='dc-tooltip-value'>" + numberFormat(d.y) +"</span></div>";});
+      .html(function (d) { 
+        var months = d.data.key.split('-');
+        var date = new Date(months[0], months[1], 1);
+        return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + monthNameFormat(date) + "</span> | <span class='dc-tooltip-value'>" + numberFormat(d.y) +"</span></div>";});
 
 var barTip = d3.tip()
       .attr('class', 'd3-tip')
@@ -113,11 +114,6 @@ d3.csv("data/PRMNDataset.csv", function (data){
 
     // configure displacement month dimension and group
     var displaceMonth = facts.dimension(function(d){
-      var months = d.yrmonthnum.split('-');
-      var date = new Date(months[0], months[1], 1);
-
-      return (date);
-
       // console.log(d.yrmonthnum);
       return d.yrmonthnum;
     });
@@ -141,7 +137,6 @@ d3.csv("data/PRMNDataset.csv", function (data){
       // .ordering(function(d) { return -d.key; }) // desc
       // .ordering(function(d) { return d.key; }) // asc
       .on("filtered", getFiltersValues) 
-
       .colors('#0072BC')
       .barPadding(0.1)
       .outerPadding(0.05)
@@ -154,7 +149,11 @@ d3.csv("data/PRMNDataset.csv", function (data){
       .yAxis().ticks(5);
 
       displaceMonthChart.xAxis()
-      .tickFormat(monthNameFormat)
+      .tickFormat(function(d){
+        var months = d.split('-');
+        var date = new Date(months[0], months[1], 1);
+        return monthNameFormat(date);
+      });
     
     // Rotate x-axis labels
     displaceMonthChart.on('renderlet',function(chart){
@@ -165,13 +164,12 @@ d3.csv("data/PRMNDataset.csv", function (data){
         .duration(500)
         .style('opacity', 1);
 
-
       chart.selectAll('rect')
-      .attr('data-tooltip', 'hello');
+        .attr('data-tooltip', 'hello');
 
       chart.selectAll(".bar").call(monthBarTip);
       chart.selectAll(".bar").on('mouseover', monthBarTip.show)
-          .on('mouseout', monthBarTip.hide);  
+        .on('mouseout', monthBarTip.hide);  
 
     });
 
@@ -231,7 +229,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
     // configure previous region chart parameters
     prevRegionChart
       .width($('#dc-prev-region-chart').width())
-      .height(500)
+      .height($('.text-section').height()-10)
       .margins({top:0, right:10, bottom:20, left:10})
       .dimension(prevRegion)
       .valueAccessor(function(d){ return d.value; })
@@ -268,7 +266,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
     // configure current region chart parameters
     currRegionChart
       .width($('#dc-curr-region-map').width())
-      .height(500)
+      .height($('.text-section').height()-10)
       .margins({top:0, right:10, bottom:20, left:10})
       .dimension(currRegion)
       .valueAccessor(function(d){ return d.value; })
