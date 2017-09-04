@@ -199,8 +199,8 @@ d3.csv("data/PRMNDataset.csv", function (data){
       .controlsUseVisibility(true)
       // .colors(d3.scale.category20())
       // .colors('#4292c6')
-      // .ordinalColors(['#e5c494','#ffd92f','#fc8d62','#a6d854','#66c2a5','#8da0cb','#e78ac3'])
-      .ordinalColors(['#F5C300','#66D1C1','#72879D','#338EC9'])
+      // .ordinalColors(['#F5C300','#66D1C1','#72879D','#338EC9'])
+      .ordinalColors(['#e5c494','#ffd92f','#66c2a5','#4292c6'])
       .label(function(d){
         return _.upperFirst(d.key);
       })
