@@ -67,7 +67,7 @@ var monthBarTip = d3.tip()
       .offset([-5, 0])
       .html(function (d) { 
         var months = d.data.key.split('-');
-        var date = new Date(months[0], months[1], 1);
+        var date = new Date(months[0], months[1]-1, 1);
         return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + monthNameFormat(date) + "</span> | <span class='dc-tooltip-value'>" + numberFormat(d.y) +"</span></div>";});
 
 var barTip = d3.tip()
@@ -151,7 +151,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
       displaceMonthChart.xAxis()
       .tickFormat(function(d){
         var months = d.split('-');
-        var date = new Date(months[0], months[1], 1);
+        var date = new Date(months[0], months[1]-1, 1);
         return monthNameFormat(date);
       });
     
