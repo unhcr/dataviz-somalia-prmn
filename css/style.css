@@ -23,6 +23,13 @@ svg text {
     padding-bottom: 2px !important;
 }
 
+#leftPanel, 
+#rightPanel
+{
+    padding-top: 6px;
+    padding-bottom: 8px;
+}
+
 h4 {
     white-space: nowrap;
 }

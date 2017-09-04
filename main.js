@@ -123,7 +123,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
     });
 
     // Configure displacement month bar chart parameters
-    displaceMonthChart.height(150)
+    displaceMonthChart.height(160)
       .width($('#leftPanel').width())
       .margins({top:0, right:10, bottom:60, left:50})
       .dimension(displaceMonth)
@@ -137,7 +137,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
       // .ordering(function(d) { return -d.key; }) // desc
       // .ordering(function(d) { return d.key; }) // asc
       .on("filtered", getFiltersValues) 
-      .colors('#0072BC')
+      .colors('#338EC9')
       .barPadding(0.1)
       .outerPadding(0.05)
       .brushOn(true)
@@ -229,7 +229,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
     // configure previous region chart parameters
     prevRegionChart
       .width($('#dc-prev-region-chart').width())
-      .height($('.text-section').height()-10)
+      .height($('.text-section').height()-40)
       .margins({top:0, right:10, bottom:20, left:10})
       .dimension(prevRegion)
       .valueAccessor(function(d){ return d.value; })
@@ -238,7 +238,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
       .on("filtered", getFiltersValues)
       .controlsUseVisibility(true)
       // .colors(d3.scale.ordinal().range(colorbrewer.Set2[6]))
-      .ordinalColors(['#eb5a5e'])
+      .ordinalColors(['#F26E80'])
       .label(function(d){
         return d.key;
       })
@@ -266,7 +266,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
     // configure current region chart parameters
     currRegionChart
       .width($('#dc-curr-region-map').width())
-      .height($('.text-section').height()-10)
+      .height($('.text-section').height()-40)
       .margins({top:0, right:10, bottom:20, left:10})
       .dimension(currRegion)
       .valueAccessor(function(d){ return d.value; })
@@ -275,7 +275,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
       .on("filtered", getFiltersValues)
       .controlsUseVisibility(true)
       // .colors(d3.scale.ordinal().range(colorbrewer.Set2[6]))
-      .colors('#0072BC')
+      .colors('#338EC9')
       .label(function(d){
         return d.key;
       })
@@ -323,9 +323,9 @@ d3.csv("data/PRMNDataset.csv", function (data){
       .on("filtered", getFiltersValues)
       .controlsUseVisibility(true)
       // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
-      .colors(["#CCC", '#f4a0a2','#f28e91','#f07d80','#ee6b6f','#eb5a5e','#e9484d','#e7373b','#e5252a','#dd1a20'])
-      .colorDomain([0, prevRegionGroup.top(1)[0].value / 2]) 
-      .colorAccessor(function (d,i) { return d ? d:0; })         
+      .colors(d3.scale.quantize().range(['#F592A0','#F26E80','#EF4A60','#B33848']))
+      .colorDomain([0, prevRegionGroup.top(1)[0].value ]) 
+      .colorCalculator(function (d) { return d ? prevRegionMap.colors()(d) : '#ccc'; })      
       .overlayGeoJson(govtJson.features, "admin1Name",function(d){
         return d.properties.admin1Name;
       })
@@ -362,9 +362,10 @@ d3.csv("data/PRMNDataset.csv", function (data){
       .on("filtered", getFiltersValues)
       .controlsUseVisibility(true)
       // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
-      .colors(["#CCC", '#E2F2FF','#C4E4FF','#9ED2FF','#81C5FF','#6BBAFF','#51AEFF','#36A2FF','#1E96FF','#0089FF','#0061B5'])
-      .colorDomain([0, currRegionGroup.top(1)[0].value / 2]) 
-      .colorAccessor(function (d,i) { return d ? d:0; })         
+      // .colors(["#CCC", '#E2F2FF','#C4E4FF','#9ED2FF','#81C5FF','#6BBAFF','#51AEFF','#36A2FF','#1E96FF','#0089FF','#0061B5'])
+      .colors(d3.scale.quantize().range(['#66AAD7','#338EC9','#0072BC','#00568D']))
+      .colorDomain([0, currRegionGroup.top(1)[0].value ]) 
+      .colorCalculator(function (d) { return d ? currRegionMap.colors()(d) : '#ccc'; })    
       .overlayGeoJson(govtJson.features, "admin1Name",function(d){
         return d.properties.admin1Name;
       })
