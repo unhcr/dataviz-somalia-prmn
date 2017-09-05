@@ -114,7 +114,6 @@ d3.csv("data/PRMNDataset.csv", function (data){
 
     // configure displacement month dimension and group
     var displaceMonth = facts.dimension(function(d){
-      // console.log(d.yrmonthnum);
       return d.yrmonthnum;
     });
     var displaceMonthGroup = displaceMonth.group()
@@ -325,8 +324,9 @@ d3.csv("data/PRMNDataset.csv", function (data){
       .on("filtered", getFiltersValues)
       .controlsUseVisibility(true)
       // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
-      .colors(d3.scale.quantize().range(['#F592A0','#F26E80','#EF4A60','#B33848']))
-      .colorDomain([0, prevRegionGroup.top(1)[0].value ]) 
+      // .colors(d3.scale.quantize().range(['#F592A0','#F26E80','#EF4A60','#B33848']))
+      .colors(d3.scale.quantize().range(['#F9B7BF','#F592A0','#F26E80','#EF4A60','#B33848']))
+      .colorDomain([0, prevRegionGroup.top(1)[0].value / 2 ]) 
       .colorCalculator(function (d) { return d ? prevRegionMap.colors()(d) : '#ccc'; })      
       .overlayGeoJson(govtJson.features, "admin1Name",function(d){
         return d.properties.admin1Name;
@@ -365,8 +365,8 @@ d3.csv("data/PRMNDataset.csv", function (data){
       .controlsUseVisibility(true)
       // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
       // .colors(["#CCC", '#E2F2FF','#C4E4FF','#9ED2FF','#81C5FF','#6BBAFF','#51AEFF','#36A2FF','#1E96FF','#0089FF','#0061B5'])
-      .colors(d3.scale.quantize().range(['#66AAD7','#338EC9','#0072BC','#00568D']))
-      .colorDomain([0, currRegionGroup.top(1)[0].value ]) 
+      .colors(d3.scale.quantize().range(['#99C7E4','#66AAD7','#338EC9','#0072BC','#00568D']))
+      .colorDomain([0, currRegionGroup.top(1)[0].value /2 ]) 
       .colorCalculator(function (d) { return d ? currRegionMap.colors()(d) : '#ccc'; })    
       .overlayGeoJson(govtJson.features, "admin1Name",function(d){
         return d.properties.admin1Name;
@@ -392,7 +392,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
 });
 
 function setResizingSvg(){
-  console.log('resize');
+  // console.log('resize');
       // set resizing viewbox
     // 
 }
