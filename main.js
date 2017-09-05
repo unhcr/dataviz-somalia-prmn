@@ -396,3 +396,6 @@ function setResizingSvg(){
       // set resizing viewbox
     // 
 }
+
+// var uri = "https://unhcr.github.io/dataviz-somalia-prmn/index.html#reason=&month=&pregion=&pregionmap=&cregion=&cregionmap=";
+// console.log(uri);
