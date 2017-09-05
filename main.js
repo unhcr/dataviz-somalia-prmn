@@ -13,7 +13,7 @@ var currRegionMap = dc.geoChoroplethChart("#dc-curr-region-map");
 
 var displaceMonthChart = dc.barChart("#dc-month-chart");
 
-// Implement bookmarking chart filters status
+// Implement bookmarking chart filters status 
 // Serializing filters values in URL
 function getFiltersValues() {
 
