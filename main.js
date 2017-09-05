@@ -200,7 +200,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
       // .colors(d3.scale.category20())
       // .colors('#4292c6')
       // .ordinalColors(['#F5C300','#66D1C1','#72879D','#338EC9'])
-      .ordinalColors(['#e5c494','#ffd92f','#66c2a5','#4292c6'])
+      .ordinalColors(['#f7941d','#e7646a','#a07b5e','#c974a2'])
       .label(function(d){
         return _.upperFirst(d.key);
       })
