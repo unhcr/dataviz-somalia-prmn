@@ -114,7 +114,6 @@ d3.csv("data/PRMNDataset.csv", function (data){
 
     // configure displacement month dimension and group
     var displaceMonth = facts.dimension(function(d){
-      // console.log(d.yrmonthnum);
       return d.yrmonthnum;
     });
     var displaceMonthGroup = displaceMonth.group()
@@ -392,7 +391,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
 });
 
 function setResizingSvg(){
-  console.log('resize');
+  // console.log('resize');
       // set resizing viewbox
     // 
 }
