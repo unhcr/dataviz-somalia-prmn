@@ -68,12 +68,12 @@ var monthBarTip = d3.tip()
       .html(function (d) { 
         var months = d.data.key.split('-');
         var date = new Date(months[0], months[1]-1, 1);
-        return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + monthNameFormat(date) + "</span> | <span class='dc-tooltip-value'>" + numberFormat(d.y) +"</span></div>";});
+        return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + monthNameFormat(date) + "</span> | <span class='dc-tooltip-value'>" + numberFormat(rndFig(d.y)) +"</span></div>";});
 
 var barTip = d3.tip()
       .attr('class', 'd3-tip')
       .offset([-5, 0])
-      .html(function (d) { return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + (d.key) + "</span> | <span class='dc-tooltip-value'>" + numberFormat(d.value) +"</span></div>";});
+      .html(function (d) { return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + (d.key) + "</span> | <span class='dc-tooltip-value'>" + numberFormat(rndFig(d.value)) +"</span></div>";});
 
 var mapTip = d3.tip()
       .attr('class', 'd3-map-tip')
@@ -110,7 +110,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
       .group(peopleGroup)
       .formatNumber(numberFormat)
       .transitionDuration(500)
-      .valueAccessor(function(d){ return d });
+      .valueAccessor(function(d){ return rndFig(d); });
 
     // configure displacement month dimension and group
     var displaceMonth = facts.dimension(function(d){
@@ -332,7 +332,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
         return d.properties.admin1Name;
       })
       .title(function(d){
-        return  d.key + ": " + d3.format(",")(d.value);
+        return  d.key + ": " + d3.format(",")(rndFig(d.value));
       });
 
     prevRegionMap.on('renderlet',function(chart){
@@ -372,7 +372,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
         return d.properties.admin1Name;
       })
       .title(function(d){
-        return d.key + ": " + d3.format(",")(d.value);
+        return d.key + ": " + d3.format(",")(rndFig(d.value));
       });
 
     currRegionMap.on('renderlet',function(chart){
@@ -388,6 +388,8 @@ d3.csv("data/PRMNDataset.csv", function (data){
 
     setResizingSvg();
 
+    
+
   });
 });
 
@@ -397,5 +399,36 @@ function setResizingSvg(){
     // 
 }
 
+// Utilities
 // var uri = "https://unhcr.github.io/dataviz-somalia-prmn/index.html#reason=&month=&pregion=&pregionmap=&cregion=&cregionmap=&@UNHCRSom";
 // console.log(uri);
+
+// Utility to round figures
+function rndFig(num) {
+     // Excel function:
+     //=IF(C9<100,C9,IF(AND(C9>=100,C9<1000),ROUND(C9,-1),IF(AND(C9>=1000,C9<10000),ROUND(C9,-2),IF(C9>=10000,ROUND(C9,-3),0))))
+    //  var num = 767; 
+     if (num<=4) {
+       res = num;
+      //  console.log("first:",res);        
+     }
+     else if (num>4 && num<100) {
+       res = Math.round(num/10)*10;
+      //  console.log("first:",res);
+     } 
+     else if (num>=100 && num<1000) {
+       res = Math.round(num/100)*100;
+      //  console.log("first:",res);
+     } 
+     else if (num>=1000) {
+       res = Math.round(num/1000)*1000;
+      //  console.log("first:",res);
+     } 
+     // else if (num>=10000) {
+     //   res = Math.round(num/10000)*10000;
+     //   console.log("first:",res);
+     // }
+
+     //console.log("last:",res);
+     return res;
+}
