@@ -1,3 +1,6 @@
+.collapse-right { padding-right: 0px !important; }
+.expand-left { padding-left: 30px !important; }
+
 img {
    margin: 2px 2px 2px 2px; 
 }
