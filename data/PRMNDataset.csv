@@ -1,4 +1,4 @@
-Id,yr,monthnum,monthname,monthend,cregion,cdistrict,pregion,pdistrict,creason,yrmonthnam,yrmonthnum,Total
+Id,yr,monthnum,monthname,monthend,cregion,cdistrict,pregion,pdistrict,creason,yrmonthnam,yrmonthnum,tpeople
 1,2016,1,Jan,31-01-16,Awdal,Borama,Bakool,Tayeeglow,Drought related,Jan '16,2016-01,7
 2,2016,1,Jan,31-01-16,Awdal,Borama,Banadir,Mogadishu,Drought related,Jan '16,2016-01,26
 3,2016,1,Jan,31-01-16,Awdal,Borama,Bay,Baidoa,Drought related,Jan '16,2016-01,6
