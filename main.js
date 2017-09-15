@@ -131,7 +131,8 @@ d3.csv("data/PRMNDataset.csv", function (data){
         return d.value;
       })
       .title(function(d){
-        return d3.format(",")(d.value);
+        // return d3.format(",")(d.value);
+        return '';
       })
       // .ordering(function(d) { return -d.key; }) // desc
       // .ordering(function(d) { return d.key; }) // asc
@@ -204,8 +205,9 @@ d3.csv("data/PRMNDataset.csv", function (data){
         return _.upperFirst(d.key);
       })
       .title(function(d){
-        return _.upperFirst(d.key) + ": "
-                 + d3.format(",")(d.value);
+        // return _.upperFirst(d.key) + ": "
+        //          + d3.format(",")(d.value);
+        return '';
       })
       .elasticX(true)
       .xAxis().ticks(4);
@@ -242,7 +244,8 @@ d3.csv("data/PRMNDataset.csv", function (data){
         return d.key;
       })
       .title(function(d){
-        return d.key + ": " + d3.format(",")(d.value);
+        // return d.key + ": " + d3.format(",")(d.value);
+        return '';
       })
       // .x(d3.scale.linear().domain([0, 300000]))
       .elasticX(true)
@@ -281,7 +284,8 @@ d3.csv("data/PRMNDataset.csv", function (data){
         return d.key;
       })
       .title(function(d){
-        return d.key + ": " + d3.format(",")(d.value);
+        // return d.key + ": " + d3.format(",")(d.value);
+        return '';
       })
       .elasticX(true)
       .xAxis().ticks(3);
@@ -333,6 +337,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
       })
       .title(function(d){
         return  d.key + ": " + d3.format(",")(rndFig(d.value));
+        // return '';
       });
 
     prevRegionMap.on('renderlet',function(chart){
@@ -373,6 +378,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
       })
       .title(function(d){
         return d.key + ": " + d3.format(",")(rndFig(d.value));
+        // return '';
       });
 
     currRegionMap.on('renderlet',function(chart){
