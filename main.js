@@ -114,14 +114,16 @@ d3.csv("data/PRMNDataset.csv", function (data){
 
     // configure displacement month dimension and group
     var displaceMonth = facts.dimension(function(d){
-      return d.yrmonthnum;
+      // return d.yrmonthnum;
+      return new Date( d.yr, d.monthnum - 1, 1);
     });
     var displaceMonthGroup = displaceMonth.group()
     .reduceSum(function(d){
       return d.tpeople;
     });
+    var keys = displaceMonthGroup.all().map(dc.pluck('key')).slice(); 
 
-    // Configure displacement month bar chart parameters
+    // Configure displacement month bar chart parameters  
     displaceMonthChart.height(160)
       .width($('#leftPanel').width())
       .margins({top:0, right:10, bottom:60, left:50})
@@ -140,21 +142,27 @@ d3.csv("data/PRMNDataset.csv", function (data){
       .colors('#338EC9')
       .barPadding(0.1)
       .outerPadding(0.05)
-      .brushOn(true)
       .controlsUseVisibility(true)
-      .x(d3.scale.ordinal())
-      .xUnits(dc.units.ordinal)
-      .elasticY(true)
+      // .x(d3.scale.ordinal())
+      .x(d3.time.scale().domain([new Date("1 Jan 2016"), new Date("31 Sep 2017")]))
+      // .xUnits(dc.units.ordinal)
+      .xUnits(d3.time.months)
+      .elasticY(false)
+      .brushOn(true)
       .renderHorizontalGridLines(true)
       .yAxis().ticks(5);
 
       displaceMonthChart.xAxis()
       .tickFormat(function(d){
-        var months = d.split('-');
-        var date = new Date(months[0], months[1]-1, 1);
-        return monthNameFormat(date);
-      });
-    
+        // var months = d.split('-');
+        // var date = new Date(months[0], months[1]-1, 1);
+        // return monthNameFormat(date);
+        
+        return monthNameFormat(d);        
+      })
+      .ticks(keys.length);
+
+
     // Rotate x-axis labels
     displaceMonthChart.on('renderlet',function(chart){
       chart.selectAll('g.x text')
