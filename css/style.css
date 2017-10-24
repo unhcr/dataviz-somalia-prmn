@@ -61,16 +61,32 @@ h4 {
     padding: 0px;
 }
 
-#dc-choropleth-map g.admin1Name path {
+/* #dc-prev-region-map g.admin1Name path {
     stroke: #fff;
-    stroke-width: 1px;
+    stroke-width: 2px;
+}
+#dc-curr-region-map g.admin1Name path {
+    stroke: #fff;
+    stroke-width: 2px;
+} */
+
+#dc-prev-district-map g.admin2Name path {
+    stroke: #fff;
+    stroke-width: .03rem;
+}
+#dc-curr-district-map g.admin2Name path {
+    stroke: #fff;
+    stroke-width: .03rem;
 }
 
 .admin1Name {
     cursor: pointer;
 }
+.admin2Name {
+    cursor: pointer;
+}
 
-#dc-choropleth-map g.admin1Name path:hover {
+#dc-choropleth-map g.admin2Name path:hover {
     fill-opacity: .8;
 }
 

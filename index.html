@@ -1,265 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>SOMALIA: INTERNAL DISPLACEMENTS</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Click on interactive charts/maps for Somalia internal displacements monitored by UNHCR Protection and Return Monitoring Network (PRMN) implemented by NRC -->
-    <meta http-equiv="expires" content="thu, 14 sep 2017 14:30:00 GMT">
-    <meta http-equiv="Cache-Control" content="no-cache"/>
 
-    <!-- Open Graph data -->
-    <meta property="og:title" content="UNHCR Somalia - Interactive Internal Displacements Visualisation"/>
-    <meta property="og:image" content="https://unhcr.github.io/dataviz-somalia-prmn/img/UNHCR-Somalia-PRMN-Interactive-displacements.jpg"/>
-    <meta property="og:site_name" content="UNHCR Somalia Internal Displacement"/>
-    <meta property="og:description" content="Displacements Monitored by UNHCR Protection and Return Monitoring Network (PRMN)"/>
-    <meta property="og:url" content="https://unhcr.github.io/dataviz-somalia-prmn/index.html"/>
-    <meta property="og:type" content="website"/>
+<head>
+  <title>SOMALIA: INTERNAL DISPLACEMENTS</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Click on interactive charts/maps for Somalia internal displacements monitored by UNHCR Protection and Return Monitoring Network (PRMN) implemented by NRC -->
+  <meta http-equiv="expires" content="thu, 14 sep 2017 14:30:00 GMT">
+  <meta http-equiv="Cache-Control" content="no-cache" />
 
-    <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@UNHCRSom">
-    <meta name="twitter:creator" content="@UNHCRSom">
-    <meta name="twitter:title" content="UNHCR Somalia - Interactive Internal Displacements Visualisation">
-    <meta name="twitter:description" content="Displacements Monitored by UNHCR Protection and Return Monitoring Network (PRMN)">
-    <meta name="twitter:image" content="https://unhcr.github.io/dataviz-somalia-prmn/img/UNHCR-Somalia-PRMN-Interactive-displacements.jpg">   
-    
-    <!-- Google+ markup -->
-    <meta itemprop="name" content="UNHCR Somalia - Interactive Internal Displacements Visualisation">
-    <meta itemprop="description" content="Displacements Monitored by UNHCR Protection and Return Monitoring Network (PRMN)">
-    <meta itemprop="image" content="https://unhcr.github.io/dataviz-somalia-prmn/img/UNHCR-Somalia-PRMN-Interactive-displacements.jpg">
-    
-    <script src="js/d3.min.js"></script>  <!-- d3.js version 3.x.x with dc.js -->
-    <script src="js/crossfilter.min.js"></script>  <!-- crossfilter.js -->
-    <script src="js/dc.js"></script>  <!-- dc.js -->
-    <script src="js/d3-tip.js"></script>  <!-- dc.js -->
-    <script src="js/jquery.min.js"></script>  <!-- jquery.js cause bootstrap requires it -->
-    <script src="js/tether.min.js"></script>  <!-- bootstrap.js requires tether.io error-->
-    <script src="https://unpkg.com/dataviz-styleguide/semantic/dist/semantic.min.js?cache=321"></script>  <!-- bootstrap.js -->
-    <script src="js/lodash.min.js"></script>  <!-- underscore.js -->
-    <script src="js/melt.js"></script>  <!-- melt.js -->
-    <script src="js/colorbrewer.js"></script>  <!-- melt.js -->
+  <!-- Open Graph data -->
+  <meta property="og:title" content="UNHCR Somalia - Interactive Internal Displacements Visualisation" />
+  <meta property="og:image" content="https://unhcr.github.io/dataviz-somalia-prmn/img/UNHCR-Somalia-PRMN-Interactive-displacements.jpg"
+  />
+  <meta property="og:site_name" content="UNHCR Somalia Internal Displacement" />
+  <meta property="og:description" content="Displacements Monitored by UNHCR Protection and Return Monitoring Network (PRMN)"
+  />
+  <meta property="og:url" content="https://unhcr.github.io/dataviz-somalia-prmn/index.html" />
+  <meta property="og:type" content="website" />
 
-    <!-- css for unhcr-semantic-ui -->
-    <link rel="stylesheet" href="https://unpkg.com/dataviz-styleguide/semantic/dist/semantic.min.css?cache=321">
-    <link rel="stylesheet" href="https://unpkg.com/dataviz-styleguide/styles.css?cache=321">
-    <!-- local-semantic-ui-dev-->
-    <!-- <link rel="stylesheet" href="../dataviz-styleguide/semantic/dist/semantic.min.css"> -->
-    <!-- <link rel="stylesheet" href="../dataviz-styleguide/styles.css"> -->
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@UNHCRSom">
+  <meta name="twitter:creator" content="@UNHCRSom">
+  <meta name="twitter:title" content="UNHCR Somalia - Interactive Internal Displacements Visualisation">
+  <meta name="twitter:description" content="Displacements Monitored by UNHCR Protection and Return Monitoring Network (PRMN)">
+  <meta name="twitter:image" content="https://unhcr.github.io/dataviz-somalia-prmn/img/UNHCR-Somalia-PRMN-Interactive-displacements.jpg">
 
-    <link href="css/dc.css?cache=321" rel="stylesheet">
-    <link href="css/colorbrewer.css" rel="stylesheet">
-    <link href="css/style.css?cache=3210" rel="stylesheet">
+  <!-- Google+ markup -->
+  <meta itemprop="name" content="UNHCR Somalia - Interactive Internal Displacements Visualisation">
+  <meta itemprop="description" content="Displacements Monitored by UNHCR Protection and Return Monitoring Network (PRMN)">
+  <meta itemprop="image" content="https://unhcr.github.io/dataviz-somalia-prmn/img/UNHCR-Somalia-PRMN-Interactive-displacements.jpg">
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+  <script src="js/d3.min.js"></script>
+  <!-- d3.js version 3.x.x with dc.js -->
+  <script src="js/crossfilter.min.js"></script>
+  <!-- crossfilter.js -->
+  <script src="js/dc.js"></script>
+  <!-- dc.js -->
+  <script src="js/d3-tip.js"></script>
+  <!-- dc.js -->
+  <script src="js/jquery.min.js"></script>
+  <!-- jquery.js cause bootstrap requires it -->
+  <script src="js/tether.min.js"></script>
+  <!-- bootstrap.js requires tether.io error-->
+  <script src="https://unpkg.com/dataviz-styleguide/semantic/dist/semantic.min.js?cache=321"></script>
+  <!-- bootstrap.js -->
+  <script src="js/lodash.min.js"></script>
+  <!-- underscore.js -->
+  <script src="js/melt.js"></script>
+  <!-- melt.js -->
+  <script src="js/colorbrewer.js"></script>
+  <!-- melt.js -->
 
-    <script src="https://unpkg.com/iframe-resizer@3.5.15/js/iframeResizer.contentWindow.min.js"></script>
+  <!-- css for unhcr-semantic-ui -->
+  <link rel="stylesheet" href="https://unpkg.com/dataviz-styleguide/semantic/dist/semantic.min.css?cache=321">
+  <link rel="stylesheet" href="https://unpkg.com/dataviz-styleguide/styles.css?cache=321">
+  <!-- local-semantic-ui-dev-->
+  <!-- <link rel="stylesheet" href="../dataviz-styleguide/semantic/dist/semantic.min.css"> -->
+  <!-- <link rel="stylesheet" href="../dataviz-styleguide/styles.css"> -->
 
-  </head>
-  <body>
-    <div>
-      <br/>
-      <div class="ui grid unhcr-header unhcr-header-style3">
-        <img class="unhcr-header-logo" src="img/unhcr-logo-horizontal.svg">
-        <div class="unhcr-header-title">
-            <h1 >Somalia</h1>
-            <h2 >Internal displacement</h2>            
-            <h3>Displacements Monitored by UNHCR Protection and Return Monitoring Network (PRMN)</h3>
-        </div>
-        <div class="unhcr-header-social">
-          
-          <a href="https://goo.gl/jGowzR"
-          title="Back to Data Portal">Back to Data Portal</a>
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://unhcr.github.io/dataviz-somalia-prmn/index.html"
-          target="_blank" title="Share on Facebook"><i class="facebook square icon"></i></a>
-          <a href="https://twitter.com/intent/tweet/?text=Somalia%20Internal%20Displacement%20Interactive%20Visualization%20-%20@UNHCRSom&url=https://unhcr.github.io/dataviz-somalia-prmn/index.html" 
-          target="_blank" title="Share on Twitter"><i class="twitter square icon"></i></a> 
-          <a href="https://plus.google.com/share?app=100&url=https://unhcr.github.io/dataviz-somalia-prmn/index.html" 
-          target="_blank" title="Share on Google+"><i class="google plus square icon"></i></a> 
-          <a href="mailto:?subject=Check out this interactive visualization&amp;body=Please find UNHCR Somalia - Interactive Internal Displacements Visualization here: https://unhcr.github.io/dataviz-somalia-prmn/index.html"
+  <link href="css/dc.css?cache=321" rel="stylesheet">
+  <link href="css/colorbrewer.css" rel="stylesheet">
+  <link href="css/style.css?cache=3210" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+
+  <script src="https://unpkg.com/iframe-resizer@3.5.15/js/iframeResizer.contentWindow.min.js"></script>
+
+</head>
+
+<body>
+  <div>
+    <br/>
+    <div class="ui grid unhcr-header unhcr-header-style3">
+      <img class="unhcr-header-logo" src="img/unhcr-logo-horizontal.svg">
+      <div class="unhcr-header-title">
+        <h1>Somalia</h1>
+        <h2>Internal displacement</h2>
+        <h3>Displacements Monitored by UNHCR Protection and Return Monitoring Network (PRMN)</h3>
+      </div>
+      <div class="unhcr-header-social">
+
+        <a href="https://goo.gl/jGowzR" title="Back to Data Portal">Back to Data Portal</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://unhcr.github.io/dataviz-somalia-prmn/index.html" target="_blank"
+          title="Share on Facebook">
+          <i class="facebook square icon"></i>
+        </a>
+        <a href="https://twitter.com/intent/tweet/?text=Somalia%20Internal%20Displacement%20Interactive%20Visualization%20-%20@UNHCRSom&url=https://unhcr.github.io/dataviz-somalia-prmn/index.html"
+          target="_blank" title="Share on Twitter">
+          <i class="twitter square icon"></i>
+        </a>
+        <a href="https://plus.google.com/share?app=100&url=https://unhcr.github.io/dataviz-somalia-prmn/index.html" target="_blank"
+          title="Share on Google+">
+          <i class="google plus square icon"></i>
+        </a>
+        <a href="mailto:?subject=Check out this interactive visualization&amp;body=Please find UNHCR Somalia - Interactive Internal Displacements Visualization here: https://unhcr.github.io/dataviz-somalia-prmn/index.html"
           target="_blank" title="Share via Email">
-          <i class="mail square icon"></i></a>
-                      
+          <i class="mail square icon"></i>
+        </a>
 
-        </div>
-        <!-- <div class="unhcr-header-divider"></div> -->
-      </div>
-
-      <div class="ui grid">    
-
-        <div class="row">
-          <div class="four wide column">
-              <div class="ui small statistic">
-                <div class="blue label">Total displacements</div>
-                <div id="dc-displace-total-number" class="value nd"></div>
-              </div>
-          </div> <!-- / displacement total -->  
-
-          <div class="twelve wide column">
-            <a class="ui primary button" style="float: right;"
-              href="javascript:dc.filterAll(); dc.renderAll(); setResizingSvg();">
-              Clear All Filters
-            </a>  
-          </div> <!-- / filters -->  
-        </div>
 
       </div>
+      <!-- <div class="unhcr-header-divider"></div> -->
+    </div>
 
-      <div class="ui grid stackable">    
+    <div class="ui grid">
 
-        <div id="leftPanel" class="eight wide column"><!-- LEFT PANEL -->
+      <div class="row">
+        <div class="four wide column">
+          <div class="ui small statistic">
+            <div class="blue label">Total Displacements</div>
+            <div id="dc-displace-total-number" class="value nd"></div>
+          </div>
+        </div>
+        <!-- / displacement total -->
 
+        <div class="twelve wide column">
+          <a class="ui primary button" style="float: right;" href="javascript:dc.filterAll(); dc.renderAll(); setResizingSvg();">
+            Clear All Filters
+          </a>
+        </div>
+        <!-- / filters -->
+      </div>
+
+    </div>
+
+    <div class="ui grid stackable">
+
+      <div id="leftPanel" class="six wide column">
+        <!-- LEFT PANEL -->
+        <div class="row chart-section">
+          <!-- text section -->
           <div class="row" id="dc-month-chart">
-            <h4 class="ui blue header">Monthly displacements&nbsp;
-              <a class="reset ui primary button mini" 
-                href="javascript: displaceMonthChart.filterAll(); dc.redrawAll();" 
-                  style="visibility: hidden">
-                Clear
-              </a>
-            </h4> 
-            selected: <span class="filter"></span>                   
-          </div>  <!-- / monthly displacement -->  
-
-          <div class="row" id="dc-displace-reason-chart">
-            <h4 class="ui blue header">Reasons for displacement&nbsp;
-              <a class="reset ui primary button mini" 
-                href="javascript: displaceReasonChart.filterAll(); dc.redrawAll();" 
-                  style="visibility: hidden">
+            <h4 class="ui blue header">Monthly Displacements&nbsp;
+              <a class="reset ui primary button mini" href="javascript: displaceMonthChart.filterAll(); dc.redrawAll();" style="visibility: hidden">
                 Clear
               </a>
             </h4>
-          </div><!-- / reasons displacement -->  
+            selected:
+            <span class="filter"></span>
+          </div>
+          <!-- / monthly displacement -->
 
-          <div class="row text-section"><!-- text section -->
-            <h4 class="ui header">About PRMN</h4>
-              <p>
-                The PRMN (Protection and Return Monitoring Network) is a UNHCR-led project implemented in partnership with <a href="https://www.nrc.no/countries/africa/somalia/" target="_blank">NRC</a> which identifies and reports on displacements and return trends of populations in Somalia. 
-                The network also identifies and reports on protection risks and incidents underlying such movements. The figures shown refer to displacements not population balances.  
-                Not all displacements in Somalia are captured - only figures collected by PRMN are reported. 
-                This report should be read in conjunction with the <a href="https://goo.gl/8tPfeX" target="_blank">Notes on PRMN Methodology</a> which outline the approach and certain limitations.
-                More information on Somalia can be found on the 
-                <a href="https://data2.unhcr.org/en/situations/horn/location/192" target="_blank">UNHCR Somalia Data Portal</a>.
-              </p>
-            <h4>How to use</h4>
-            <ul>
-              <li>Click on any chart or map element to filter and slice the data, click again on the same element to undo. </li>
-              <li>To combine multiple filters, click multiple chart or map elements on any chart or map.</li>
-              <li>Copy the link once you're done to share or tweet.</li>
-              <li>Use the 'Clear' button to clear all filters for a specific chart or map</li>
-              <li>Use 'Clear All Filters' button to clear all your filters for all charts and maps.   </li>
-            </ul>
-            <h4>Dataset</h4>
-            <p>
-              Internal displacement dataset by month, reason and region is available <a href="data/UNHCR-PRMN-Displacement-Dataset.xlsx">here</a> under <a href="https://creativecommons.org/licenses/by/3.0/igo/legalcode" target="_blank">CC licence by IGOs</a>. Please attribute data to "UNHCR-led Protection and Return Monitoring Network (PRMN) Somalia".
-            </p>
-            <br/>
-          </div><!-- / text section -->
+          <div class="row" id="dc-displace-reason-chart">
+            <h4 class="ui blue header">Reasons for Displacement&nbsp;
+              <a class="reset ui primary button mini" href="javascript: displaceReasonChart.filterAll(); dc.redrawAll();" style="visibility: hidden">
+                Clear
+              </a>
+            </h4>
+          </div>
+          <!-- / reasons displacement -->
+        </div>
+        <!-- / graph section  -->
 
-        </div><!-- / LEFT PANEL eight wide column --> 
+        <div class="row text-section">
+          <!-- text section -->
+          <h4 class="ui header">About PRMN</h4>
+          <p>
+            The PRMN (Protection and Return Monitoring Network) is a UNHCR-led project implemented in partnership with
+            <a
+              href="https://www.nrc.no/countries/africa/somalia/" target="_blank">NRC</a> which identifies and reports on displacements and return trends of populations in Somalia. The network
+              also identifies and reports on protection risks and incidents underlying such movements. The figures shown
+              refer to displacements not population balances. Not all displacements in Somalia are captured - only figures
+              collected by PRMN are reported. This report should be read in conjunction with the
+              <a href="https://goo.gl/8tPfeX"
+                target="_blank">Notes on PRMN Methodology</a> which outline the approach and certain limitations. More information on Somalia
+              can be found on the
+              <a href="https://data2.unhcr.org/en/situations/horn/location/192" target="_blank">UNHCR Somalia Data Portal</a>.
+          </p>
+          <h4>How to use</h4>
+          <ul>
+            <li>Click on any chart or map element to filter and slice the data, click again on the same element to undo. </li>
+            <li>To combine multiple filters, click multiple chart or map elements on any chart or map.</li>
+            <li>Copy the link once you're done to share or tweet.</li>
+            <li>Use the 'Clear' button to clear all filters for a specific chart or map</li>
+            <li>Use 'Clear All Filters' button to clear all your filters for all charts and maps. </li>
+          </ul>
+          <h4>Dataset</h4>
+          <p>
+            Internal displacement dataset by month, reason and region is available
+            <a href="data/UNHCR-PRMN-Displacement-Dataset.xlsx">here</a> under
+            <a href="https://creativecommons.org/licenses/by/3.0/igo/legalcode" target="_blank">CC licence by IGOs</a>. Please attribute data to "UNHCR-led Protection and Return Monitoring Network (PRMN) Somalia".
+          </p>
+          <br/>
+        </div>
+        <!-- / text section -->
 
-
-        <div id="rightPanel" class="eight wide column"><!-- RIGHT PANEL -->
-          <div class="ui grid stackable">   
-            <!-- <div class="row"> -->
-              <div class="eight wide column" id="dc-prev-region-map">
-                <h4 class="ui blue header">Departure regions map&nbsp;
-                  <a class="reset ui primary button mini" 
-                    href="javascript:prevRegionMap.filterAll(); dc.redrawAll();" 
-                      style="visibility: hidden">
-                    Clear
-                  </a>
-                </h4>
-              </div> <!-- / departure regions map -->          
-
-              <div class="eight wide column" id="dc-curr-region-map">
-                <h4 class="ui blue header">Arrival regions map&nbsp;
-                  <a class="reset ui primary button mini" 
-                    href="javascript:currRegionMap.filterAll(); dc.redrawAll();" 
-                      style="visibility: hidden">
-                    Clear
-                  </a>
-                </h4>
-              </div> <!-- / arrival regions map --> 
-
-            <div class="row">
-              <div class="eight wide column" id="dc-prev-region-chart">
-                <h4 class="ui blue header">Departure regions&nbsp;
-                  <a class="reset ui primary button mini" 
-                    href="javascript:prevRegionChart.filterAll(); dc.redrawAll();" 
-                      style="visibility: hidden">
-                    Clear
-                  </a>
-                </h4>             
-              </div> <!-- / departure regions -->
-
-              <div class="eight wide column" id="dc-curr-region-chart">
-                <h4 class="ui blue header">Arrival regions&nbsp;
-                  <a class="reset ui primary button mini" 
-                    href="javascript:currRegionChart.filterAll(); dc.redrawAll();" 
-                      style="visibility: hidden">
-                    Clear
-                  </a>
-                </h4>             
-              </div>  <!-- / arrival regions --> 
-            </div><!-- / row -->
-
-          </div><!-- / ui-grid stackable -->      
-        </div><!-- / RIGHT PANEL eight wide column --> 
-        
-      </div><!-- / ui-grid stackable -->      
+      </div>
+      <!-- / LEFT PANEL eight wide column -->
 
 
-
-            <div class="ui two column relaxed grid">
-
-                <div class="row">
-
-                  <div class="two wide column collapse-right">
-                    <h4 class="ui header">
-                      <div class="sub header">
-                          Partner:
-                      </div> 
-                    </h4>  
-                    <a href="https://www.nrc.no/countries/africa/somalia/" 
-                      target="_blank">
-                      <img src="img/NRCLogoFull.png" alt="" height="34px">                      
-                    </a>                  
-                  </div>
-
-                  <div class="fourteen wide column collapse-right expand-left">                    
-                    <h4 class="ui header">
-                      <div class="sub header">
-                          UNHCR is grateful for the generous contributions of donors who have directly contributed to the UNHCR Somalia Operation in 2017:
-                      </div> 
-                    </h4>
-                    <img src="img/Picture1.png" alt="" height="34px">
-                    <img src="img/Picture2.png" alt="" height="34px">
-                    <img src="img/Picture3.png" alt="" height="34px">
-                    <img src="img/Picture4.png" alt="" height="34px">
-                    <img src="img/Picture5.png" alt="" height="34px">
-                    <img src="img/Picture6.png" alt="" height="34px">
-                    <img src="img/Picture7.png" alt="" height="34px">
-                    <img src="img/Picture8.png" alt="" height="34px">
-                    <img src="img/Picture9.png" alt="" height="34px">
-                    <img src="img/Picture10.png" alt="" height="34px">
-                    <img src="img/Picture11.png" alt="" height="34px">
-                    <img src="img/Picture12.png" alt="" height="34px">
-                    <img src="img/Picture13.png" alt="" height="34px">
-                    <img src="img/Picture14.png" alt="" height="34px">
-                    <img src="img/Picture15.png" alt="" height="34px">
-                    <img src="img/Picture16.png" alt="" height="34px">                      
-                  </div>
-                </div>
-
+      <div id="rightPanel" class="ten wide column">
+        <!-- RIGHT PANEL -->
+        <div class="ui grid stackable">
+          <div class="row">
+            <div class="six wide column" id="dc-prev-region-map">
+              <h4 class="ui blue header">Departure Regions Map&nbsp;
+                <a class="reset ui primary button mini" href="javascript:prevRegionMap.filterAll(); dc.redrawAll();" style="visibility: hidden">
+                  Clear
+                </a>
+              </h4>
             </div>
-  
+            <!-- / departure regions map -->
 
-    </div>        
-    
-    <!-- TODO: Add footer -->    
-    <div></div>
+            <div class="four wide column" id="dc-prev-region-chart">
+              <h4 class="ui blue header">Departure Regions&nbsp;
+                <a class="reset ui primary button mini" href="javascript:prevRegionChart.filterAll(); dc.redrawAll();" style="visibility: hidden">
+                  Clear
+                </a>
+              </h4>
+            </div>
+            <!-- / departure regions -->
 
-    <script src="main.js?cache=321"></script>   
-  </body>
+            <div class="six wide column" id="dc-prev-district-map">
+              <h4 class="ui blue header">Departure Districts Map&nbsp;
+                <a class="reset ui primary button mini" href="javascript:prevDistrictMap.filterAll(); dc.redrawAll();" style="visibility: hidden">
+                  Clear
+                </a>
+              </h4>
+            </div>
+            <!-- / departure districts -->
+          </div>
+          <!-- / row -->
+
+          <div class="row">
+
+            <div class="six wide column" id="dc-curr-region-map">
+              <h4 class="ui blue header">Arrival Regions Map&nbsp;
+                <a class="reset ui primary button mini" href="javascript:currRegionMap.filterAll(); dc.redrawAll();" style="visibility: hidden">
+                  Clear
+                </a>
+              </h4>
+            </div>
+            <!-- / arrival regions map -->
+
+            <div class="four wide column" id="dc-curr-region-chart">
+              <h4 class="ui blue header">Arrival Regions&nbsp;
+                <a class="reset ui primary button mini" href="javascript:currRegionChart.filterAll(); dc.redrawAll();" style="visibility: hidden">
+                  Clear
+                </a>
+              </h4>
+            </div>
+            <!-- / arrival regions -->
+
+            <div class="six wide column" id="dc-curr-district-map">
+              <h4 class="ui blue header">Arrival Districts Map&nbsp;
+                <a class="reset ui primary button mini" href="javascript:currDistrictMap.filterAll(); dc.redrawAll();" style="visibility: hidden">
+                  Clear
+                </a>
+              </h4>
+            </div>
+            <!-- / departure districts -->   
+
+          </div>
+          <!-- / row -->
+
+        </div>
+        <!-- / ui-grid stackable -->
+      </div>
+      <!-- / RIGHT PANEL eight wide column -->
+
+    </div>
+    <!-- / ui-grid stackable -->
+
+
+
+    <div class="ui two column grid">
+
+      <div class="row">
+
+        <div class="two wide column collapse-right">
+          <h4 class="ui header">
+            <div class="sub header">
+              Partner:
+            </div>
+          </h4>
+          <a href="https://www.nrc.no/countries/africa/somalia/" target="_blank">
+            <img src="img/NRCLogoFull.png" alt="" height="34px">
+          </a>
+        </div>
+
+        <div class="fourteen wide column collapse-right">
+          <h4 class="ui header">
+            <div class="sub header">
+              UNHCR is grateful for the generous contributions of donors who have directly contributed to the UNHCR Somalia Operation in
+              2017:
+            </div>
+          </h4>
+          <img src="img/Picture1.png" alt="" height="34px">
+          <img src="img/Picture2.png" alt="" height="34px">
+          <img src="img/Picture3.png" alt="" height="34px">
+          <img src="img/Picture4.png" alt="" height="34px">
+          <img src="img/Picture5.png" alt="" height="34px">
+          <img src="img/Picture6.png" alt="" height="34px">
+          <img src="img/Picture7.png" alt="" height="34px">
+          <img src="img/Picture8.png" alt="" height="34px">
+          <img src="img/Picture9.png" alt="" height="34px">
+          <img src="img/Picture10.png" alt="" height="34px">
+          <img src="img/Picture11.png" alt="" height="34px">
+          <img src="img/Picture12.png" alt="" height="34px">
+          <img src="img/Picture13.png" alt="" height="34px">
+          <img src="img/Picture14.png" alt="" height="34px">
+          <img src="img/Picture15.png" alt="" height="34px">
+          <img src="img/Picture16.png" alt="" height="34px">
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <!-- TODO: Add footer -->
+  <div></div>
+
+  <script src="main.js?cache=321"></script>
+</body>
+
 </html>
