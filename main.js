@@ -37,7 +37,7 @@ function getFiltersValues() {
   
 function initFilters() {
     // Get hash values
-    var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([A-Za-z0-9,_\-\/\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)$/;
+    var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([A-Za-z0-9,_\-\/\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
     var parsed = parseHash.exec(decodeURIComponent(location.hash));
     function filter(chart, rank) {  // for instance chart = sector_chart and rank in URL hash = 1
         // sector chart
@@ -88,13 +88,12 @@ var mapTip = d3.tip()
       .offset([-5, 0])
       .html(function (d) { 
         var t = d3.select(this).select('title').html(); 
-        var tA = t.split(':')
+        var tA = t.split(':');
         return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + (tA[0]) + "</span> | <span class='dc-tooltip-value'>" + (tA[1]) +"</span></div>";});
 
 // Load data from CSV file
 d3.csv("data/PRMNDataset.csv", function (data){
   // Load data from JSON file
-  // d3.json("data/admin1.json", function (regionJson){
   d3.json("data/Som_Admbnda_Adm1_UNDP.json", function (regionJson) {
     d3.json("data/Som_Admbnda_Adm2_UNDP.json", function (districtJson) {
       // format our data
@@ -390,7 +389,6 @@ d3.csv("data/PRMNDataset.csv", function (data){
       .on("filtered", getFiltersValues)
       .controlsUseVisibility(true)
       // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
-      // .colors(d3.scale.quantize().range(['#F592A0','#F26E80','#EF4A60','#B33848']))
       .colors(d3.scale.quantize().range(['#F9B7BF', '#F592A0', '#F26E80', '#EF4A60', '#B33848']))
       .colorDomain([0, prevDistrictGroup.top(1)[0].value / 2])
       .colorCalculator(function (d) { return d ? prevDistrictMap.colors()(d) : '#ccc'; })
@@ -451,6 +449,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
 
       // create map dimension and group 
       var currDistrict = facts.dimension(function (d) {
+
         return d.cdistrict;
       });
       var currDistrictGroup = currDistrict.group().reduceSum(function (d) {
@@ -472,8 +471,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
       .on("filtered", getFiltersValues)
       .controlsUseVisibility(true)
       // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
-      // .colors(d3.scale.quantize().range(['#F592A0','#F26E80','#EF4A60','#B33848']))
-      .colors(d3.scale.quantize().range(['#F9B7BF', '#F592A0', '#F26E80', '#EF4A60', '#B33848']))
+      .colors(d3.scale.quantize().range(['#99C7E4', '#66AAD7', '#338EC9', '#0072BC', '#00568D']))
       .colorDomain([0, currDistrictGroup.top(1)[0].value / 2])
       .colorCalculator(function (d) { return d ? currDistrictMap.colors()(d) : '#ccc'; })
       .overlayGeoJson(districtJson.features, "admin2Name", function (d) {
@@ -514,24 +512,27 @@ function setResizingSvg(){
 
 // Utility to round figures
 function rndFig(num) {
-     // Excel function:
-     //=IF(C9<100,C9,IF(AND(C9>=100,C9<1000),ROUND(C9,-1),IF(AND(C9>=1000,C9<10000),ROUND(C9,-2),IF(C9>=10000,ROUND(C9,-3),0))))
+    // Excel function:
+    //=IF(C9<100,C9,IF(AND(C9>=100,C9<1000),ROUND(C9,-1),IF(AND(C9>=1000,C9<10000),ROUND(C9,-2),IF(C9>=10000,ROUND(C9,-3),0))))
     //  var num = 767; 
-     if (num<=4) {
+    if (num == null){ // null == undefined
+      res = 0;
+    }    
+    else if (num<=4) {
        res = num;
-     }
-     else if (num>4 && num<100) {
-       res = Math.round(num/10)*10;
-     } 
-     else if (num>=100 && num<1000) {
-       res = Math.round(num/100)*100;
-     } 
-     else if (num>=1000) {
-       res = Math.round(num/1000)*1000;
-     } 
-     // else if (num>=10000) {
-     //   res = Math.round(num/10000)*10000;
-     // }
+    }
+    else if (num>4 && num<100) {
+      res = Math.round(num/10)*10;
+    } 
+    else if (num>=100 && num<1000) {
+      res = Math.round(num/100)*100;
+    } 
+    else if (num>=1000) {
+      res = Math.round(num/1000)*1000;
+    } 
+    // else if (num>=10000) {
+    //   res = Math.round(num/10000)*10000;
+    // }
 
-     return res;
+    return res;
 }
