@@ -67,7 +67,7 @@ function initFilters() {
 
 var numberFormat = d3.format(",.0f");
 
-var monthNameFormat = d3.time.format.utc("%b %Y");
+var monthNameFormat = d3.time.format("%b %Y");
 
 var monthBarTip = d3.tip()
       .attr('class', 'd3-month-tip')
@@ -123,7 +123,8 @@ d3.csv("data/PRMNDataset.csv", function (data){
       var displaceMonth = facts.dimension(function (d) {
         var months = d.monthend.split('\/');
         var date = new Date(months[2], months[1] - 1, months[0]);
-        return new Date(date);
+        //return new Date(date);
+        return d3.time.month(date);
       });
       var displaceMonthGroup = displaceMonth.group()
         .reduceSum(function (d) {
@@ -134,14 +135,30 @@ d3.csv("data/PRMNDataset.csv", function (data){
 
 
       // Configure displacement month bar chart parameters
+      
       var minDate = keys[0];
-      var maxDate = keys[keys.length - 1];
+
+      var ld = keys[keys.length - 1];
+      var maxDate = new Date(ld.getFullYear(),ld.getMonth()+1,ld.getDate()-1);
+      console.log(minDate);
+      console.log(maxDate);
+
+      // var minDate = new Date(2016,0,1);
+      // var maxDate = new Date(2017,8,30);
+      // console.log(minDate);
+      // console.log(maxDate);
 
       displaceMonthChart.height(160)
         .width($('#leftPanel').width())
         .margins({ top: 0, right: 10, bottom: 60, left: 50 })
         .dimension(displaceMonth)
         .group(displaceMonthGroup, "Year-Month")
+        // .keyAccessor(function(d){
+        //   var monthYearFormat = d3.time.format("%b %Y");
+        //   //console.log(monthYearFormat(d.key));
+        //   return monthYearFormat(d.key);
+        //   return d.key;
+        // })
         .valueAccessor(function (d) {
           return d.value;
         })
@@ -158,8 +175,10 @@ d3.csv("data/PRMNDataset.csv", function (data){
         .outerPadding(0.05)
         .controlsUseVisibility(true)
         // .x(d3.scale.ordinal())
-        .x(d3.time.scale().domain([minDate, maxDate]))
         // .xUnits(dc.units.ordinal)
+        .mouseZoomable(false)
+        .x(d3.time.scale().domain([minDate, maxDate]))
+        .round(d3.time.month.round) 
         .xUnits(d3.time.months)
         .elasticY(false)
         .brushOn(true)
@@ -172,6 +191,11 @@ d3.csv("data/PRMNDataset.csv", function (data){
         })
         .ticks(keys.length);
 
+      // function test(){
+      //   return new Date(2017,9,27);
+      // }
+      
+      // console.log(d3.time.month.floor(test()));
 
       // Rotate x-axis labels
       displaceMonthChart.on('renderlet', function (chart) {
@@ -519,7 +543,7 @@ function rndFig(num) {
       res = 0;
     }    
     else if (num<=4) {
-       res = num;
+      res = num;
     }
     else if (num>4 && num<100) {
       res = Math.round(num/10)*10;
@@ -536,3 +560,4 @@ function rndFig(num) {
 
     return res;
 }
+
