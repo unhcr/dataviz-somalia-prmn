@@ -123,7 +123,6 @@ d3.csv("data/PRMNDataset.csv", function (data){
       var displaceMonth = facts.dimension(function (d) {
         var months = d.monthend.split('\/');
         var date = new Date(months[2], months[1] - 1, months[0]);
-        //return new Date(date);
         return d3.time.month(date);
       });
       var displaceMonthGroup = displaceMonth.group()
@@ -135,18 +134,12 @@ d3.csv("data/PRMNDataset.csv", function (data){
 
 
       // Configure displacement month bar chart parameters
-      
+
+      // Get minimum date
       var minDate = keys[0];
-
-      var ld = keys[keys.length - 1];
-      var maxDate = new Date(ld.getFullYear(),ld.getMonth()+1,ld.getDate()-1);
-      console.log(minDate);
-      console.log(maxDate);
-
-      // var minDate = new Date(2016,0,1);
-      // var maxDate = new Date(2017,8,30);
-      // console.log(minDate);
-      // console.log(maxDate);
+      // Get maximum date
+      var ld = keys[keys.length - 1]; // e.g. Fri Sep 01 2017
+      var maxDate = new Date(ld.getFullYear(),ld.getMonth()+1,ld.getDate()-1); // e.g. Sat Sep 30 2017
 
       displaceMonthChart.height(160)
         .width($('#leftPanel').width())
@@ -154,9 +147,9 @@ d3.csv("data/PRMNDataset.csv", function (data){
         .dimension(displaceMonth)
         .group(displaceMonthGroup, "Year-Month")
         // .keyAccessor(function(d){
-        //   var monthYearFormat = d3.time.format("%b %Y");
-        //   //console.log(monthYearFormat(d.key));
-        //   return monthYearFormat(d.key);
+        //   // var monthYearFormat = d3.time.format("%b %Y");
+        //   // debugger;
+        //   // return monthYearFormat(d.key);
         //   return d.key;
         // })
         .valueAccessor(function (d) {
@@ -170,6 +163,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
         // .ordering(function(d) { return -d.key; }) // desc
         // .ordering(function(d) { return d.key; }) // asc
         .on("filtered", getFiltersValues)
+        .filter([minDate,maxDate])
         .colors('#338EC9')
         .barPadding(0.1)
         .outerPadding(0.05)
@@ -190,12 +184,15 @@ d3.csv("data/PRMNDataset.csv", function (data){
           return monthNameFormat(d);
         })
         .ticks(keys.length);
-
-      // function test(){
-      //   return new Date(2017,9,27);
-      // }
       
-      // console.log(d3.time.month.floor(test()));
+      // custom filter handler
+      displaceMonthChart.filterHandler(function(dimension, filter){
+        if (filter.length > 0) {
+          filter[0][1].setDate(filter[0][1].getDate() -1);
+        }
+      });
+
+      // console.log(d3.time.month.floor(new Date(2017,9,27));
 
       // Rotate x-axis labels
       displaceMonthChart.on('renderlet', function (chart) {
