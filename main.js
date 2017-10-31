@@ -67,6 +67,8 @@ function initFilters() {
 
 var numberFormat = d3.format(",.0f");
 
+var dateFormat = d3.time.format("%d %b %Y");
+
 var monthNameFormat = d3.time.format("%b %Y");
 
 var monthBarTip = d3.tip()
@@ -124,6 +126,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
         var months = d.monthend.split('\/');
         var date = new Date(months[2], months[1] - 1, months[0]);
         return d3.time.month(date);
+        // return date;
       });
       var displaceMonthGroup = displaceMonth.group()
         .reduceSum(function (d) {
@@ -135,15 +138,25 @@ d3.csv("data/PRMNDataset.csv", function (data){
 
       // Configure displacement month bar chart parameters
 
-      // Get minimum date
+      // Get minimum and maximum date
       var minDate = keys[0];
-      // Get maximum date
-      var ld = keys[keys.length - 1]; // e.g. Fri Sep 01 2017
-      var maxDate = new Date(ld.getFullYear(),ld.getMonth()+1,ld.getDate()-1); // e.g. Sat Sep 30 2017
-
+      var maxDate = new Date(
+          keys[keys.length - 1].getFullYear(),
+          keys[keys.length - 1].getMonth()+1,
+          keys[keys.length - 1].getDate()-1
+        ); // e.g. Sat Sep 30 2017
+      
+      // Get default filter dates
+      var startDate = keys[0];
+      var endDate = new Date(
+        keys[keys.length - 1].getFullYear(), 
+        keys[keys.length - 1].getMonth()+1, 
+        keys[keys.length - 1].getDate()
+      ); // e.g. Fri Oct 01 2017
+      
       displaceMonthChart.height(160)
         .width($('#leftPanel').width())
-        .margins({ top: 0, right: 10, bottom: 60, left: 50 })
+        .margins({ top: 5, right: 10, bottom: 60, left: 50 })
         .dimension(displaceMonth)
         .group(displaceMonthGroup, "Year-Month")
         // .keyAccessor(function(d){
@@ -155,7 +168,11 @@ d3.csv("data/PRMNDataset.csv", function (data){
         .valueAccessor(function (d) {
           return d.value;
         })
+        .brushOn(true)
         .centerBar(false)
+        .gap(1)
+        .round(d3.time.month.round) 
+        .alwaysUseRounding(true)
         .title(function (d) {
           // return d3.format(",")(d.value);
           return '';
@@ -163,34 +180,35 @@ d3.csv("data/PRMNDataset.csv", function (data){
         // .ordering(function(d) { return -d.key; }) // desc
         // .ordering(function(d) { return d.key; }) // asc
         .on("filtered", getFiltersValues)
-        .filter([minDate,maxDate])
+        // .filter([minDate,maxDate])
         .colors('#338EC9')
         .barPadding(0.1)
         .outerPadding(0.05)
         .controlsUseVisibility(true)
         // .x(d3.scale.ordinal())
         // .xUnits(dc.units.ordinal)
-        .mouseZoomable(false)
         .x(d3.time.scale().domain([minDate, maxDate]))
-        .round(d3.time.month.round) 
         .xUnits(d3.time.months)
-        .elasticY(false)
-        .brushOn(true)
+        .elasticY(true)
         .renderHorizontalGridLines(true)
         .yAxis().ticks(5);
+      
+      displaceMonthChart.filterPrinter(function(filters){
+        var filter = filters[0], s = '';
+        // Correct end date due to month rounding
+        var oldDate = filter[1];
+        var newDate = new Date(oldDate.getFullYear(),oldDate.getMonth(),oldDate.getDate() - 1);
+        s += dateFormat(filter[0]) + ' to ' + dateFormat(newDate);
+        return s;
+      });
+
+      displaceMonthChart.filter([startDate, endDate])
 
       displaceMonthChart.xAxis()
         .tickFormat(function (d) {
           return monthNameFormat(d);
         })
         .ticks(keys.length);
-      
-      // custom filter handler
-      displaceMonthChart.filterHandler(function(dimension, filter){
-        if (filter.length > 0) {
-          filter[0][1].setDate(filter[0][1].getDate() -1);
-        }
-      });
 
       // console.log(d3.time.month.floor(new Date(2017,9,27));
 
