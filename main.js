@@ -30,6 +30,8 @@ function getFiltersValues() {
         { name: 'cregionmap', value: currRegionMap.filters()},
         { name: 'cdistrictmap', value: currDistrictMap.filters()}
     ];
+
+    console.log(filters[1].value);
     var recursiveEncoded = $.param( filters );
     location.hash = recursiveEncoded;
 
@@ -125,6 +127,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
       var displaceMonth = facts.dimension(function (d) {
         var months = d.monthend.split('\/');
         var date = new Date(months[2], months[1] - 1, months[0]);
+        console.log(d3.time.month(date));
         return d3.time.month(date);
         // return date;
       });
@@ -194,7 +197,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
         .yAxis().ticks(5);
       
       displaceMonthChart.filterPrinter(function(filters){
-        var filter = filters[0], s = '';
+        var filter = filters[0], s = 'Period: ';
         // Correct end date due to month rounding
         var oldDate = filter[1];
         var newDate = new Date(oldDate.getFullYear(),oldDate.getMonth(),oldDate.getDate() - 1);
@@ -202,7 +205,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
         return s;
       });
 
-      displaceMonthChart.filter([startDate, endDate])
+      //displaceMonthChart.filter([startDate, endDate])
 
       displaceMonthChart.xAxis()
         .tickFormat(function (d) {
