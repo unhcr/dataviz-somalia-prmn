@@ -31,7 +31,6 @@ function getFiltersValues() {
         { name: 'cdistrictmap', value: currDistrictMap.filters()}
     ];
 
-    console.log(filters[1].value);
     var recursiveEncoded = $.param( filters );
     location.hash = recursiveEncoded;
 
@@ -41,18 +40,19 @@ function initFilters() {
     // Get hash values
     var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([A-Za-z0-9,_\-\/\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
     var parsed = parseHash.exec(decodeURIComponent(location.hash));
+    
     function filter(chart, rank) {  // for instance chart = sector_chart and rank in URL hash = 1
         // sector chart
         if (parsed[rank] == "") {
-            chart.filter(null);
-        }
-        else {
-            var filterValues = parsed[rank].split(",");
-            for (var i = 0; i < filterValues.length; i++ ) {
-                chart.filter(filterValues[i]);
-            }
+          chart.filter(null);            
+        } else {
+          var filterValues = parsed[rank].split(",");
+          for (var i = 0; i < filterValues.length; i++ ) {
+              chart.filter(filterValues[i]);                
+          }            
         }
     }
+
     if (parsed) {
         filter(displaceReasonChart, 1);
         filter(displaceMonthChart, 2);
@@ -77,9 +77,7 @@ var monthBarTip = d3.tip()
       .attr('class', 'd3-month-tip')
       .offset([-5, 0])
       .html(function (d) { 
-        // var months = d.data.key.split('-');
-        // var date = new Date(months[0], months[1]-1, 1);
-        var date = d.data.key;
+        var date = new Date(d.data.key);
         return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + monthNameFormat(date) + "</span> | <span class='dc-tooltip-value'>" + numberFormat(rndFig(d.y)) +"</span></div>";});
 
 var barTip = d3.tip()
@@ -125,11 +123,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
 
       // configure displacement month dimension and group
       var displaceMonth = facts.dimension(function (d) {
-        var months = d.monthend.split('\/');
-        var date = new Date(months[2], months[1] - 1, months[0]);
-        console.log(d3.time.month(date));
-        return d3.time.month(date);
-        // return date;
+        return d.yrmonthnum;
       });
       var displaceMonthGroup = displaceMonth.group()
         .reduceSum(function (d) {
@@ -137,83 +131,61 @@ d3.csv("data/PRMNDataset.csv", function (data){
         });
 
       var keys = displaceMonthGroup.all().map(dc.pluck('key')).slice();
-
-
-      // Configure displacement month bar chart parameters
-
-      // Get minimum and maximum date
-      var minDate = keys[0];
-      var maxDate = new Date(
-          keys[keys.length - 1].getFullYear(),
-          keys[keys.length - 1].getMonth()+1,
-          keys[keys.length - 1].getDate()-1
-        ); // e.g. Sat Sep 30 2017
       
-      // Get default filter dates
-      var startDate = keys[0];
-      var endDate = new Date(
-        keys[keys.length - 1].getFullYear(), 
-        keys[keys.length - 1].getMonth()+1, 
-        keys[keys.length - 1].getDate()
-      ); // e.g. Fri Oct 01 2017
-      
+      function index_group(group) {
+        return {
+          all: function() {
+            return group.all().map(function(kv, i) {
+              return {key: i, value: kv.value};
+            });
+          }
+        }
+      }
+
       displaceMonthChart.height(160)
         .width($('#leftPanel').width())
         .margins({ top: 5, right: 10, bottom: 60, left: 50 })
         .dimension(displaceMonth)
-        .group(displaceMonthGroup, "Year-Month")
-        // .keyAccessor(function(d){
-        //   // var monthYearFormat = d3.time.format("%b %Y");
-        //   // debugger;
-        //   // return monthYearFormat(d.key);
-        //   return d.key;
-        // })
-        .valueAccessor(function (d) {
-          return d.value;
-        })
+        .group(index_group(displaceMonthGroup))
         .brushOn(true)
-        .centerBar(false)
-        .gap(1)
-        .round(d3.time.month.round) 
+        .round(Math.floor) 
         .alwaysUseRounding(true)
         .title(function (d) {
           // return d3.format(",")(d.value);
           return '';
         })
-        // .ordering(function(d) { return -d.key; }) // desc
-        // .ordering(function(d) { return d.key; }) // asc
         .on("filtered", getFiltersValues)
-        // .filter([minDate,maxDate])
         .colors('#338EC9')
         .barPadding(0.1)
         .outerPadding(0.05)
         .controlsUseVisibility(true)
-        // .x(d3.scale.ordinal())
-        // .xUnits(dc.units.ordinal)
-        .x(d3.time.scale().domain([minDate, maxDate]))
-        .xUnits(d3.time.months)
-        .elasticY(true)
-        .renderHorizontalGridLines(true)
-        .yAxis().ticks(5);
-      
-      displaceMonthChart.filterPrinter(function(filters){
-        var filter = filters[0], s = 'Period: ';
-        // Correct end date due to month rounding
-        var oldDate = filter[1];
-        var newDate = new Date(oldDate.getFullYear(),oldDate.getMonth(),oldDate.getDate() - 1);
-        s += dateFormat(filter[0]) + ' to ' + dateFormat(newDate);
-        return s;
-      });
+        .x(d3.scale.linear().domain([0, keys.length]));
 
-      //displaceMonthChart.filter([startDate, endDate])
+      displaceMonthChart.filterHandler(function(dimension, filters) {
+        return filters.map(function(rangefilt) {
+          var low = keys[rangefilt[0]], high = keys[rangefilt[1]];
+          return dc.filters.RangedFilter(low,high);
+        });
+      });
+      // displaceMonthChart.filterHandler(function(dimension, filter) {
+      //   console.log(filter);
+      //   var newFilter = dc.filters.RangedFilter(keys[0],keys[keys.length-1]);
+      //   dimension.filter(newFilter);
+      //   return newFilter; // set the actual filter value to the new value
+      // });
+
+      // displaceMonthChart.filterPrinter(function(filters){
+      //   var s = "Period: ";
+      //   s += filters[0][0] + ' -> ' + filters[0][1];
+      //   return s;
+      // });
 
       displaceMonthChart.xAxis()
         .tickFormat(function (d) {
-          return monthNameFormat(d);
+          // return monthNameFormat(d);
+          return keys[d];
         })
         .ticks(keys.length);
-
-      // console.log(d3.time.month.floor(new Date(2017,9,27));
 
       // Rotate x-axis labels
       displaceMonthChart.on('renderlet', function (chart) {
