@@ -3160,159 +3160,160 @@ id,yr,monthnum,monthname,monthend,cregion,cdistrict,pregion,pdistrict,creason,tp
 3159,2017,10,Oct,31/10/2017,Bari,Caluula,Bari,Caluula,Drought related,7,Oct '17,2017-10
 3160,2017,10,Oct,31/10/2017,Bari,Iskushuban,Bari,Bossaso,Drought related,16,Oct '17,2017-10
 3161,2017,10,Oct,31/10/2017,Bari,Iskushuban,Bari,Qardho,Drought related,6,Oct '17,2017-10
-3162,2017,10,Oct,31/10/2017,Bari,Qardho,Banadir,Banadir,Conflict/Insecurity,9,Oct '17,2017-10
-3163,2017,10,Oct,31/10/2017,Bari,Qardho,Bari,Bossaso,Drought related,8,Oct '17,2017-10
-3164,2017,10,Oct,31/10/2017,Bari,Qardho,Bari,Iskushuban,Drought related,6,Oct '17,2017-10
-3165,2017,10,Oct,31/10/2017,Bari,Qardho,Bari,Qandala,Drought related,5,Oct '17,2017-10
-3166,2017,10,Oct,31/10/2017,Bari,Qardho,Bari,Qardho,Drought related,2520,Oct '17,2017-10
-3167,2017,10,Oct,31/10/2017,Bari,Qardho,Bay,Baidoa,Conflict/Insecurity,13,Oct '17,2017-10
-3168,2017,10,Oct,31/10/2017,Bari,Qardho,Galgaduud,Cadaado,Conflict/Insecurity,12,Oct '17,2017-10
-3169,2017,10,Oct,31/10/2017,Bari,Qardho,Hiraan,Belet Weyne,Conflict/Insecurity,5,Oct '17,2017-10
-3170,2017,10,Oct,31/10/2017,Bari,Qardho,Hiraan,Belet Weyne,Drought related,11,Oct '17,2017-10
-3171,2017,10,Oct,31/10/2017,Bari,Qardho,Lower Shabelle,Wanla Weyn,Drought related,3,Oct '17,2017-10
-3172,2017,10,Oct,31/10/2017,Bari,Qardho,Middle Shabelle,Jowhar,Drought related,8,Oct '17,2017-10
-3173,2017,10,Oct,31/10/2017,Bari,Qardho,Nugaal,Garoowe,Drought related,2,Oct '17,2017-10
-3174,2017,10,Oct,31/10/2017,Bay,Baidoa,Bakool,Rab Dhuure,Drought related,516,Oct '17,2017-10
-3175,2017,10,Oct,31/10/2017,Bay,Baidoa,Bakool,Waajid,Drought related,60,Oct '17,2017-10
-3176,2017,10,Oct,31/10/2017,Bay,Baidoa,Bakool,Xudur,Drought related,251,Oct '17,2017-10
-3177,2017,10,Oct,31/10/2017,Bay,Baidoa,Bay,Baidoa,Conflict/Insecurity,418,Oct '17,2017-10
-3178,2017,10,Oct,31/10/2017,Bay,Baidoa,Bay,Baidoa,Drought related,3417,Oct '17,2017-10
-3179,2017,10,Oct,31/10/2017,Bay,Baidoa,Bay,Buur Hakaba,Drought related,119,Oct '17,2017-10
-3180,2017,10,Oct,31/10/2017,Bay,Baidoa,Bay,Diinsoor,Drought related,973,Oct '17,2017-10
-3181,2017,10,Oct,31/10/2017,Bay,Baidoa,Bay,Qansax Dheere,Drought related,1473,Oct '17,2017-10
-3182,2017,10,Oct,31/10/2017,Bay,Diinsoor,Middle Juba,Saakow,Drought related,1,Oct '17,2017-10
-3183,2017,10,Oct,31/10/2017,Bay,Qansax Dheere,Bay,Qansax Dheere,Drought related,5,Oct '17,2017-10
-3184,2017,10,Oct,31/10/2017,Galgaduud,Dhuusamarreeb,Galgaduud,Cabudwaaq,Drought related,120,Oct '17,2017-10
-3185,2017,10,Oct,31/10/2017,Galgaduud,Dhuusamarreeb,Galgaduud,Dhuusamarreeb,Drought related,1030,Oct '17,2017-10
-3186,2017,10,Oct,31/10/2017,Gedo,Baardheere,Gedo,Baardheere,Drought related,255,Oct '17,2017-10
-3187,2017,10,Oct,31/10/2017,Gedo,Belet Xaawo,Gedo,Belet Xaawo,Drought related,3,Oct '17,2017-10
-3188,2017,10,Oct,31/10/2017,Gedo,Doolow,Bay,Diinsoor,Drought related,49,Oct '17,2017-10
-3189,2017,10,Oct,31/10/2017,Gedo,Doolow,Bay,Qansax Dheere,Drought related,51,Oct '17,2017-10
-3190,2017,10,Oct,31/10/2017,Gedo,Doolow,Gedo,Luuq,Drought related,65,Oct '17,2017-10
-3191,2017,10,Oct,31/10/2017,Gedo,Garbahaarey,Gedo,Garbahaarey,Conflict/Insecurity,124,Oct '17,2017-10
-3192,2017,10,Oct,31/10/2017,Gedo,Luuq,Bay,Diinsoor,Drought related,76,Oct '17,2017-10
-3193,2017,10,Oct,31/10/2017,Gedo,Luuq,Bay,Diinsoor,Other,6,Oct '17,2017-10
-3194,2017,10,Oct,31/10/2017,Gedo,Luuq,Gedo,Luuq,Drought related,103,Oct '17,2017-10
-3195,2017,10,Oct,31/10/2017,Hiraan,Belet Weyne,Bakool,Tayeeglow,Drought related,104,Oct '17,2017-10
-3196,2017,10,Oct,31/10/2017,Lower Juba,Afmadow,Bay,Qansax Dheere,Drought related,19,Oct '17,2017-10
-3197,2017,10,Oct,31/10/2017,Lower Juba,Afmadow,Gedo,Luuq,Drought related,253,Oct '17,2017-10
-3198,2017,10,Oct,31/10/2017,Lower Juba,Afmadow,Lower Juba,Afmadow,Drought related,163,Oct '17,2017-10
-3199,2017,10,Oct,31/10/2017,Lower Juba,Afmadow,Lower Juba,Afmadow,Other,18,Oct '17,2017-10
-3200,2017,10,Oct,31/10/2017,Lower Juba,Afmadow,Lower Juba,Jamaame,Drought related,7,Oct '17,2017-10
-3201,2017,10,Oct,31/10/2017,Lower Juba,Afmadow,Middle Juba,Bu'aale,Drought related,120,Oct '17,2017-10
-3202,2017,10,Oct,31/10/2017,Lower Juba,Kismayo,Lower Juba,Afmadow,Drought related,4,Oct '17,2017-10
-3203,2017,10,Oct,31/10/2017,Lower Juba,Kismayo,Lower Juba,Badhaadhe,Drought related,8,Oct '17,2017-10
-3204,2017,10,Oct,31/10/2017,Lower Juba,Kismayo,Lower Juba,Badhaadhe,Other,9,Oct '17,2017-10
-3205,2017,10,Oct,31/10/2017,Lower Juba,Kismayo,Lower Juba,Jamaame,Drought related,100,Oct '17,2017-10
-3206,2017,10,Oct,31/10/2017,Lower Juba,Kismayo,Lower Juba,Kismayo,Conflict/Insecurity,447,Oct '17,2017-10
-3207,2017,10,Oct,31/10/2017,Lower Juba,Kismayo,Lower Juba,Kismayo,Drought related,81,Oct '17,2017-10
-3208,2017,10,Oct,31/10/2017,Lower Juba,Kismayo,Lower Juba,Kismayo,Other,1,Oct '17,2017-10
-3209,2017,10,Oct,31/10/2017,Lower Juba,Kismayo,Middle Juba,Jilib,Drought related,33,Oct '17,2017-10
-3210,2017,10,Oct,31/10/2017,Lower Shabelle,Afgooye,Banadir,Banadir,Drought related,6,Oct '17,2017-10
-3211,2017,10,Oct,31/10/2017,Lower Shabelle,Kurtunwaarey,Lower Shabelle,Afgooye,Conflict/Insecurity,10,Oct '17,2017-10
-3212,2017,10,Oct,31/10/2017,Lower Shabelle,Marka,Lower Shabelle,Afgooye,Conflict/Insecurity,313,Oct '17,2017-10
-3213,2017,10,Oct,31/10/2017,Middle Juba,Bu'aale,Bay,Diinsoor,Drought related,11,Oct '17,2017-10
-3214,2017,10,Oct,31/10/2017,Middle Juba,Bu'aale,Gedo,Baardheere,Drought related,31,Oct '17,2017-10
-3215,2017,10,Oct,31/10/2017,Middle Juba,Bu'aale,Lower Juba,Afmadow,Drought related,139,Oct '17,2017-10
-3216,2017,10,Oct,31/10/2017,Middle Juba,Bu'aale,Lower Shabelle,Baraawe,Drought related,21,Oct '17,2017-10
-3217,2017,10,Oct,31/10/2017,Middle Juba,Jilib,Bay,Buur Hakaba,Drought related,18,Oct '17,2017-10
-3218,2017,10,Oct,31/10/2017,Middle Juba,Jilib,Lower Shabelle,Baraawe,Drought related,24,Oct '17,2017-10
-3219,2017,10,Oct,31/10/2017,Middle Juba,Jilib,Middle Juba,Jilib,Drought related,16,Oct '17,2017-10
-3220,2017,10,Oct,31/10/2017,Middle Juba,Jilib,Middle Juba,Saakow,Drought related,13,Oct '17,2017-10
-3221,2017,10,Oct,31/10/2017,Middle Juba,Saakow,Bay,Diinsoor,Drought related,183,Oct '17,2017-10
-3222,2017,10,Oct,31/10/2017,Middle Juba,Saakow,Gedo,Baardheere,Drought related,166,Oct '17,2017-10
-3223,2017,10,Oct,31/10/2017,Middle Juba,Saakow,Gedo,Baardheere,Other,4,Oct '17,2017-10
-3224,2017,10,Oct,31/10/2017,Middle Juba,Saakow,Gedo,Ceel Waaq,Drought related,7,Oct '17,2017-10
-3225,2017,10,Oct,31/10/2017,Middle Shabelle,Balcad,Middle Shabelle,Balcad,Conflict/Insecurity,219,Oct '17,2017-10
-3226,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Banadir,Banadir,Drought related,81,Oct '17,2017-10
-3227,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Bari,Bossaso,Drought related,62,Oct '17,2017-10
-3228,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Bay,Baidoa,Drought related,14,Oct '17,2017-10
-3229,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Bay,Buur Hakaba,Drought related,4,Oct '17,2017-10
-3230,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Galgaduud,Cadaado,Drought related,11,Oct '17,2017-10
-3231,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Hiraan,Belet Weyne,Drought related,23,Oct '17,2017-10
-3232,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Hiraan,Bulo Burto,Drought related,10,Oct '17,2017-10
-3233,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Hiraan,Jalalaqsi,Drought related,12,Oct '17,2017-10
-3234,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Lower Juba,Kismayo,Other,78,Oct '17,2017-10
-3235,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Middle Shabelle,Jowhar,Drought related,13,Oct '17,2017-10
-3236,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Mudug,Gaalkacyo,Conflict/Insecurity,41,Oct '17,2017-10
-3237,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Mudug,Gaalkacyo,Drought related,158,Oct '17,2017-10
-3238,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Mudug,Gaalkacyo,Other,200,Oct '17,2017-10
-3239,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Mudug,Galdogob,Drought related,49,Oct '17,2017-10
-3240,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Mudug,Hobyo,Drought related,1187,Oct '17,2017-10
-3241,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Mudug,Jariiban,Other,229,Oct '17,2017-10
-3242,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Mudug,Xarardheere,Drought related,108,Oct '17,2017-10
-3243,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Nugaal,Garoowe,Drought related,5,Oct '17,2017-10
-3244,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Togdheer,Burco,Drought related,4,Oct '17,2017-10
-3245,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Woqooyi Galbeed,Hargeysa,Drought related,20,Oct '17,2017-10
-3246,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Woqooyi Galbeed,Hargeysa,Other,12,Oct '17,2017-10
-3247,2017,10,Oct,31/10/2017,Mudug,Galdogob,Mudug,Galdogob,Drought related,6,Oct '17,2017-10
-3248,2017,10,Oct,31/10/2017,Mudug,Hobyo,Mudug,Gaalkacyo,Conflict/Insecurity,126,Oct '17,2017-10
-3249,2017,10,Oct,31/10/2017,Mudug,Hobyo,Mudug,Hobyo,Conflict/Insecurity,123,Oct '17,2017-10
-3250,2017,10,Oct,31/10/2017,Mudug,Hobyo,Mudug,Hobyo,Drought related,137,Oct '17,2017-10
-3251,2017,10,Oct,31/10/2017,Mudug,Jariiban,Mudug,Jariiban,Other,14,Oct '17,2017-10
-3252,2017,10,Oct,31/10/2017,Mudug,Xarardheere,Mudug,Xarardheere,Drought related,102,Oct '17,2017-10
-3253,2017,10,Oct,31/10/2017,Nugaal,Eyl,Bari,Qardho,Drought related,154,Oct '17,2017-10
-3254,2017,10,Oct,31/10/2017,Nugaal,Garoowe,Bari,Qardho,Drought related,497,Oct '17,2017-10
-3255,2017,10,Oct,31/10/2017,Sanaag,Ceel Afweyn,Sanaag,Ceel Afweyn,Conflict/Insecurity,10,Oct '17,2017-10
-3256,2017,10,Oct,31/10/2017,Sanaag,Ceel Afweyn,Sanaag,Ceel Afweyn,Drought related,63,Oct '17,2017-10
-3257,2017,10,Oct,31/10/2017,Sanaag,Ceerigaabo,Bari,Qardho,Drought related,109,Oct '17,2017-10
-3258,2017,10,Oct,31/10/2017,Sanaag,Ceerigaabo,Sanaag,Ceel Afweyn,Drought related,117,Oct '17,2017-10
-3259,2017,10,Oct,31/10/2017,Sanaag,Ceerigaabo,Sanaag,Ceerigaabo,Drought related,215,Oct '17,2017-10
-3260,2017,10,Oct,31/10/2017,Sanaag,Laasqoray,Sanaag,Laasqoray,Drought related,1845,Oct '17,2017-10
-3261,2017,10,Oct,31/10/2017,Sool,Caynabo,Sool,Xudun,Drought related,7,Oct '17,2017-10
-3262,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Banadir,Banadir,Drought related,7,Oct '17,2017-10
-3263,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Galgaduud,Cabudwaaq,Drought related,16,Oct '17,2017-10
-3264,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Galgaduud,Cadaado,Drought related,11,Oct '17,2017-10
-3265,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Galgaduud,Ceel Buur,Drought related,11,Oct '17,2017-10
-3266,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Hiraan,Belet Weyne,Conflict/Insecurity,8,Oct '17,2017-10
-3267,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Hiraan,Bulo Burto,Drought related,8,Oct '17,2017-10
-3268,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Lower Juba,Afmadow,Conflict/Insecurity,6,Oct '17,2017-10
-3269,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Middle Juba,Jilib,Drought related,10,Oct '17,2017-10
-3270,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Sanaag,Ceerigaabo,Drought related,9,Oct '17,2017-10
-3271,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Sool,Laas Caanood,Drought related,11,Oct '17,2017-10
-3272,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Sool,Taleex,Drought related,49,Oct '17,2017-10
-3273,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Sool,Xudun,Drought related,47,Oct '17,2017-10
-3274,2017,10,Oct,31/10/2017,Togdheer,Burco,Togdheer,Burco,Drought related,74,Oct '17,2017-10
-3275,2017,10,Oct,31/10/2017,Togdheer,Burco,Togdheer,Burco,Other,17,Oct '17,2017-10
-3276,2017,10,Oct,31/10/2017,Togdheer,Buuhoodle,Togdheer,Buuhoodle,Drought related,348,Oct '17,2017-10
-3277,2017,10,Oct,31/10/2017,Togdheer,Buuhoodle,Togdheer,Buuhoodle,Other,145,Oct '17,2017-10
-3278,2017,10,Oct,31/10/2017,Togdheer,Owdweyne,Togdheer,Owdweyne,Drought related,116,Oct '17,2017-10
-3279,2017,10,Oct,31/10/2017,Togdheer,Owdweyne,Togdheer,Owdweyne,Other,10,Oct '17,2017-10
-3280,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Berbera,Togdheer,Burco,Drought related,9,Oct '17,2017-10
-3281,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Berbera,Togdheer,Burco,Other,7,Oct '17,2017-10
-3282,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Berbera,Togdheer,Owdweyne,Drought related,6,Oct '17,2017-10
-3283,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Berbera,Woqooyi Galbeed,Berbera,Drought related,6,Oct '17,2017-10
-3284,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Berbera,Woqooyi Galbeed,Berbera,Other,37,Oct '17,2017-10
-3285,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Gebiley,Awdal,Lughaye,Drought related,8,Oct '17,2017-10
-3286,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Gebiley,Woqooyi Galbeed,Gebiley,Drought related,116,Oct '17,2017-10
-3287,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Awdal,Borama,Drought related,8,Oct '17,2017-10
-3288,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Bakool,Ceel Barde,Drought related,11,Oct '17,2017-10
-3289,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Bakool,Xudur,Drought related,7,Oct '17,2017-10
-3290,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Banadir,Banadir,Drought related,52,Oct '17,2017-10
-3291,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Bari,Bossaso,Drought related,22,Oct '17,2017-10
-3292,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Bari,Qardho,Drought related,5,Oct '17,2017-10
-3293,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Bay,Baidoa,Drought related,8,Oct '17,2017-10
-3294,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Galgaduud,Cabudwaaq,Drought related,20,Oct '17,2017-10
-3295,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Galgaduud,Cadaado,Drought related,4,Oct '17,2017-10
-3296,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Hiraan,Belet Weyne,Drought related,14,Oct '17,2017-10
-3297,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Hiraan,Bulo Burto,Drought related,15,Oct '17,2017-10
-3298,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Hiraan,Jalalaqsi,Drought related,28,Oct '17,2017-10
-3299,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Lower Juba,Badhaadhe,Drought related,5,Oct '17,2017-10
-3300,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Lower Juba,Kismayo,Drought related,23,Oct '17,2017-10
-3301,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Middle Juba,Saakow,Drought related,3,Oct '17,2017-10
-3302,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Middle Shabelle,Balcad,Other,5,Oct '17,2017-10
-3303,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Mudug,Gaalkacyo,Drought related,12,Oct '17,2017-10
-3304,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Mudug,Xarardheere,Drought related,4,Oct '17,2017-10
-3305,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Nugaal,Burtinle,Drought related,10,Oct '17,2017-10
-3306,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Nugaal,Eyl,Drought related,4,Oct '17,2017-10
-3307,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Nugaal,Garoowe,Drought related,27,Oct '17,2017-10
-3308,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Sanaag,Ceel Afweyn,Drought related,8,Oct '17,2017-10
-3309,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Sanaag,Ceerigaabo,Drought related,18,Oct '17,2017-10
-3310,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Sanaag,Laasqoray,Drought related,7,Oct '17,2017-10
-3311,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Sool,Caynabo,Drought related,10,Oct '17,2017-10
-3312,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Sool,Laas Caanood,Drought related,14,Oct '17,2017-10
-3313,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Togdheer,Burco,Drought related,27,Oct '17,2017-10
-3314,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Togdheer,Owdweyne,Drought related,16,Oct '17,2017-10
-3315,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Togdheer,Sheikh,Drought related,33,Oct '17,2017-10
-3316,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Woqooyi Galbeed,Berbera,Drought related,37,Oct '17,2017-10
-3317,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Woqooyi Galbeed,Gebiley,Drought related,14,Oct '17,2017-10
+3162,2017,10,Oct,31/10/2017,Bari,Qardho,Banadir,Banadir,Conflict/Insecurity,16,Oct '17,2017-10
+3163,2017,10,Oct,31/10/2017,Bari,Qardho,Bari,Bandarbeyla,Drought related,106,Oct '17,2017-10
+3164,2017,10,Oct,31/10/2017,Bari,Qardho,Bari,Bossaso,Drought related,8,Oct '17,2017-10
+3165,2017,10,Oct,31/10/2017,Bari,Qardho,Bari,Iskushuban,Drought related,15,Oct '17,2017-10
+3166,2017,10,Oct,31/10/2017,Bari,Qardho,Bari,Qandala,Drought related,5,Oct '17,2017-10
+3167,2017,10,Oct,31/10/2017,Bari,Qardho,Bari,Qardho,Drought related,2520,Oct '17,2017-10
+3168,2017,10,Oct,31/10/2017,Bari,Qardho,Bay,Baidoa,Conflict/Insecurity,13,Oct '17,2017-10
+3169,2017,10,Oct,31/10/2017,Bari,Qardho,Galgaduud,Cadaado,Conflict/Insecurity,12,Oct '17,2017-10
+3170,2017,10,Oct,31/10/2017,Bari,Qardho,Hiraan,Belet Weyne,Conflict/Insecurity,5,Oct '17,2017-10
+3171,2017,10,Oct,31/10/2017,Bari,Qardho,Hiraan,Belet Weyne,Drought related,11,Oct '17,2017-10
+3172,2017,10,Oct,31/10/2017,Bari,Qardho,Lower Shabelle,Wanla Weyn,Drought related,3,Oct '17,2017-10
+3173,2017,10,Oct,31/10/2017,Bari,Qardho,Middle Shabelle,Jowhar,Drought related,8,Oct '17,2017-10
+3174,2017,10,Oct,31/10/2017,Bari,Qardho,Nugaal,Garoowe,Drought related,2,Oct '17,2017-10
+3175,2017,10,Oct,31/10/2017,Bay,Baidoa,Bakool,Rab Dhuure,Drought related,516,Oct '17,2017-10
+3176,2017,10,Oct,31/10/2017,Bay,Baidoa,Bakool,Waajid,Drought related,60,Oct '17,2017-10
+3177,2017,10,Oct,31/10/2017,Bay,Baidoa,Bakool,Xudur,Drought related,251,Oct '17,2017-10
+3178,2017,10,Oct,31/10/2017,Bay,Baidoa,Bay,Baidoa,Conflict/Insecurity,418,Oct '17,2017-10
+3179,2017,10,Oct,31/10/2017,Bay,Baidoa,Bay,Baidoa,Drought related,3417,Oct '17,2017-10
+3180,2017,10,Oct,31/10/2017,Bay,Baidoa,Bay,Buur Hakaba,Drought related,119,Oct '17,2017-10
+3181,2017,10,Oct,31/10/2017,Bay,Baidoa,Bay,Diinsoor,Drought related,973,Oct '17,2017-10
+3182,2017,10,Oct,31/10/2017,Bay,Baidoa,Bay,Qansax Dheere,Drought related,1473,Oct '17,2017-10
+3183,2017,10,Oct,31/10/2017,Bay,Diinsoor,Middle Juba,Saakow,Drought related,1,Oct '17,2017-10
+3184,2017,10,Oct,31/10/2017,Bay,Qansax Dheere,Bay,Qansax Dheere,Drought related,5,Oct '17,2017-10
+3185,2017,10,Oct,31/10/2017,Galgaduud,Dhuusamarreeb,Galgaduud,Cabudwaaq,Drought related,120,Oct '17,2017-10
+3186,2017,10,Oct,31/10/2017,Galgaduud,Dhuusamarreeb,Galgaduud,Dhuusamarreeb,Drought related,1030,Oct '17,2017-10
+3187,2017,10,Oct,31/10/2017,Gedo,Baardheere,Gedo,Baardheere,Drought related,255,Oct '17,2017-10
+3188,2017,10,Oct,31/10/2017,Gedo,Belet Xaawo,Gedo,Belet Xaawo,Drought related,3,Oct '17,2017-10
+3189,2017,10,Oct,31/10/2017,Gedo,Doolow,Bay,Diinsoor,Drought related,49,Oct '17,2017-10
+3190,2017,10,Oct,31/10/2017,Gedo,Doolow,Bay,Qansax Dheere,Drought related,51,Oct '17,2017-10
+3191,2017,10,Oct,31/10/2017,Gedo,Doolow,Gedo,Luuq,Drought related,65,Oct '17,2017-10
+3192,2017,10,Oct,31/10/2017,Gedo,Garbahaarey,Gedo,Garbahaarey,Conflict/Insecurity,124,Oct '17,2017-10
+3193,2017,10,Oct,31/10/2017,Gedo,Luuq,Bay,Diinsoor,Drought related,76,Oct '17,2017-10
+3194,2017,10,Oct,31/10/2017,Gedo,Luuq,Bay,Diinsoor,Other,6,Oct '17,2017-10
+3195,2017,10,Oct,31/10/2017,Gedo,Luuq,Gedo,Luuq,Drought related,103,Oct '17,2017-10
+3196,2017,10,Oct,31/10/2017,Hiraan,Belet Weyne,Bakool,Tayeeglow,Drought related,104,Oct '17,2017-10
+3197,2017,10,Oct,31/10/2017,Lower Juba,Afmadow,Bay,Qansax Dheere,Drought related,19,Oct '17,2017-10
+3198,2017,10,Oct,31/10/2017,Lower Juba,Afmadow,Gedo,Luuq,Drought related,253,Oct '17,2017-10
+3199,2017,10,Oct,31/10/2017,Lower Juba,Afmadow,Lower Juba,Afmadow,Drought related,163,Oct '17,2017-10
+3200,2017,10,Oct,31/10/2017,Lower Juba,Afmadow,Lower Juba,Afmadow,Other,18,Oct '17,2017-10
+3201,2017,10,Oct,31/10/2017,Lower Juba,Afmadow,Lower Juba,Jamaame,Drought related,7,Oct '17,2017-10
+3202,2017,10,Oct,31/10/2017,Lower Juba,Afmadow,Middle Juba,Bu'aale,Drought related,120,Oct '17,2017-10
+3203,2017,10,Oct,31/10/2017,Lower Juba,Kismayo,Lower Juba,Afmadow,Drought related,4,Oct '17,2017-10
+3204,2017,10,Oct,31/10/2017,Lower Juba,Kismayo,Lower Juba,Badhaadhe,Drought related,8,Oct '17,2017-10
+3205,2017,10,Oct,31/10/2017,Lower Juba,Kismayo,Lower Juba,Badhaadhe,Other,9,Oct '17,2017-10
+3206,2017,10,Oct,31/10/2017,Lower Juba,Kismayo,Lower Juba,Jamaame,Drought related,100,Oct '17,2017-10
+3207,2017,10,Oct,31/10/2017,Lower Juba,Kismayo,Lower Juba,Kismayo,Conflict/Insecurity,447,Oct '17,2017-10
+3208,2017,10,Oct,31/10/2017,Lower Juba,Kismayo,Lower Juba,Kismayo,Drought related,81,Oct '17,2017-10
+3209,2017,10,Oct,31/10/2017,Lower Juba,Kismayo,Lower Juba,Kismayo,Other,1,Oct '17,2017-10
+3210,2017,10,Oct,31/10/2017,Lower Juba,Kismayo,Middle Juba,Jilib,Drought related,33,Oct '17,2017-10
+3211,2017,10,Oct,31/10/2017,Lower Shabelle,Afgooye,Banadir,Banadir,Drought related,6,Oct '17,2017-10
+3212,2017,10,Oct,31/10/2017,Lower Shabelle,Kurtunwaarey,Lower Shabelle,Afgooye,Conflict/Insecurity,10,Oct '17,2017-10
+3213,2017,10,Oct,31/10/2017,Lower Shabelle,Marka,Lower Shabelle,Afgooye,Conflict/Insecurity,313,Oct '17,2017-10
+3214,2017,10,Oct,31/10/2017,Middle Juba,Bu'aale,Bay,Diinsoor,Drought related,11,Oct '17,2017-10
+3215,2017,10,Oct,31/10/2017,Middle Juba,Bu'aale,Gedo,Baardheere,Drought related,31,Oct '17,2017-10
+3216,2017,10,Oct,31/10/2017,Middle Juba,Bu'aale,Lower Juba,Afmadow,Drought related,139,Oct '17,2017-10
+3217,2017,10,Oct,31/10/2017,Middle Juba,Bu'aale,Lower Shabelle,Baraawe,Drought related,21,Oct '17,2017-10
+3218,2017,10,Oct,31/10/2017,Middle Juba,Jilib,Bay,Buur Hakaba,Drought related,18,Oct '17,2017-10
+3219,2017,10,Oct,31/10/2017,Middle Juba,Jilib,Lower Shabelle,Baraawe,Drought related,24,Oct '17,2017-10
+3220,2017,10,Oct,31/10/2017,Middle Juba,Jilib,Middle Juba,Jilib,Drought related,16,Oct '17,2017-10
+3221,2017,10,Oct,31/10/2017,Middle Juba,Jilib,Middle Juba,Saakow,Drought related,13,Oct '17,2017-10
+3222,2017,10,Oct,31/10/2017,Middle Juba,Saakow,Bay,Diinsoor,Drought related,183,Oct '17,2017-10
+3223,2017,10,Oct,31/10/2017,Middle Juba,Saakow,Gedo,Baardheere,Drought related,166,Oct '17,2017-10
+3224,2017,10,Oct,31/10/2017,Middle Juba,Saakow,Gedo,Baardheere,Other,4,Oct '17,2017-10
+3225,2017,10,Oct,31/10/2017,Middle Juba,Saakow,Gedo,Ceel Waaq,Drought related,7,Oct '17,2017-10
+3226,2017,10,Oct,31/10/2017,Middle Shabelle,Balcad,Middle Shabelle,Balcad,Conflict/Insecurity,219,Oct '17,2017-10
+3227,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Banadir,Banadir,Drought related,81,Oct '17,2017-10
+3228,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Bari,Bossaso,Drought related,62,Oct '17,2017-10
+3229,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Bay,Baidoa,Drought related,14,Oct '17,2017-10
+3230,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Bay,Buur Hakaba,Drought related,4,Oct '17,2017-10
+3231,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Galgaduud,Cadaado,Drought related,11,Oct '17,2017-10
+3232,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Hiraan,Belet Weyne,Drought related,23,Oct '17,2017-10
+3233,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Hiraan,Bulo Burto,Drought related,10,Oct '17,2017-10
+3234,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Hiraan,Jalalaqsi,Drought related,12,Oct '17,2017-10
+3235,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Lower Juba,Kismayo,Other,78,Oct '17,2017-10
+3236,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Middle Shabelle,Jowhar,Drought related,13,Oct '17,2017-10
+3237,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Mudug,Gaalkacyo,Conflict/Insecurity,41,Oct '17,2017-10
+3238,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Mudug,Gaalkacyo,Drought related,158,Oct '17,2017-10
+3239,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Mudug,Gaalkacyo,Other,200,Oct '17,2017-10
+3240,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Mudug,Galdogob,Drought related,49,Oct '17,2017-10
+3241,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Mudug,Hobyo,Drought related,1187,Oct '17,2017-10
+3242,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Mudug,Jariiban,Other,229,Oct '17,2017-10
+3243,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Mudug,Xarardheere,Drought related,108,Oct '17,2017-10
+3244,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Nugaal,Garoowe,Drought related,5,Oct '17,2017-10
+3245,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Togdheer,Burco,Drought related,4,Oct '17,2017-10
+3246,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Woqooyi Galbeed,Hargeysa,Drought related,20,Oct '17,2017-10
+3247,2017,10,Oct,31/10/2017,Mudug,Gaalkacyo,Woqooyi Galbeed,Hargeysa,Other,12,Oct '17,2017-10
+3248,2017,10,Oct,31/10/2017,Mudug,Galdogob,Mudug,Galdogob,Drought related,6,Oct '17,2017-10
+3249,2017,10,Oct,31/10/2017,Mudug,Hobyo,Mudug,Gaalkacyo,Conflict/Insecurity,126,Oct '17,2017-10
+3250,2017,10,Oct,31/10/2017,Mudug,Hobyo,Mudug,Hobyo,Conflict/Insecurity,123,Oct '17,2017-10
+3251,2017,10,Oct,31/10/2017,Mudug,Hobyo,Mudug,Hobyo,Drought related,137,Oct '17,2017-10
+3252,2017,10,Oct,31/10/2017,Mudug,Jariiban,Mudug,Jariiban,Other,14,Oct '17,2017-10
+3253,2017,10,Oct,31/10/2017,Mudug,Xarardheere,Mudug,Xarardheere,Drought related,102,Oct '17,2017-10
+3254,2017,10,Oct,31/10/2017,Nugaal,Eyl,Bari,Qardho,Drought related,154,Oct '17,2017-10
+3255,2017,10,Oct,31/10/2017,Nugaal,Garoowe,Bari,Qardho,Drought related,497,Oct '17,2017-10
+3256,2017,10,Oct,31/10/2017,Sanaag,Ceel Afweyn,Sanaag,Ceel Afweyn,Conflict/Insecurity,10,Oct '17,2017-10
+3257,2017,10,Oct,31/10/2017,Sanaag,Ceel Afweyn,Sanaag,Ceel Afweyn,Drought related,63,Oct '17,2017-10
+3258,2017,10,Oct,31/10/2017,Sanaag,Ceerigaabo,Bari,Qardho,Drought related,109,Oct '17,2017-10
+3259,2017,10,Oct,31/10/2017,Sanaag,Ceerigaabo,Sanaag,Ceel Afweyn,Drought related,117,Oct '17,2017-10
+3260,2017,10,Oct,31/10/2017,Sanaag,Ceerigaabo,Sanaag,Ceerigaabo,Drought related,215,Oct '17,2017-10
+3261,2017,10,Oct,31/10/2017,Sanaag,Laasqoray,Sanaag,Laasqoray,Drought related,1845,Oct '17,2017-10
+3262,2017,10,Oct,31/10/2017,Sool,Caynabo,Sool,Xudun,Drought related,7,Oct '17,2017-10
+3263,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Banadir,Banadir,Drought related,7,Oct '17,2017-10
+3264,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Galgaduud,Cabudwaaq,Drought related,16,Oct '17,2017-10
+3265,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Galgaduud,Cadaado,Drought related,11,Oct '17,2017-10
+3266,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Galgaduud,Ceel Buur,Drought related,11,Oct '17,2017-10
+3267,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Hiraan,Belet Weyne,Conflict/Insecurity,8,Oct '17,2017-10
+3268,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Hiraan,Bulo Burto,Drought related,8,Oct '17,2017-10
+3269,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Lower Juba,Afmadow,Conflict/Insecurity,6,Oct '17,2017-10
+3270,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Middle Juba,Jilib,Drought related,10,Oct '17,2017-10
+3271,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Sanaag,Ceerigaabo,Drought related,9,Oct '17,2017-10
+3272,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Sool,Laas Caanood,Drought related,11,Oct '17,2017-10
+3273,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Sool,Taleex,Drought related,49,Oct '17,2017-10
+3274,2017,10,Oct,31/10/2017,Sool,Laas Caanood,Sool,Xudun,Drought related,47,Oct '17,2017-10
+3275,2017,10,Oct,31/10/2017,Togdheer,Burco,Togdheer,Burco,Drought related,74,Oct '17,2017-10
+3276,2017,10,Oct,31/10/2017,Togdheer,Burco,Togdheer,Burco,Other,17,Oct '17,2017-10
+3277,2017,10,Oct,31/10/2017,Togdheer,Buuhoodle,Togdheer,Buuhoodle,Drought related,348,Oct '17,2017-10
+3278,2017,10,Oct,31/10/2017,Togdheer,Buuhoodle,Togdheer,Buuhoodle,Other,145,Oct '17,2017-10
+3279,2017,10,Oct,31/10/2017,Togdheer,Owdweyne,Togdheer,Owdweyne,Drought related,116,Oct '17,2017-10
+3280,2017,10,Oct,31/10/2017,Togdheer,Owdweyne,Togdheer,Owdweyne,Other,10,Oct '17,2017-10
+3281,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Berbera,Togdheer,Burco,Drought related,9,Oct '17,2017-10
+3282,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Berbera,Togdheer,Burco,Other,7,Oct '17,2017-10
+3283,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Berbera,Togdheer,Owdweyne,Drought related,6,Oct '17,2017-10
+3284,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Berbera,Woqooyi Galbeed,Berbera,Drought related,6,Oct '17,2017-10
+3285,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Berbera,Woqooyi Galbeed,Berbera,Other,37,Oct '17,2017-10
+3286,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Gebiley,Awdal,Lughaye,Drought related,8,Oct '17,2017-10
+3287,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Gebiley,Woqooyi Galbeed,Gebiley,Drought related,116,Oct '17,2017-10
+3288,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Awdal,Borama,Drought related,8,Oct '17,2017-10
+3289,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Bakool,Ceel Barde,Drought related,11,Oct '17,2017-10
+3290,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Bakool,Xudur,Drought related,7,Oct '17,2017-10
+3291,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Banadir,Banadir,Drought related,52,Oct '17,2017-10
+3292,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Bari,Bossaso,Drought related,22,Oct '17,2017-10
+3293,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Bari,Qardho,Drought related,5,Oct '17,2017-10
+3294,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Bay,Baidoa,Drought related,8,Oct '17,2017-10
+3295,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Galgaduud,Cabudwaaq,Drought related,20,Oct '17,2017-10
+3296,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Galgaduud,Cadaado,Drought related,4,Oct '17,2017-10
+3297,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Hiraan,Belet Weyne,Drought related,14,Oct '17,2017-10
+3298,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Hiraan,Bulo Burto,Drought related,15,Oct '17,2017-10
+3299,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Hiraan,Jalalaqsi,Drought related,28,Oct '17,2017-10
+3300,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Lower Juba,Badhaadhe,Drought related,5,Oct '17,2017-10
+3301,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Lower Juba,Kismayo,Drought related,23,Oct '17,2017-10
+3302,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Middle Juba,Saakow,Drought related,3,Oct '17,2017-10
+3303,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Middle Shabelle,Balcad,Other,5,Oct '17,2017-10
+3304,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Mudug,Gaalkacyo,Drought related,12,Oct '17,2017-10
+3305,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Mudug,Xarardheere,Drought related,4,Oct '17,2017-10
+3306,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Nugaal,Burtinle,Drought related,10,Oct '17,2017-10
+3307,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Nugaal,Eyl,Drought related,4,Oct '17,2017-10
+3308,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Nugaal,Garoowe,Drought related,27,Oct '17,2017-10
+3309,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Sanaag,Ceel Afweyn,Drought related,8,Oct '17,2017-10
+3310,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Sanaag,Ceerigaabo,Drought related,18,Oct '17,2017-10
+3311,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Sanaag,Laasqoray,Drought related,7,Oct '17,2017-10
+3312,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Sool,Caynabo,Drought related,10,Oct '17,2017-10
+3313,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Sool,Laas Caanood,Drought related,14,Oct '17,2017-10
+3314,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Togdheer,Burco,Drought related,27,Oct '17,2017-10
+3315,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Togdheer,Owdweyne,Drought related,16,Oct '17,2017-10
+3316,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Togdheer,Sheikh,Drought related,33,Oct '17,2017-10
+3317,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Woqooyi Galbeed,Berbera,Drought related,37,Oct '17,2017-10
+3318,2017,10,Oct,31/10/2017,Woqooyi Galbeed,Hargeysa,Woqooyi Galbeed,Gebiley,Drought related,14,Oct '17,2017-10
