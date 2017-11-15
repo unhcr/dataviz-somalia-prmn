@@ -59,17 +59,8 @@ function initFilters() {
         // sector chart
         if (parsed[rank] == "") {
           chart.filter(null);  
-        } else if (rank == 2) {
-          // debugger;
-          var keys = ["2016-01", "2016-02", "2016-03", "2016-04", "2016-05", "2016-06", "2016-07", "2016-08", "2016-09", "2016-10", "2016-11", "2016-12", "2017-01", "2017-02", "2017-03", "2017-04", "2017-05", "2017-06", "2017-07", "2017-08", "2017-09", "2017-10", "2017-11", "2017-12", "2018-01", "2018-02", "2017-03"];
-          var filterValues = parsed[rank].split(",");
-          
-          // console.log(keys);
-          var filter = dc.filters.RangedFilter(keys.indexOf(filterValues[0]), keys.indexOf(filterValues[1])-1);                          
-          // var filter = dc.filters.RangedFilter(filterValues[0], filterValues[1]); 
-          // var filter = dc.filters.RangedFilter(4, 10); 
-          chart.filter(filter);            
-        } else {                    
+        } 
+        else {                    
           var filterValues = parsed[rank].split(",");
           for (var i = 0; i < filterValues.length; i++ ) {
               chart.filter(filterValues[i]);                
@@ -154,124 +145,57 @@ d3.csv("data/PRMNDataset.csv", function (data){
           return d.tpeople;
         });
 
-      var keys = displaceMonthGroup.all().map(dc.pluck('key')).slice();
-      
-      // console.log(keys);
+    // Configure displacement month bar chart parameters
+    displaceMonthChart.height(160)
+    .width($('#leftPanel').width())
+    .margins({top:5, right:10, bottom:60, left:50})
+    .dimension(displaceMonth)
+    .group(displaceMonthGroup, "Year-Month")
+    .valueAccessor(function(d){
+      return d.value;
+    })
+    .title(function(d){
+      // return d3.format(",")(d.value);
+      return '';
+    })
+    // .ordering(function(d) { return -d.key; }) // desc
+    // .ordering(function(d) { return d.key; }) // asc
+    .on("filtered", getFiltersValues) 
+    .colors('#338EC9')
+    .barPadding(0.1)
+    .outerPadding(0.05)
+    .brushOn(true)
+    .controlsUseVisibility(true)
+    .x(d3.scale.ordinal())
+    .xUnits(dc.units.ordinal)
+    .elasticY(true)
+    .renderHorizontalGridLines(true)
+    .yAxis().ticks(5);
 
-      function index_group(group) {
-        return {
-          all: function() {
-            return group.all().map(function(kv, i) {
+    displaceMonthChart.xAxis()
+    .tickFormat(function(d){
+      var months = d.split('-');
+      var date = new Date(months[0], months[1]-1, 1);
+      return monthNameFormat(date);
+    });
+  
+  // Rotate x-axis labels
+  displaceMonthChart.on('renderlet',function(chart){
+    chart.selectAll('g.x text')
+      .attr('transform', 'translate(-10,10) rotate(270)')
+      .style('text-anchor', 'end')
+      .transition()
+      .duration(500)
+      .style('opacity', 1);
 
-              return {key: i, value: kv.value};
-            });
-          }
-        }
-      }
+    chart.selectAll('rect')
+      .attr('data-tooltip', 'hello');
 
-      displaceMonthChart.height(160)
-        .width($('#leftPanel').width())
-        .margins({ top: 5, right: 10, bottom: 60, left: 50 })
-        .dimension(displaceMonth)
-        .group(index_group(displaceMonthGroup))
-        .brushOn(true)
-        .round(Math.floor) 
-        .alwaysUseRounding(true)
-        .title(function (d) {
-          // return d3.format(",")(d.value);
-          return '';
-        })
-        .on("filtered", getFiltersValues)
-        .colors('#338EC9')
-        .barPadding(0.1)
-        .outerPadding(0.05)
-        .controlsUseVisibility(true)
-        .x(d3.scale.linear().domain([0, keys.length]));
+    chart.selectAll(".bar").call(monthBarTip);
+    chart.selectAll(".bar").on('mouseover', monthBarTip.show)
+      .on('mouseout', monthBarTip.hide);  
 
-      displaceMonthChart.filterHandler(function(dimension, filters) {
-        // debugger;
-        var newFilters = filters;
-        if (filters.length === 0) {
-          // the empty case (no filtering)
-          dimension.filter(null);
-          
-        }  else if (filters.length === 1 && !filters[0].isFiltered) {
-          // single value and not a function-based filter
-          dimension.filterExact(null);
-        } else if (filters.length === 1 && filters[0].filterType === 'RangedFilter') {
-            // single range-based filter
-            
-            var low = filters[0][0];
-            var high = filters[0][1];
-            // debugger;
-            console.log(low,high);
-            newFilters = dc.filters.RangedFilter(keys[low],keys[high-1]);
-            // newFilters = dc.filters.RangedFilter(low,high);
-            dimension.filterRange(newFilters);
-        }  else {
-            // an array of values, or an array of filter objects
-            dimension.filterFunction(function (d) {
-              for (var i = 0; i < filters.length; i++) {
-                  var filter = filters[i];
-                  if (filter.isFiltered && filter.isFiltered(d)) {
-                      return true;
-                  } else if (filter <= d && filter >= d) {
-                      return true;
-                  }
-              }
-                return false;
-            });
-        }         
-        return newFilters;
-      });
-
-      // Function to test string as date
-      function isValidDate(dateString){
-        var regEx = /^\d{4}-\d{2}$/ ;
-        if(!dateString.match(regEx)) return false;  // Invalid format
-        var d = new Date(dateString);
-        if(!d.getTime()) return false; // Invalid date (or this could be epoch)
-        return d.toISOString().slice(0,7) === dateString;     
-      }
-
-      // displaceMonthChart.filterHandler(function(dimension, filter) {
-      //   console.log(filter);
-      //   var newFilter = dc.filters.RangedFilter(keys[0],keys[keys.length-1]);
-      //   dimension.filter(newFilter);
-      //   return newFilter; // set the actual filter value to the new value
-      // });
-
-      // displaceMonthChart.filterPrinter(function(filters){
-      //   var s = "Period: ";
-      //   s += keys[filters[0][0]] + ' -> ' + keys[filters[0][1]];
-      //   return s;
-      // });
-
-      displaceMonthChart.xAxis()
-        .tickFormat(function (d) {
-          // return monthNameFormat(d);
-          return keys[d];
-        })
-        .ticks(keys.length);
-
-      // Rotate x-axis labels
-      displaceMonthChart.on('renderlet', function (chart) {
-        chart.selectAll('g.x text')
-          .attr('transform', 'translate(-10,10) rotate(270)')
-          .style('text-anchor', 'end')
-          .transition()
-          .duration(500)
-          .style('opacity', 1);
-
-        chart.selectAll('rect')
-          .attr('data-tooltip', 'hello');
-
-        chart.selectAll(".bar").call(monthBarTip);
-        chart.selectAll(".bar").on('mouseover', monthBarTip.show)
-          .on('mouseout', monthBarTip.hide);
-
-      });
-
+  });
 
       // create displacement reason dimension and group
       var displaceReason = facts.dimension(function (d) {
