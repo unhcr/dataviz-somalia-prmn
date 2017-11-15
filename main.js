@@ -35,17 +35,41 @@ function getFiltersValues() {
     location.hash = recursiveEncoded;
 
 }        
-  
+// window.onload = function(){
+//   initFilters();
+//   dc.redrawAll();
+// };
+
+// $(document).ready(function() { 
+ 
+//     initFilters();
+//     dc.redrawAll();
+
+// });
+
 function initFilters() {
+  // debugger;
     // Get hash values
-    var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([A-Za-z0-9,_\-\/\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
+    // var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([A-Za-z0-9,_\-\/\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
+    var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\d{4}-\d{2},\d{4}-\d{2}]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
     var parsed = parseHash.exec(decodeURIComponent(location.hash));
     
+
     function filter(chart, rank) {  // for instance chart = sector_chart and rank in URL hash = 1
         // sector chart
         if (parsed[rank] == "") {
-          chart.filter(null);            
-        } else {
+          chart.filter(null);  
+        } else if (rank == 2) {
+          // debugger;
+          var keys = ["2016-01", "2016-02", "2016-03", "2016-04", "2016-05", "2016-06", "2016-07", "2016-08", "2016-09", "2016-10", "2016-11", "2016-12", "2017-01", "2017-02", "2017-03", "2017-04", "2017-05", "2017-06", "2017-07", "2017-08", "2017-09", "2017-10", "2017-11", "2017-12", "2018-01", "2018-02", "2017-03"];
+          var filterValues = parsed[rank].split(",");
+          
+          // console.log(keys);
+          var filter = dc.filters.RangedFilter(keys.indexOf(filterValues[0]), keys.indexOf(filterValues[1])-1);                          
+          // var filter = dc.filters.RangedFilter(filterValues[0], filterValues[1]); 
+          // var filter = dc.filters.RangedFilter(4, 10); 
+          chart.filter(filter);            
+        } else {                    
           var filterValues = parsed[rank].split(",");
           for (var i = 0; i < filterValues.length; i++ ) {
               chart.filter(filterValues[i]);                
@@ -132,10 +156,13 @@ d3.csv("data/PRMNDataset.csv", function (data){
 
       var keys = displaceMonthGroup.all().map(dc.pluck('key')).slice();
       
+      // console.log(keys);
+
       function index_group(group) {
         return {
           all: function() {
             return group.all().map(function(kv, i) {
+
               return {key: i, value: kv.value};
             });
           }
@@ -162,11 +189,51 @@ d3.csv("data/PRMNDataset.csv", function (data){
         .x(d3.scale.linear().domain([0, keys.length]));
 
       displaceMonthChart.filterHandler(function(dimension, filters) {
-        return filters.map(function(rangefilt) {
-          var low = keys[rangefilt[0]], high = keys[rangefilt[1]];
-          return dc.filters.RangedFilter(low,high);
-        });
+        // debugger;
+        var newFilters = filters;
+        if (filters.length === 0) {
+          // the empty case (no filtering)
+          dimension.filter(null);
+          
+        }  else if (filters.length === 1 && !filters[0].isFiltered) {
+          // single value and not a function-based filter
+          dimension.filterExact(null);
+        } else if (filters.length === 1 && filters[0].filterType === 'RangedFilter') {
+            // single range-based filter
+            
+            var low = filters[0][0];
+            var high = filters[0][1];
+            // debugger;
+            console.log(low,high);
+            newFilters = dc.filters.RangedFilter(keys[low],keys[high-1]);
+            // newFilters = dc.filters.RangedFilter(low,high);
+            dimension.filterRange(newFilters);
+        }  else {
+            // an array of values, or an array of filter objects
+            dimension.filterFunction(function (d) {
+              for (var i = 0; i < filters.length; i++) {
+                  var filter = filters[i];
+                  if (filter.isFiltered && filter.isFiltered(d)) {
+                      return true;
+                  } else if (filter <= d && filter >= d) {
+                      return true;
+                  }
+              }
+                return false;
+            });
+        }         
+        return newFilters;
       });
+
+      // Function to test string as date
+      function isValidDate(dateString){
+        var regEx = /^\d{4}-\d{2}$/ ;
+        if(!dateString.match(regEx)) return false;  // Invalid format
+        var d = new Date(dateString);
+        if(!d.getTime()) return false; // Invalid date (or this could be epoch)
+        return d.toISOString().slice(0,7) === dateString;     
+      }
+
       // displaceMonthChart.filterHandler(function(dimension, filter) {
       //   console.log(filter);
       //   var newFilter = dc.filters.RangedFilter(keys[0],keys[keys.length-1]);
@@ -176,7 +243,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
 
       // displaceMonthChart.filterPrinter(function(filters){
       //   var s = "Period: ";
-      //   s += filters[0][0] + ' -> ' + filters[0][1];
+      //   s += keys[filters[0][0]] + ' -> ' + keys[filters[0][1]];
       //   return s;
       // });
 
@@ -514,6 +581,8 @@ d3.csv("data/PRMNDataset.csv", function (data){
   });
   });
 });
+
+
 
 function setResizingSvg(){
   // console.log('resize');
