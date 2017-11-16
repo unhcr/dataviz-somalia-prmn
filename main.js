@@ -16,6 +16,13 @@ var currDistrictMap = dc.geoChoroplethChart("#dc-curr-district-map");
 
 var displaceMonthChart = dc.barChart("#dc-month-chart");
 
+var ts = function test() {
+  var filter = dc.filters.RangedFilter(new Date(2017,2,1), new Date(2017,3,1)); 
+  displaceMonthChart.filter(filter);
+  dc.redrawAll();
+  return true;
+}
+
 // Implement bookmarking chart filters status 
 // Serializing filters values in URL
 function getFiltersValues() {
@@ -35,32 +42,28 @@ function getFiltersValues() {
     location.hash = recursiveEncoded;
 
 }        
-// window.onload = function(){
-//   initFilters();
-//   dc.redrawAll();
-// };
 
-// $(document).ready(function() { 
- 
-//     initFilters();
-//     dc.redrawAll();
 
-// });
 
 function initFilters() {
-  // debugger;
     // Get hash values
     // var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([A-Za-z0-9,_\-\/\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
-    var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\d{4}-\d{2},\d{4}-\d{2}]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
+    // e.g. month="1987-12-24"
+    // var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\d{4}-\d{2}-\d{2},\d{4}-\d{2}-\d{2}]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
+    var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\S\s,\S\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
     var parsed = parseHash.exec(decodeURIComponent(location.hash));
     
-
     function filter(chart, rank) {  // for instance chart = sector_chart and rank in URL hash = 1
+
         // sector chart
         if (parsed[rank] == "") {
-          chart.filter(null);  
-        } 
-        else {                    
+          chart.filter(null);
+        } else if (rank == 2) {
+          var filterValues = parsed[rank].split(",");
+          var filter = dc.filters.RangedFilter(new Date(filterValues[0]), new Date(filterValues[1]));              
+          // var filter = dc.filters.RangedFilter(new Date(2017,2,1), new Date(2017,2,31));              
+          chart.filter(filter);            
+        } else {
           var filterValues = parsed[rank].split(",");
           for (var i = 0; i < filterValues.length; i++ ) {
               chart.filter(filterValues[i]);                
@@ -79,7 +82,6 @@ function initFilters() {
         filter(currDistrictMap, 8);
     }
 
-
 }
 
 var numberFormat = d3.format(",.0f");
@@ -88,11 +90,15 @@ var dateFormat = d3.time.format("%d %b %Y");
 
 var monthNameFormat = d3.time.format("%b %Y");
 
+var dateLongFormat = d3.time.format("%Y-%m-%d");
+
 var monthBarTip = d3.tip()
       .attr('class', 'd3-month-tip')
       .offset([-5, 0])
       .html(function (d) { 
-        var date = new Date(d.data.key);
+        // var months = d.data.key.split('-');
+        // var date = new Date(months[0], months[1]-1, 1);
+        var date = d.data.key;
         return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + monthNameFormat(date) + "</span> | <span class='dc-tooltip-value'>" + numberFormat(rndFig(d.y)) +"</span></div>";});
 
 var barTip = d3.tip()
@@ -138,64 +144,139 @@ d3.csv("data/PRMNDataset.csv", function (data){
 
       // configure displacement month dimension and group
       var displaceMonth = facts.dimension(function (d) {
-        return d.yrmonthnum;
+        var months = d.monthend.split('\/');
+        var date = new Date(months[2], months[1] - 1, months[0]);
+        return d3.time.month(date);
+        // return date;
       });
       var displaceMonthGroup = displaceMonth.group()
         .reduceSum(function (d) {
           return d.tpeople;
         });
 
-    // Configure displacement month bar chart parameters
-    displaceMonthChart.height(160)
-    .width($('#leftPanel').width())
-    .margins({top:5, right:10, bottom:60, left:50})
-    .dimension(displaceMonth)
-    .group(displaceMonthGroup, "Year-Month")
-    .valueAccessor(function(d){
-      return d.value;
-    })
-    .title(function(d){
-      // return d3.format(",")(d.value);
-      return '';
-    })
-    // .ordering(function(d) { return -d.key; }) // desc
-    // .ordering(function(d) { return d.key; }) // asc
-    .on("filtered", getFiltersValues) 
-    .colors('#338EC9')
-    .barPadding(0.1)
-    .outerPadding(0.05)
-    .brushOn(true)
-    .controlsUseVisibility(true)
-    .x(d3.scale.ordinal())
-    .xUnits(dc.units.ordinal)
-    .elasticY(true)
-    .renderHorizontalGridLines(true)
-    .yAxis().ticks(5);
+      var keys = displaceMonthGroup.all().map(dc.pluck('key')).slice();
 
-    displaceMonthChart.xAxis()
-    .tickFormat(function(d){
-      var months = d.split('-');
-      var date = new Date(months[0], months[1]-1, 1);
-      return monthNameFormat(date);
-    });
-  
-  // Rotate x-axis labels
-  displaceMonthChart.on('renderlet',function(chart){
-    chart.selectAll('g.x text')
-      .attr('transform', 'translate(-10,10) rotate(270)')
-      .style('text-anchor', 'end')
-      .transition()
-      .duration(500)
-      .style('opacity', 1);
 
-    chart.selectAll('rect')
-      .attr('data-tooltip', 'hello');
+      // Configure displacement month bar chart parameters
 
-    chart.selectAll(".bar").call(monthBarTip);
-    chart.selectAll(".bar").on('mouseover', monthBarTip.show)
-      .on('mouseout', monthBarTip.hide);  
+      // Get minimum and maximum date
+      var minDate = keys[0];
+      var maxDate = new Date(
+          keys[keys.length - 1].getFullYear(),
+          keys[keys.length - 1].getMonth()+1,
+          keys[keys.length - 1].getDate()-1
+        ); // e.g. Sat Sep 30 2017
+      
+      // Get default filter dates
+      var startDate = keys[0];
+      var endDate = new Date(
+        keys[keys.length - 1].getFullYear(), 
+        keys[keys.length - 1].getMonth()+1, 
+        keys[keys.length - 1].getDate()
+      ); // e.g. Fri Oct 01 2017
+      
+      displaceMonthChart.height(160)
+        .width($('#leftPanel').width())
+        .margins({ top: 5, right: 10, bottom: 60, left: 50 })
+        .dimension(displaceMonth)
+        .group(displaceMonthGroup, "Year-Month")
+        // .keyAccessor(function(d){
+        //   return d.key;
+        // })
+        .valueAccessor(function (d) {
+          return d.value;
+        })
+        .brushOn(true)
+        .centerBar(false)
+        .gap(1)
+        .round(d3.time.month.round) 
+        .alwaysUseRounding(true)
+        .title(function (d) {
+          // return d3.format(",")(d.value);
+          return '';
+        })
+        // .ordering(function(d) { return -d.key; }) // desc
+        // .ordering(function(d) { return d.key; }) // asc
+        .on("filtered", getFiltersValues)
+        // .filter([minDate,maxDate])
+        .colors('#338EC9')
+        .barPadding(0.1)
+        .outerPadding(0.05)
+        .controlsUseVisibility(true)
+        // .x(d3.scale.ordinal())
+        // .xUnits(dc.units.ordinal)
+        .x(d3.time.scale().domain([minDate, maxDate]))
+        .xUnits(d3.time.months)
+        .elasticY(true)
+        .renderHorizontalGridLines(true)
+        .yAxis().ticks(5);
 
-  });
+        displaceMonthChart.filterHandler(function(dimension, filters) {
+
+          var newFilters = filters;
+          if (filters.length === 0) {
+            // the empty case (no filtering)
+            dimension.filter(null);
+            
+          }  else if (filters.length === 1 && !filters[0].isFiltered) {
+            // single value and not a function-based filter
+            dimension.filterExact(null);
+          } else if (filters.length === 1 && filters[0].filterType === 'RangedFilter') {
+              // single range-based filter
+              var start = filters[0][0];
+              var end = filters[0][1];
+              newFilters = dc.filters.RangedFilter(start,end);
+              dimension.filterRange(newFilters);
+          }  else {
+              // an array of values, or an array of filter objects
+              dimension.filterFunction(function (d) {
+                for (var i = 0; i < filters.length; i++) {
+                    var filter = filters[i];
+                    if (filter.isFiltered && filter.isFiltered(d)) {
+                        return true;
+                    } else if (filter <= d && filter >= d) {
+                        return true;
+                    }
+                }
+                  return false;
+              });
+          }         
+          return newFilters;
+        });        
+
+      displaceMonthChart.filterPrinter(function(filters){
+        var s = "Period: ";
+        // Correct end date due to month rounding
+        var oldDate = new Date(filters[1]);        
+        var newDate = new Date(oldDate.getFullYear(),oldDate.getMonth(),oldDate.getDate() - 1);
+        s += dateFormat(filters[0]) + ' to ' + dateFormat(newDate);
+        return s;
+      });
+
+      displaceMonthChart.xAxis()
+        .tickFormat(function (d) {
+          return monthNameFormat(d);
+        })
+        .ticks(keys.length);
+
+      // Rotate x-axis labels
+      displaceMonthChart.on('renderlet', function (chart) {
+        chart.selectAll('g.x text')
+          .attr('transform', 'translate(-10,10) rotate(270)')
+          .style('text-anchor', 'end')
+          .transition()
+          .duration(500)
+          .style('opacity', 1);
+
+        chart.selectAll('rect')
+          .attr('data-tooltip', 'hello');
+
+        chart.selectAll(".bar").call(monthBarTip);
+        chart.selectAll(".bar").on('mouseover', monthBarTip.show)
+          .on('mouseout', monthBarTip.hide);
+
+      });
+
 
       // create displacement reason dimension and group
       var displaceReason = facts.dimension(function (d) {
@@ -494,10 +575,14 @@ d3.csv("data/PRMNDataset.csv", function (data){
       });
 
 
-      initFilters();
+      
 
       // Render the charts
       dc.renderAll();
+
+      initFilters();
+
+      dc.redrawAll();
 
       setResizingSvg();
 
@@ -505,8 +590,6 @@ d3.csv("data/PRMNDataset.csv", function (data){
   });
   });
 });
-
-
 
 function setResizingSvg(){
   // console.log('resize');
@@ -543,4 +626,5 @@ function rndFig(num) {
 
     return res;
 }
+
 
