@@ -23,7 +23,7 @@ function getFiltersValues() {
     var filters = [
         { name: 'reason', value: displaceReasonChart.filters()},
         // { name: 'month', value: displaceMonthChart.filters()},
-        { name: 'month', value: reformatFilter(displaceMonthChart.filters())},
+        { name: 'month', value: resetFilter(displaceMonthChart.filters())},
         { name: 'pregion', value: prevRegionChart.filters()},
         { name: 'pregionmap', value: prevRegionMap.filters()},
         { name: 'pdistrictmap', value: prevDistrictMap.filters()},
@@ -60,7 +60,7 @@ function initFilters() {
       start.setHours(0,0,0,0);
       end.setHours(0,0,0,0);
 
-      var filter = dc.filters.RangedFilter(start, correctEndDate(end,1));              
+      var filter = dc.filters.RangedFilter(start, dayOffset(end,1));              
       // var filter = dc.filters.RangedFilter(new Date(2017,2,1), new Date(2017,2,31));              
       chart.filter(filter);            
     } else {
@@ -115,15 +115,14 @@ var mapTip = d3.tip()
 
 // Correct end date due to month rounding off 
 // by adding or deducting a day
-var correctEndDate = function (oldDate, day){  
-  var newDate = new Date(oldDate.getFullYear(),oldDate.getMonth(),oldDate.getDate() + day);        
-  return newDate;
-} 
+var dayOffset = d3.time.day.offset;
 
-var reformatFilter = function (filterValues){
+var monthOffset = d3.time.month.offset;
+
+var resetFilter = function (filterValues){
   if (filterValues.length == 0) return filterValues;
   var start = filterValues[0];
-  var end = correctEndDate(filterValues[1],-1);
+  var end = dayOffset(filterValues[1],-1);
   var filter = dc.filters.RangedFilter(dateLongFormat(start), dateLongFormat(end)); 
   return filter;
 }
@@ -173,9 +172,9 @@ d3.csv("data/PRMNDataset.csv", function (data){
       // Configure displacement month bar chart parameters
 
       // Get minimum and maximum date
-      debugger;
+
       var minDate = keys[0];
-      var maxDate =  correctEndDate(keys[keys.length -1],-1);
+      var maxDate =  dayOffset(monthOffset(keys[keys.length -1],1),-1);
       displaceMonthChart.height(160)
         .width($('#leftPanel').width())
         .margins({ top: 5, right: 10, bottom: 60, left: 50 })
@@ -246,7 +245,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
       displaceMonthChart.filterPrinter(function(filters){
         var s = "Period: ";  
         var start = filters[0];
-        var end = correctEndDate(filters[1],-1);    // correct month rounding off 
+        var end = dayOffset(filters[1],-1);    // correct month rounding off 
         s += dateFormat(start) + ' to ' + dateFormat(end);
         return s;
       });
@@ -590,7 +589,6 @@ d3.csv("data/PRMNDataset.csv", function (data){
 });
 
 function setResizingSvg(){
-  // console.log('resize');
       // set resizing viewbox
     // 
 }
