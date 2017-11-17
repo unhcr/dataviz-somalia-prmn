@@ -16,20 +16,14 @@ var currDistrictMap = dc.geoChoroplethChart("#dc-curr-district-map");
 
 var displaceMonthChart = dc.barChart("#dc-month-chart");
 
-var ts = function test() {
-  var filter = dc.filters.RangedFilter(new Date(2017,2,1), new Date(2017,3,1)); 
-  displaceMonthChart.filter(filter);
-  dc.redrawAll();
-  return true;
-}
-
 // Implement bookmarking chart filters status 
 // Serializing filters values in URL
 function getFiltersValues() {
 
     var filters = [
         { name: 'reason', value: displaceReasonChart.filters()},
-        { name: 'month', value: displaceMonthChart.filters()},
+        // { name: 'month', value: displaceMonthChart.filters()},
+        { name: 'month', value: reformatFilter(displaceMonthChart.filters())},
         { name: 'pregion', value: prevRegionChart.filters()},
         { name: 'pregionmap', value: prevRegionMap.filters()},
         { name: 'pdistrictmap', value: prevDistrictMap.filters()},
@@ -44,44 +38,49 @@ function getFiltersValues() {
 }        
 
 
-
 function initFilters() {
-    // Get hash values
-    // var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([A-Za-z0-9,_\-\/\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
-    // e.g. month="1987-12-24"
-    // var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\d{4}-\d{2}-\d{2},\d{4}-\d{2}-\d{2}]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
-    var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\S\s,\S\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
-    var parsed = parseHash.exec(decodeURIComponent(location.hash));
-    
-    function filter(chart, rank) {  // for instance chart = sector_chart and rank in URL hash = 1
+  // Get hash values
+  // var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([A-Za-z0-9,_\-\/\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
+  // e.g. month="1987-12-24"
+  var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\d{4}-\d{2}-\d{2},\d{4}-\d{2}-\d{2}]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
+  // var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\S\s,\S\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
+  var parsed = parseHash.exec(decodeURIComponent(location.hash));
+  
+  function filter(chart, rank) {  // for instance chart = sector_chart and rank in URL hash = 1
+    // sector chart
+    if (parsed[rank] == "") {
+      chart.filter(null);
+    } else if (rank == 2) {
+      var filterValues = parsed[rank].split(",");
+      
+      var start = new Date(filterValues[0]);
+      var end = new Date(filterValues[1]);
+      
+      // initialize date to midnight
+      start.setHours(0,0,0,0);
+      end.setHours(0,0,0,0);
 
-        // sector chart
-        if (parsed[rank] == "") {
-          chart.filter(null);
-        } else if (rank == 2) {
-          var filterValues = parsed[rank].split(",");
-          var filter = dc.filters.RangedFilter(new Date(filterValues[0]), new Date(filterValues[1]));              
-          // var filter = dc.filters.RangedFilter(new Date(2017,2,1), new Date(2017,2,31));              
-          chart.filter(filter);            
-        } else {
-          var filterValues = parsed[rank].split(",");
-          for (var i = 0; i < filterValues.length; i++ ) {
-              chart.filter(filterValues[i]);                
-          }            
-        }
+      var filter = dc.filters.RangedFilter(start, correctEndDate(end,1));              
+      // var filter = dc.filters.RangedFilter(new Date(2017,2,1), new Date(2017,2,31));              
+      chart.filter(filter);            
+    } else {
+      var filterValues = parsed[rank].split(",");
+      for (var i = 0; i < filterValues.length; i++ ) {
+          chart.filter(filterValues[i]);                
+      }            
     }
+  }
 
-    if (parsed) {
-        filter(displaceReasonChart, 1);
-        filter(displaceMonthChart, 2);
-        filter(prevRegionChart, 3);
-        filter(prevRegionMap, 4);
-        filter(prevDistrictMap, 5);
-        filter(currRegionChart, 6);
-        filter(currRegionMap, 7);
-        filter(currDistrictMap, 8);
-    }
-
+  if (parsed) {
+    filter(displaceReasonChart, 1);
+    filter(displaceMonthChart, 2);
+    filter(prevRegionChart, 3);
+    filter(prevRegionMap, 4);
+    filter(prevDistrictMap, 5);
+    filter(currRegionChart, 6);
+    filter(currRegionMap, 7);
+    filter(currDistrictMap, 8);
+  }
 }
 
 var numberFormat = d3.format(",.0f");
@@ -113,6 +112,21 @@ var mapTip = d3.tip()
         var t = d3.select(this).select('title').html(); 
         var tA = t.split(':');
         return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + (tA[0]) + "</span> | <span class='dc-tooltip-value'>" + (tA[1]) +"</span></div>";});
+
+// Correct end date due to month rounding off 
+// by adding or deducting a day
+var correctEndDate = function (oldDate, day){  
+  var newDate = new Date(oldDate.getFullYear(),oldDate.getMonth(),oldDate.getDate() + day);        
+  return newDate;
+} 
+
+var reformatFilter = function (filterValues){
+  if (filterValues.length == 0) return filterValues;
+  var start = filterValues[0];
+  var end = correctEndDate(filterValues[1],-1);
+  var filter = dc.filters.RangedFilter(dateLongFormat(start), dateLongFormat(end)); 
+  return filter;
+}
 
 // Load data from CSV file
 d3.csv("data/PRMNDataset.csv", function (data){
@@ -156,25 +170,12 @@ d3.csv("data/PRMNDataset.csv", function (data){
 
       var keys = displaceMonthGroup.all().map(dc.pluck('key')).slice();
 
-
       // Configure displacement month bar chart parameters
 
       // Get minimum and maximum date
+      debugger;
       var minDate = keys[0];
-      var maxDate = new Date(
-          keys[keys.length - 1].getFullYear(),
-          keys[keys.length - 1].getMonth()+1,
-          keys[keys.length - 1].getDate()-1
-        ); // e.g. Sat Sep 30 2017
-      
-      // Get default filter dates
-      var startDate = keys[0];
-      var endDate = new Date(
-        keys[keys.length - 1].getFullYear(), 
-        keys[keys.length - 1].getMonth()+1, 
-        keys[keys.length - 1].getDate()
-      ); // e.g. Fri Oct 01 2017
-      
+      var maxDate =  correctEndDate(keys[keys.length -1],-1);
       displaceMonthChart.height(160)
         .width($('#leftPanel').width())
         .margins({ top: 5, right: 10, bottom: 60, left: 50 })
@@ -198,7 +199,6 @@ d3.csv("data/PRMNDataset.csv", function (data){
         // .ordering(function(d) { return -d.key; }) // desc
         // .ordering(function(d) { return d.key; }) // asc
         .on("filtered", getFiltersValues)
-        // .filter([minDate,maxDate])
         .colors('#338EC9')
         .barPadding(0.1)
         .outerPadding(0.05)
@@ -211,45 +211,43 @@ d3.csv("data/PRMNDataset.csv", function (data){
         .renderHorizontalGridLines(true)
         .yAxis().ticks(5);
 
-        displaceMonthChart.filterHandler(function(dimension, filters) {
-
-          var newFilters = filters;
-          if (filters.length === 0) {
-            // the empty case (no filtering)
-            dimension.filter(null);
-            
-          }  else if (filters.length === 1 && !filters[0].isFiltered) {
-            // single value and not a function-based filter
-            dimension.filterExact(null);
-          } else if (filters.length === 1 && filters[0].filterType === 'RangedFilter') {
-              // single range-based filter
-              var start = filters[0][0];
-              var end = filters[0][1];
-              newFilters = dc.filters.RangedFilter(start,end);
-              dimension.filterRange(newFilters);
-          }  else {
-              // an array of values, or an array of filter objects
-              dimension.filterFunction(function (d) {
-                for (var i = 0; i < filters.length; i++) {
-                    var filter = filters[i];
-                    if (filter.isFiltered && filter.isFiltered(d)) {
-                        return true;
-                    } else if (filter <= d && filter >= d) {
-                        return true;
-                    }
-                }
-                  return false;
-              });
-          }         
-          return newFilters;
-        });        
+      displaceMonthChart.filterHandler(function(dimension, filters) {
+        var newFilters = filters;
+        if (filters.length === 0) {
+          // the empty case (no filtering)
+          dimension.filter(null);
+          
+        }  else if (filters.length === 1 && !filters[0].isFiltered) {
+          // single value and not a function-based filter
+          dimension.filterExact(null);
+        } else if (filters.length === 1 && filters[0].filterType === 'RangedFilter') {
+            // single range-based filter
+            var start = filters[0][0];
+            var end = filters[0][1];
+            newFilters = dc.filters.RangedFilter(start,end);
+            dimension.filterRange(newFilters);
+        }  else {
+            // an array of values, or an array of filter objects
+            dimension.filterFunction(function (d) {
+              for (var i = 0; i < filters.length; i++) {
+                  var filter = filters[i];
+                  if (filter.isFiltered && filter.isFiltered(d)) {
+                      return true;
+                  } else if (filter <= d && filter >= d) {
+                      return true;
+                  }
+              }
+                return false;
+            });
+        }         
+        return newFilters;
+      });        
 
       displaceMonthChart.filterPrinter(function(filters){
-        var s = "Period: ";
-        // Correct end date due to month rounding
-        var oldDate = new Date(filters[1]);        
-        var newDate = new Date(oldDate.getFullYear(),oldDate.getMonth(),oldDate.getDate() - 1);
-        s += dateFormat(filters[0]) + ' to ' + dateFormat(newDate);
+        var s = "Period: ";  
+        var start = filters[0];
+        var end = correctEndDate(filters[1],-1);    // correct month rounding off 
+        s += dateFormat(start) + ' to ' + dateFormat(end);
         return s;
       });
 
