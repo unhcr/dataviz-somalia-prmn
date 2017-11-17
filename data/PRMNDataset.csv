@@ -1308,7 +1308,6 @@ id,yr,monthnum,monthname,monthend,cregion,cdistrict,pregion,pdistrict,creason,tp
 1307,2016,11,Nov,30/11/2016,Togdheer,Buuhoodle,Sool,Caynabo,Drought related,13,Nov '16,2016-11
 1308,2016,11,Nov,30/11/2016,Togdheer,Buuhoodle,Sool,Laas Caanood,Drought related,19,Nov '16,2016-11
 1309,2016,11,Nov,30/11/2016,Togdheer,Buuhoodle,Sool,Xudun,Drought related,27,Nov '16,2016-11
-1310,2016,11,Nov,30/11/2016,Woqooyi Galbeed,Berbera,,,Other,4,Nov '16,2016-11
 1311,2016,11,Nov,30/11/2016,Woqooyi Galbeed,Berbera,Banadir,Banadir,Other,4,Nov '16,2016-11
 1312,2016,11,Nov,30/11/2016,Woqooyi Galbeed,Berbera,Bari,Bossaso,Other,3,Nov '16,2016-11
 1313,2016,11,Nov,30/11/2016,Woqooyi Galbeed,Berbera,Mudug,Gaalkacyo,Conflict/Insecurity,4,Nov '16,2016-11
@@ -1568,7 +1567,6 @@ id,yr,monthnum,monthname,monthend,cregion,cdistrict,pregion,pdistrict,creason,tp
 1567,2017,1,Jan,31/01/2017,Middle Juba,Saakow,Gedo,Baardheere,Other,3,Jan '17,2017-01
 1568,2017,1,Jan,31/01/2017,Middle Juba,Saakow,Middle Juba,Saakow,Drought related,324,Jan '17,2017-01
 1569,2017,1,Jan,31/01/2017,Middle Shabelle,Jowhar,Middle Shabelle,Jowhar,Drought related,6,Jan '17,2017-01
-1570,2017,1,Jan,31/01/2017,Mudug,Gaalkacyo,,,Drought related,6,Jan '17,2017-01
 1571,2017,1,Jan,31/01/2017,Mudug,Gaalkacyo,Banadir,Afgooye,Drought related,5,Jan '17,2017-01
 1572,2017,1,Jan,31/01/2017,Mudug,Gaalkacyo,Bari,Bossaso,Other,13,Jan '17,2017-01
 1573,2017,1,Jan,31/01/2017,Mudug,Gaalkacyo,Galgaduud,Cabudwaaq,Drought related,16,Jan '17,2017-01
