@@ -173,7 +173,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
 
       // Get minimum and maximum date
 
-      var minDate = keys[0];
+      var minDate = keys[0]; 
       var maxDate =  dayOffset(monthOffset(keys[keys.length -1],1),-1);
       displaceMonthChart.height(160)
         .width($('#leftPanel').width())
