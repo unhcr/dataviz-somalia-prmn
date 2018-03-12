@@ -3963,10 +3963,10 @@ id,yr,monthnum,monthname,monthend,cregion,cdistrict,pregion,pdistrict,creason,tp
 3964,2018,1,Jan,31/01/2018,Bari,Iskushuban,Sool,Laas Caanood,Conflict/Insecurity,7,Jan '18,2018-01
 3965,2018,1,Jan,31/01/2018,Bari,Qardho,Banadir,Banadir,Conflict/Insecurity,14,Jan '18,2018-01
 3966,2018,1,Jan,31/01/2018,Bari,Qardho,Banadir,Banadir,Drought related,3,Jan '18,2018-01
-3967,2018,1,Jan,31/01/2018,Bari,Qardho,Bari,Bandarbeyla,Drought related,14,Jan '18,2018-01
+3967,2018,1,Jan,31/01/2018,Bari,Qardho,Bari,Bandarbeyla,Drought related,21,Jan '18,2018-01
 3968,2018,1,Jan,31/01/2018,Bari,Qardho,Bari,Iskushuban,Drought related,29,Jan '18,2018-01
 3969,2018,1,Jan,31/01/2018,Bari,Qardho,Bari,Qandala,Drought related,6,Jan '18,2018-01
-3970,2018,1,Jan,31/01/2018,Bari,Qardho,Bari,Qardho,Drought related,130,Jan '18,2018-01
+3970,2018,1,Jan,31/01/2018,Bari,Qardho,Bari,Qardho,Drought related,191,Jan '18,2018-01
 3971,2018,1,Jan,31/01/2018,Bari,Qardho,Bari,Qardho,Other,6,Jan '18,2018-01
 3972,2018,1,Jan,31/01/2018,Bari,Qardho,Bay,Baidoa,Drought related,5,Jan '18,2018-01
 3973,2018,1,Jan,31/01/2018,Bari,Qardho,Galgaduud,Cadaado,Conflict/Insecurity,6,Jan '18,2018-01
@@ -3975,7 +3975,7 @@ id,yr,monthnum,monthname,monthend,cregion,cdistrict,pregion,pdistrict,creason,tp
 3976,2018,1,Jan,31/01/2018,Bari,Qardho,Lower Juba,Kismayo,Drought related,8,Jan '18,2018-01
 3977,2018,1,Jan,31/01/2018,Bari,Qardho,Mudug,Gaalkacyo,Conflict/Insecurity,8,Jan '18,2018-01
 3978,2018,1,Jan,31/01/2018,Bari,Qardho,Nugaal,Burtinle,Drought related,11,Jan '18,2018-01
-3979,2018,1,Jan,31/01/2018,Bari,Qardho,Nugaal,Qardho,Drought related,11,Jan '18,2018-01
+3979,2018,1,Jan,31/01/2018,Bari,Qardho,Nugaal,Qardho,Drought related,17,Jan '18,2018-01
 3980,2018,1,Jan,31/01/2018,Bay,Baidoa,Bakool,Ceel Barde,Conflict/Insecurity,234,Jan '18,2018-01
 3981,2018,1,Jan,31/01/2018,Bay,Baidoa,Bakool,Ceel Barde,Drought related,510,Jan '18,2018-01
 3982,2018,1,Jan,31/01/2018,Bay,Baidoa,Bakool,Rab Dhuure,Conflict/Insecurity,287,Jan '18,2018-01
@@ -4095,10 +4095,10 @@ id,yr,monthnum,monthname,monthend,cregion,cdistrict,pregion,pdistrict,creason,tp
 4096,2018,1,Jan,31/01/2018,Nugaal,Garoowe,Sool,Laas Caanood,Conflict/Insecurity,49,Jan '18,2018-01
 4097,2018,1,Jan,31/01/2018,Nugaal,Qardho,Nugaal,Qardho,Other,29,Jan '18,2018-01
 4098,2018,1,Jan,31/01/2018,Sanaag,Ceel Afweyn,Sanaag,Ceerigaabo,Conflict/Insecurity,10,Jan '18,2018-01
-4099,2018,1,Jan,31/01/2018,Sanaag,Ceerigaabo,Sanaag,Ceel Afweyn,Drought related,18,Jan '18,2018-01
+4099,2018,1,Jan,31/01/2018,Sanaag,Ceerigaabo,Sanaag,Ceel Afweyn,Drought related,79,Jan '18,2018-01
 4100,2018,1,Jan,31/01/2018,Sanaag,Ceerigaabo,Sanaag,Ceerigaabo,Conflict/Insecurity,234,Jan '18,2018-01
-4101,2018,1,Jan,31/01/2018,Sanaag,Ceerigaabo,Sanaag,Ceerigaabo,Drought related,16,Jan '18,2018-01
-4102,2018,1,Jan,31/01/2018,Sool,Caynabo,Sool,Caynabo,Drought related,13,Jan '18,2018-01
+4101,2018,1,Jan,31/01/2018,Sanaag,Ceerigaabo,Sanaag,Ceerigaabo,Drought related,108,Jan '18,2018-01
+4102,2018,1,Jan,31/01/2018,Sool,Caynabo,Sool,Caynabo,Drought related,22,Jan '18,2018-01
 4103,2018,1,Jan,31/01/2018,Sool,Caynabo,Sool,Caynabo,Other,8,Jan '18,2018-01
 4104,2018,1,Jan,31/01/2018,Sool,Laas Caanood,Galgaduud,Ceel Dheer,Drought related,9,Jan '18,2018-01
 4105,2018,1,Jan,31/01/2018,Sool,Laas Caanood,Gedo,Ceel Waaq,Drought related,10,Jan '18,2018-01
@@ -4155,3 +4155,250 @@ id,yr,monthnum,monthname,monthend,cregion,cdistrict,pregion,pdistrict,creason,tp
 4156,2018,1,Jan,31/01/2018,Woqooyi Galbeed,Hargeysa,Sanaag,Ceerigaabo,Drought related,14,Jan '18,2018-01
 4157,2018,1,Jan,31/01/2018,Woqooyi Galbeed,Hargeysa,Togdheer,Burco,Drought related,14,Jan '18,2018-01
 4158,2018,1,Jan,31/01/2018,Woqooyi Galbeed,Hargeysa,Woqooyi Galbeed,Berbera,Drought related,29,Jan '18,2018-01
+4159,2018,2,Feb,28/02/2018,Awdal,Baki,Awdal,Lughaye,Drought related,401,Feb '18,2018-02
+4160,2018,2,Feb,28/02/2018,Awdal,Baki,Awdal,Zeylac,Drought related,38,Feb '18,2018-02
+4161,2018,2,Feb,28/02/2018,Awdal,Borama,Awdal,Lughaye,Drought related,109,Feb '18,2018-02
+4162,2018,2,Feb,28/02/2018,Awdal,Borama,Awdal,Zeylac,Drought related,51,Feb '18,2018-02
+4163,2018,2,Feb,28/02/2018,Awdal,Borama,Bakool,Ceel Barde,Drought related,7,Feb '18,2018-02
+4164,2018,2,Feb,28/02/2018,Awdal,Borama,Banadir,Banadir,Drought related,16,Feb '18,2018-02
+4165,2018,2,Feb,28/02/2018,Awdal,Borama,Mudug,Gaalkacyo,Drought related,8,Feb '18,2018-02
+4166,2018,2,Feb,28/02/2018,Awdal,Lughaye,Awdal,Lughaye,Drought related,724,Feb '18,2018-02
+4167,2018,2,Feb,28/02/2018,Awdal,Lughaye,Awdal,Zeylac,Drought related,19,Feb '18,2018-02
+4168,2018,2,Feb,28/02/2018,Awdal,Zeylac,Awdal,Lughaye,Drought related,359,Feb '18,2018-02
+4169,2018,2,Feb,28/02/2018,Awdal,Zeylac,Awdal,Zeylac,Drought related,33,Feb '18,2018-02
+4170,2018,2,Feb,28/02/2018,Bakool,Rab Dhuure,Bakool,Rab Dhuure,Drought related,1300,Feb '18,2018-02
+4171,2018,2,Feb,28/02/2018,Bakool,Tayeeglow,Bakool,Tayeeglow,Drought related,2800,Feb '18,2018-02
+4172,2018,2,Feb,28/02/2018,Bakool,Waajid,Bakool,Rab Dhuure,Conflict/Insecurity,100,Feb '18,2018-02
+4173,2018,2,Feb,28/02/2018,Bakool,Waajid,Bakool,Waajid,Drought related,600,Feb '18,2018-02
+4174,2018,2,Feb,28/02/2018,Banadir,Banadir,Bakool,Rab Dhuure,Drought related,105,Feb '18,2018-02
+4175,2018,2,Feb,28/02/2018,Banadir,Banadir,Bakool,Tayeeglow,Drought related,21,Feb '18,2018-02
+4176,2018,2,Feb,28/02/2018,Banadir,Banadir,Banadir,Banadir,Drought related,47,Feb '18,2018-02
+4177,2018,2,Feb,28/02/2018,Banadir,Banadir,Banadir,Banadir,Other,510,Feb '18,2018-02
+4178,2018,2,Feb,28/02/2018,Banadir,Banadir,Bay,Baidoa,Drought related,32,Feb '18,2018-02
+4179,2018,2,Feb,28/02/2018,Banadir,Banadir,Bay,Buur Hakaba,Drought related,150,Feb '18,2018-02
+4180,2018,2,Feb,28/02/2018,Banadir,Banadir,Bay,Diinsoor,Drought related,35,Feb '18,2018-02
+4181,2018,2,Feb,28/02/2018,Banadir,Banadir,Bay,Qansax Dheere,Drought related,31,Feb '18,2018-02
+4182,2018,2,Feb,28/02/2018,Banadir,Banadir,Galgaduud,Cadaado,Drought related,52,Feb '18,2018-02
+4183,2018,2,Feb,28/02/2018,Banadir,Banadir,Galgaduud,Ceel Dheer,Drought related,28,Feb '18,2018-02
+4184,2018,2,Feb,28/02/2018,Banadir,Banadir,Gedo,Baardheere,Drought related,102,Feb '18,2018-02
+4185,2018,2,Feb,28/02/2018,Banadir,Banadir,Gedo,Ceel Waaq,Drought related,32,Feb '18,2018-02
+4186,2018,2,Feb,28/02/2018,Banadir,Banadir,Hiraan,Bulo Burto,Drought related,16,Feb '18,2018-02
+4187,2018,2,Feb,28/02/2018,Banadir,Banadir,Lower Shabelle,Afgooye,Conflict/Insecurity,3667,Feb '18,2018-02
+4188,2018,2,Feb,28/02/2018,Banadir,Banadir,Lower Shabelle,Afgooye,Drought related,1437,Feb '18,2018-02
+4189,2018,2,Feb,28/02/2018,Banadir,Banadir,Lower Shabelle,Kurtunwaarey,Conflict/Insecurity,324,Feb '18,2018-02
+4190,2018,2,Feb,28/02/2018,Banadir,Banadir,Lower Shabelle,Kurtunwaarey,Drought related,332,Feb '18,2018-02
+4191,2018,2,Feb,28/02/2018,Banadir,Banadir,Lower Shabelle,Marka,Conflict/Insecurity,1539,Feb '18,2018-02
+4192,2018,2,Feb,28/02/2018,Banadir,Banadir,Lower Shabelle,Marka,Drought related,724,Feb '18,2018-02
+4193,2018,2,Feb,28/02/2018,Banadir,Banadir,Lower Shabelle,Marka,Other,5,Feb '18,2018-02
+4194,2018,2,Feb,28/02/2018,Banadir,Banadir,Lower Shabelle,Qoryooley,Conflict/Insecurity,1491,Feb '18,2018-02
+4195,2018,2,Feb,28/02/2018,Banadir,Banadir,Lower Shabelle,Qoryooley,Drought related,1664,Feb '18,2018-02
+4196,2018,2,Feb,28/02/2018,Banadir,Banadir,Lower Shabelle,Sablaale,Drought related,204,Feb '18,2018-02
+4197,2018,2,Feb,28/02/2018,Banadir,Banadir,Lower Shabelle,Wanla Weyn,Conflict/Insecurity,153,Feb '18,2018-02
+4198,2018,2,Feb,28/02/2018,Banadir,Banadir,Lower Shabelle,Wanla Weyn,Drought related,25,Feb '18,2018-02
+4199,2018,2,Feb,28/02/2018,Banadir,Banadir,Middle Shabelle,Balcad,Conflict/Insecurity,425,Feb '18,2018-02
+4200,2018,2,Feb,28/02/2018,Banadir,Banadir,Middle Shabelle,Balcad,Drought related,168,Feb '18,2018-02
+4201,2018,2,Feb,28/02/2018,Banadir,Banadir,Middle Shabelle,Cadale,Drought related,49,Feb '18,2018-02
+4202,2018,2,Feb,28/02/2018,Banadir,Banadir,Middle Shabelle,Jowhar,Conflict/Insecurity,516,Feb '18,2018-02
+4203,2018,2,Feb,28/02/2018,Banadir,Banadir,Middle Shabelle,Jowhar,Drought related,174,Feb '18,2018-02
+4204,2018,2,Feb,28/02/2018,Banadir,Banadir,Mudug,Gaalkacyo,Drought related,1,Feb '18,2018-02
+4205,2018,2,Feb,28/02/2018,Banadir,Banadir,Mudug,Jariiban,Drought related,8,Feb '18,2018-02
+4206,2018,2,Feb,28/02/2018,Banadir,Banadir,Mudug,Xarardheere,Drought related,23,Feb '18,2018-02
+4207,2018,2,Feb,28/02/2018,Bari,Bandarbeyla,Bari,Iskushuban,Drought related,6,Feb '18,2018-02
+4208,2018,2,Feb,28/02/2018,Bari,Bossaso,Banadir,Banadir,Conflict/Insecurity,7,Feb '18,2018-02
+4209,2018,2,Feb,28/02/2018,Bari,Bossaso,Banadir,Banadir,Drought related,131,Feb '18,2018-02
+4210,2018,2,Feb,28/02/2018,Bari,Bossaso,Bari,Bossaso,Other,660,Feb '18,2018-02
+4211,2018,2,Feb,28/02/2018,Bari,Bossaso,Hiraan,Belet Weyne,Drought related,26,Feb '18,2018-02
+4212,2018,2,Feb,28/02/2018,Bari,Bossaso,Middle Shabelle,Jowhar,Drought related,30,Feb '18,2018-02
+4213,2018,2,Feb,28/02/2018,Bari,Bossaso,Middle Shabelle,Jowhar,Other,10,Feb '18,2018-02
+4214,2018,2,Feb,28/02/2018,Bari,Bossaso,Mudug,Gaalkacyo,Drought related,4,Feb '18,2018-02
+4215,2018,2,Feb,28/02/2018,Bari,Iskushuban,Bari,Caluula,Drought related,27,Feb '18,2018-02
+4216,2018,2,Feb,28/02/2018,Bari,Iskushuban,Bari,Qardho,Drought related,4,Feb '18,2018-02
+4217,2018,2,Feb,28/02/2018,Bari,Qardho,Banadir,Banadir,Conflict/Insecurity,5,Feb '18,2018-02
+4218,2018,2,Feb,28/02/2018,Bari,Qardho,Banadir,Banadir,Drought related,12,Feb '18,2018-02
+4219,2018,2,Feb,28/02/2018,Bari,Qardho,Bari,Bandarbeyla,Drought related,34,Feb '18,2018-02
+4220,2018,2,Feb,28/02/2018,Bari,Qardho,Bari,Bossaso,Drought related,5,Feb '18,2018-02
+4221,2018,2,Feb,28/02/2018,Bari,Qardho,Bari,Caluula,Drought related,7,Feb '18,2018-02
+4222,2018,2,Feb,28/02/2018,Bari,Qardho,Bari,Iskushuban,Drought related,17,Feb '18,2018-02
+4223,2018,2,Feb,28/02/2018,Bari,Qardho,Bari,Qandala,Drought related,6,Feb '18,2018-02
+4224,2018,2,Feb,28/02/2018,Bari,Qardho,Bari,Qardho,Conflict/Insecurity,4,Feb '18,2018-02
+4225,2018,2,Feb,28/02/2018,Bari,Qardho,Bari,Qardho,Drought related,112,Feb '18,2018-02
+4226,2018,2,Feb,28/02/2018,Bari,Qardho,Bari,Qardho,Other,7,Feb '18,2018-02
+4227,2018,2,Feb,28/02/2018,Bari,Qardho,Bay,Baidoa,Drought related,12,Feb '18,2018-02
+4228,2018,2,Feb,28/02/2018,Bari,Qardho,Hiraan,Belet Weyne,Drought related,7,Feb '18,2018-02
+4229,2018,2,Feb,28/02/2018,Bari,Qardho,Lower Shabelle,Qoryooley,Drought related,8,Feb '18,2018-02
+4230,2018,2,Feb,28/02/2018,Bari,Qardho,Mudug,Galdogob,Drought related,4,Feb '18,2018-02
+4231,2018,2,Feb,28/02/2018,Bari,Qardho,Nugaal,Burtinle,Drought related,17,Feb '18,2018-02
+4232,2018,2,Feb,28/02/2018,Bari,Qardho,Nugaal,Eyl,Drought related,6,Feb '18,2018-02
+4233,2018,2,Feb,28/02/2018,Bari,Qardho,Nugaal,Qardho,Drought related,10,Feb '18,2018-02
+4234,2018,2,Feb,28/02/2018,Bari,Qardho,Nugaal,Qardho,Other,18,Feb '18,2018-02
+4235,2018,2,Feb,28/02/2018,Bay,Baidoa,Bakool,Rab Dhuure,Drought related,21,Feb '18,2018-02
+4236,2018,2,Feb,28/02/2018,Bay,Baidoa,Bakool,Tayeeglow,Conflict/Insecurity,100,Feb '18,2018-02
+4237,2018,2,Feb,28/02/2018,Bay,Baidoa,Bakool,Tayeeglow,Drought related,1396,Feb '18,2018-02
+4238,2018,2,Feb,28/02/2018,Bay,Baidoa,Bakool,Waajid,Conflict/Insecurity,48,Feb '18,2018-02
+4239,2018,2,Feb,28/02/2018,Bay,Baidoa,Bakool,Waajid,Drought related,356,Feb '18,2018-02
+4240,2018,2,Feb,28/02/2018,Bay,Baidoa,Bakool,Xudur,Conflict/Insecurity,792,Feb '18,2018-02
+4241,2018,2,Feb,28/02/2018,Bay,Baidoa,Bakool,Xudur,Drought related,418,Feb '18,2018-02
+4242,2018,2,Feb,28/02/2018,Bay,Baidoa,Bay,Baidoa,Conflict/Insecurity,684,Feb '18,2018-02
+4243,2018,2,Feb,28/02/2018,Bay,Baidoa,Bay,Baidoa,Drought related,4147,Feb '18,2018-02
+4244,2018,2,Feb,28/02/2018,Bay,Baidoa,Bay,Buur Hakaba,Conflict/Insecurity,103,Feb '18,2018-02
+4245,2018,2,Feb,28/02/2018,Bay,Baidoa,Bay,Buur Hakaba,Drought related,321,Feb '18,2018-02
+4246,2018,2,Feb,28/02/2018,Bay,Baidoa,Bay,Diinsoor,Conflict/Insecurity,141,Feb '18,2018-02
+4247,2018,2,Feb,28/02/2018,Bay,Baidoa,Bay,Diinsoor,Drought related,1440,Feb '18,2018-02
+4248,2018,2,Feb,28/02/2018,Bay,Baidoa,Bay,Qansax Dheere,Conflict/Insecurity,103,Feb '18,2018-02
+4249,2018,2,Feb,28/02/2018,Bay,Baidoa,Bay,Qansax Dheere,Drought related,1382,Feb '18,2018-02
+4250,2018,2,Feb,28/02/2018,Bay,Baidoa,Lower Shabelle,Marka,Conflict/Insecurity,103,Feb '18,2018-02
+4251,2018,2,Feb,28/02/2018,Bay,Baidoa,Middle Juba,Saakow,Conflict/Insecurity,210,Feb '18,2018-02
+4252,2018,2,Feb,28/02/2018,Bay,Diinsoor,Bay,Diinsoor,Conflict/Insecurity,150,Feb '18,2018-02
+4253,2018,2,Feb,28/02/2018,Galgaduud,Cabudwaaq,Galgaduud,Cabudwaaq,Drought related,120,Feb '18,2018-02
+4254,2018,2,Feb,28/02/2018,Galgaduud,Cadaado,Mudug,Xarardheere,Conflict/Insecurity,9,Feb '18,2018-02
+4255,2018,2,Feb,28/02/2018,Galgaduud,Dhuusamarreeb,Mudug,Xarardheere,Conflict/Insecurity,20,Feb '18,2018-02
+4256,2018,2,Feb,28/02/2018,Gedo,Baardheere,Bay,Qansax Dheere,Drought related,16,Feb '18,2018-02
+4257,2018,2,Feb,28/02/2018,Gedo,Baardheere,Gedo,Baardheere,Drought related,118,Feb '18,2018-02
+4258,2018,2,Feb,28/02/2018,Gedo,Baardheere,Middle Juba,Saakow,Drought related,11,Feb '18,2018-02
+4259,2018,2,Feb,28/02/2018,Gedo,Belet Xaawo,Gedo,Belet Xaawo,Drought related,55,Feb '18,2018-02
+4260,2018,2,Feb,28/02/2018,Gedo,Belet Xaawo,Gedo,Belet Xaawo,Other,4,Feb '18,2018-02
+4261,2018,2,Feb,28/02/2018,Gedo,Doolow,Bakool,Waajid,Drought related,17,Feb '18,2018-02
+4262,2018,2,Feb,28/02/2018,Gedo,Doolow,Bay,Diinsoor,Drought related,13,Feb '18,2018-02
+4263,2018,2,Feb,28/02/2018,Gedo,Doolow,Bay,Qansax Dheere,Drought related,36,Feb '18,2018-02
+4264,2018,2,Feb,28/02/2018,Gedo,Doolow,Gedo,Luuq,Drought related,36,Feb '18,2018-02
+4265,2018,2,Feb,28/02/2018,Gedo,Garbahaarey,Gedo,Garbahaarey,Drought related,87,Feb '18,2018-02
+4266,2018,2,Feb,28/02/2018,Gedo,Luuq,Bay,Diinsoor,Drought related,17,Feb '18,2018-02
+4267,2018,2,Feb,28/02/2018,Gedo,Luuq,Gedo,Belet Xaawo,Drought related,9,Feb '18,2018-02
+4268,2018,2,Feb,28/02/2018,Gedo,Luuq,Gedo,Luuq,Drought related,77,Feb '18,2018-02
+4269,2018,2,Feb,28/02/2018,Hiraan,Belet Weyne,Bakool,Tayeeglow,Drought related,285,Feb '18,2018-02
+4270,2018,2,Feb,28/02/2018,Hiraan,Belet Weyne,Mudug,Gaalkacyo,Drought related,13,Feb '18,2018-02
+4271,2018,2,Feb,28/02/2018,Lower Juba,Afmadow,Bay,Qansax Dheere,Drought related,3,Feb '18,2018-02
+4272,2018,2,Feb,28/02/2018,Lower Juba,Afmadow,Lower Juba,Afmadow,Drought related,96,Feb '18,2018-02
+4273,2018,2,Feb,28/02/2018,Lower Juba,Afmadow,Middle Juba,Bu'aale,Drought related,39,Feb '18,2018-02
+4274,2018,2,Feb,28/02/2018,Lower Juba,Afmadow,Middle Juba,Jilib,Drought related,11,Feb '18,2018-02
+4275,2018,2,Feb,28/02/2018,Lower Juba,Afmadow,Middle Juba,Saakow,Drought related,103,Feb '18,2018-02
+4276,2018,2,Feb,28/02/2018,Lower Juba,Kismayo,Lower Juba,Afmadow,Drought related,34,Feb '18,2018-02
+4277,2018,2,Feb,28/02/2018,Lower Juba,Kismayo,Lower Juba,Jamaame,Conflict/Insecurity,958,Feb '18,2018-02
+4278,2018,2,Feb,28/02/2018,Lower Juba,Kismayo,Lower Juba,Jamaame,Drought related,238,Feb '18,2018-02
+4279,2018,2,Feb,28/02/2018,Lower Juba,Kismayo,Lower Juba,Kismayo,Conflict/Insecurity,11,Feb '18,2018-02
+4280,2018,2,Feb,28/02/2018,Lower Juba,Kismayo,Lower Juba,Kismayo,Drought related,134,Feb '18,2018-02
+4281,2018,2,Feb,28/02/2018,Lower Juba,Kismayo,Middle Juba,Bu'aale,Drought related,8,Feb '18,2018-02
+4282,2018,2,Feb,28/02/2018,Lower Juba,Kismayo,Middle Juba,Jilib,Conflict/Insecurity,67,Feb '18,2018-02
+4283,2018,2,Feb,28/02/2018,Lower Juba,Kismayo,Middle Juba,Jilib,Drought related,37,Feb '18,2018-02
+4284,2018,2,Feb,28/02/2018,Lower Juba,Kismayo,Middle Juba,Saakow,Drought related,13,Feb '18,2018-02
+4285,2018,2,Feb,28/02/2018,Lower Shabelle,Afgooye,Lower Shabelle,Afgooye,Conflict/Insecurity,3516,Feb '18,2018-02
+4286,2018,2,Feb,28/02/2018,Lower Shabelle,Afgooye,Lower Shabelle,Afgooye,Drought related,102,Feb '18,2018-02
+4287,2018,2,Feb,28/02/2018,Lower Shabelle,Afgooye,Lower Shabelle,Kurtunwaarey,Conflict/Insecurity,720,Feb '18,2018-02
+4288,2018,2,Feb,28/02/2018,Lower Shabelle,Afgooye,Lower Shabelle,Kurtunwaarey,Drought related,178,Feb '18,2018-02
+4289,2018,2,Feb,28/02/2018,Lower Shabelle,Afgooye,Lower Shabelle,Qoryooley,Conflict/Insecurity,107,Feb '18,2018-02
+4290,2018,2,Feb,28/02/2018,Lower Shabelle,Afgooye,Lower Shabelle,Wanla Weyn,Drought related,338,Feb '18,2018-02
+4291,2018,2,Feb,28/02/2018,Lower Shabelle,Baraawe,Lower Shabelle,Sablaale,Drought related,264,Feb '18,2018-02
+4292,2018,2,Feb,28/02/2018,Lower Shabelle,Kurtunwaarey,Lower Shabelle,Kurtunwaarey,Drought related,60,Feb '18,2018-02
+4293,2018,2,Feb,28/02/2018,Lower Shabelle,Kurtunwaarey,Lower Shabelle,Marka,Drought related,36,Feb '18,2018-02
+4294,2018,2,Feb,28/02/2018,Lower Shabelle,Marka,Lower Shabelle,Marka,Conflict/Insecurity,270,Feb '18,2018-02
+4295,2018,2,Feb,28/02/2018,Lower Shabelle,Marka,Lower Shabelle,Marka,Drought related,336,Feb '18,2018-02
+4296,2018,2,Feb,28/02/2018,Middle Juba,Bu'aale,Bay,Diinsoor,Drought related,52,Feb '18,2018-02
+4297,2018,2,Feb,28/02/2018,Middle Juba,Bu'aale,Lower Juba,Afmadow,Drought related,15,Feb '18,2018-02
+4298,2018,2,Feb,28/02/2018,Middle Juba,Saakow,Bay,Diinsoor,Drought related,57,Feb '18,2018-02
+4299,2018,2,Feb,28/02/2018,Middle Juba,Saakow,Gedo,Baardheere,Conflict/Insecurity,19,Feb '18,2018-02
+4300,2018,2,Feb,28/02/2018,Middle Juba,Saakow,Gedo,Baardheere,Drought related,60,Feb '18,2018-02
+4301,2018,2,Feb,28/02/2018,Middle Juba,Saakow,Gedo,Baardheere,Other,5,Feb '18,2018-02
+4302,2018,2,Feb,28/02/2018,Middle Juba,Saakow,Gedo,Ceel Waaq,Conflict/Insecurity,42,Feb '18,2018-02
+4303,2018,2,Feb,28/02/2018,Middle Juba,Saakow,Lower Juba,Jamaame,Conflict/Insecurity,108,Feb '18,2018-02
+4304,2018,2,Feb,28/02/2018,Middle Juba,Saakow,Middle Juba,Bu'aale,Drought related,13,Feb '18,2018-02
+4305,2018,2,Feb,28/02/2018,Middle Juba,Saakow,Middle Juba,Jilib,Conflict/Insecurity,136,Feb '18,2018-02
+4306,2018,2,Feb,28/02/2018,Middle Shabelle,Balcad,Middle Shabelle,Balcad,Conflict/Insecurity,233,Feb '18,2018-02
+4307,2018,2,Feb,28/02/2018,Middle Shabelle,Balcad,Middle Shabelle,Balcad,Other,6,Feb '18,2018-02
+4308,2018,2,Feb,28/02/2018,Middle Shabelle,Jowhar,Bari,Bossaso,Drought related,6,Feb '18,2018-02
+4309,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Awdal,Borama,Drought related,14,Feb '18,2018-02
+4310,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Bakool,Xudur,Drought related,6,Feb '18,2018-02
+4311,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Banadir,Banadir,Drought related,6,Feb '18,2018-02
+4312,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Banadir,Banadir,Other,5,Feb '18,2018-02
+4313,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Bari,Bossaso,Drought related,99,Feb '18,2018-02
+4314,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Bari,Bossaso,Other,8,Feb '18,2018-02
+4315,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Bari,Qardho,Drought related,12,Feb '18,2018-02
+4316,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Bari,Qardho,Other,9,Feb '18,2018-02
+4317,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Bay,Baidoa,Drought related,14,Feb '18,2018-02
+4318,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Galgaduud,Cadaado,Drought related,18,Feb '18,2018-02
+4319,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Galgaduud,Ceel Buur,Drought related,2,Feb '18,2018-02
+4320,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Galgaduud,Ceel Dheer,Drought related,8,Feb '18,2018-02
+4321,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Hiraan,Belet Weyne,Drought related,3,Feb '18,2018-02
+4322,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Hiraan,Bulo Burto,Drought related,4,Feb '18,2018-02
+4323,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Hiraan,Jalalaqsi,Drought related,5,Feb '18,2018-02
+4324,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Lower Juba,Badhaadhe,Drought related,5,Feb '18,2018-02
+4325,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Lower Juba,Kismayo,Other,319,Feb '18,2018-02
+4326,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Middle Juba,Jilib,Drought related,4,Feb '18,2018-02
+4327,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Mudug,Gaalkacyo,Drought related,26,Feb '18,2018-02
+4328,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Mudug,Galdogob,Drought related,7,Feb '18,2018-02
+4329,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Mudug,Hobyo,Drought related,182,Feb '18,2018-02
+4330,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Nugaal,Burtinle,Drought related,120,Feb '18,2018-02
+4331,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Nugaal,Garoowe,Drought related,22,Feb '18,2018-02
+4332,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Sool,Laas Caanood,Drought related,11,Feb '18,2018-02
+4333,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Sool,Laas Caanood,Other,8,Feb '18,2018-02
+4334,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Togdheer,Burco,Drought related,44,Feb '18,2018-02
+4335,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Togdheer,Owdweyne,Drought related,38,Feb '18,2018-02
+4336,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Woqooyi Galbeed,Berbera,Drought related,17,Feb '18,2018-02
+4337,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Woqooyi Galbeed,Berbera,Other,11,Feb '18,2018-02
+4338,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Woqooyi Galbeed,Gebiley,Drought related,9,Feb '18,2018-02
+4339,2018,2,Feb,28/02/2018,Mudug,Gaalkacyo,Woqooyi Galbeed,Hargeysa,Drought related,24,Feb '18,2018-02
+4340,2018,2,Feb,28/02/2018,Mudug,Hobyo,Mudug,Gaalkacyo,Drought related,8,Feb '18,2018-02
+4341,2018,2,Feb,28/02/2018,Mudug,Hobyo,Mudug,Hobyo,Drought related,45,Feb '18,2018-02
+4342,2018,2,Feb,28/02/2018,Mudug,Jariiban,Mudug,Jariiban,Drought related,63,Feb '18,2018-02
+4343,2018,2,Feb,28/02/2018,Mudug,Jariiban,Mudug,Jariiban,Other,47,Feb '18,2018-02
+4344,2018,2,Feb,28/02/2018,Nugaal,Qardho,Bari,Bandarbeyla,Drought related,6,Feb '18,2018-02
+4345,2018,2,Feb,28/02/2018,Sanaag,Ceel Afweyn,Sanaag,Ceel Afweyn,Conflict/Insecurity,6,Feb '18,2018-02
+4346,2018,2,Feb,28/02/2018,Sanaag,Ceel Afweyn,Sanaag,Ceel Afweyn,Drought related,14,Feb '18,2018-02
+4347,2018,2,Feb,28/02/2018,Sanaag,Ceel Afweyn,Sanaag,Ceerigaabo,Conflict/Insecurity,14,Feb '18,2018-02
+4348,2018,2,Feb,28/02/2018,Sanaag,Ceerigaabo,Sanaag,Ceel Afweyn,Drought related,11,Feb '18,2018-02
+4349,2018,2,Feb,28/02/2018,Sanaag,Ceerigaabo,Sanaag,Ceerigaabo,Drought related,7,Feb '18,2018-02
+4350,2018,2,Feb,28/02/2018,Sanaag,Laasqoray,Sanaag,Laasqoray,Drought related,426,Feb '18,2018-02
+4351,2018,2,Feb,28/02/2018,Sool,Caynabo,Sool,Caynabo,Drought related,18,Feb '18,2018-02
+4352,2018,2,Feb,28/02/2018,Sool,Laas Caanood,Nugaal,Burtinle,Drought related,6,Feb '18,2018-02
+4353,2018,2,Feb,28/02/2018,Sool,Laas Caanood,Sanaag,Ceerigaabo,Drought related,9,Feb '18,2018-02
+4354,2018,2,Feb,28/02/2018,Sool,Laas Caanood,Sool,Laas Caanood,Conflict/Insecurity,9000,Feb '18,2018-02
+4355,2018,2,Feb,28/02/2018,Sool,Laas Caanood,Sool,Laas Caanood,Drought related,12,Feb '18,2018-02
+4356,2018,2,Feb,28/02/2018,Sool,Laas Caanood,Sool,Taleex,Drought related,253,Feb '18,2018-02
+4357,2018,2,Feb,28/02/2018,Sool,Laas Caanood,Sool,Xudun,Drought related,63,Feb '18,2018-02
+4358,2018,2,Feb,28/02/2018,Sool,Taleex,Sool,Taleex,Drought related,8,Feb '18,2018-02
+4359,2018,2,Feb,28/02/2018,Togdheer,Burco,Sanaag,Ceel Afweyn,Conflict/Insecurity,5,Feb '18,2018-02
+4360,2018,2,Feb,28/02/2018,Togdheer,Burco,Sool,Caynabo,Conflict/Insecurity,41,Feb '18,2018-02
+4361,2018,2,Feb,28/02/2018,Togdheer,Burco,Sool,Caynabo,Drought related,6,Feb '18,2018-02
+4362,2018,2,Feb,28/02/2018,Togdheer,Buuhoodle,Sool,Taleex,Drought related,116,Feb '18,2018-02
+4363,2018,2,Feb,28/02/2018,Togdheer,Buuhoodle,Togdheer,Buuhoodle,Drought related,21,Feb '18,2018-02
+4364,2018,2,Feb,28/02/2018,Togdheer,Owdweyne,Togdheer,Owdweyne,Drought related,43,Feb '18,2018-02
+4365,2018,2,Feb,28/02/2018,Togdheer,Owdweyne,Togdheer,Owdweyne,Other,98,Feb '18,2018-02
+4366,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Berbera,Woqooyi Galbeed,Berbera,Drought related,28,Feb '18,2018-02
+4367,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Berbera,Woqooyi Galbeed,Berbera,Other,8,Feb '18,2018-02
+4368,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Berbera,Woqooyi Galbeed,Hargeysa,Drought related,8,Feb '18,2018-02
+4369,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Gebiley,Awdal,Borama,Drought related,7,Feb '18,2018-02
+4370,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Gebiley,Woqooyi Galbeed,Gebiley,Drought related,92,Feb '18,2018-02
+4371,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Bakool,Ceel Barde,Drought related,11,Feb '18,2018-02
+4372,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Bakool,Tayeeglow,Drought related,22,Feb '18,2018-02
+4373,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Bakool,Xudur,Drought related,6,Feb '18,2018-02
+4374,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Banadir,Banadir,Drought related,44,Feb '18,2018-02
+4375,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Bari,Bossaso,Drought related,5,Feb '18,2018-02
+4376,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Bari,Caluula,Drought related,5,Feb '18,2018-02
+4377,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Bari,Qandala,Drought related,4,Feb '18,2018-02
+4378,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Bari,Qardho,Drought related,5,Feb '18,2018-02
+4379,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Bay,Baidoa,Drought related,25,Feb '18,2018-02
+4380,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Bay,Buur Hakaba,Drought related,4,Feb '18,2018-02
+4381,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Bay,Diinsoor,Drought related,5,Feb '18,2018-02
+4382,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Bay,Qansax Dheere,Drought related,6,Feb '18,2018-02
+4383,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Galgaduud,Cabudwaaq,Drought related,6,Feb '18,2018-02
+4384,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Galgaduud,Cadaado,Drought related,6,Feb '18,2018-02
+4385,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Galgaduud,Ceel Buur,Drought related,5,Feb '18,2018-02
+4386,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Galgaduud,Dhuusamarreeb,Drought related,13,Feb '18,2018-02
+4387,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Hiraan,Belet Weyne,Drought related,7,Feb '18,2018-02
+4388,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Hiraan,Bulo Burto,Drought related,22,Feb '18,2018-02
+4389,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Hiraan,Jalalaqsi,Drought related,20,Feb '18,2018-02
+4390,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Lower Juba,Badhaadhe,Drought related,4,Feb '18,2018-02
+4391,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Lower Juba,Kismayo,Drought related,13,Feb '18,2018-02
+4392,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Lower Shabelle,Afgooye,Drought related,8,Feb '18,2018-02
+4393,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Lower Shabelle,Qoryooley,Drought related,7,Feb '18,2018-02
+4394,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Middle Juba,Jilib,Drought related,15,Feb '18,2018-02
+4395,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Middle Juba,Saakow,Drought related,8,Feb '18,2018-02
+4396,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Middle Shabelle,Adan Yabaal,Drought related,5,Feb '18,2018-02
+4397,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Middle Shabelle,Balcad,Drought related,39,Feb '18,2018-02
+4398,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Middle Shabelle,Jowhar,Drought related,6,Feb '18,2018-02
+4399,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Mudug,Gaalkacyo,Drought related,9,Feb '18,2018-02
+4400,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Mudug,Galdogob,Drought related,10,Feb '18,2018-02
+4401,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Mudug,Hobyo,Drought related,6,Feb '18,2018-02
+4402,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Mudug,Xarardheere,Drought related,7,Feb '18,2018-02
+4403,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Nugaal,Burtinle,Drought related,8,Feb '18,2018-02
+4404,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Nugaal,Garoowe,Drought related,10,Feb '18,2018-02
+4405,2018,2,Feb,28/02/2018,Woqooyi Galbeed,Hargeysa,Sanaag,Ceel Afweyn,Drought related,15,Feb '18,2018-02
