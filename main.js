@@ -15,27 +15,28 @@ var prevDistrictMap = dc.geoChoroplethChart("#dc-prev-district-map");
 var currDistrictMap = dc.geoChoroplethChart("#dc-curr-district-map");
 
 var displaceMonthChart = dc.barChart("#dc-month-chart");
+var displaceWeekChart = dc.compositeChart("#dc-week-chart");
 
 // Implement bookmarking chart filters status 
 // Serializing filters values in URL
 function getFiltersValues() {
 
-    var filters = [
-        { name: 'reason', value: displaceReasonChart.filters()},
-        // { name: 'month', value: displaceMonthChart.filters()},
-        { name: 'month', value: resetFilter(displaceMonthChart.filters())},
-        { name: 'pregion', value: prevRegionChart.filters()},
-        { name: 'pregionmap', value: prevRegionMap.filters()},
-        { name: 'pdistrictmap', value: prevDistrictMap.filters()},
-        { name: 'cregion', value: currRegionChart.filters()},
-        { name: 'cregionmap', value: currRegionMap.filters()},
-        { name: 'cdistrictmap', value: currDistrictMap.filters()}
-    ];
+  var filters = [
+    { name: 'reason', value: displaceReasonChart.filters() },
+    // { name: 'month', value: displaceMonthChart.filters()},
+    { name: 'month', value: resetFilter(displaceMonthChart.filters()) },
+    { name: 'pregion', value: prevRegionChart.filters() },
+    { name: 'pregionmap', value: prevRegionMap.filters() },
+    { name: 'pdistrictmap', value: prevDistrictMap.filters() },
+    { name: 'cregion', value: currRegionChart.filters() },
+    { name: 'cregionmap', value: currRegionMap.filters() },
+    { name: 'cdistrictmap', value: currDistrictMap.filters() }
+  ];
 
-    var recursiveEncoded = $.param( filters );
-    location.hash = recursiveEncoded;
+  var recursiveEncoded = $.param(filters);
+  location.hash = recursiveEncoded;
 
-}        
+}
 
 
 function initFilters() {
@@ -45,29 +46,29 @@ function initFilters() {
   var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\d{4}-\d{2}-\d{2},\d{4}-\d{2}-\d{2}]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
   // var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\S\s,\S\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
   var parsed = parseHash.exec(decodeURIComponent(location.hash));
-  
+
   function filter(chart, rank) {  // for instance chart = sector_chart and rank in URL hash = 1
     // sector chart
     if (parsed[rank] == "") {
       chart.filter(null);
     } else if (rank == 2) {
       var filterValues = parsed[rank].split(",");
-      
+
       var start = new Date(filterValues[0]);
       var end = new Date(filterValues[1]);
-      
-      // initialize date to midnight
-      start.setHours(0,0,0,0);
-      end.setHours(0,0,0,0);
 
-      var filter = dc.filters.RangedFilter(start, dayOffset(end,1));              
+      // initialize date to midnight
+      start.setHours(0, 0, 0, 0);
+      end.setHours(0, 0, 0, 0);
+
+      var filter = dc.filters.RangedFilter(start, dayOffset(end, 1));
       // var filter = dc.filters.RangedFilter(new Date(2017,2,1), new Date(2017,2,31));              
-      chart.filter(filter);            
+      chart.filter(filter);
     } else {
       var filterValues = parsed[rank].split(",");
-      for (var i = 0; i < filterValues.length; i++ ) {
-          chart.filter(filterValues[i]);                
-      }            
+      for (var i = 0; i < filterValues.length; i++) {
+        chart.filter(filterValues[i]);
+      }
     }
   }
 
@@ -92,26 +93,28 @@ var monthNameFormat = d3.time.format("%b %Y");
 var dateLongFormat = d3.time.format("%Y-%m-%d");
 
 var monthBarTip = d3.tip()
-      .attr('class', 'd3-month-tip')
-      .offset([-5, 0])
-      .html(function (d) { 
-        // var months = d.data.key.split('-');
-        // var date = new Date(months[0], months[1]-1, 1);
-        var date = d.data.key;
-        return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + monthNameFormat(date) + "</span> | <span class='dc-tooltip-value'>" + numberFormat(rndFig(d.y)) +"</span></div>";});
+  .attr('class', 'd3-month-tip')
+  .offset([-5, 0])
+  .html(function (d) {
+    // var months = d.data.key.split('-');
+    // var date = new Date(months[0], months[1]-1, 1);
+    var date = d.data.key;
+    return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + monthNameFormat(date) + "</span> | <span class='dc-tooltip-value'>" + numberFormat(rndFig(d.y)) + "</span></div>";
+  });
 
 var barTip = d3.tip()
-      .attr('class', 'd3-tip')
-      .offset([-5, 0])
-      .html(function (d) { return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + (d.key) + "</span> | <span class='dc-tooltip-value'>" + numberFormat(rndFig(d.value)) +"</span></div>";});
+  .attr('class', 'd3-tip')
+  .offset([-5, 0])
+  .html(function (d) { return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + (d.key) + "</span> | <span class='dc-tooltip-value'>" + numberFormat(rndFig(d.value)) + "</span></div>"; });
 
 var mapTip = d3.tip()
-      .attr('class', 'd3-map-tip')
-      .offset([-5, 0])
-      .html(function (d) { 
-        var t = d3.select(this).select('title').html(); 
-        var tA = t.split(':');
-        return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + (tA[0]) + "</span> | <span class='dc-tooltip-value'>" + (tA[1]) +"</span></div>";});
+  .attr('class', 'd3-map-tip')
+  .offset([-5, 0])
+  .html(function (d) {
+    var t = d3.select(this).select('title').html();
+    var tA = t.split(':');
+    return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + (tA[0]) + "</span> | <span class='dc-tooltip-value'>" + (tA[1]) + "</span></div>";
+  });
 
 // Correct end date due to month rounding off 
 // by adding or deducting a day
@@ -119,16 +122,16 @@ var dayOffset = d3.time.day.offset;
 
 var monthOffset = d3.time.month.offset;
 
-var resetFilter = function (filterValues){
+var resetFilter = function (filterValues) {
   if (filterValues.length == 0) return filterValues;
   var start = filterValues[0];
-  var end = dayOffset(filterValues[1],-1);
-  var filter = dc.filters.RangedFilter(dateLongFormat(start), dateLongFormat(end)); 
+  var end = dayOffset(filterValues[1], -1);
+  var filter = dc.filters.RangedFilter(dateLongFormat(start), dateLongFormat(end));
   return filter;
 }
 
 // Load data from CSV file
-d3.csv("data/PRMNDataset.csv", function (data){
+d3.csv("data/PRMNDataset.csv", function (data) {
   // Load data from JSON file
   d3.json("data/Som_Admbnda_Adm1_UNDP.json", function (regionJson) {
     d3.json("data/Som_Admbnda_Adm2_UNDP.json", function (districtJson) {
@@ -173,8 +176,8 @@ d3.csv("data/PRMNDataset.csv", function (data){
 
       // Get minimum and maximum date
 
-      var minDate = keys[0]; 
-      var maxDate =  dayOffset(monthOffset(keys[keys.length -1],1),-1);
+      var minDate = keys[0];
+      var maxDate = dayOffset(monthOffset(keys[keys.length - 1], 1), -1);
       displaceMonthChart.height(160)
         .width($('#leftPanel').width())
         .margins({ top: 5, right: 10, bottom: 60, left: 50 })
@@ -189,7 +192,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
         .brushOn(true)
         .centerBar(false)
         .gap(1)
-        .round(d3.time.month.round) 
+        .round(d3.time.month.round)
         .alwaysUseRounding(true)
         .title(function (d) {
           // return d3.format(",")(d.value);
@@ -210,42 +213,42 @@ d3.csv("data/PRMNDataset.csv", function (data){
         .renderHorizontalGridLines(true)
         .yAxis().ticks(5);
 
-      displaceMonthChart.filterHandler(function(dimension, filters) {
+      displaceMonthChart.filterHandler(function (dimension, filters) {
         var newFilters = filters;
         if (filters.length === 0) {
           // the empty case (no filtering)
           dimension.filter(null);
-          
-        }  else if (filters.length === 1 && !filters[0].isFiltered) {
+
+        } else if (filters.length === 1 && !filters[0].isFiltered) {
           // single value and not a function-based filter
           dimension.filterExact(null);
         } else if (filters.length === 1 && filters[0].filterType === 'RangedFilter') {
-            // single range-based filter
-            var start = filters[0][0];
-            var end = filters[0][1];
-            newFilters = dc.filters.RangedFilter(start,end);
-            dimension.filterRange(newFilters);
-        }  else {
-            // an array of values, or an array of filter objects
-            dimension.filterFunction(function (d) {
-              for (var i = 0; i < filters.length; i++) {
-                  var filter = filters[i];
-                  if (filter.isFiltered && filter.isFiltered(d)) {
-                      return true;
-                  } else if (filter <= d && filter >= d) {
-                      return true;
-                  }
+          // single range-based filter
+          var start = filters[0][0];
+          var end = filters[0][1];
+          newFilters = dc.filters.RangedFilter(start, end);
+          dimension.filterRange(newFilters);
+        } else {
+          // an array of values, or an array of filter objects
+          dimension.filterFunction(function (d) {
+            for (var i = 0; i < filters.length; i++) {
+              var filter = filters[i];
+              if (filter.isFiltered && filter.isFiltered(d)) {
+                return true;
+              } else if (filter <= d && filter >= d) {
+                return true;
               }
-                return false;
-            });
-        }         
+            }
+            return false;
+          });
+        }
         return newFilters;
-      });        
+      });
 
-      displaceMonthChart.filterPrinter(function(filters){
-        var s = "Period: ";  
+      displaceMonthChart.filterPrinter(function (filters) {
+        var s = "Period: ";
         var start = filters[0];
-        var end = dayOffset(filters[1],-1);    // correct month rounding off 
+        var end = dayOffset(filters[1], -1);    // correct month rounding off 
         s += dateFormat(start) + ' to ' + dateFormat(end);
         return s;
       });
@@ -275,7 +278,79 @@ d3.csv("data/PRMNDataset.csv", function (data){
       });
 
 
-      // create displacement reason dimension and group
+
+
+
+
+
+
+      // Configure weekly displacements parameters
+      
+      var displaceWeek = facts.dimension(function (d) {
+        return +d.weeknum;
+      });
+
+      var displaceWeekGroup1 = displaceWeek.group()
+        .reduceSum(function (d) {
+          return +d.yr2016;
+        });
+      var displaceWeekGroup2 = displaceWeek.group()
+        .reduceSum(function (d) {
+          return +d.yr2017;
+        });
+      var displaceWeekGroup3 = displaceWeek.group()
+        .reduceSum(function (d) {
+          return +d.yr2018;
+        });
+      var displaceWeekGroup4 = displaceWeek.group()
+        .reduceSum(function (d) {
+          return +d.yr2019;
+        });
+
+      displaceWeekChart
+        .height(140)
+        .width($('#leftPanel').width())     
+        .margins({ top: 10, right: 50, bottom: 20, left: 50 })  
+        .compose([
+          dc.lineChart(displaceWeekChart)
+          .dimension(displaceWeek)
+          .colors('#d9d9d9') // gray
+          .dashStyle([3,2])
+          .group(displaceWeekGroup1, "2016"),
+          dc.lineChart(displaceWeekChart)
+          .dimension(displaceWeek)
+          .colors('#addd8e')  // green
+          .dashStyle([3,2])
+          .group(displaceWeekGroup2, "2017"),
+          dc.lineChart(displaceWeekChart)
+          .dimension(displaceWeek)
+          .colors('#41b6c4') // purple
+          .dashStyle([3,2])
+          .group(displaceWeekGroup3, "2018"),
+          dc.lineChart(displaceWeekChart)
+          .dimension(displaceWeek)
+          .colors('#338EC9') // blue
+          .group(displaceWeekGroup4, "2019")
+          .useRightYAxis(true)
+          
+        ]) 
+        .brushOn(false) 
+        .mouseZoomable(true)
+        .renderHorizontalGridLines(true)
+        .x(d3.scale.linear().domain([0,53]))
+        .elasticY(true) 
+        .elasticX(false) 
+        .yAxis().ticks(6);
+
+        displaceWeekChart
+        .rightYAxis().ticks(6);
+
+
+
+
+
+
+        // create displacement reason dimension and group
       var displaceReason = facts.dimension(function (d) {
         return d.creason;
       });
@@ -458,30 +533,30 @@ d3.csv("data/PRMNDataset.csv", function (data){
       });
 
       prevDistrictMap
-      .width($('#leftPanel').width())
-      .height(380)
-      .transitionDuration(1000)
-      .dimension(prevDistrict)
-      .group(prevDistrictGroup)
-      .projection(d3.geo.mercator()
-        .scale(1490)
-        .translate([-1030, 320])
-      )
-      .keyAccessor(function (d) { return d.key; })
-      .valueAccessor(function (d) { return d.value; })
-      .on("filtered", getFiltersValues)
-      .controlsUseVisibility(true)
-      // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
-      .colors(d3.scale.quantize().range(['#F9B7BF', '#F592A0', '#F26E80', '#EF4A60', '#B33848']))
-      .colorDomain([0, prevDistrictGroup.top(1)[0].value / 2])
-      .colorCalculator(function (d) { return d ? prevDistrictMap.colors()(d) : '#ccc'; })
-      .overlayGeoJson(districtJson.features, "admin2Name", function (d) {
-        return d.properties.admin2Name;
-      })
-      .title(function (d) {
-        return d.key + ": " + d3.format(",")(rndFig(d.value));
-        // return '';
-      });
+        .width($('#leftPanel').width())
+        .height(380)
+        .transitionDuration(1000)
+        .dimension(prevDistrict)
+        .group(prevDistrictGroup)
+        .projection(d3.geo.mercator()
+          .scale(1490)
+          .translate([-1030, 320])
+        )
+        .keyAccessor(function (d) { return d.key; })
+        .valueAccessor(function (d) { return d.value; })
+        .on("filtered", getFiltersValues)
+        .controlsUseVisibility(true)
+        // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
+        .colors(d3.scale.quantize().range(['#F9B7BF', '#F592A0', '#F26E80', '#EF4A60', '#B33848']))
+        .colorDomain([0, prevDistrictGroup.top(1)[0].value / 2])
+        .colorCalculator(function (d) { return d ? prevDistrictMap.colors()(d) : '#ccc'; })
+        .overlayGeoJson(districtJson.features, "admin2Name", function (d) {
+          return d.properties.admin2Name;
+        })
+        .title(function (d) {
+          return d.key + ": " + d3.format(",")(rndFig(d.value));
+          // return '';
+        });
 
       prevDistrictMap.on('renderlet', function (chart) {
         chart.selectAll(".admin2Name").call(mapTip);
@@ -540,30 +615,30 @@ d3.csv("data/PRMNDataset.csv", function (data){
       });
 
       currDistrictMap
-      .width($('#leftPanel').width())
-      .height(380)
-      .transitionDuration(1000)
-      .dimension(currDistrict)
-      .group(currDistrictGroup)
-      .projection(d3.geo.mercator()
-        .scale(1490)
-        .translate([-1030, 320])
-      )
-      .keyAccessor(function (d) { return d.key; })
-      .valueAccessor(function (d) { return d.value; })
-      .on("filtered", getFiltersValues)
-      .controlsUseVisibility(true)
-      // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
-      .colors(d3.scale.quantize().range(['#99C7E4', '#66AAD7', '#338EC9', '#0072BC', '#00568D']))
-      .colorDomain([0, currDistrictGroup.top(1)[0].value / 2])
-      .colorCalculator(function (d) { return d ? currDistrictMap.colors()(d) : '#ccc'; })
-      .overlayGeoJson(districtJson.features, "admin2Name", function (d) {
-        return d.properties.admin2Name;
-      })
-      .title(function (d) {
-        return d.key + ": " + d3.format(",")(rndFig(d.value));
-        // return '';
-      });
+        .width($('#leftPanel').width())
+        .height(380)
+        .transitionDuration(1000)
+        .dimension(currDistrict)
+        .group(currDistrictGroup)
+        .projection(d3.geo.mercator()
+          .scale(1490)
+          .translate([-1030, 320])
+        )
+        .keyAccessor(function (d) { return d.key; })
+        .valueAccessor(function (d) { return d.value; })
+        .on("filtered", getFiltersValues)
+        .controlsUseVisibility(true)
+        // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
+        .colors(d3.scale.quantize().range(['#99C7E4', '#66AAD7', '#338EC9', '#0072BC', '#00568D']))
+        .colorDomain([0, currDistrictGroup.top(1)[0].value / 2])
+        .colorCalculator(function (d) { return d ? currDistrictMap.colors()(d) : '#ccc'; })
+        .overlayGeoJson(districtJson.features, "admin2Name", function (d) {
+          return d.properties.admin2Name;
+        })
+        .title(function (d) {
+          return d.key + ": " + d3.format(",")(rndFig(d.value));
+          // return '';
+        });
 
       currDistrictMap.on('renderlet', function (chart) {
         chart.selectAll(".admin2Name").call(mapTip);
@@ -572,7 +647,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
       });
 
 
-      
+
 
       // Render the charts
       dc.renderAll();
@@ -584,13 +659,13 @@ d3.csv("data/PRMNDataset.csv", function (data){
       setResizingSvg();
 
 
-  });
+    });
   });
 });
 
-function setResizingSvg(){
-      // set resizing viewbox
-    // 
+function setResizingSvg() {
+  // set resizing viewbox
+  // 
 }
 
 // Utilities
@@ -598,29 +673,29 @@ function setResizingSvg(){
 
 // Utility to round figures
 function rndFig(num) {
-    // Excel function:
-    //=IF(C9<100,C9,IF(AND(C9>=100,C9<1000),ROUND(C9,-1),IF(AND(C9>=1000,C9<10000),ROUND(C9,-2),IF(C9>=10000,ROUND(C9,-3),0))))
-    //  var num = 767; 
-    if (num == null){ // null == undefined
-      res = 0;
-    }    
-    else if (num<=4) {
-      res = num;
-    }
-    else if (num>4 && num<100) {
-      res = Math.round(num/10)*10;
-    } 
-    else if (num>=100 && num<1000) {
-      res = Math.round(num/100)*100;
-    } 
-    else if (num>=1000) {
-      res = Math.round(num/1000)*1000;
-    } 
-    // else if (num>=10000) {
-    //   res = Math.round(num/10000)*10000;
-    // }
+  // Excel function:
+  //=IF(C9<100,C9,IF(AND(C9>=100,C9<1000),ROUND(C9,-1),IF(AND(C9>=1000,C9<10000),ROUND(C9,-2),IF(C9>=10000,ROUND(C9,-3),0))))
+  //  var num = 767; 
+  if (num == null) { // null == undefined
+    res = 0;
+  }
+  else if (num <= 4) {
+    res = num;
+  }
+  else if (num > 4 && num < 100) {
+    res = Math.round(num / 10) * 10;
+  }
+  else if (num >= 100 && num < 1000) {
+    res = Math.round(num / 100) * 100;
+  }
+  else if (num >= 1000) {
+    res = Math.round(num / 1000) * 1000;
+  }
+  // else if (num>=10000) {
+  //   res = Math.round(num/10000)*10000;
+  // }
 
-    return res;
+  return res;
 }
 
 

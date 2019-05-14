@@ -118,7 +118,7 @@
         <!-- / displacement total -->
 
         <div class="twelve wide column">
-          <a class="ui primary button" style="float: right;" href="javascript:dc.filterAll(); dc.renderAll(); setResizingSvg();">
+          <a class="ui primary button" style="float: right;" href="javascript:dc.filterAll(); dc.renderAll(); setResizingSvg(); displaceWeekChart.focus(0,53);">
             Clear All Filters
           </a>
         </div>
@@ -146,6 +146,15 @@
             </h5>
           </div>
           <!-- / monthly displacement -->
+
+          <div class="row" id="dc-week-chart">
+            <h4 class="ui blue header">Weekly Displacements&nbsp;
+              <a class="reset ui primary button mini" href="javascript: displaceWeekChart.filterAll(); dc.redrawAll();" style="visibility: hidden">
+                Clear
+              </a>
+            </h4>
+          </div>
+          <!-- / weekly displacement -->
 
           <div class="row" id="dc-displace-reason-chart">
             <h4 class="ui blue header">Reasons for Displacement&nbsp;
