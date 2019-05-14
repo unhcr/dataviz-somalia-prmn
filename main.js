@@ -307,33 +307,59 @@ d3.csv("data/PRMNDataset.csv", function (data) {
           return +d.yr2019;
         });
 
+      // displaceWeekChart helper function
+      // function lineChartKey(d){
+      //   // split yrweeknum into two
+      //   var arr = d.key.split("-");
+      //   return parseInt(arr[1]);
+      // }
+
       displaceWeekChart
         .height(140)
         .width($('#leftPanel').width())     
-        .margins({ top: 10, right: 50, bottom: 20, left: 50 })  
+        .margins({ top: 10, right: 50, bottom: 20, left: 50 }) 
+        .title(function (d) {
+          return "Week " + d.key + ": "
+                   + d3.format(",")(d.value);
+        })
         .compose([
           dc.lineChart(displaceWeekChart)
-          .dimension(displaceWeek)
-          .colors('#d9d9d9') // gray
-          .dashStyle([3,2])
-          .group(displaceWeekGroup1, "2016"),
+            .dimension(displaceWeek)
+            // .keyAccessor(function(d){
+            //   return +d.key.substr(4,6);
+            // })
+            .colors('#bdbdbd') // gray
+            .dashStyle([3,2])
+            .group(displaceWeekGroup1, "2016"),
           dc.lineChart(displaceWeekChart)
-          .dimension(displaceWeek)
-          .colors('#addd8e')  // green
-          .dashStyle([3,2])
-          .group(displaceWeekGroup2, "2017"),
+            .dimension(displaceWeek)
+            // .keyAccessor(function(d){
+            //   return +d.key.substr(4,6);
+            // })
+            .colors('#addd8e')  // green
+            .dashStyle([3,2])
+            .group(displaceWeekGroup2, "2017"),
           dc.lineChart(displaceWeekChart)
-          .dimension(displaceWeek)
-          .colors('#41b6c4') // purple
-          .dashStyle([3,2])
-          .group(displaceWeekGroup3, "2018"),
+            .dimension(displaceWeek)
+            // .keyAccessor(function(d){
+            //   return +d.key.substr(4,6);
+            // })
+            .colors('#41b6c4') // purple
+            .dashStyle([3,2])
+            .group(displaceWeekGroup3, "2018"),
           dc.lineChart(displaceWeekChart)
-          .dimension(displaceWeek)
-          .colors('#338EC9') // blue
-          .group(displaceWeekGroup4, "2019")
-          .useRightYAxis(true)
+            .dimension(displaceWeek)
+            // .keyAccessor(function(d){
+            //   return +d.key.substr(4,6);
+            // })
+            .colors('#338EC9') // blue
+            .group(displaceWeekGroup4, "2019")
+
+            .useRightYAxis(true)
           
         ]) 
+        .legend(dc.legend().x(370).y(5).itemHeight(13).gap(5))
+        // .shareTitle(false)
         .brushOn(false) 
         .mouseZoomable(true)
         .renderHorizontalGridLines(true)
@@ -342,9 +368,8 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .elasticX(false) 
         .yAxis().ticks(6);
 
-        displaceWeekChart
+      displaceWeekChart
         .rightYAxis().ticks(6);
-
 
 
 
@@ -364,7 +389,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       displaceReasonChart
         .width($('#leftPanel').width())
         .height(130)
-        .margins({ top: 0, right: 10, bottom: 20, left: 10 })
+        .margins({ top: 0, right: 10, bottom: 50, left: 10 })
         .dimension(displaceReason)
         .group(displaceReasonGroup)
         .valueAccessor(function (d) {

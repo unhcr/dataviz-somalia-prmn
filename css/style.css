@@ -130,10 +130,10 @@ td.dc-table-column._2
    content: "\00a0 ";
 }
 
-g.x text {
+/* g.x text {
     opacity: 0;
     text-anchor: end;
-}
+} */
 
 .admin1Name path {
     stroke: #fff;

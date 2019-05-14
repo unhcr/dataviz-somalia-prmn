@@ -4226,55 +4226,55 @@ id,yr,monthnum,monthname,monthend,cregion,cdistrict,pregion,pdistrict,creason,tp
 4225,2017,6,Jun,30/06/2017,Woqooyi Galbeed,Hargeysa,Togdheer,Burco,Drought related,7,Jun '17,2017-06,201723,23,0,7,0,0
 4226,2017,6,Jun,30/06/2017,Woqooyi Galbeed,Hargeysa,Woqooyi Galbeed,Gebiley,Drought related,8,Jun '17,2017-06,201722,22,0,8,0,0
 4227,2017,6,Jun,30/06/2017,Woqooyi Galbeed,Hargeysa,Woqooyi Galbeed,Hargeysa,Drought related,8,Jun '17,2017-06,201723,23,0,8,0,0
-4228,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Baki,Other,7,Jul '17,2017-07,201728,28,0,7,0,0
-4229,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Baki,Other,14,Jul '17,2017-07,201729,29,0,14,0,0
-4230,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Baki,Other,7,Jul '17,2017-07,201730,30,0,7,0,0
-4231,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Baki,Other,7,Jul '17,2017-07,201726,26,0,7,0,0
-4232,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Baki,Other,7,Jul '17,2017-07,201727,27,0,7,0,0
-4233,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Borama,Drought related,8,Jul '17,2017-07,201728,28,0,8,0,0
-4234,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Borama,Drought related,6,Jul '17,2017-07,201729,29,0,6,0,0
-4235,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Borama,Drought related,360,Jul '17,2017-07,201730,30,0,360,0,0
-4236,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Borama,Drought related,6,Jul '17,2017-07,201727,27,0,6,0,0
-4237,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Borama,Other,38,Jul '17,2017-07,201728,28,0,38,0,0
-4238,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Borama,Other,24,Jul '17,2017-07,201729,29,0,24,0,0
-4239,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Borama,Other,39,Jul '17,2017-07,201730,30,0,39,0,0
-4240,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Borama,Other,7,Jul '17,2017-07,201727,27,0,7,0,0
-4241,2017,7,Jul,31/07/2017,Awdal,Borama,Banadir,Banadir,Drought related,28,Jul '17,2017-07,201728,28,0,28,0,0
-4242,2017,7,Jul,31/07/2017,Awdal,Borama,Banadir,Banadir,Drought related,31,Jul '17,2017-07,201729,29,0,31,0,0
-4243,2017,7,Jul,31/07/2017,Awdal,Borama,Banadir,Banadir,Drought related,43,Jul '17,2017-07,201730,30,0,43,0,0
-4244,2017,7,Jul,31/07/2017,Awdal,Borama,Banadir,Banadir,Drought related,29,Jul '17,2017-07,201727,27,0,29,0,0
+4228,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Baki,Other,7,Jul '17,2017-07,201726,26,0,7,0,0
+4229,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Baki,Other,7,Jul '17,2017-07,201727,27,0,7,0,0
+4230,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Baki,Other,7,Jul '17,2017-07,201728,28,0,7,0,0
+4231,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Baki,Other,14,Jul '17,2017-07,201729,29,0,14,0,0
+4232,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Baki,Other,7,Jul '17,2017-07,201730,30,0,7,0,0
+4233,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Borama,Drought related,6,Jul '17,2017-07,201727,27,0,6,0,0
+4234,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Borama,Drought related,8,Jul '17,2017-07,201728,28,0,8,0,0
+4235,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Borama,Drought related,6,Jul '17,2017-07,201729,29,0,6,0,0
+4236,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Borama,Drought related,360,Jul '17,2017-07,201730,30,0,360,0,0
+4237,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Borama,Other,7,Jul '17,2017-07,201727,27,0,7,0,0
+4238,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Borama,Other,38,Jul '17,2017-07,201728,28,0,38,0,0
+4239,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Borama,Other,24,Jul '17,2017-07,201729,29,0,24,0,0
+4240,2017,7,Jul,31/07/2017,Awdal,Borama,Awdal,Borama,Other,39,Jul '17,2017-07,201730,30,0,39,0,0
+4241,2017,7,Jul,31/07/2017,Awdal,Borama,Banadir,Banadir,Drought related,29,Jul '17,2017-07,201727,27,0,29,0,0
+4242,2017,7,Jul,31/07/2017,Awdal,Borama,Banadir,Banadir,Drought related,28,Jul '17,2017-07,201728,28,0,28,0,0
+4243,2017,7,Jul,31/07/2017,Awdal,Borama,Banadir,Banadir,Drought related,31,Jul '17,2017-07,201729,29,0,31,0,0
+4244,2017,7,Jul,31/07/2017,Awdal,Borama,Banadir,Banadir,Drought related,43,Jul '17,2017-07,201730,30,0,43,0,0
 4245,2017,7,Jul,31/07/2017,Awdal,Borama,Galgaduud,Cabudwaaq,Drought related,5,Jul '17,2017-07,201728,28,0,5,0,0
 4246,2017,7,Jul,31/07/2017,Awdal,Borama,Galgaduud,Dhuusamarreeb,Drought related,7,Jul '17,2017-07,201727,27,0,7,0,0
-4247,2017,7,Jul,31/07/2017,Awdal,Borama,Hiraan,Belet Weyne,Drought related,22,Jul '17,2017-07,201728,28,0,22,0,0
-4248,2017,7,Jul,31/07/2017,Awdal,Borama,Hiraan,Belet Weyne,Drought related,8,Jul '17,2017-07,201730,30,0,8,0,0
-4249,2017,7,Jul,31/07/2017,Awdal,Borama,Hiraan,Belet Weyne,Drought related,6,Jul '17,2017-07,201727,27,0,6,0,0
+4247,2017,7,Jul,31/07/2017,Awdal,Borama,Hiraan,Belet Weyne,Drought related,6,Jul '17,2017-07,201727,27,0,6,0,0
+4248,2017,7,Jul,31/07/2017,Awdal,Borama,Hiraan,Belet Weyne,Drought related,22,Jul '17,2017-07,201728,28,0,22,0,0
+4249,2017,7,Jul,31/07/2017,Awdal,Borama,Hiraan,Belet Weyne,Drought related,8,Jul '17,2017-07,201730,30,0,8,0,0
 4250,2017,7,Jul,31/07/2017,Awdal,Borama,Hiraan,Bulo Burto,Drought related,7,Jul '17,2017-07,201730,30,0,7,0,0
 4251,2017,7,Jul,31/07/2017,Awdal,Borama,Middle Juba,Jilib,Drought related,6,Jul '17,2017-07,201728,28,0,6,0,0
 4252,2017,7,Jul,31/07/2017,Awdal,Borama,Middle Shabelle,Jowhar,Drought related,8,Jul '17,2017-07,201730,30,0,8,0,0
 4253,2017,7,Jul,31/07/2017,Awdal,Borama,Mudug,Gaalkacyo,Drought related,6,Jul '17,2017-07,201728,28,0,6,0,0
 4254,2017,7,Jul,31/07/2017,Awdal,Borama,Mudug,Gaalkacyo,Drought related,8,Jul '17,2017-07,201729,29,0,8,0,0
 4255,2017,7,Jul,31/07/2017,Awdal,Borama,Nugaal,Burtinle,Drought related,7,Jul '17,2017-07,201730,30,0,7,0,0
-4256,2017,7,Jul,31/07/2017,Awdal,Borama,Nugaal,Garoowe,Drought related,8,Jul '17,2017-07,201729,29,0,8,0,0
-4257,2017,7,Jul,31/07/2017,Awdal,Borama,Nugaal,Garoowe,Drought related,4,Jul '17,2017-07,201727,27,0,4,0,0
+4256,2017,7,Jul,31/07/2017,Awdal,Borama,Nugaal,Garoowe,Drought related,4,Jul '17,2017-07,201727,27,0,4,0,0
+4257,2017,7,Jul,31/07/2017,Awdal,Borama,Nugaal,Garoowe,Drought related,8,Jul '17,2017-07,201729,29,0,8,0,0
 4258,2017,7,Jul,31/07/2017,Awdal,Lughaye,Awdal,Baki,Other,7,Jul '17,2017-07,201727,27,0,7,0,0
-4259,2017,7,Jul,31/07/2017,Awdal,Lughaye,Awdal,Borama,Other,263,Jul '17,2017-07,201728,28,0,263,0,0
-4260,2017,7,Jul,31/07/2017,Awdal,Lughaye,Awdal,Borama,Other,7,Jul '17,2017-07,201729,29,0,7,0,0
-4261,2017,7,Jul,31/07/2017,Awdal,Lughaye,Awdal,Borama,Other,137,Jul '17,2017-07,201727,27,0,137,0,0
-4262,2017,7,Jul,31/07/2017,Awdal,Zeylac,Awdal,Baki,Other,16,Jul '17,2017-07,201728,28,0,16,0,0
-4263,2017,7,Jul,31/07/2017,Awdal,Zeylac,Awdal,Baki,Other,7,Jul '17,2017-07,201729,29,0,7,0,0
-4264,2017,7,Jul,31/07/2017,Awdal,Zeylac,Awdal,Baki,Other,6,Jul '17,2017-07,201727,27,0,6,0,0
+4259,2017,7,Jul,31/07/2017,Awdal,Lughaye,Awdal,Borama,Other,137,Jul '17,2017-07,201727,27,0,137,0,0
+4260,2017,7,Jul,31/07/2017,Awdal,Lughaye,Awdal,Borama,Other,263,Jul '17,2017-07,201728,28,0,263,0,0
+4261,2017,7,Jul,31/07/2017,Awdal,Lughaye,Awdal,Borama,Other,7,Jul '17,2017-07,201729,29,0,7,0,0
+4262,2017,7,Jul,31/07/2017,Awdal,Zeylac,Awdal,Baki,Other,6,Jul '17,2017-07,201727,27,0,6,0,0
+4263,2017,7,Jul,31/07/2017,Awdal,Zeylac,Awdal,Baki,Other,16,Jul '17,2017-07,201728,28,0,16,0,0
+4264,2017,7,Jul,31/07/2017,Awdal,Zeylac,Awdal,Baki,Other,7,Jul '17,2017-07,201729,29,0,7,0,0
 4265,2017,7,Jul,31/07/2017,Awdal,Zeylac,Awdal,Lughaye,Other,22,Jul '17,2017-07,201727,27,0,22,0,0
-4266,2017,7,Jul,31/07/2017,Bakool,Rab Dhuure,Bakool,Rab Dhuure,Drought related,200,Jul '17,2017-07,201728,28,0,200,0,0
-4267,2017,7,Jul,31/07/2017,Bakool,Rab Dhuure,Bakool,Rab Dhuure,Drought related,900,Jul '17,2017-07,201729,29,0,900,0,0
-4268,2017,7,Jul,31/07/2017,Bakool,Rab Dhuure,Bakool,Rab Dhuure,Drought related,1700,Jul '17,2017-07,201730,30,0,1700,0,0
-4269,2017,7,Jul,31/07/2017,Bakool,Rab Dhuure,Bakool,Rab Dhuure,Drought related,500,Jul '17,2017-07,201727,27,0,500,0,0
-4270,2017,7,Jul,31/07/2017,Bakool,Tayeeglow,Bakool,Tayeeglow,Drought related,1000,Jul '17,2017-07,201728,28,0,1000,0,0
-4271,2017,7,Jul,31/07/2017,Bakool,Tayeeglow,Bakool,Tayeeglow,Drought related,1000,Jul '17,2017-07,201729,29,0,1000,0,0
-4272,2017,7,Jul,31/07/2017,Bakool,Tayeeglow,Bakool,Tayeeglow,Drought related,1500,Jul '17,2017-07,201730,30,0,1500,0,0
-4273,2017,7,Jul,31/07/2017,Bakool,Tayeeglow,Bakool,Tayeeglow,Drought related,300,Jul '17,2017-07,201727,27,0,300,0,0
-4274,2017,7,Jul,31/07/2017,Bakool,Waajid,Bakool,Rab Dhuure,Drought related,100,Jul '17,2017-07,201729,29,0,100,0,0
-4275,2017,7,Jul,31/07/2017,Bakool,Waajid,Bakool,Rab Dhuure,Drought related,300,Jul '17,2017-07,201730,30,0,300,0,0
-4276,2017,7,Jul,31/07/2017,Bakool,Waajid,Bakool,Rab Dhuure,Drought related,100,Jul '17,2017-07,201727,27,0,100,0,0
+4266,2017,7,Jul,31/07/2017,Bakool,Rab Dhuure,Bakool,Rab Dhuure,Drought related,500,Jul '17,2017-07,201727,27,0,500,0,0
+4267,2017,7,Jul,31/07/2017,Bakool,Rab Dhuure,Bakool,Rab Dhuure,Drought related,200,Jul '17,2017-07,201728,28,0,200,0,0
+4268,2017,7,Jul,31/07/2017,Bakool,Rab Dhuure,Bakool,Rab Dhuure,Drought related,900,Jul '17,2017-07,201729,29,0,900,0,0
+4269,2017,7,Jul,31/07/2017,Bakool,Rab Dhuure,Bakool,Rab Dhuure,Drought related,1700,Jul '17,2017-07,201730,30,0,1700,0,0
+4270,2017,7,Jul,31/07/2017,Bakool,Tayeeglow,Bakool,Tayeeglow,Drought related,300,Jul '17,2017-07,201727,27,0,300,0,0
+4271,2017,7,Jul,31/07/2017,Bakool,Tayeeglow,Bakool,Tayeeglow,Drought related,1000,Jul '17,2017-07,201728,28,0,1000,0,0
+4272,2017,7,Jul,31/07/2017,Bakool,Tayeeglow,Bakool,Tayeeglow,Drought related,1000,Jul '17,2017-07,201729,29,0,1000,0,0
+4273,2017,7,Jul,31/07/2017,Bakool,Tayeeglow,Bakool,Tayeeglow,Drought related,1500,Jul '17,2017-07,201730,30,0,1500,0,0
+4274,2017,7,Jul,31/07/2017,Bakool,Waajid,Bakool,Rab Dhuure,Drought related,100,Jul '17,2017-07,201727,27,0,100,0,0
+4275,2017,7,Jul,31/07/2017,Bakool,Waajid,Bakool,Rab Dhuure,Drought related,100,Jul '17,2017-07,201729,29,0,100,0,0
+4276,2017,7,Jul,31/07/2017,Bakool,Waajid,Bakool,Rab Dhuure,Drought related,300,Jul '17,2017-07,201730,30,0,300,0,0
 4277,2017,7,Jul,31/07/2017,Bakool,Waajid,Bakool,Tayeeglow,Drought related,100,Jul '17,2017-07,201726,26,0,100,0,0
 4278,2017,7,Jul,31/07/2017,Bakool,Waajid,Bakool,Waajid,Drought related,1000,Jul '17,2017-07,201729,29,0,1000,0,0
 4279,2017,7,Jul,31/07/2017,Bakool,Waajid,Bakool,Waajid,Drought related,1500,Jul '17,2017-07,201730,30,0,1500,0,0
@@ -4286,21 +4286,21 @@ id,yr,monthnum,monthname,monthend,cregion,cdistrict,pregion,pdistrict,creason,tp
 4285,2017,7,Jul,31/07/2017,Banadir,Banadir,Lower Shabelle,Kurtunwaarey,Conflict/Insecurity,1651,Jul '17,2017-07,201730,30,0,1651,0,0
 4286,2017,7,Jul,31/07/2017,Banadir,Banadir,Lower Shabelle,Kurtunwaarey,Drought related,171,Jul '17,2017-07,201730,30,0,171,0,0
 4287,2017,7,Jul,31/07/2017,Banadir,Banadir,Lower Shabelle,Kurtunwaarey,Drought related,12,Jul '17,2017-07,201731,31,0,12,0,0
-4288,2017,7,Jul,31/07/2017,Banadir,Banadir,Lower Shabelle,Marka,Conflict/Insecurity,3412,Jul '17,2017-07,201728,28,0,3412,0,0
-4289,2017,7,Jul,31/07/2017,Banadir,Banadir,Lower Shabelle,Marka,Conflict/Insecurity,1636,Jul '17,2017-07,201729,29,0,1636,0,0
-4290,2017,7,Jul,31/07/2017,Banadir,Banadir,Lower Shabelle,Marka,Conflict/Insecurity,2607,Jul '17,2017-07,201730,30,0,2607,0,0
-4291,2017,7,Jul,31/07/2017,Banadir,Banadir,Lower Shabelle,Marka,Conflict/Insecurity,7,Jul '17,2017-07,201731,31,0,7,0,0
-4292,2017,7,Jul,31/07/2017,Banadir,Banadir,Lower Shabelle,Marka,Conflict/Insecurity,500,Jul '17,2017-07,201726,26,0,500,0,0
-4293,2017,7,Jul,31/07/2017,Banadir,Banadir,Lower Shabelle,Marka,Conflict/Insecurity,11115,Jul '17,2017-07,201727,27,0,11115,0,0
+4288,2017,7,Jul,31/07/2017,Banadir,Banadir,Lower Shabelle,Marka,Conflict/Insecurity,500,Jul '17,2017-07,201726,26,0,500,0,0
+4289,2017,7,Jul,31/07/2017,Banadir,Banadir,Lower Shabelle,Marka,Conflict/Insecurity,11115,Jul '17,2017-07,201727,27,0,11115,0,0
+4290,2017,7,Jul,31/07/2017,Banadir,Banadir,Lower Shabelle,Marka,Conflict/Insecurity,3412,Jul '17,2017-07,201728,28,0,3412,0,0
+4291,2017,7,Jul,31/07/2017,Banadir,Banadir,Lower Shabelle,Marka,Conflict/Insecurity,1636,Jul '17,2017-07,201729,29,0,1636,0,0
+4292,2017,7,Jul,31/07/2017,Banadir,Banadir,Lower Shabelle,Marka,Conflict/Insecurity,2607,Jul '17,2017-07,201730,30,0,2607,0,0
+4293,2017,7,Jul,31/07/2017,Banadir,Banadir,Lower Shabelle,Marka,Conflict/Insecurity,7,Jul '17,2017-07,201731,31,0,7,0,0
 4294,2017,7,Jul,31/07/2017,Banadir,Banadir,Lower Shabelle,Qoryooley,Conflict/Insecurity,144,Jul '17,2017-07,201729,29,0,144,0,0
 4295,2017,7,Jul,31/07/2017,Banadir,Banadir,Lower Shabelle,Qoryooley,Conflict/Insecurity,510,Jul '17,2017-07,201730,30,0,510,0,0
 4296,2017,7,Jul,31/07/2017,Banadir,Banadir,Lower Shabelle,Sablaale,Drought related,676,Jul '17,2017-07,201728,28,0,676,0,0
 4297,2017,7,Jul,31/07/2017,Banadir,Banadir,Lower Shabelle,Wanla Weyn,Conflict/Insecurity,216,Jul '17,2017-07,201728,28,0,216,0,0
-4298,2017,7,Jul,31/07/2017,Banadir,Banadir,Mudug,Gaalkacyo,Drought related,11,Jul '17,2017-07,201729,29,0,11,0,0
-4299,2017,7,Jul,31/07/2017,Banadir,Banadir,Mudug,Gaalkacyo,Drought related,18,Jul '17,2017-07,201727,27,0,18,0,0
+4298,2017,7,Jul,31/07/2017,Banadir,Banadir,Mudug,Gaalkacyo,Drought related,18,Jul '17,2017-07,201727,27,0,18,0,0
+4299,2017,7,Jul,31/07/2017,Banadir,Banadir,Mudug,Gaalkacyo,Drought related,11,Jul '17,2017-07,201729,29,0,11,0,0
 4300,2017,7,Jul,31/07/2017,Banadir,Banadir,Mudug,Gaalkacyo,Other,34,Jul '17,2017-07,201727,27,0,34,0,0
-4301,2017,7,Jul,31/07/2017,Banadir,Banadir,Mudug,Xarardheere,Conflict/Insecurity,40,Jul '17,2017-07,201728,28,0,40,0,0
-4302,2017,7,Jul,31/07/2017,Banadir,Banadir,Mudug,Xarardheere,Conflict/Insecurity,8,Jul '17,2017-07,201727,27,0,8,0,0
+4301,2017,7,Jul,31/07/2017,Banadir,Banadir,Mudug,Xarardheere,Conflict/Insecurity,8,Jul '17,2017-07,201727,27,0,8,0,0
+4302,2017,7,Jul,31/07/2017,Banadir,Banadir,Mudug,Xarardheere,Conflict/Insecurity,40,Jul '17,2017-07,201728,28,0,40,0,0
 4303,2017,7,Jul,31/07/2017,Banadir,Banadir,Mudug,Xarardheere,Drought related,23,Jul '17,2017-07,201729,29,0,23,0,0
 4304,2017,7,Jul,31/07/2017,Bari,Bossaso,Banadir,Banadir,Conflict/Insecurity,15,Jul '17,2017-07,201728,28,0,15,0,0
 4305,2017,7,Jul,31/07/2017,Bari,Bossaso,Banadir,Banadir,Drought related,11,Jul '17,2017-07,201728,28,0,11,0,0
@@ -4312,17 +4312,17 @@ id,yr,monthnum,monthname,monthend,cregion,cdistrict,pregion,pdistrict,creason,tp
 4311,2017,7,Jul,31/07/2017,Bari,Qardho,Bari,Bandarbeyla,Drought related,7,Jul '17,2017-07,201728,28,0,7,0,0
 4312,2017,7,Jul,31/07/2017,Bari,Qardho,Bari,Bandarbeyla,Drought related,4,Jul '17,2017-07,201729,29,0,4,0,0
 4313,2017,7,Jul,31/07/2017,Bari,Qardho,Bari,Bandarbeyla,Drought related,15,Jul '17,2017-07,201730,30,0,15,0,0
-4314,2017,7,Jul,31/07/2017,Bari,Qardho,Bari,Bossaso,Drought related,6,Jul '17,2017-07,201730,30,0,6,0,0
-4315,2017,7,Jul,31/07/2017,Bari,Qardho,Bari,Bossaso,Drought related,3,Jul '17,2017-07,201726,26,0,3,0,0
-4316,2017,7,Jul,31/07/2017,Bari,Qardho,Bari,Bossaso,Drought related,5,Jul '17,2017-07,201727,27,0,5,0,0
-4317,2017,7,Jul,31/07/2017,Bari,Qardho,Bari,Qardho,Drought related,29,Jul '17,2017-07,201728,28,0,29,0,0
-4318,2017,7,Jul,31/07/2017,Bari,Qardho,Bari,Qardho,Drought related,90,Jul '17,2017-07,201729,29,0,90,0,0
-4319,2017,7,Jul,31/07/2017,Bari,Qardho,Bari,Qardho,Drought related,21,Jul '17,2017-07,201730,30,0,21,0,0
-4320,2017,7,Jul,31/07/2017,Bari,Qardho,Bari,Qardho,Drought related,5,Jul '17,2017-07,201726,26,0,5,0,0
-4321,2017,7,Jul,31/07/2017,Bari,Qardho,Bari,Qardho,Drought related,43,Jul '17,2017-07,201727,27,0,43,0,0
+4314,2017,7,Jul,31/07/2017,Bari,Qardho,Bari,Bossaso,Drought related,3,Jul '17,2017-07,201726,26,0,3,0,0
+4315,2017,7,Jul,31/07/2017,Bari,Qardho,Bari,Bossaso,Drought related,5,Jul '17,2017-07,201727,27,0,5,0,0
+4316,2017,7,Jul,31/07/2017,Bari,Qardho,Bari,Bossaso,Drought related,6,Jul '17,2017-07,201730,30,0,6,0,0
+4317,2017,7,Jul,31/07/2017,Bari,Qardho,Bari,Qardho,Drought related,5,Jul '17,2017-07,201726,26,0,5,0,0
+4318,2017,7,Jul,31/07/2017,Bari,Qardho,Bari,Qardho,Drought related,43,Jul '17,2017-07,201727,27,0,43,0,0
+4319,2017,7,Jul,31/07/2017,Bari,Qardho,Bari,Qardho,Drought related,29,Jul '17,2017-07,201728,28,0,29,0,0
+4320,2017,7,Jul,31/07/2017,Bari,Qardho,Bari,Qardho,Drought related,90,Jul '17,2017-07,201729,29,0,90,0,0
+4321,2017,7,Jul,31/07/2017,Bari,Qardho,Bari,Qardho,Drought related,21,Jul '17,2017-07,201730,30,0,21,0,0
 4322,2017,7,Jul,31/07/2017,Bari,Qardho,Bari,Qardho,Other,8,Jul '17,2017-07,201728,28,0,8,0,0
-4323,2017,7,Jul,31/07/2017,Bari,Qardho,Bay,Baidoa,Conflict/Insecurity,6,Jul '17,2017-07,201730,30,0,6,0,0
-4324,2017,7,Jul,31/07/2017,Bari,Qardho,Bay,Baidoa,Conflict/Insecurity,3,Jul '17,2017-07,201727,27,0,3,0,0
+4323,2017,7,Jul,31/07/2017,Bari,Qardho,Bay,Baidoa,Conflict/Insecurity,3,Jul '17,2017-07,201727,27,0,3,0,0
+4324,2017,7,Jul,31/07/2017,Bari,Qardho,Bay,Baidoa,Conflict/Insecurity,6,Jul '17,2017-07,201730,30,0,6,0,0
 4325,2017,7,Jul,31/07/2017,Bari,Qardho,Gedo,Garbahaarey,Drought related,4,Jul '17,2017-07,201727,27,0,4,0,0
 4326,2017,7,Jul,31/07/2017,Bari,Qardho,Lower Juba,Kismayo,Conflict/Insecurity,5,Jul '17,2017-07,201730,30,0,5,0,0
 4327,2017,7,Jul,31/07/2017,Bari,Qardho,Lower Shabelle,Qoryooley,Conflict/Insecurity,6,Jul '17,2017-07,201730,30,0,6,0,0
@@ -4330,34 +4330,34 @@ id,yr,monthnum,monthname,monthend,cregion,cdistrict,pregion,pdistrict,creason,tp
 4329,2017,7,Jul,31/07/2017,Bari,Qardho,Mudug,Gaalkacyo,Drought related,7,Jul '17,2017-07,201729,29,0,7,0,0
 4330,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Ceel Barde,Drought related,48,Jul '17,2017-07,201729,29,0,48,0,0
 4331,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Ceel Barde,Drought related,234,Jul '17,2017-07,201730,30,0,234,0,0
-4332,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Rab Dhuure,Drought related,7,Jul '17,2017-07,201728,28,0,7,0,0
-4333,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Rab Dhuure,Drought related,312,Jul '17,2017-07,201729,29,0,312,0,0
-4334,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Rab Dhuure,Drought related,104,Jul '17,2017-07,201730,30,0,104,0,0
-4335,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Rab Dhuure,Drought related,215,Jul '17,2017-07,201727,27,0,215,0,0
+4332,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Rab Dhuure,Drought related,215,Jul '17,2017-07,201727,27,0,215,0,0
+4333,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Rab Dhuure,Drought related,7,Jul '17,2017-07,201728,28,0,7,0,0
+4334,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Rab Dhuure,Drought related,312,Jul '17,2017-07,201729,29,0,312,0,0
+4335,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Rab Dhuure,Drought related,104,Jul '17,2017-07,201730,30,0,104,0,0
 4336,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Tayeeglow,Drought related,675,Jul '17,2017-07,201730,30,0,675,0,0
-4337,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Waajid,Drought related,200,Jul '17,2017-07,201728,28,0,200,0,0
-4338,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Waajid,Drought related,565,Jul '17,2017-07,201729,29,0,565,0,0
-4339,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Waajid,Drought related,500,Jul '17,2017-07,201726,26,0,500,0,0
-4340,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Waajid,Drought related,440,Jul '17,2017-07,201727,27,0,440,0,0
-4341,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Xudur,Drought related,600,Jul '17,2017-07,201730,30,0,600,0,0
-4342,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Xudur,Drought related,5,Jul '17,2017-07,201731,31,0,5,0,0
-4343,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Xudur,Drought related,550,Jul '17,2017-07,201727,27,0,550,0,0
-4344,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Baidoa,Drought related,5513,Jul '17,2017-07,201728,28,0,5513,0,0
-4345,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Baidoa,Drought related,3638,Jul '17,2017-07,201729,29,0,3638,0,0
-4346,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Baidoa,Drought related,2321,Jul '17,2017-07,201730,30,0,2321,0,0
-4347,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Baidoa,Drought related,914,Jul '17,2017-07,201731,31,0,914,0,0
-4348,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Baidoa,Drought related,650,Jul '17,2017-07,201726,26,0,650,0,0
-4349,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Baidoa,Drought related,4430,Jul '17,2017-07,201727,27,0,4430,0,0
-4350,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Diinsoor,Drought related,622,Jul '17,2017-07,201728,28,0,622,0,0
-4351,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Diinsoor,Drought related,538,Jul '17,2017-07,201729,29,0,538,0,0
-4352,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Diinsoor,Drought related,535,Jul '17,2017-07,201730,30,0,535,0,0
-4353,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Diinsoor,Drought related,1675,Jul '17,2017-07,201727,27,0,1675,0,0
-4354,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Qansax Dheere,Drought related,314,Jul '17,2017-07,201728,28,0,314,0,0
-4355,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Qansax Dheere,Drought related,1107,Jul '17,2017-07,201729,29,0,1107,0,0
-4356,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Qansax Dheere,Drought related,389,Jul '17,2017-07,201730,30,0,389,0,0
-4357,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Qansax Dheere,Drought related,768,Jul '17,2017-07,201727,27,0,768,0,0
-4358,2017,7,Jul,31/07/2017,Galgaduud,Cabudwaaq,Galgaduud,Cabudwaaq,Conflict/Insecurity,1650,Jul '17,2017-07,201728,28,0,1650,0,0
-4359,2017,7,Jul,31/07/2017,Galgaduud,Cabudwaaq,Galgaduud,Cabudwaaq,Conflict/Insecurity,7170,Jul '17,2017-07,201727,27,0,7170,0,0
+4337,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Waajid,Drought related,500,Jul '17,2017-07,201726,26,0,500,0,0
+4338,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Waajid,Drought related,440,Jul '17,2017-07,201727,27,0,440,0,0
+4339,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Waajid,Drought related,200,Jul '17,2017-07,201728,28,0,200,0,0
+4340,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Waajid,Drought related,565,Jul '17,2017-07,201729,29,0,565,0,0
+4341,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Xudur,Drought related,550,Jul '17,2017-07,201727,27,0,550,0,0
+4342,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Xudur,Drought related,600,Jul '17,2017-07,201730,30,0,600,0,0
+4343,2017,7,Jul,31/07/2017,Bay,Baidoa,Bakool,Xudur,Drought related,5,Jul '17,2017-07,201731,31,0,5,0,0
+4344,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Baidoa,Drought related,650,Jul '17,2017-07,201726,26,0,650,0,0
+4345,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Baidoa,Drought related,4430,Jul '17,2017-07,201727,27,0,4430,0,0
+4346,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Baidoa,Drought related,5513,Jul '17,2017-07,201728,28,0,5513,0,0
+4347,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Baidoa,Drought related,3638,Jul '17,2017-07,201729,29,0,3638,0,0
+4348,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Baidoa,Drought related,2321,Jul '17,2017-07,201730,30,0,2321,0,0
+4349,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Baidoa,Drought related,914,Jul '17,2017-07,201731,31,0,914,0,0
+4350,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Diinsoor,Drought related,1675,Jul '17,2017-07,201727,27,0,1675,0,0
+4351,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Diinsoor,Drought related,622,Jul '17,2017-07,201728,28,0,622,0,0
+4352,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Diinsoor,Drought related,538,Jul '17,2017-07,201729,29,0,538,0,0
+4353,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Diinsoor,Drought related,535,Jul '17,2017-07,201730,30,0,535,0,0
+4354,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Qansax Dheere,Drought related,768,Jul '17,2017-07,201727,27,0,768,0,0
+4355,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Qansax Dheere,Drought related,314,Jul '17,2017-07,201728,28,0,314,0,0
+4356,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Qansax Dheere,Drought related,1107,Jul '17,2017-07,201729,29,0,1107,0,0
+4357,2017,7,Jul,31/07/2017,Bay,Baidoa,Bay,Qansax Dheere,Drought related,389,Jul '17,2017-07,201730,30,0,389,0,0
+4358,2017,7,Jul,31/07/2017,Galgaduud,Cabudwaaq,Galgaduud,Cabudwaaq,Conflict/Insecurity,7170,Jul '17,2017-07,201727,27,0,7170,0,0
+4359,2017,7,Jul,31/07/2017,Galgaduud,Cabudwaaq,Galgaduud,Cabudwaaq,Conflict/Insecurity,1650,Jul '17,2017-07,201728,28,0,1650,0,0
 4360,2017,7,Jul,31/07/2017,Galgaduud,Cadaado,Galgaduud,Cabudwaaq,Conflict/Insecurity,1080,Jul '17,2017-07,201728,28,0,1080,0,0
 4361,2017,7,Jul,31/07/2017,Galgaduud,Dhuusamarreeb,Galgaduud,Cabudwaaq,Conflict/Insecurity,3900,Jul '17,2017-07,201728,28,0,3900,0,0
 4362,2017,7,Jul,31/07/2017,Gedo,Baardheere,Bay,Diinsoor,Drought related,102,Jul '17,2017-07,201729,29,0,102,0,0
@@ -4372,9 +4372,9 @@ id,yr,monthnum,monthname,monthend,cregion,cdistrict,pregion,pdistrict,creason,tp
 4371,2017,7,Jul,31/07/2017,Gedo,Doolow,Bay,Qansax Dheere,Drought related,24,Jul '17,2017-07,201728,28,0,24,0,0
 4372,2017,7,Jul,31/07/2017,Gedo,Doolow,Bay,Qansax Dheere,Drought related,21,Jul '17,2017-07,201729,29,0,21,0,0
 4373,2017,7,Jul,31/07/2017,Gedo,Doolow,Bay,Qansax Dheere,Drought related,26,Jul '17,2017-07,201730,30,0,26,0,0
-4374,2017,7,Jul,31/07/2017,Gedo,Doolow,Gedo,Luuq,Drought related,40,Jul '17,2017-07,201728,28,0,40,0,0
-4375,2017,7,Jul,31/07/2017,Gedo,Doolow,Gedo,Luuq,Drought related,22,Jul '17,2017-07,201729,29,0,22,0,0
-4376,2017,7,Jul,31/07/2017,Gedo,Doolow,Gedo,Luuq,Drought related,20,Jul '17,2017-07,201727,27,0,20,0,0
+4374,2017,7,Jul,31/07/2017,Gedo,Doolow,Gedo,Luuq,Drought related,20,Jul '17,2017-07,201727,27,0,20,0,0
+4375,2017,7,Jul,31/07/2017,Gedo,Doolow,Gedo,Luuq,Drought related,40,Jul '17,2017-07,201728,28,0,40,0,0
+4376,2017,7,Jul,31/07/2017,Gedo,Doolow,Gedo,Luuq,Drought related,22,Jul '17,2017-07,201729,29,0,22,0,0
 4377,2017,7,Jul,31/07/2017,Gedo,Garbahaarey,Gedo,Garbahaarey,Conflict/Insecurity,132,Jul '17,2017-07,201729,29,0,132,0,0
 4378,2017,7,Jul,31/07/2017,Gedo,Garbahaarey,Gedo,Garbahaarey,Conflict/Insecurity,210,Jul '17,2017-07,201730,30,0,210,0,0
 4379,2017,7,Jul,31/07/2017,Gedo,Luuq,Bay,Diinsoor,Drought related,7,Jul '17,2017-07,201728,28,0,7,0,0
@@ -4384,8 +4384,8 @@ id,yr,monthnum,monthname,monthend,cregion,cdistrict,pregion,pdistrict,creason,tp
 4383,2017,7,Jul,31/07/2017,Gedo,Luuq,Gedo,Luuq,Drought related,120,Jul '17,2017-07,201730,30,0,120,0,0
 4384,2017,7,Jul,31/07/2017,Hiraan,Belet Weyne,Bakool,Tayeeglow,Drought related,27,Jul '17,2017-07,201730,30,0,27,0,0
 4385,2017,7,Jul,31/07/2017,Lower Juba,Afmadow,Bay,Baidoa,Drought related,6,Jul '17,2017-07,201728,28,0,6,0,0
-4386,2017,7,Jul,31/07/2017,Lower Juba,Afmadow,Bay,Qansax Dheere,Drought related,20,Jul '17,2017-07,201728,28,0,20,0,0
-4387,2017,7,Jul,31/07/2017,Lower Juba,Afmadow,Bay,Qansax Dheere,Drought related,10,Jul '17,2017-07,201727,27,0,10,0,0
+4386,2017,7,Jul,31/07/2017,Lower Juba,Afmadow,Bay,Qansax Dheere,Drought related,10,Jul '17,2017-07,201727,27,0,10,0,0
+4387,2017,7,Jul,31/07/2017,Lower Juba,Afmadow,Bay,Qansax Dheere,Drought related,20,Jul '17,2017-07,201728,28,0,20,0,0
 4388,2017,7,Jul,31/07/2017,Lower Juba,Afmadow,Lower Juba,Jamaame,Drought related,7,Jul '17,2017-07,201728,28,0,7,0,0
 4389,2017,7,Jul,31/07/2017,Lower Juba,Afmadow,Lower Juba,Jamaame,Drought related,6,Jul '17,2017-07,201729,29,0,6,0,0
 4390,2017,7,Jul,31/07/2017,Lower Juba,Afmadow,Middle Juba,Bu'aale,Drought related,7,Jul '17,2017-07,201728,28,0,7,0,0
@@ -4403,16 +4403,16 @@ id,yr,monthnum,monthname,monthend,cregion,cdistrict,pregion,pdistrict,creason,tp
 4402,2017,7,Jul,31/07/2017,Lower Juba,Kismayo,Lower Juba,Kismayo,Drought related,8,Jul '17,2017-07,201728,28,0,8,0,0
 4403,2017,7,Jul,31/07/2017,Lower Juba,Kismayo,Middle Juba,Saakow,Drought related,7,Jul '17,2017-07,201728,28,0,7,0,0
 4404,2017,7,Jul,31/07/2017,Lower Shabelle,Afgooye,Lower Shabelle,Marka,Conflict/Insecurity,561,Jul '17,2017-07,201726,26,0,561,0,0
-4405,2017,7,Jul,31/07/2017,Lower Shabelle,Kurtunwaarey,Lower Shabelle,Marka,Conflict/Insecurity,1700,Jul '17,2017-07,201730,30,0,1700,0,0
-4406,2017,7,Jul,31/07/2017,Lower Shabelle,Kurtunwaarey,Lower Shabelle,Marka,Conflict/Insecurity,2400,Jul '17,2017-07,201731,31,0,2400,0,0
-4407,2017,7,Jul,31/07/2017,Lower Shabelle,Kurtunwaarey,Lower Shabelle,Marka,Conflict/Insecurity,1150,Jul '17,2017-07,201727,27,0,1150,0,0
+4405,2017,7,Jul,31/07/2017,Lower Shabelle,Kurtunwaarey,Lower Shabelle,Marka,Conflict/Insecurity,1150,Jul '17,2017-07,201727,27,0,1150,0,0
+4406,2017,7,Jul,31/07/2017,Lower Shabelle,Kurtunwaarey,Lower Shabelle,Marka,Conflict/Insecurity,1700,Jul '17,2017-07,201730,30,0,1700,0,0
+4407,2017,7,Jul,31/07/2017,Lower Shabelle,Kurtunwaarey,Lower Shabelle,Marka,Conflict/Insecurity,2400,Jul '17,2017-07,201731,31,0,2400,0,0
 4408,2017,7,Jul,31/07/2017,Lower Shabelle,Kurtunwaarey,Lower Shabelle,Marka,Drought related,980,Jul '17,2017-07,201731,31,0,980,0,0
-4409,2017,7,Jul,31/07/2017,Lower Shabelle,Marka,Lower Shabelle,Marka,Conflict/Insecurity,4030,Jul '17,2017-07,201730,30,0,4030,0,0
-4410,2017,7,Jul,31/07/2017,Lower Shabelle,Marka,Lower Shabelle,Marka,Conflict/Insecurity,5150,Jul '17,2017-07,201731,31,0,5150,0,0
-4411,2017,7,Jul,31/07/2017,Lower Shabelle,Marka,Lower Shabelle,Marka,Conflict/Insecurity,1500,Jul '17,2017-07,201726,26,0,1500,0,0
-4412,2017,7,Jul,31/07/2017,Lower Shabelle,Marka,Lower Shabelle,Marka,Conflict/Insecurity,3235,Jul '17,2017-07,201727,27,0,3235,0,0
-4413,2017,7,Jul,31/07/2017,Lower Shabelle,Qoryooley,Lower Shabelle,Marka,Conflict/Insecurity,900,Jul '17,2017-07,201731,31,0,900,0,0
-4414,2017,7,Jul,31/07/2017,Lower Shabelle,Qoryooley,Lower Shabelle,Marka,Conflict/Insecurity,580,Jul '17,2017-07,201727,27,0,580,0,0
+4409,2017,7,Jul,31/07/2017,Lower Shabelle,Marka,Lower Shabelle,Marka,Conflict/Insecurity,1500,Jul '17,2017-07,201726,26,0,1500,0,0
+4410,2017,7,Jul,31/07/2017,Lower Shabelle,Marka,Lower Shabelle,Marka,Conflict/Insecurity,3235,Jul '17,2017-07,201727,27,0,3235,0,0
+4411,2017,7,Jul,31/07/2017,Lower Shabelle,Marka,Lower Shabelle,Marka,Conflict/Insecurity,4030,Jul '17,2017-07,201730,30,0,4030,0,0
+4412,2017,7,Jul,31/07/2017,Lower Shabelle,Marka,Lower Shabelle,Marka,Conflict/Insecurity,5150,Jul '17,2017-07,201731,31,0,5150,0,0
+4413,2017,7,Jul,31/07/2017,Lower Shabelle,Qoryooley,Lower Shabelle,Marka,Conflict/Insecurity,580,Jul '17,2017-07,201727,27,0,580,0,0
+4414,2017,7,Jul,31/07/2017,Lower Shabelle,Qoryooley,Lower Shabelle,Marka,Conflict/Insecurity,900,Jul '17,2017-07,201731,31,0,900,0,0
 4415,2017,7,Jul,31/07/2017,Middle Juba,Saakow,Bay,Diinsoor,Drought related,51,Jul '17,2017-07,201729,29,0,51,0,0
 4416,2017,7,Jul,31/07/2017,Middle Juba,Saakow,Bay,Diinsoor,Drought related,46,Jul '17,2017-07,201730,30,0,46,0,0
 4417,2017,7,Jul,31/07/2017,Middle Juba,Saakow,Bay,Diinsoor,Drought related,10,Jul '17,2017-07,201731,31,0,10,0,0
@@ -4422,9 +4422,9 @@ id,yr,monthnum,monthname,monthend,cregion,cdistrict,pregion,pdistrict,creason,tp
 4421,2017,7,Jul,31/07/2017,Middle Shabelle,Balcad,Middle Shabelle,Cadale,Conflict/Insecurity,1140,Jul '17,2017-07,201728,28,0,1140,0,0
 4422,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Awdal,Borama,Other,6,Jul '17,2017-07,201727,27,0,6,0,0
 4423,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Banadir,Banadir,Drought related,8,Jul '17,2017-07,201726,26,0,8,0,0
-4424,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Bari,Bossaso,Drought related,16,Jul '17,2017-07,201728,28,0,16,0,0
-4425,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Bari,Bossaso,Drought related,6,Jul '17,2017-07,201729,29,0,6,0,0
-4426,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Bari,Bossaso,Drought related,7,Jul '17,2017-07,201727,27,0,7,0,0
+4424,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Bari,Bossaso,Drought related,7,Jul '17,2017-07,201727,27,0,7,0,0
+4425,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Bari,Bossaso,Drought related,16,Jul '17,2017-07,201728,28,0,16,0,0
+4426,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Bari,Bossaso,Drought related,6,Jul '17,2017-07,201729,29,0,6,0,0
 4427,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Bari,Qardho,Drought related,17,Jul '17,2017-07,201729,29,0,17,0,0
 4428,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Bari,Qardho,Drought related,5,Jul '17,2017-07,201730,30,0,5,0,0
 4429,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Bay,Baidoa,Drought related,6,Jul '17,2017-07,201728,28,0,6,0,0
@@ -4439,10 +4439,10 @@ id,yr,monthnum,monthname,monthend,cregion,cdistrict,pregion,pdistrict,creason,tp
 4438,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Mudug,Gaalkacyo,Drought related,451,Jul '17,2017-07,201729,29,0,451,0,0
 4439,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Mudug,Gaalkacyo,Other,230,Jul '17,2017-07,201728,28,0,230,0,0
 4440,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Mudug,Galdogob,Drought related,3,Jul '17,2017-07,201727,27,0,3,0,0
-4441,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Mudug,Hobyo,Drought related,136,Jul '17,2017-07,201728,28,0,136,0,0
-4442,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Mudug,Hobyo,Drought related,10,Jul '17,2017-07,201729,29,0,10,0,0
-4443,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Mudug,Hobyo,Drought related,7,Jul '17,2017-07,201726,26,0,7,0,0
-4444,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Mudug,Hobyo,Drought related,9,Jul '17,2017-07,201727,27,0,9,0,0
+4441,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Mudug,Hobyo,Drought related,7,Jul '17,2017-07,201726,26,0,7,0,0
+4442,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Mudug,Hobyo,Drought related,9,Jul '17,2017-07,201727,27,0,9,0,0
+4443,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Mudug,Hobyo,Drought related,136,Jul '17,2017-07,201728,28,0,136,0,0
+4444,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Mudug,Hobyo,Drought related,10,Jul '17,2017-07,201729,29,0,10,0,0
 4445,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Woqooyi Galbeed,Berbera,Drought related,12,Jul '17,2017-07,201728,28,0,12,0,0
 4446,2017,7,Jul,31/07/2017,Mudug,Gaalkacyo,Woqooyi Galbeed,Berbera,Drought related,12,Jul '17,2017-07,201729,29,0,12,0,0
 4447,2017,7,Jul,31/07/2017,Mudug,Galdogob,Galgaduud,Cadaado,Drought related,7,Jul '17,2017-07,201727,27,0,7,0,0
@@ -4456,115 +4456,115 @@ id,yr,monthnum,monthname,monthend,cregion,cdistrict,pregion,pdistrict,creason,tp
 4455,2017,7,Jul,31/07/2017,Sanaag,Ceerigaabo,Sanaag,Ceerigaabo,Drought related,6,Jul '17,2017-07,201731,31,0,6,0,0
 4456,2017,7,Jul,31/07/2017,Sool,Caynabo,Galgaduud,Cadaado,Drought related,217,Jul '17,2017-07,201731,31,0,217,0,0
 4457,2017,7,Jul,31/07/2017,Sool,Caynabo,Galgaduud,Dhuusamarreeb,Other,8,Jul '17,2017-07,201729,29,0,8,0,0
-4458,2017,7,Jul,31/07/2017,Sool,Caynabo,Sool,Caynabo,Drought related,151,Jul '17,2017-07,201728,28,0,151,0,0
-4459,2017,7,Jul,31/07/2017,Sool,Caynabo,Sool,Caynabo,Drought related,7,Jul '17,2017-07,201729,29,0,7,0,0
-4460,2017,7,Jul,31/07/2017,Sool,Caynabo,Sool,Caynabo,Drought related,127,Jul '17,2017-07,201730,30,0,127,0,0
-4461,2017,7,Jul,31/07/2017,Sool,Caynabo,Sool,Caynabo,Drought related,13,Jul '17,2017-07,201731,31,0,13,0,0
-4462,2017,7,Jul,31/07/2017,Sool,Caynabo,Sool,Caynabo,Drought related,131,Jul '17,2017-07,201727,27,0,131,0,0
-4463,2017,7,Jul,31/07/2017,Sool,Caynabo,Sool,Caynabo,Other,8,Jul '17,2017-07,201728,28,0,8,0,0
-4464,2017,7,Jul,31/07/2017,Sool,Caynabo,Sool,Caynabo,Other,89,Jul '17,2017-07,201730,30,0,89,0,0
-4465,2017,7,Jul,31/07/2017,Sool,Caynabo,Sool,Caynabo,Other,8,Jul '17,2017-07,201731,31,0,8,0,0
-4466,2017,7,Jul,31/07/2017,Sool,Caynabo,Sool,Caynabo,Other,31,Jul '17,2017-07,201726,26,0,31,0,0
-4467,2017,7,Jul,31/07/2017,Sool,Caynabo,Sool,Caynabo,Other,31,Jul '17,2017-07,201727,27,0,31,0,0
+4458,2017,7,Jul,31/07/2017,Sool,Caynabo,Sool,Caynabo,Drought related,131,Jul '17,2017-07,201727,27,0,131,0,0
+4459,2017,7,Jul,31/07/2017,Sool,Caynabo,Sool,Caynabo,Drought related,151,Jul '17,2017-07,201728,28,0,151,0,0
+4460,2017,7,Jul,31/07/2017,Sool,Caynabo,Sool,Caynabo,Drought related,7,Jul '17,2017-07,201729,29,0,7,0,0
+4461,2017,7,Jul,31/07/2017,Sool,Caynabo,Sool,Caynabo,Drought related,127,Jul '17,2017-07,201730,30,0,127,0,0
+4462,2017,7,Jul,31/07/2017,Sool,Caynabo,Sool,Caynabo,Drought related,13,Jul '17,2017-07,201731,31,0,13,0,0
+4463,2017,7,Jul,31/07/2017,Sool,Caynabo,Sool,Caynabo,Other,31,Jul '17,2017-07,201726,26,0,31,0,0
+4464,2017,7,Jul,31/07/2017,Sool,Caynabo,Sool,Caynabo,Other,31,Jul '17,2017-07,201727,27,0,31,0,0
+4465,2017,7,Jul,31/07/2017,Sool,Caynabo,Sool,Caynabo,Other,8,Jul '17,2017-07,201728,28,0,8,0,0
+4466,2017,7,Jul,31/07/2017,Sool,Caynabo,Sool,Caynabo,Other,89,Jul '17,2017-07,201730,30,0,89,0,0
+4467,2017,7,Jul,31/07/2017,Sool,Caynabo,Sool,Caynabo,Other,8,Jul '17,2017-07,201731,31,0,8,0,0
 4468,2017,7,Jul,31/07/2017,Sool,Caynabo,Togdheer,Burco,Other,12,Jul '17,2017-07,201730,30,0,12,0,0
-4469,2017,7,Jul,31/07/2017,Sool,Caynabo,Togdheer,Buuhoodle,Drought related,89,Jul '17,2017-07,201728,28,0,89,0,0
-4470,2017,7,Jul,31/07/2017,Sool,Caynabo,Togdheer,Buuhoodle,Drought related,8,Jul '17,2017-07,201729,29,0,8,0,0
-4471,2017,7,Jul,31/07/2017,Sool,Caynabo,Togdheer,Buuhoodle,Drought related,35,Jul '17,2017-07,201730,30,0,35,0,0
-4472,2017,7,Jul,31/07/2017,Sool,Caynabo,Togdheer,Buuhoodle,Drought related,16,Jul '17,2017-07,201727,27,0,16,0,0
-4473,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Galgaduud,Cadaado,Drought related,756,Jul '17,2017-07,201728,28,0,756,0,0
-4474,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Galgaduud,Cadaado,Drought related,230,Jul '17,2017-07,201729,29,0,230,0,0
-4475,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Galgaduud,Cadaado,Drought related,427,Jul '17,2017-07,201730,30,0,427,0,0
-4476,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Galgaduud,Cadaado,Drought related,874,Jul '17,2017-07,201727,27,0,874,0,0
+4469,2017,7,Jul,31/07/2017,Sool,Caynabo,Togdheer,Buuhoodle,Drought related,16,Jul '17,2017-07,201727,27,0,16,0,0
+4470,2017,7,Jul,31/07/2017,Sool,Caynabo,Togdheer,Buuhoodle,Drought related,89,Jul '17,2017-07,201728,28,0,89,0,0
+4471,2017,7,Jul,31/07/2017,Sool,Caynabo,Togdheer,Buuhoodle,Drought related,8,Jul '17,2017-07,201729,29,0,8,0,0
+4472,2017,7,Jul,31/07/2017,Sool,Caynabo,Togdheer,Buuhoodle,Drought related,35,Jul '17,2017-07,201730,30,0,35,0,0
+4473,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Galgaduud,Cadaado,Drought related,874,Jul '17,2017-07,201727,27,0,874,0,0
+4474,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Galgaduud,Cadaado,Drought related,756,Jul '17,2017-07,201728,28,0,756,0,0
+4475,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Galgaduud,Cadaado,Drought related,230,Jul '17,2017-07,201729,29,0,230,0,0
+4476,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Galgaduud,Cadaado,Drought related,427,Jul '17,2017-07,201730,30,0,427,0,0
 4477,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Galgaduud,Ceel Buur,Drought related,274,Jul '17,2017-07,201730,30,0,274,0,0
 4478,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Galgaduud,Dhuusamarreeb,Drought related,111,Jul '17,2017-07,201728,28,0,111,0,0
 4479,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Hiraan,Belet Weyne,Drought related,120,Jul '17,2017-07,201728,28,0,120,0,0
-4480,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Hiraan,Bulo Burto,Drought related,110,Jul '17,2017-07,201728,28,0,110,0,0
-4481,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Hiraan,Bulo Burto,Drought related,157,Jul '17,2017-07,201727,27,0,157,0,0
+4480,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Hiraan,Bulo Burto,Drought related,157,Jul '17,2017-07,201727,27,0,157,0,0
+4481,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Hiraan,Bulo Burto,Drought related,110,Jul '17,2017-07,201728,28,0,110,0,0
 4482,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Hiraan,Jalalaqsi,Drought related,120,Jul '17,2017-07,201727,27,0,120,0,0
-4483,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sanaag,Ceerigaabo,Drought related,350,Jul '17,2017-07,201728,28,0,350,0,0
-4484,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sanaag,Ceerigaabo,Drought related,127,Jul '17,2017-07,201730,30,0,127,0,0
-4485,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sanaag,Ceerigaabo,Drought related,217,Jul '17,2017-07,201727,27,0,217,0,0
-4486,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Laas Caanood,Drought related,219,Jul '17,2017-07,201728,28,0,219,0,0
-4487,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Laas Caanood,Drought related,24,Jul '17,2017-07,201730,30,0,24,0,0
-4488,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Laas Caanood,Drought related,8,Jul '17,2017-07,201726,26,0,8,0,0
-4489,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Laas Caanood,Drought related,117,Jul '17,2017-07,201727,27,0,117,0,0
-4490,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Taleex,Drought related,1233,Jul '17,2017-07,201728,28,0,1233,0,0
-4491,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Taleex,Drought related,52,Jul '17,2017-07,201729,29,0,52,0,0
-4492,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Taleex,Drought related,41,Jul '17,2017-07,201730,30,0,41,0,0
-4493,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Taleex,Drought related,7,Jul '17,2017-07,201731,31,0,7,0,0
-4494,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Taleex,Drought related,153,Jul '17,2017-07,201726,26,0,153,0,0
-4495,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Taleex,Drought related,1190,Jul '17,2017-07,201727,27,0,1190,0,0
-4496,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Xudun,Drought related,472,Jul '17,2017-07,201728,28,0,472,0,0
-4497,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Xudun,Drought related,291,Jul '17,2017-07,201729,29,0,291,0,0
-4498,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Xudun,Drought related,375,Jul '17,2017-07,201730,30,0,375,0,0
-4499,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Xudun,Drought related,106,Jul '17,2017-07,201731,31,0,106,0,0
-4500,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Xudun,Drought related,209,Jul '17,2017-07,201726,26,0,209,0,0
-4501,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Xudun,Drought related,348,Jul '17,2017-07,201727,27,0,348,0,0
+4483,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sanaag,Ceerigaabo,Drought related,217,Jul '17,2017-07,201727,27,0,217,0,0
+4484,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sanaag,Ceerigaabo,Drought related,350,Jul '17,2017-07,201728,28,0,350,0,0
+4485,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sanaag,Ceerigaabo,Drought related,127,Jul '17,2017-07,201730,30,0,127,0,0
+4486,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Laas Caanood,Drought related,8,Jul '17,2017-07,201726,26,0,8,0,0
+4487,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Laas Caanood,Drought related,117,Jul '17,2017-07,201727,27,0,117,0,0
+4488,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Laas Caanood,Drought related,219,Jul '17,2017-07,201728,28,0,219,0,0
+4489,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Laas Caanood,Drought related,24,Jul '17,2017-07,201730,30,0,24,0,0
+4490,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Taleex,Drought related,153,Jul '17,2017-07,201726,26,0,153,0,0
+4491,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Taleex,Drought related,1190,Jul '17,2017-07,201727,27,0,1190,0,0
+4492,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Taleex,Drought related,1233,Jul '17,2017-07,201728,28,0,1233,0,0
+4493,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Taleex,Drought related,52,Jul '17,2017-07,201729,29,0,52,0,0
+4494,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Taleex,Drought related,41,Jul '17,2017-07,201730,30,0,41,0,0
+4495,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Taleex,Drought related,7,Jul '17,2017-07,201731,31,0,7,0,0
+4496,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Xudun,Drought related,209,Jul '17,2017-07,201726,26,0,209,0,0
+4497,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Xudun,Drought related,348,Jul '17,2017-07,201727,27,0,348,0,0
+4498,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Xudun,Drought related,472,Jul '17,2017-07,201728,28,0,472,0,0
+4499,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Xudun,Drought related,291,Jul '17,2017-07,201729,29,0,291,0,0
+4500,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Xudun,Drought related,375,Jul '17,2017-07,201730,30,0,375,0,0
+4501,2017,7,Jul,31/07/2017,Sool,Laas Caanood,Sool,Xudun,Drought related,106,Jul '17,2017-07,201731,31,0,106,0,0
 4502,2017,7,Jul,31/07/2017,Sool,Xudun,Sanaag,Ceerigaabo,Drought related,110,Jul '17,2017-07,201728,28,0,110,0,0
 4503,2017,7,Jul,31/07/2017,Sool,Xudun,Sanaag,Ceerigaabo,Drought related,120,Jul '17,2017-07,201730,30,0,120,0,0
 4504,2017,7,Jul,31/07/2017,Togdheer,Burco,Bakool,Waajid,Drought related,192,Jul '17,2017-07,201731,31,0,192,0,0
 4505,2017,7,Jul,31/07/2017,Togdheer,Burco,Sanaag,Ceel Afweyn,Conflict/Insecurity,9,Jul '17,2017-07,201730,30,0,9,0,0
 4506,2017,7,Jul,31/07/2017,Togdheer,Burco,Sool,Caynabo,Drought related,279,Jul '17,2017-07,201729,29,0,279,0,0
 4507,2017,7,Jul,31/07/2017,Togdheer,Burco,Sool,Caynabo,Other,16,Jul '17,2017-07,201727,27,0,16,0,0
-4508,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Burco,Drought related,123,Jul '17,2017-07,201728,28,0,123,0,0
-4509,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Burco,Drought related,450,Jul '17,2017-07,201729,29,0,450,0,0
-4510,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Burco,Drought related,24,Jul '17,2017-07,201730,30,0,24,0,0
-4511,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Burco,Drought related,106,Jul '17,2017-07,201731,31,0,106,0,0
-4512,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Burco,Drought related,1,Jul '17,2017-07,201726,26,0,1,0,0
-4513,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Burco,Drought related,65,Jul '17,2017-07,201727,27,0,65,0,0
-4514,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Burco,Other,33,Jul '17,2017-07,201728,28,0,33,0,0
-4515,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Burco,Other,210,Jul '17,2017-07,201729,29,0,210,0,0
-4516,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Burco,Other,41,Jul '17,2017-07,201730,30,0,41,0,0
-4517,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Burco,Other,30,Jul '17,2017-07,201726,26,0,30,0,0
-4518,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Burco,Other,380,Jul '17,2017-07,201727,27,0,380,0,0
+4508,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Burco,Drought related,1,Jul '17,2017-07,201726,26,0,1,0,0
+4509,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Burco,Drought related,65,Jul '17,2017-07,201727,27,0,65,0,0
+4510,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Burco,Drought related,123,Jul '17,2017-07,201728,28,0,123,0,0
+4511,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Burco,Drought related,450,Jul '17,2017-07,201729,29,0,450,0,0
+4512,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Burco,Drought related,24,Jul '17,2017-07,201730,30,0,24,0,0
+4513,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Burco,Drought related,106,Jul '17,2017-07,201731,31,0,106,0,0
+4514,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Burco,Other,30,Jul '17,2017-07,201726,26,0,30,0,0
+4515,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Burco,Other,380,Jul '17,2017-07,201727,27,0,380,0,0
+4516,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Burco,Other,33,Jul '17,2017-07,201728,28,0,33,0,0
+4517,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Burco,Other,210,Jul '17,2017-07,201729,29,0,210,0,0
+4518,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Burco,Other,41,Jul '17,2017-07,201730,30,0,41,0,0
 4519,2017,7,Jul,31/07/2017,Togdheer,Burco,Togdheer,Owdweyne,Other,13,Jul '17,2017-07,201729,29,0,13,0,0
 4520,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Galgaduud,Cabudwaaq,Drought related,123,Jul '17,2017-07,201727,27,0,123,0,0
-4521,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Galgaduud,Cadaado,Drought related,430,Jul '17,2017-07,201728,28,0,430,0,0
-4522,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Galgaduud,Cadaado,Drought related,375,Jul '17,2017-07,201727,27,0,375,0,0
+4521,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Galgaduud,Cadaado,Drought related,375,Jul '17,2017-07,201727,27,0,375,0,0
+4522,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Galgaduud,Cadaado,Drought related,430,Jul '17,2017-07,201728,28,0,430,0,0
 4523,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Galgaduud,Ceel Buur,Drought related,500,Jul '17,2017-07,201728,28,0,500,0,0
 4524,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Galgaduud,Dhuusamarreeb,Drought related,111,Jul '17,2017-07,201728,28,0,111,0,0
-4525,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Hiraan,Belet Weyne,Drought related,129,Jul '17,2017-07,201728,28,0,129,0,0
-4526,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Hiraan,Belet Weyne,Drought related,325,Jul '17,2017-07,201730,30,0,325,0,0
-4527,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Hiraan,Belet Weyne,Drought related,806,Jul '17,2017-07,201727,27,0,806,0,0
+4525,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Hiraan,Belet Weyne,Drought related,806,Jul '17,2017-07,201727,27,0,806,0,0
+4526,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Hiraan,Belet Weyne,Drought related,129,Jul '17,2017-07,201728,28,0,129,0,0
+4527,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Hiraan,Belet Weyne,Drought related,325,Jul '17,2017-07,201730,30,0,325,0,0
 4528,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Hiraan,Bulo Burto,Drought related,632,Jul '17,2017-07,201727,27,0,632,0,0
-4529,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Hiraan,Jalalaqsi,Drought related,395,Jul '17,2017-07,201728,28,0,395,0,0
-4530,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Hiraan,Jalalaqsi,Drought related,215,Jul '17,2017-07,201729,29,0,215,0,0
-4531,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Hiraan,Jalalaqsi,Drought related,350,Jul '17,2017-07,201730,30,0,350,0,0
-4532,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Hiraan,Jalalaqsi,Drought related,731,Jul '17,2017-07,201727,27,0,731,0,0
-4533,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Sanaag,Ceerigaabo,Drought related,343,Jul '17,2017-07,201728,28,0,343,0,0
-4534,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Sanaag,Ceerigaabo,Drought related,250,Jul '17,2017-07,201727,27,0,250,0,0
+4529,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Hiraan,Jalalaqsi,Drought related,731,Jul '17,2017-07,201727,27,0,731,0,0
+4530,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Hiraan,Jalalaqsi,Drought related,395,Jul '17,2017-07,201728,28,0,395,0,0
+4531,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Hiraan,Jalalaqsi,Drought related,215,Jul '17,2017-07,201729,29,0,215,0,0
+4532,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Hiraan,Jalalaqsi,Drought related,350,Jul '17,2017-07,201730,30,0,350,0,0
+4533,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Sanaag,Ceerigaabo,Drought related,250,Jul '17,2017-07,201727,27,0,250,0,0
+4534,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Sanaag,Ceerigaabo,Drought related,343,Jul '17,2017-07,201728,28,0,343,0,0
 4535,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Sool,Laas Caanood,Drought related,339,Jul '17,2017-07,201729,29,0,339,0,0
 4536,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Sool,Taleex,Drought related,393,Jul '17,2017-07,201728,28,0,393,0,0
 4537,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Sool,Taleex,Drought related,863,Jul '17,2017-07,201729,29,0,863,0,0
 4538,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Sool,Taleex,Drought related,735,Jul '17,2017-07,201730,30,0,735,0,0
-4539,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Sool,Xudun,Drought related,312,Jul '17,2017-07,201728,28,0,312,0,0
-4540,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Sool,Xudun,Drought related,478,Jul '17,2017-07,201729,29,0,478,0,0
-4541,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Sool,Xudun,Drought related,109,Jul '17,2017-07,201730,30,0,109,0,0
-4542,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Sool,Xudun,Drought related,787,Jul '17,2017-07,201727,27,0,787,0,0
-4543,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Togdheer,Buuhoodle,Drought related,404,Jul '17,2017-07,201728,28,0,404,0,0
-4544,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Togdheer,Buuhoodle,Drought related,643,Jul '17,2017-07,201730,30,0,643,0,0
-4545,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Togdheer,Buuhoodle,Drought related,452,Jul '17,2017-07,201727,27,0,452,0,0
+4539,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Sool,Xudun,Drought related,787,Jul '17,2017-07,201727,27,0,787,0,0
+4540,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Sool,Xudun,Drought related,312,Jul '17,2017-07,201728,28,0,312,0,0
+4541,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Sool,Xudun,Drought related,478,Jul '17,2017-07,201729,29,0,478,0,0
+4542,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Sool,Xudun,Drought related,109,Jul '17,2017-07,201730,30,0,109,0,0
+4543,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Togdheer,Buuhoodle,Drought related,452,Jul '17,2017-07,201727,27,0,452,0,0
+4544,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Togdheer,Buuhoodle,Drought related,404,Jul '17,2017-07,201728,28,0,404,0,0
+4545,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Togdheer,Buuhoodle,Drought related,643,Jul '17,2017-07,201730,30,0,643,0,0
 4546,2017,7,Jul,31/07/2017,Togdheer,Buuhoodle,Togdheer,Buuhoodle,Other,100,Jul '17,2017-07,201730,30,0,100,0,0
-4547,2017,7,Jul,31/07/2017,Togdheer,Owdweyne,Togdheer,Owdweyne,Other,11,Jul '17,2017-07,201728,28,0,11,0,0
-4548,2017,7,Jul,31/07/2017,Togdheer,Owdweyne,Togdheer,Owdweyne,Other,26,Jul '17,2017-07,201729,29,0,26,0,0
-4549,2017,7,Jul,31/07/2017,Togdheer,Owdweyne,Togdheer,Owdweyne,Other,124,Jul '17,2017-07,201730,30,0,124,0,0
-4550,2017,7,Jul,31/07/2017,Togdheer,Owdweyne,Togdheer,Owdweyne,Other,28,Jul '17,2017-07,201727,27,0,28,0,0
+4547,2017,7,Jul,31/07/2017,Togdheer,Owdweyne,Togdheer,Owdweyne,Other,28,Jul '17,2017-07,201727,27,0,28,0,0
+4548,2017,7,Jul,31/07/2017,Togdheer,Owdweyne,Togdheer,Owdweyne,Other,11,Jul '17,2017-07,201728,28,0,11,0,0
+4549,2017,7,Jul,31/07/2017,Togdheer,Owdweyne,Togdheer,Owdweyne,Other,26,Jul '17,2017-07,201729,29,0,26,0,0
+4550,2017,7,Jul,31/07/2017,Togdheer,Owdweyne,Togdheer,Owdweyne,Other,124,Jul '17,2017-07,201730,30,0,124,0,0
 4551,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Berbera,Awdal,Borama,Drought related,7,Jul '17,2017-07,201729,29,0,7,0,0
 4552,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Berbera,Sanaag,Laasqoray,Drought related,17,Jul '17,2017-07,201729,29,0,17,0,0
-4553,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Berbera,Woqooyi Galbeed,Berbera,Drought related,394,Jul '17,2017-07,201728,28,0,394,0,0
-4554,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Berbera,Woqooyi Galbeed,Berbera,Drought related,75,Jul '17,2017-07,201729,29,0,75,0,0
-4555,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Berbera,Woqooyi Galbeed,Berbera,Drought related,47,Jul '17,2017-07,201730,30,0,47,0,0
-4556,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Berbera,Woqooyi Galbeed,Berbera,Drought related,2,Jul '17,2017-07,201731,31,0,2,0,0
-4557,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Berbera,Woqooyi Galbeed,Berbera,Drought related,31,Jul '17,2017-07,201727,27,0,31,0,0
+4553,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Berbera,Woqooyi Galbeed,Berbera,Drought related,31,Jul '17,2017-07,201727,27,0,31,0,0
+4554,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Berbera,Woqooyi Galbeed,Berbera,Drought related,394,Jul '17,2017-07,201728,28,0,394,0,0
+4555,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Berbera,Woqooyi Galbeed,Berbera,Drought related,75,Jul '17,2017-07,201729,29,0,75,0,0
+4556,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Berbera,Woqooyi Galbeed,Berbera,Drought related,47,Jul '17,2017-07,201730,30,0,47,0,0
+4557,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Berbera,Woqooyi Galbeed,Berbera,Drought related,2,Jul '17,2017-07,201731,31,0,2,0,0
 4558,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Berbera,Woqooyi Galbeed,Gebiley,Drought related,6,Jul '17,2017-07,201727,27,0,6,0,0
 4559,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Berbera,Woqooyi Galbeed,Hargeysa,Drought related,12,Jul '17,2017-07,201729,29,0,12,0,0
 4560,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Berbera,Woqooyi Galbeed,Hargeysa,Drought related,10,Jul '17,2017-07,201731,31,0,10,0,0
-4561,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Gebiley,Woqooyi Galbeed,Gebiley,Drought related,13,Jul '17,2017-07,201728,28,0,13,0,0
-4562,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Gebiley,Woqooyi Galbeed,Gebiley,Drought related,50,Jul '17,2017-07,201729,29,0,50,0,0
-4563,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Gebiley,Woqooyi Galbeed,Gebiley,Drought related,27,Jul '17,2017-07,201730,30,0,27,0,0
-4564,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Gebiley,Woqooyi Galbeed,Gebiley,Drought related,7,Jul '17,2017-07,201731,31,0,7,0,0
-4565,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Gebiley,Woqooyi Galbeed,Gebiley,Drought related,24,Jul '17,2017-07,201726,26,0,24,0,0
-4566,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Gebiley,Woqooyi Galbeed,Gebiley,Drought related,43,Jul '17,2017-07,201727,27,0,43,0,0
+4561,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Gebiley,Woqooyi Galbeed,Gebiley,Drought related,24,Jul '17,2017-07,201726,26,0,24,0,0
+4562,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Gebiley,Woqooyi Galbeed,Gebiley,Drought related,43,Jul '17,2017-07,201727,27,0,43,0,0
+4563,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Gebiley,Woqooyi Galbeed,Gebiley,Drought related,13,Jul '17,2017-07,201728,28,0,13,0,0
+4564,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Gebiley,Woqooyi Galbeed,Gebiley,Drought related,50,Jul '17,2017-07,201729,29,0,50,0,0
+4565,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Gebiley,Woqooyi Galbeed,Gebiley,Drought related,27,Jul '17,2017-07,201730,30,0,27,0,0
+4566,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Gebiley,Woqooyi Galbeed,Gebiley,Drought related,7,Jul '17,2017-07,201731,31,0,7,0,0
 4567,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Hargeysa,Banadir,Banadir,Drought related,4,Jul '17,2017-07,201728,28,0,4,0,0
 4568,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Hargeysa,Banadir,Banadir,Drought related,13,Jul '17,2017-07,201729,29,0,13,0,0
 4569,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Hargeysa,Banadir,Banadir,Drought related,15,Jul '17,2017-07,201730,30,0,15,0,0
@@ -4578,10 +4578,10 @@ id,yr,monthnum,monthname,monthend,cregion,cdistrict,pregion,pdistrict,creason,tp
 4577,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Hargeysa,Hiraan,Belet Weyne,Drought related,6,Jul '17,2017-07,201730,30,0,6,0,0
 4578,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Hargeysa,Hiraan,Bulo Burto,Drought related,8,Jul '17,2017-07,201730,30,0,8,0,0
 4579,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Hargeysa,Lower Juba,Kismayo,Drought related,5,Jul '17,2017-07,201727,27,0,5,0,0
-4580,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Hargeysa,Mudug,Gaalkacyo,Drought related,7,Jul '17,2017-07,201728,28,0,7,0,0
-4581,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Hargeysa,Mudug,Gaalkacyo,Drought related,5,Jul '17,2017-07,201729,29,0,5,0,0
-4582,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Hargeysa,Mudug,Gaalkacyo,Drought related,7,Jul '17,2017-07,201730,30,0,7,0,0
-4583,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Hargeysa,Mudug,Gaalkacyo,Drought related,4,Jul '17,2017-07,201727,27,0,4,0,0
+4580,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Hargeysa,Mudug,Gaalkacyo,Drought related,4,Jul '17,2017-07,201727,27,0,4,0,0
+4581,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Hargeysa,Mudug,Gaalkacyo,Drought related,7,Jul '17,2017-07,201728,28,0,7,0,0
+4582,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Hargeysa,Mudug,Gaalkacyo,Drought related,5,Jul '17,2017-07,201729,29,0,5,0,0
+4583,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Hargeysa,Mudug,Gaalkacyo,Drought related,7,Jul '17,2017-07,201730,30,0,7,0,0
 4584,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Hargeysa,Mudug,Galdogob,Drought related,7,Jul '17,2017-07,201728,28,0,7,0,0
 4585,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Hargeysa,Nugaal,Garoowe,Drought related,5,Jul '17,2017-07,201726,26,0,5,0,0
 4586,2017,7,Jul,31/07/2017,Woqooyi Galbeed,Hargeysa,Togdheer,Burco,Drought related,7,Jul '17,2017-07,201730,30,0,7,0,0
