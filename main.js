@@ -111,7 +111,6 @@ var lineTip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([-5, 0])
   .html(function (d) { 
-    console.log(d);
     return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + (d.layer) + " Week "  + d.data.key +"</span> | <span class='dc-tooltip-value'>" + numberFormat(rndFig(d.data.value)) +"</span></div>"; 
   });
 
@@ -383,14 +382,9 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .rightYAxis().ticks(6);
 
       displaceWeekChart.on('renderlet', function (chart) {
-        // console.log(chart)
-        chart.selectAll(".dot")
-          .call(lineTip);
-        chart.selectAll(".dot")
-          .on('mouseover.tip', lineTip.show)
+        chart.selectAll(".dot").call(lineTip);
+        chart.selectAll(".dot").on('mouseover.tip', lineTip.show)
           .on('mouseout.tip', lineTip.hide);
-        chart.selectAll(".dot")
-          .call(lineTip)
       });
   
 
