@@ -190,7 +190,8 @@ div.dc-chart {
     cursor: default; }
 
 .dc-chart circle.dot {
-  stroke: none; }
+  stroke: none; 
+}
 
 .dc-data-count {
   float: right;

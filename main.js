@@ -107,6 +107,14 @@ var barTip = d3.tip()
   .offset([-5, 0])
   .html(function (d) { return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + (d.key) + "</span> | <span class='dc-tooltip-value'>" + numberFormat(rndFig(d.value)) + "</span></div>"; });
 
+var lineTip = d3.tip()
+  .attr('class', 'd3-tip')
+  .offset([-5, 0])
+  .html(function (d) { 
+    console.log(d);
+    return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + (d.layer) + " Week "  + d.data.key +"</span> | <span class='dc-tooltip-value'>" + numberFormat(rndFig(d.data.value)) +"</span></div>"; 
+  });
+
 var mapTip = d3.tip()
   .attr('class', 'd3-map-tip')
   .offset([-5, 0])
@@ -317,10 +325,11 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       displaceWeekChart
         .height(140)
         .width($('#leftPanel').width())     
-        .margins({ top: 10, right: 50, bottom: 20, left: 50 }) 
+        .margins({ top: 25, right: 50, bottom: 20, left: 50 }) 
         .title(function (d) {
-          return "Week " + d.key + ": "
-                   + d3.format(",")(d.value);
+          // return "Week " + d.key + ": "
+          //          + d3.format(",")(d.value);
+          return '';
         })
         .compose([
           dc.lineChart(displaceWeekChart)
@@ -354,11 +363,12 @@ d3.csv("data/PRMNDataset.csv", function (data) {
             // })
             .colors('#338EC9') // blue
             .group(displaceWeekGroup4, "2019")
-
+            // .useRightAxisGridLines(true)
             .useRightYAxis(true)
           
         ]) 
-        .legend(dc.legend().x(370).y(5).itemHeight(13).gap(5))
+        .legend(dc.legend().horizontal(true).x(0).y(0).gap(0))
+        // .legend(dc.legend().x(370).y(5).itemHeight(13).gap(5))
         // .shareTitle(false)
         .brushOn(false) 
         .mouseZoomable(true)
@@ -369,8 +379,20 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .yAxis().ticks(6);
 
       displaceWeekChart
+        .useRightAxisGridLines(true)
         .rightYAxis().ticks(6);
 
+      displaceWeekChart.on('renderlet', function (chart) {
+        // console.log(chart)
+        chart.selectAll(".dot")
+          .call(lineTip);
+        chart.selectAll(".dot")
+          .on('mouseover.tip', lineTip.show)
+          .on('mouseout.tip', lineTip.hide);
+        chart.selectAll(".dot")
+          .call(lineTip)
+      });
+  
 
 
 
@@ -389,7 +411,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       displaceReasonChart
         .width($('#leftPanel').width())
         .height(130)
-        .margins({ top: 0, right: 10, bottom: 50, left: 10 })
+        .margins({ top: 0, right: 10, bottom: 20, left: 10 })
         .dimension(displaceReason)
         .group(displaceReasonGroup)
         .valueAccessor(function (d) {
