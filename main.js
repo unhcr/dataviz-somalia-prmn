@@ -433,7 +433,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
         // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
         // .colors(d3.scale.quantize().range(['#F592A0','#F26E80','#EF4A60','#B33848']))
         .colors(d3.scale.quantize().range(['#F9B7BF', '#F592A0', '#F26E80', '#EF4A60', '#B33848']))
-        .colorDomain([0, prevRegionGroup.top(1)[0].value / 10])
+        .colorDomain([0, prevRegionGroup.top(1)[0].value / 2])
         .colorCalculator(function (d) { return d ? prevRegionMap.colors()(d) : '#ccc'; })
         .overlayGeoJson(regionJson.features, "admin1Name", function (d) {
           return d.properties.admin1Name;
