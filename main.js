@@ -490,7 +490,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .width($('#dc-curr-region-chart').width())
         // .height($('.text-section').height()-50)
         .height(380)
-        .margins({ top: 0, right: 10, bottom: 20, left: 10 })
+        .margins({ top: 0, right: 10, bottom: 50, left: 10 })
         .dimension(currRegion)
         .valueAccessor(function (d) { return d.value; })
         .group(currRegionGroup)
@@ -615,7 +615,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
 
       currRegionMap
         .width($('#leftPanel').width())
-        .height(380)
+        .height(400)
         .transitionDuration(1000)
         .dimension(currRegion)
         .group(currRegionGroup)
@@ -657,7 +657,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
 
       currDistrictMap
         .width($('#leftPanel').width())
-        .height(380)
+        .height(400)
         .transitionDuration(1000)
         .dimension(currDistrict)
         .group(currDistrictGroup)
