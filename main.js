@@ -381,6 +381,9 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .useRightAxisGridLines(true)
         .rightYAxis().ticks(6);
 
+      displaceWeekChart
+        .xAxis().ticks(26);
+
       displaceWeekChart.on('renderlet', function (chart) {
         chart.selectAll(".dot").call(lineTip);
         chart.selectAll(".dot").on('mouseover.tip', lineTip.show)
