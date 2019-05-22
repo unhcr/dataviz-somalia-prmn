@@ -1,4 +1,5 @@
 
+dc.config.defaultColors(d3.schemeCategory20c);
 //Create the dc.js chart objects and link to div
 
 var displaceTotalNumber = dc.numberDisplay("#dc-displace-total-number");
@@ -31,10 +32,12 @@ function getFiltersValues() {
     { name: 'cregion', value: currRegionChart.filters() },
     { name: 'cregionmap', value: currRegionMap.filters() },
     { name: 'cdistrictmap', value: currDistrictMap.filters() }
+
   ];
 
   var recursiveEncoded = $.param(filters);
   location.hash = recursiveEncoded;
+
 
 }
 
@@ -47,6 +50,7 @@ function initFilters() {
   // var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\S\s,\S\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
   var parsed = parseHash.exec(decodeURIComponent(location.hash));
 
+
   function filter(chart, rank) {  // for instance chart = sector_chart and rank in URL hash = 1
     // sector chart
     if (parsed[rank] == "") {
@@ -54,8 +58,10 @@ function initFilters() {
     } else if (rank == 2) {
       var filterValues = parsed[rank].split(",");
 
+
       var start = new Date(filterValues[0]);
       var end = new Date(filterValues[1]);
+
 
       // initialize date to midnight
       start.setHours(0, 0, 0, 0);
@@ -68,6 +74,7 @@ function initFilters() {
       var filterValues = parsed[rank].split(",");
       for (var i = 0; i < filterValues.length; i++) {
         chart.filter(filterValues[i]);
+
       }
     }
   }
@@ -86,11 +93,11 @@ function initFilters() {
 
 var numberFormat = d3.format(",.0f");
 
-var dateFormat = d3.time.format("%d %b %Y");
+var dateFormat = d3.timeFormat("%d %b %Y");
 
-var monthNameFormat = d3.time.format("%b %Y");
+var monthNameFormat = d3.timeFormat("%b %Y");
 
-var dateLongFormat = d3.time.format("%Y-%m-%d");
+var dateLongFormat = d3.timeFormat("%Y-%m-%d");
 
 var monthBarTip = d3.tip()
   .attr('class', 'd3-month-tip')
@@ -125,14 +132,14 @@ var mapTip = d3.tip()
 
 // Correct end date due to month rounding off 
 // by adding or deducting a day
-var dayOffset = d3.time.day.offset;
+var dayOffset = d3.timeDay.offset;
 
-var monthOffset = d3.time.month.offset;
+var monthOffset = d3.timeMonth.offset;
 
 var resetFilter = function (filterValues) {
   if (filterValues.length == 0) return filterValues;
-  var start = filterValues[0];
-  var end = dayOffset(filterValues[1], -1);
+  var start = filterValues[0][0];
+  var end = dayOffset(filterValues[0][1], -1);
   var filter = dc.filters.RangedFilter(dateLongFormat(start), dateLongFormat(end));
   return filter;
 }
@@ -169,7 +176,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       var displaceMonth = facts.dimension(function (d) {
         var months = d.monthend.split('\/');
         var date = new Date(months[2], months[1] - 1, months[0]);
-        return d3.time.month(date);
+        return d3.timeMonth(date);
         // return date;
       });
       var displaceMonthGroup = displaceMonth.group()
@@ -182,82 +189,43 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       // Configure displacement month bar chart parameters
 
       // Get minimum and maximum date
+      var minDate = keys[0]; 
+      var maxDate =  dayOffset(monthOffset(keys[keys.length -1],1));
 
-      var minDate = keys[0];
-      var maxDate = dayOffset(monthOffset(keys[keys.length - 1], 1), -1);
       displaceMonthChart.height(160)
         .width($('#leftPanel').width())
-        .margins({ top: 5, right: 10, bottom: 60, left: 50 })
+        .margins({ top: 5, right:10, bottom: 60, left: 50 })
         .dimension(displaceMonth)
         .group(displaceMonthGroup, "Year-Month")
-        // .keyAccessor(function(d){
-        //   return d.key;
-        // })
         .valueAccessor(function (d) {
           return d.value;
         })
-        .brushOn(true)
-        .centerBar(false)
         .gap(1)
-        .round(d3.time.month.round)
-        .alwaysUseRounding(true)
+        // .barPadding(0.1)
+        // .outerPadding(0.05)
+        // .centerBar(true)
+        .ordinalColors(['#338EC9'])
+        .renderHorizontalGridLines(true)
+        .controlsUseVisibility(true)
+        .round(d3.timeMonth.round) 
+        .x(d3.scaleTime().domain([minDate, maxDate]))
+        .xUnits(d3.timeMonths)
+        .round(d3.timeMonth)
+        .brushOn(true)
+        .elasticY(true)
+        .on("filtered", getFiltersValues)
         .title(function (d) {
           // return d3.format(",")(d.value);
           return '';
         })
-        // .ordering(function(d) { return -d.key; }) // desc
-        // .ordering(function(d) { return d.key; }) // asc
-        .on("filtered", getFiltersValues)
-        .colors('#338EC9')
-        .barPadding(0.1)
-        .outerPadding(0.05)
-        .controlsUseVisibility(true)
-        // .x(d3.scale.ordinal())
-        // .xUnits(dc.units.ordinal)
-        .x(d3.time.scale().domain([minDate, maxDate]))
-        .xUnits(d3.time.months)
-        .elasticY(true)
-        .renderHorizontalGridLines(true)
-        .yAxis().ticks(5);
+        .yAxis().ticks(5);       
 
-      displaceMonthChart.filterHandler(function (dimension, filters) {
-        var newFilters = filters;
-        if (filters.length === 0) {
-          // the empty case (no filtering)
-          dimension.filter(null);
-
-        } else if (filters.length === 1 && !filters[0].isFiltered) {
-          // single value and not a function-based filter
-          dimension.filterExact(null);
-        } else if (filters.length === 1 && filters[0].filterType === 'RangedFilter') {
-          // single range-based filter
-          var start = filters[0][0];
-          var end = filters[0][1];
-          newFilters = dc.filters.RangedFilter(start, end);
-          dimension.filterRange(newFilters);
-        } else {
-          // an array of values, or an array of filter objects
-          dimension.filterFunction(function (d) {
-            for (var i = 0; i < filters.length; i++) {
-              var filter = filters[i];
-              if (filter.isFiltered && filter.isFiltered(d)) {
-                return true;
-              } else if (filter <= d && filter >= d) {
-                return true;
-              }
-            }
-            return false;
-          });
-        }
-        return newFilters;
-      });
-
-      displaceMonthChart.filterPrinter(function (filters) {
-        var s = "Period: ";
-        var start = filters[0];
-        var end = dayOffset(filters[1], -1);    // correct month rounding off 
+      displaceMonthChart.filterPrinter(function(filters){
+        var s = "Period: ";  
+        var start = filters[0][0];
+        var end = dayOffset(filters[0][1],-1);    // correct month rounding off 
         s += dateFormat(start) + ' to ' + dateFormat(end);
-        return s;
+        return s;        
       });
 
       displaceMonthChart.xAxis()
@@ -372,7 +340,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .brushOn(false) 
         .mouseZoomable(true)
         .renderHorizontalGridLines(true)
-        .x(d3.scale.linear().domain([0,53]))
+        .x(d3.scaleLinear().domain([0,53]))
         .elasticY(true) 
         .elasticX(false) 
         .yAxis().ticks(6);
@@ -452,6 +420,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .width($('#dc-prev-region-chart').width())
         // .height($('.text-section').height()-50)
         .height(380)
+
         .margins({ top: 0, right: 10, bottom: 20, left: 10 })
         .dimension(prevRegion)
         .valueAccessor(function (d) { return d.value; })
@@ -493,6 +462,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .width($('#dc-curr-region-chart').width())
         // .height($('.text-section').height()-50)
         .height(380)
+
         .margins({ top: 0, right: 10, bottom: 50, left: 10 })
         .dimension(currRegion)
         .valueAccessor(function (d) { return d.value; })
@@ -528,7 +498,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       });
 
       // Convert zipped shapefiles to GeoJSON with mapshaper (mapshaper.org).
-      // Use d3.geo.mercator projections and play around with the scale and 
+      // Use d3.geoMercator projections and play around with the scale and 
       // translate method parameters to get the right fit for the map. 
       // The maximum value for colorDomain can be automatically calculated 
       // from the dataset.
@@ -541,7 +511,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .transitionDuration(1000)
         .dimension(prevRegion)
         .group(prevRegionGroup)
-        .projection(d3.geo.mercator()
+        .projection(d3.geoMercator()
           .scale(1490)
           .translate([-1030, 320])
         )
@@ -550,9 +520,11 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .on("filtered", getFiltersValues)
         .controlsUseVisibility(true)
         // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
-        // .colors(d3.scale.quantize().range(['#F592A0','#F26E80','#EF4A60','#B33848']))
-        .colors(d3.scale.quantize().range(['#F9B7BF', '#F592A0', '#F26E80', '#EF4A60', '#B33848']))
+        // .colors(d3.scaleQuantize().range(['#F592A0','#F26E80','#EF4A60','#B33848']))
+
+        .colors(d3.scaleQuantize().range(['#F9B7BF', '#F592A0', '#F26E80', '#EF4A60', '#B33848']))
         .colorDomain([0, prevRegionGroup.top(1)[0].value / 2])
+
         .colorCalculator(function (d) { return d ? prevRegionMap.colors()(d) : '#ccc'; })
         .overlayGeoJson(regionJson.features, "admin1Name", function (d) {
           return d.properties.admin1Name;
@@ -578,28 +550,32 @@ d3.csv("data/PRMNDataset.csv", function (data) {
 
       prevDistrictMap
         .width($('#leftPanel').width())
+
         .height(380)
         .transitionDuration(1000)
         .dimension(prevDistrict)
         .group(prevDistrictGroup)
-        .projection(d3.geo.mercator()
+        .projection(d3.geoMercator()
           .scale(1490)
           .translate([-1030, 320])
+
         )
         .keyAccessor(function (d) { return d.key; })
         .valueAccessor(function (d) { return d.value; })
         .on("filtered", getFiltersValues)
         .controlsUseVisibility(true)
         // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
-        .colors(d3.scale.quantize().range(['#F9B7BF', '#F592A0', '#F26E80', '#EF4A60', '#B33848']))
+        .colors(d3.scaleQuantize().range(['#F9B7BF', '#F592A0', '#F26E80', '#EF4A60', '#B33848']))
         .colorDomain([0, prevDistrictGroup.top(1)[0].value / 2])
         .colorCalculator(function (d) { return d ? prevDistrictMap.colors()(d) : '#ccc'; })
         .overlayGeoJson(districtJson.features, "admin2Name", function (d) {
           return d.properties.admin2Name;
+
         })
         .title(function (d) {
           return d.key + ": " + d3.format(",")(rndFig(d.value));
           // return '';
+
         });
 
       prevDistrictMap.on('renderlet', function (chart) {
@@ -618,11 +594,12 @@ d3.csv("data/PRMNDataset.csv", function (data) {
 
       currRegionMap
         .width($('#leftPanel').width())
+
         .height(400)
         .transitionDuration(1000)
         .dimension(currRegion)
         .group(currRegionGroup)
-        .projection(d3.geo.mercator()
+        .projection(d3.geoMercator()
           .scale(1490)
           .translate([-1030, 320])
         )
@@ -632,7 +609,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .controlsUseVisibility(true)
         // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
         // .colors(["#CCC", '#E2F2FF','#C4E4FF','#9ED2FF','#81C5FF','#6BBAFF','#51AEFF','#36A2FF','#1E96FF','#0089FF','#0061B5'])
-        .colors(d3.scale.quantize().range(['#99C7E4', '#66AAD7', '#338EC9', '#0072BC', '#00568D']))
+        .colors(d3.scaleQuantize().range(['#99C7E4', '#66AAD7', '#338EC9', '#0072BC', '#00568D']))
         .colorDomain([0, currRegionGroup.top(1)[0].value / 2])
         .colorCalculator(function (d) { return d ? currRegionMap.colors()(d) : '#ccc'; })
         .overlayGeoJson(regionJson.features, "admin1Name", function (d) {
@@ -664,24 +641,27 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .transitionDuration(1000)
         .dimension(currDistrict)
         .group(currDistrictGroup)
-        .projection(d3.geo.mercator()
+        .projection(d3.geoMercator()
           .scale(1490)
           .translate([-1030, 320])
+
         )
         .keyAccessor(function (d) { return d.key; })
         .valueAccessor(function (d) { return d.value; })
         .on("filtered", getFiltersValues)
         .controlsUseVisibility(true)
         // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
-        .colors(d3.scale.quantize().range(['#99C7E4', '#66AAD7', '#338EC9', '#0072BC', '#00568D']))
+        .colors(d3.scaleQuantize().range(['#99C7E4', '#66AAD7', '#338EC9', '#0072BC', '#00568D']))
         .colorDomain([0, currDistrictGroup.top(1)[0].value / 2])
         .colorCalculator(function (d) { return d ? currDistrictMap.colors()(d) : '#ccc'; })
         .overlayGeoJson(districtJson.features, "admin2Name", function (d) {
           return d.properties.admin2Name;
+
         })
         .title(function (d) {
           return d.key + ": " + d3.format(",")(rndFig(d.value));
           // return '';
+
         });
 
       currDistrictMap.on('renderlet', function (chart) {
@@ -689,6 +669,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         chart.selectAll(".admin2Name").on('mouseover', mapTip.show)
           .on('mouseout', mapTip.hide);
       });
+
 
 
 
@@ -709,6 +690,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
 
 function setResizingSvg() {
   // set resizing viewbox
+
   // 
 }
 
@@ -722,18 +704,23 @@ function rndFig(num) {
   //  var num = 767; 
   if (num == null) { // null == undefined
     res = 0;
+
   }
   else if (num <= 4) {
     res = num;
+
   }
   else if (num > 4 && num < 100) {
     res = Math.round(num / 10) * 10;
+
   }
   else if (num >= 100 && num < 1000) {
     res = Math.round(num / 100) * 100;
+
   }
   else if (num >= 1000) {
     res = Math.round(num / 1000) * 1000;
+
   }
   // else if (num>=10000) {
   //   res = Math.round(num/10000)*10000;
