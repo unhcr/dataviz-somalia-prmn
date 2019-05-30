@@ -361,13 +361,7 @@ d3.csv("data/PRMNDataset.csv", function (data){
 
 
       // create map dimension and group
-      var prevRegion = facts.dimension(function (d) {
-        return d.pregion;
-      });
-      var prevRegionGroup = prevRegion.group().reduceSum(function (d) {
-        return d.tpeople;
-      });
-
+      
       // Convert zipped shapefiles to GeoJSON with mapshaper (mapshaper.org).
       // Use d3.geoMercator projections and play around with the scale and 
       // translate method parameters to get the right fit for the map. 
@@ -376,7 +370,24 @@ d3.csv("data/PRMNDataset.csv", function (data){
       // colorAccessor returns a grey color for 0 or undefined data values. 
       // Remember to set the 'stroke' color for the admin1 borders to stand-out,
       // to increase thickness set 'stroke-width' to 2px or more. See 'style.css'.
+      
+      // var maxRegion = prevRegionGroup.top(1)[0].value;
+      // console.log(maxRegion);
+      
+      var prevRegion = facts.dimension(function (d) {
+        return d.pregion;
+      });
 
+      var prevRegionGroup = prevRegion.group().reduceSum(function (d) {
+        return d.tpeople;
+      });
+
+      var prevRegionScale = d3.scaleCluster()
+          .domain(d3.range(10).map(function(i){
+            return prevRegionGroup.top(1)[0].value * i/10;
+          }))
+          .range(['#f7ebec', '#efd7da', '#e8c3c8', '#e0afb5', '#d99ba3', '#d18791', '#c9737e', '#c25f6c', '#ba4b5a', '#b33848']);
+  
       prevRegionMap
         .width($('#leftPanel').width())
         .height(380)
@@ -391,8 +402,10 @@ d3.csv("data/PRMNDataset.csv", function (data){
         .valueAccessor(function (d) { return d.value; })
         .on("filtered", getFiltersValues)
         .controlsUseVisibility(true)
-        .colors(d3.scaleQuantize().range(['#F9B7BF', '#F592A0', '#F26E80', '#EF4A60', '#B33848']))
-        .colorDomain([0, prevRegionGroup.top(1)[0].value / 2])
+        // .colors(d3.scaleQuantize().range(['#F9B7BF', '#F592A0', '#F26E80', '#EF4A60', '#B33848']))
+        .colors(prevRegionScale.range())
+        // .colorDomain([0, prevRegionGroup.top(1)[0].value / 2])
+        .colorDomain(prevRegionScale.domain())
         .colorCalculator(function (d) { return d ? prevRegionMap.colors()(d) : '#ccc'; })
         .overlayGeoJson(regionJson.features, "admin1Name", function (d) {
           return d.properties.admin1Name;
@@ -408,14 +421,22 @@ d3.csv("data/PRMNDataset.csv", function (data){
           .on('mouseout', mapTip.hide);
       });
 
+
       // create map dimension and group
       var prevDistrict = facts.dimension(function (d) {
         return d.pdistrict;
       });
+
       var prevDistrictGroup = prevDistrict.group().reduceSum(function (d) {
         return d.tpeople;
       });
 
+      var prevDistrictScale = d3.scaleCluster()
+          .domain(d3.range(10).map(function(i){
+            return prevDistrictGroup.top(1)[0].value * i/10;
+          }))
+          .range(['#f7ebec', '#efd7da', '#e8c3c8', '#e0afb5', '#d99ba3', '#d18791', '#c9737e', '#c25f6c', '#ba4b5a', '#b33848']);
+  
       prevDistrictMap
       .width($('#leftPanel').width())
       .height(380)
@@ -430,9 +451,10 @@ d3.csv("data/PRMNDataset.csv", function (data){
       .valueAccessor(function (d) { return d.value; })
       .on("filtered", getFiltersValues)
       .controlsUseVisibility(true)
-      // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
-      .colors(d3.scaleQuantize().range(['#F9B7BF', '#F592A0', '#F26E80', '#EF4A60', '#B33848']))
-      .colorDomain([0, prevDistrictGroup.top(1)[0].value / 2])
+      // .colors(d3.scaleQuantize().range(['#F9B7BF', '#F592A0', '#F26E80', '#EF4A60', '#B33848']))
+      .colors(prevDistrictScale.range())
+      // .colorDomain([0, prevDistrictGroup.top(1)[0].value / 2])
+      .colorDomain(prevDistrictScale.domain())
       .colorCalculator(function (d) { return d ? prevDistrictMap.colors()(d) : '#ccc'; })
       .overlayGeoJson(districtJson.features, "admin2Name", function (d) {
         return d.properties.admin2Name;
@@ -448,13 +470,21 @@ d3.csv("data/PRMNDataset.csv", function (data){
           .on('mouseout', mapTip.hide);
       });
 
+
       // create map dimension and group
       var currRegion = facts.dimension(function (d) {
         return d.cregion;
       });
+
       var currRegionGroup = currRegion.group().reduceSum(function (d) {
         return d.tpeople;
       });
+
+      var currRegionScale = d3.scaleCluster()
+          .domain(d3.range(10).map(function(i){
+            return currRegionGroup.top(1)[0].value * i/10;
+          }))
+          .range(['#e5eef3', '#ccdde8', '#b2ccdc', '#99bbd1', '#7faac6', '#6699ba', '#4c88af', '#3277a3', '#196698', '#00568d']);
 
       currRegionMap
         .width($('#leftPanel').width())
@@ -470,10 +500,11 @@ d3.csv("data/PRMNDataset.csv", function (data){
         .valueAccessor(function (d) { return d.value; })
         .on("filtered", getFiltersValues)
         .controlsUseVisibility(true)
-        // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
         // .colors(["#CCC", '#E2F2FF','#C4E4FF','#9ED2FF','#81C5FF','#6BBAFF','#51AEFF','#36A2FF','#1E96FF','#0089FF','#0061B5'])
-        .colors(d3.scaleQuantize().range(['#99C7E4', '#66AAD7', '#338EC9', '#0072BC', '#00568D']))
-        .colorDomain([0, currRegionGroup.top(1)[0].value / 2])
+        // .colors(d3.scaleQuantize().range(['#99C7E4', '#66AAD7', '#338EC9', '#0072BC', '#00568D']))
+        .colors(currRegionScale.range())
+        // .colorDomain([0, currRegionGroup.top(1)[0].value / 2])
+        .colorDomain(currRegionScale.domain())
         .colorCalculator(function (d) { return d ? currRegionMap.colors()(d) : '#ccc'; })
         .overlayGeoJson(regionJson.features, "admin1Name", function (d) {
           return d.properties.admin1Name;
@@ -498,6 +529,12 @@ d3.csv("data/PRMNDataset.csv", function (data){
         return d.tpeople;
       });
 
+      var currDistrictScale = d3.scaleCluster()
+          .domain(d3.range(10).map(function(i){
+            return currDistrictGroup.top(1)[0].value * i/10;
+          }))
+          .range(['#e5eef3', '#ccdde8', '#b2ccdc', '#99bbd1', '#7faac6', '#6699ba', '#4c88af', '#3277a3', '#196698', '#00568d']);
+
       currDistrictMap
       .width($('#leftPanel').width())
       .height(380)
@@ -513,8 +550,10 @@ d3.csv("data/PRMNDataset.csv", function (data){
       .on("filtered", getFiltersValues)
       .controlsUseVisibility(true)
       // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
-      .colors(d3.scaleQuantize().range(['#99C7E4', '#66AAD7', '#338EC9', '#0072BC', '#00568D']))
-      .colorDomain([0, currDistrictGroup.top(1)[0].value / 2])
+      // .colors(d3.scaleQuantize().range(['#99C7E4', '#66AAD7', '#338EC9', '#0072BC', '#00568D']))
+      .colors(currDistrictScale.range())
+      // .colorDomain([0, currDistrictGroup.top(1)[0].value / 2])
+      .colorDomain(currDistrictScale.domain())
       .colorCalculator(function (d) { return d ? currDistrictMap.colors()(d) : '#ccc'; })
       .overlayGeoJson(districtJson.features, "admin2Name", function (d) {
         return d.properties.admin2Name;
