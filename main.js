@@ -5,12 +5,13 @@ dc.config.defaultColors(d3.schemeCategory20c);
 var displaceTotalNumber = dc.numberDisplay("#dc-displace-total-number");
 
 var displaceReasonChart = dc.rowChart("#dc-displace-reason-chart");
+var displaceNeedChart = dc.rowChart("#dc-displace-need-chart");
 
 var prevRegionChart = dc.rowChart("#dc-prev-region-chart");
 var currRegionChart = dc.rowChart("#dc-curr-region-chart");
 
-var prevRegionMap = dc.geoChoroplethChart("#dc-prev-region-map");
-var currRegionMap = dc.geoChoroplethChart("#dc-curr-region-map");
+// var prevRegionMap = dc.geoChoroplethChart("#dc-prev-region-map");
+// var currRegionMap = dc.geoChoroplethChart("#dc-curr-region-map");
 
 var prevDistrictMap = dc.geoChoroplethChart("#dc-prev-district-map");
 var currDistrictMap = dc.geoChoroplethChart("#dc-curr-district-map");
@@ -26,11 +27,12 @@ function getFiltersValues() {
     { name: 'reason', value: displaceReasonChart.filters() },
     // { name: 'month', value: displaceMonthChart.filters()},
     { name: 'month', value: resetFilter(displaceMonthChart.filters()) },
+    { name: 'need', value: displaceNeedChart.filters() },
     { name: 'pregion', value: prevRegionChart.filters() },
-    { name: 'pregionmap', value: prevRegionMap.filters() },
+    // { name: 'pregionmap', value: prevRegionMap.filters() },
     { name: 'pdistrictmap', value: prevDistrictMap.filters() },
     { name: 'cregion', value: currRegionChart.filters() },
-    { name: 'cregionmap', value: currRegionMap.filters() },
+    // { name: 'cregionmap', value: currRegionMap.filters() },
     { name: 'cdistrictmap', value: currDistrictMap.filters() }
 
   ];
@@ -46,7 +48,8 @@ function initFilters() {
   // Get hash values
   // var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([A-Za-z0-9,_\-\/\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
   // e.g. month="1987-12-24"
-  var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\d{4}-\d{2}-\d{2},\d{4}-\d{2}-\d{2}]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
+  var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\d{4}-\d{2}-\d{2},\d{4}-\d{2}-\d{2}]*)&need=([A-Za-z0-9,_\-\/\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
+  // var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\d{4}-\d{2}-\d{2},\d{4}-\d{2}-\d{2}]*)&need=([A-Za-z0-9,_\-\/\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
   // var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\S\s,\S\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
   var parsed = parseHash.exec(decodeURIComponent(location.hash));
 
@@ -82,12 +85,13 @@ function initFilters() {
   if (parsed) {
     filter(displaceReasonChart, 1);
     filter(displaceMonthChart, 2);
-    filter(prevRegionChart, 3);
-    filter(prevRegionMap, 4);
+    filter(displaceNeedChart, 3);
+    filter(prevRegionChart, 4);
+    // filter(prevRegionMap, 5);
     filter(prevDistrictMap, 5);
     filter(currRegionChart, 6);
-    filter(currRegionMap, 7);
-    filter(currDistrictMap, 8);
+    // filter(currRegionMap, 8);
+    filter(currDistrictMap, 7);
   }
 }
 
@@ -253,14 +257,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       });
 
 
-
-
-
-
-
-
       // Configure weekly displacements parameters
-      
       var displaceWeek = facts.dimension(function (d) {
         return +d.weeknum;
       });
@@ -290,9 +287,9 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       // }
 
       displaceWeekChart
-        .height(140)
+        .height(152)
         .width($('#leftPanel').width())     
-        .margins({ top: 25, right: 50, bottom: 20, left: 50 }) 
+        .margins({ top: 25, right: 50, bottom: 34, left: 50 }) 
         .title(function (d) {
           // return "Week " + d.key + ": "
           //          + d3.format(",")(d.value);
@@ -306,7 +303,8 @@ d3.csv("data/PRMNDataset.csv", function (data) {
             // })
             .colors('#bdbdbd') // gray
             .dashStyle([3,2])
-            .group(displaceWeekGroup1, "2016"),
+            .group(displaceWeekGroup1, "2016")
+            .useRightYAxis(true),
           dc.lineChart(displaceWeekChart)
             .dimension(displaceWeek)
             // .keyAccessor(function(d){
@@ -314,7 +312,8 @@ d3.csv("data/PRMNDataset.csv", function (data) {
             // })
             .colors('#addd8e')  // green
             .dashStyle([3,2])
-            .group(displaceWeekGroup2, "2017"),
+            .group(displaceWeekGroup2, "2017")
+            .useRightYAxis(true),
           dc.lineChart(displaceWeekChart)
             .dimension(displaceWeek)
             // .keyAccessor(function(d){
@@ -322,7 +321,8 @@ d3.csv("data/PRMNDataset.csv", function (data) {
             // })
             .colors('#41b6c4') // purple
             .dashStyle([3,2])
-            .group(displaceWeekGroup3, "2018"),
+            .group(displaceWeekGroup3, "2018")
+            .useRightYAxis(true),
           dc.lineChart(displaceWeekChart)
             .dimension(displaceWeek)
             // .keyAccessor(function(d){
@@ -331,23 +331,22 @@ d3.csv("data/PRMNDataset.csv", function (data) {
             .colors('#338EC9') // blue
             .group(displaceWeekGroup4, "2019")
             // .useRightAxisGridLines(true)
-            .useRightYAxis(true)
           
         ]) 
         .legend(dc.legend().horizontal(true).x(0).y(0).gap(0))
         // .legend(dc.legend().x(370).y(5).itemHeight(13).gap(5))
         // .shareTitle(false)
         .brushOn(false) 
-        .mouseZoomable(true)
+        // .mouseZoomable(true)
         .renderHorizontalGridLines(true)
         .x(d3.scaleLinear().domain([0,53]))
         .elasticY(true) 
         .elasticX(false) 
-        .yAxis().ticks(6);
+        .yAxis().ticks(4);
 
       displaceWeekChart
         .useRightAxisGridLines(true)
-        .rightYAxis().ticks(6);
+        .rightYAxis().ticks(4);
 
       displaceWeekChart
         .xAxis().ticks(26);
@@ -358,9 +357,6 @@ d3.csv("data/PRMNDataset.csv", function (data) {
           .on('mouseout.tip', lineTip.hide);
       });
   
-
-
-
 
         // create displacement reason dimension and group
       var displaceReason = facts.dimension(function (d) {
@@ -374,9 +370,9 @@ d3.csv("data/PRMNDataset.csv", function (data) {
 
       // configure displacement reason chart parameters
       displaceReasonChart
-        .width($('#leftPanel').width())
-        .height(130)
-        .margins({ top: 0, right: 10, bottom: 20, left: 10 })
+        .width($('#dc-displace-reason-chart').width())
+        .height(150)
+        .margins({ top: 0, right: 10, bottom: 40, left: 10 })
         .dimension(displaceReason)
         .group(displaceReasonGroup)
         .valueAccessor(function (d) {
@@ -406,6 +402,49 @@ d3.csv("data/PRMNDataset.csv", function (data) {
           .on('mouseout', barTip.hide);
       });
 
+      
+
+      // create displacement need dimension and group
+      var displaceNeed = facts.dimension(function (d) {
+        return d.cneed;
+      });
+
+      var displaceNeedGroup = displaceNeed.group().reduceSum(function (d) {
+        return d.tpeople;
+      });
+
+      // configure current region chart parameters
+      displaceNeedChart
+        .width($('#dc-displace-need-chart').width())
+        // .height($('.text-section').height()-50)
+        .height(230)
+        .margins({ top: 0, right: 10, bottom: 40, left: 10 })
+        .dimension(displaceNeed)
+        .valueAccessor(function (d) { return d.value; })
+        .group(displaceNeedGroup)
+        .ordering(function (d) { return -d.value; })
+        .on("filtered", getFiltersValues)
+        .controlsUseVisibility(true)
+        // .colors(d3.scale.ordinal().range(colorbrewer.Set2[6]))
+        .colors('#338EC9')
+        .label(function (d) {
+          return d.key;
+        })
+        .title(function (d) {
+          // return d.key + ": " + d3.format(",")(d.value);
+          return '';
+        })
+        .elasticX(true)
+        .xAxis().ticks(3);
+
+      displaceNeedChart.on('renderlet', function (chart) {
+        chart.selectAll(".row").call(barTip);
+        chart.selectAll(".row").on('mouseover', barTip.show)
+          .on('mouseout', barTip.hide);
+      });
+      
+      
+
       // create previous region dimension and group
       var prevRegion = facts.dimension(function (d) {
         return d.pregion;
@@ -420,7 +459,6 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .width($('#dc-prev-region-chart').width())
         // .height($('.text-section').height()-50)
         .height(380)
-
         .margins({ top: 0, right: 10, bottom: 20, left: 10 })
         .dimension(prevRegion)
         .valueAccessor(function (d) { return d.value; })
@@ -448,6 +486,8 @@ d3.csv("data/PRMNDataset.csv", function (data) {
           .on('mouseout', barTip.hide);
       });
 
+
+
       // create current region dimension and group
       var currRegion = facts.dimension(function (d) {
         return d.cregion;
@@ -462,8 +502,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .width($('#dc-curr-region-chart').width())
         // .height($('.text-section').height()-50)
         .height(380)
-
-        .margins({ top: 0, right: 10, bottom: 50, left: 10 })
+        .margins({ top: 0, right: 10, bottom: 20, left: 10 })
         .dimension(currRegion)
         .valueAccessor(function (d) { return d.value; })
         .group(currRegionGroup)
@@ -505,52 +544,58 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       // colorAccessor returns a grey color for 0 or undefined data values. 
       // Remember to set the 'stroke' color for the admin1 borders to stand-out,
       // to increase thickness set 'stroke-width' to 2px or more. See 'style.css'.
-      prevRegionMap
-        .width($('#leftPanel').width())
-        .height(380)
-        .transitionDuration(1000)
-        .dimension(prevRegion)
-        .group(prevRegionGroup)
-        .projection(d3.geoMercator()
-          .scale(1490)
-          .translate([-1030, 320])
-        )
-        .keyAccessor(function (d) { return d.key; })
-        .valueAccessor(function (d) { return d.value; })
-        .on("filtered", getFiltersValues)
-        .controlsUseVisibility(true)
-        // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
-        // .colors(d3.scaleQuantize().range(['#F592A0','#F26E80','#EF4A60','#B33848']))
+      // prevRegionMap
+      //   .width($('#leftPanel').width())
+      //   .height(380)
+      //   .transitionDuration(1000)
+      //   .dimension(prevRegion)
+      //   .group(prevRegionGroup)
+      //   .projection(d3.geoMercator()
+      //     .scale(1490)
+      //     .translate([-1030, 320])
+      //   )
+      //   .keyAccessor(function (d) { return d.key; })
+      //   .valueAccessor(function (d) { return d.value; })
+      //   .on("filtered", getFiltersValues)
+      //   .controlsUseVisibility(true)
+      //   // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
+      //   // .colors(d3.scaleQuantize().range(['#F592A0','#F26E80','#EF4A60','#B33848']))
 
-        .colors(d3.scaleQuantize().range(['#F9B7BF', '#F592A0', '#F26E80', '#EF4A60', '#B33848']))
-        .colorDomain([0, prevRegionGroup.top(1)[0].value / 2])
+      //   .colors(d3.scaleQuantize().range(['#F9B7BF', '#F592A0', '#F26E80', '#EF4A60', '#B33848']))
+      //   .colorDomain([0, prevRegionGroup.top(1)[0].value / 2])
 
-        .colorCalculator(function (d) { return d ? prevRegionMap.colors()(d) : '#ccc'; })
-        .overlayGeoJson(regionJson.features, "admin1Name", function (d) {
-          return d.properties.admin1Name;
-        })
-        .title(function (d) {
-          return d.key + ": " + d3.format(",")(rndFig(d.value));
-          // return '';
-        });
+      //   .colorCalculator(function (d) { return d ? prevRegionMap.colors()(d) : '#ccc'; })
+      //   .overlayGeoJson(regionJson.features, "admin1Name", function (d) {
+      //     return d.properties.admin1Name;
+      //   })
+      //   .title(function (d) {
+      //     return d.key + ": " + d3.format(",")(rndFig(d.value));
+      //     // return '';
+      //   });
 
-      prevRegionMap.on('renderlet', function (chart) {
-        chart.selectAll(".admin1Name").call(mapTip);
-        chart.selectAll(".admin1Name").on('mouseover', mapTip.show)
-          .on('mouseout', mapTip.hide);
-      });
+      // prevRegionMap.on('renderlet', function (chart) {
+      //   chart.selectAll(".admin1Name").call(mapTip);
+      //   chart.selectAll(".admin1Name").on('mouseover', mapTip.show)
+      //     .on('mouseout', mapTip.hide);
+      // });
 
       // create map dimension and group
       var prevDistrict = facts.dimension(function (d) {
         return d.pdistrict;
       });
+
       var prevDistrictGroup = prevDistrict.group().reduceSum(function (d) {
         return d.tpeople;
       });
 
+      var prevDistrictScale = d3.scaleCluster()
+          .domain(d3.range(10).map(function(i){
+            return prevDistrictGroup.top(1)[0].value * i/10;
+          }))
+          .range(['#f7ebec', '#efd7da', '#e8c3c8', '#e0afb5', '#d99ba3', '#d18791', '#c9737e', '#c25f6c', '#ba4b5a', '#b33848']);
+      
       prevDistrictMap
         .width($('#leftPanel').width())
-
         .height(380)
         .transitionDuration(1000)
         .dimension(prevDistrict)
@@ -565,8 +610,10 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .on("filtered", getFiltersValues)
         .controlsUseVisibility(true)
         // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
-        .colors(d3.scaleQuantize().range(['#F9B7BF', '#F592A0', '#F26E80', '#EF4A60', '#B33848']))
-        .colorDomain([0, prevDistrictGroup.top(1)[0].value / 2])
+        // .colors(d3.scaleQuantize().range(['#F9B7BF', '#F592A0', '#F26E80', '#EF4A60', '#B33848']))
+        .colors(prevDistrictScale.range())
+        // .colorDomain([0, prevDistrictGroup.top(1)[0].value / 2])
+        .colorDomain(prevDistrictScale.domain())
         .colorCalculator(function (d) { return d ? prevDistrictMap.colors()(d) : '#ccc'; })
         .overlayGeoJson(districtJson.features, "admin2Name", function (d) {
           return d.properties.admin2Name;
@@ -585,59 +632,67 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       });
 
       // create map dimension and group
-      var currRegion = facts.dimension(function (d) {
-        return d.cregion;
-      });
-      var currRegionGroup = currRegion.group().reduceSum(function (d) {
-        return d.tpeople;
-      });
+      // var currRegion = facts.dimension(function (d) {
+      //   return d.cregion;
+      // });
+      // var currRegionGroup = currRegion.group().reduceSum(function (d) {
+      //   return d.tpeople;
+      // });
 
-      currRegionMap
-        .width($('#leftPanel').width())
+      // currRegionMap
+      //   .width($('#leftPanel').width())
 
-        .height(400)
-        .transitionDuration(1000)
-        .dimension(currRegion)
-        .group(currRegionGroup)
-        .projection(d3.geoMercator()
-          .scale(1490)
-          .translate([-1030, 320])
-        )
-        .keyAccessor(function (d) { return d.key; })
-        .valueAccessor(function (d) { return d.value; })
-        .on("filtered", getFiltersValues)
-        .controlsUseVisibility(true)
-        // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
-        // .colors(["#CCC", '#E2F2FF','#C4E4FF','#9ED2FF','#81C5FF','#6BBAFF','#51AEFF','#36A2FF','#1E96FF','#0089FF','#0061B5'])
-        .colors(d3.scaleQuantize().range(['#99C7E4', '#66AAD7', '#338EC9', '#0072BC', '#00568D']))
-        .colorDomain([0, currRegionGroup.top(1)[0].value / 2])
-        .colorCalculator(function (d) { return d ? currRegionMap.colors()(d) : '#ccc'; })
-        .overlayGeoJson(regionJson.features, "admin1Name", function (d) {
-          return d.properties.admin1Name;
-        })
-        .title(function (d) {
-          return d.key + ": " + d3.format(",")(rndFig(d.value));
-          // return '';
-        });
+      //   .height(400)
+      //   .transitionDuration(1000)
+      //   .dimension(currRegion)
+      //   .group(currRegionGroup)
+      //   .projection(d3.geoMercator()
+      //     .scale(1490)
+      //     .translate([-1030, 320])
+      //   )
+      //   .keyAccessor(function (d) { return d.key; })
+      //   .valueAccessor(function (d) { return d.value; })
+      //   .on("filtered", getFiltersValues)
+      //   .controlsUseVisibility(true)
+      //   // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
+      //   // .colors(["#CCC", '#E2F2FF','#C4E4FF','#9ED2FF','#81C5FF','#6BBAFF','#51AEFF','#36A2FF','#1E96FF','#0089FF','#0061B5'])
+      //   .colors(d3.scaleQuantize().range(['#99C7E4', '#66AAD7', '#338EC9', '#0072BC', '#00568D']))
+      //   .colorDomain([0, currRegionGroup.top(1)[0].value / 2])
+      //   .colorCalculator(function (d) { return d ? currRegionMap.colors()(d) : '#ccc'; })
+      //   .overlayGeoJson(regionJson.features, "admin1Name", function (d) {
+      //     return d.properties.admin1Name;
+      //   })
+      //   .title(function (d) {
+      //     return d.key + ": " + d3.format(",")(rndFig(d.value));
+      //     // return '';
+      //   });
 
-      currRegionMap.on('renderlet', function (chart) {
-        chart.selectAll(".admin1Name").call(mapTip);
-        chart.selectAll(".admin1Name").on('mouseover', mapTip.show)
-          .on('mouseout', mapTip.hide);
-      });
+      // currRegionMap.on('renderlet', function (chart) {
+      //   chart.selectAll(".admin1Name").call(mapTip);
+      //   chart.selectAll(".admin1Name").on('mouseover', mapTip.show)
+      //     .on('mouseout', mapTip.hide);
+      // });
+
+
 
       // create map dimension and group 
       var currDistrict = facts.dimension(function (d) {
-
         return d.cdistrict;
       });
+
       var currDistrictGroup = currDistrict.group().reduceSum(function (d) {
         return d.tpeople;
       });
+      
+      var currDistrictScale = d3.scaleCluster()
+      .domain(d3.range(10).map(function(i){
+        return currDistrictGroup.top(1)[0].value * i/10;
+      }))
+      .range(['#e5eef3', '#ccdde8', '#b2ccdc', '#99bbd1', '#7faac6', '#6699ba', '#4c88af', '#3277a3', '#196698', '#00568d']);
 
       currDistrictMap
         .width($('#leftPanel').width())
-        .height(400)
+        .height(370)
         .transitionDuration(1000)
         .dimension(currDistrict)
         .group(currDistrictGroup)
@@ -651,8 +706,10 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .on("filtered", getFiltersValues)
         .controlsUseVisibility(true)
         // .colors(['#ccc'].concat(colorbrewer.Blues[9])) 
-        .colors(d3.scaleQuantize().range(['#99C7E4', '#66AAD7', '#338EC9', '#0072BC', '#00568D']))
-        .colorDomain([0, currDistrictGroup.top(1)[0].value / 2])
+        // .colors(d3.scaleQuantize().range(['#99C7E4', '#66AAD7', '#338EC9', '#0072BC', '#00568D']))
+        .colors(currDistrictScale.range())
+        // .colorDomain([0, currDistrictGroup.top(1)[0].value / 2])
+        .colorDomain(currDistrictScale.domain())
         .colorCalculator(function (d) { return d ? currDistrictMap.colors()(d) : '#ccc'; })
         .overlayGeoJson(districtJson.features, "admin2Name", function (d) {
           return d.properties.admin2Name;
