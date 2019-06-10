@@ -118,7 +118,7 @@
       <div class="row">
         <div class="four wide column">
           <div class="ui small statistic">
-            <div class="blue label">Total Displacements</div>
+            <div class="blue label">Total New Displacements</div>
             <div id="dc-displace-total-number" class="value nd"></div>
           </div>
         </div>
@@ -126,7 +126,8 @@
 
         <div class="twelve wide column">
           <a class="ui primary button" style="float: right;"
-            href="javascript:dc.filterAll(); dc.renderAll(); setResizingSvg(); displaceWeekChart.focus(0,53);">
+            href="javascript:dc.filterAll(); dc.renderAll(); setResizingSvg(); displaceWeekChart.focus(0,53);"
+            data-content="Clears all filters for all charts and maps.">
             Clear All Filters
           </a>
         </div>
@@ -141,121 +142,129 @@
           <div class="row chart-section">
             <!-- graph section -->
             <div class="row" id="dc-month-chart">
-              <h4 class="ui blue header">Monthly Displacements&nbsp;
+              <h4 class="ui blue header">Monthly Displacements&nbsp;<span class="filter"></span>&nbsp;
+                <i class="grey question circle outline icon link content"
+                  data-content="Click and drag (brush) on the chart to select month(s) to filter by.">
+                </i>
                 <a class="reset ui primary button mini"
-                  href="javascript: displaceMonthChart.filterAll(); dc.redrawAll();" style="visibility: hidden">
+                  href="javascript: displaceMonthChart.filterAll(); dc.redrawAll();" style="visibility: hidden"
+                  data-content="Clears filter below.">
                   Clear
                 </a>
               </h4>
-              <h5 class="ui header">
+              <!-- <h5 class="ui header">
                 <div class="sub header">
                   <span class="filter"></span>&nbsp;
                 </div>
-              </h5>
+              </h5> -->
             </div>
             <!-- / monthly displacement -->
 
             <div class="row" id="dc-week-chart">
               <h4 class="ui blue header">Weekly Displacements&nbsp;
-                <a class="reset ui primary button mini"
+                <i class="grey question circle outline icon link content"
+                  data-content="Hover over the legend below to distinctly view a year's trend.">
+                </i>
+                <!-- <a class="reset ui primary button mini"
                   href="javascript: displaceWeekChart.filterAll(); dc.redrawAll();" style="visibility: hidden">
                   Clear
-                </a>
+                </a> -->
               </h4>
             </div>
             <!-- / weekly displacement -->
 
             <div class="ui two column grid">
               <div class="row">
-                <div class="nine wide column" id="dc-displace-reason-chart">
-                  <h4 class="ui blue header">Reasons for Displacement&nbsp;
-                    <a class="reset ui primary button mini"
-                      href="javascript: displaceReasonChart.filterAll(); dc.redrawAll();" style="visibility: hidden">
-                      Clear
-                    </a>
-                  </h4>
+                <div class="nine wide column">
+                  <div id="dc-displace-reason-chart">
+                    <h4 class="ui blue header">Reasons for Displacement&nbsp;
+                      <i class="grey question circle outline icon link content"
+                        data-content="Click on one or more bars to filter by reason(s).">
+                      </i>
+                      <a class="reset ui primary button mini"
+                        href="javascript: displaceReasonChart.filterAll(); dc.redrawAll();" style="visibility: hidden"
+                        data-content="Clears filter(s) below.">
+                        Clear
+                      </a>
+                    </h4>
+                  </div>
                   <!-- / reasons displacement -->
+                  <h4 class="ui header">About PRMN</h4>
+                  <div>
+                    The PRMN (Protection and Return Monitoring Network) is a UNHCR-led project implemented in
+                    partnership
+                    with
+                    <a href="https://www.nrc.no/countries/africa/somalia/" target="_blank">NRC</a> which reports on
+                    displacements and protection risks and incidents underlying such movements.
+                    The figures shown refer to displacements not population balances. Not all displacements in Somalia
+                    are
+                    captured - only figures collected by PRMN are reported.
+                    Figures are based on reports by key informants and displaced households at the place of arrival but
+                    in
+                    the
+                    case of flood-related displacements may also include reports from the place of departure.
+                    This dashboard should be read in conjunction with the
+                    <a href="https://goo.gl/8tPfeX" target="_blank">Notes on PRMN Methodology</a> which outline the
+                    approach
+                    and
+                    certain limitations. More information on Somalia can be found on the
+                    <a href="https://data2.unhcr.org/en/situations/horn/location/192" target="_blank">
+                      UNHCR Somalia Data Portal
+                    </a>.
+                  </div>
+                  <br>
+
+
                 </div>
 
-                <div class="seven wide column" id="dc-displace-need-chart">
-                  <h4 class="ui blue header">Arrival Priority Needs&nbsp;
-                    <a class="reset ui primary button mini"
-                      href="javascript: displaceNeedChart.filterAll(); dc.redrawAll();" style="visibility: hidden">
-                      Clear
-                    </a>
-                  </h4>
+                <div class="seven wide column">
+                  <div id="dc-displace-need-chart">
+                    <h4 class="ui blue header">Arrival Priority Needs&nbsp;
+                      <i class="grey question circle outline icon link content"
+                        data-content="Click on one or more bars to filter by reason(s).">
+                      </i>
+                      <a class="reset ui primary button mini"
+                        href="javascript: displaceNeedChart.filterAll(); dc.redrawAll();" style="visibility: hidden"
+                        data-content="Clears filter(s) below.">
+                        Clear
+                      </a>
+                    </h4>
+                  </div>
+
+                  <h4>Dataset</h4>
+                  <div>
+                    Internal displacement dataset by month, reason and region is available
+                    <a href="data/UNHCR-PRMN-Displacement-Dataset.xlsx">here</a> under
+                    <a href="https://creativecommons.org/licenses/by/3.0/igo/legalcode" target="_blank">CC licence by
+                      IGOs</a>. Please attribute data to "UNHCR-led Protection and Return Monitoring Network (PRMN)
+                    Somalia".
+                  </div>
+
                   <!-- / needs displacement -->
+                  <!-- <h4>How to use</h4>
+                  <ul>
+                    <li>Click and drag (brush) on 'Monthly Displacements' chart to select month(s).</li> -->
+                  <!-- <li>Double-click any section on 'Weekly Displacements' chart to zoom in, or mouse over a section and use
+                      the
+                      scroll button to zoom in or out.</li>
+                    <li>Drag the 'Weekly Displacements' chart left or right after zooming to a specified section (as stated
+                      above).</li> -->
+                  <!-- <li>Use 'Clear All Filters' button to clear all your filters for all charts and maps. </li>
+                    <li>Click on any other chart or map element to filter and slice the data, click again on the same
+                      element
+                      to
+                      undo. </li>
+                    <li>To combine multiple filters, click multiple chart or map elements on any chart or map.</li>
+                    <li>Copy the link once you're done to share or tweet.</li>
+                    <li>Use the 'Clear' button to clear all filters for a specific chart or map</li>
+                    <li>Use 'Clear All Filters' button to clear all your filters for all charts and maps. </li>
+                  </ul> -->
                 </div>
               </div>
             </div>
 
           </div>
           <!-- / graph section  -->
-
-          <div class="ui two column grid">
-            <div class="row text-section">
-              <!-- text section -->
-              <div class="nine wide column" id="dc-displace-reason-chart">
-                <h4 class="ui header">About PRMN</h4>
-                <div>
-                  The PRMN (Protection and Return Monitoring Network) is a UNHCR-led project implemented in partnership
-                  with
-                  <a href="https://www.nrc.no/countries/africa/somalia/" target="_blank">NRC</a> which reports on
-                  displacements and protection risks and incidents underlying such movements.
-                  The figures shown refer to displacements not population balances. Not all displacements in Somalia are
-                  captured - only figures collected by PRMN are reported.
-                  Figures are based on reports by key informants and displaced households at the place of arrival but in
-                  the
-                  case of flood-related displacements may also include reports from the place of departure.
-                  This dashboard should be read in conjunction with the
-                  <a href="https://goo.gl/8tPfeX" target="_blank">Notes on PRMN Methodology</a> which outline the
-                  approach
-                  and
-                  certain limitations. More information on Somalia can be found on the
-                  <a href="https://data2.unhcr.org/en/situations/horn/location/192" target="_blank">UNHCR Somalia Data
-                    Portal</a>.
-                  </div>
-
-                <h4>Dataset</h4>
-                <div>
-                  Internal displacement dataset by month, reason and region is available
-                  <a href="data/UNHCR-PRMN-Displacement-Dataset.xlsx">here</a> under
-                  <a href="https://creativecommons.org/licenses/by/3.0/igo/legalcode" target="_blank">CC licence by
-                    IGOs</a>. Please attribute data to "UNHCR-led Protection and Return Monitoring Network (PRMN)
-                  Somalia".
-                </div>
-                <br><br>
-              </div>
-              <div class="seven wide column" id="dc-displace-need-chart">
-                <h4>How to use</h4>
-                <ul>
-                  <li>Click and drag (brush) on 'Monthly Displacements' chart to select month(s).</li>
-                  <!-- <li>Double-click any section on 'Weekly Displacements' chart to zoom in, or mouse over a section and use
-                    the
-                    scroll button to zoom in or out.</li>
-                  <li>Drag the 'Weekly Displacements' chart left or right after zooming to a specified section (as stated
-                    above).</li> -->
-                  <li>Use 'Clear All Filters' button to clear all your filters for all charts and maps. </li>
-                  <li>Click on any other chart or map element to filter and slice the data, click again on the same
-                    element
-                    to
-                    undo. </li>
-                  <li>To combine multiple filters, click multiple chart or map elements on any chart or map.</li>
-                  <li>Copy the link once you're done to share or tweet.</li>
-                  <li>Use the 'Clear' button to clear all filters for a specific chart or map</li>
-                  <li>Use 'Clear All Filters' button to clear all your filters for all charts and maps. </li>
-                </ul>
-                <!-- <h4>Dataset</h4>
-                  <p>
-                    Internal displacement dataset by month, reason and region is available
-                    <a href="data/UNHCR-PRMN-Displacement-Dataset.xlsx">here</a> under
-                    <a href="https://creativecommons.org/licenses/by/3.0/igo/legalcode" target="_blank">CC licence by IGOs</a>. Please attribute data to "UNHCR-led Protection and Return Monitoring Network (PRMN) Somalia".
-                  </p> -->
-                  
-              </div>
-            </div>
-            <!-- / text section -->
-          </div>
 
 
         </div>
@@ -280,8 +289,11 @@
 
               <div class="seven wide column" id="dc-prev-region-chart">
                 <h4 class="ui blue header">Departure Regions&nbsp;
+                  <i class="grey question circle outline icon link content"
+                    data-content="Click on one or more bars to filter by reason(s).">
+                  </i>
                   <a class="reset ui primary button mini" href="javascript:prevRegionChart.filterAll(); dc.redrawAll();"
-                    style="visibility: hidden">
+                    style="visibility: hidden" data-content="Clears filter(s) below.">
                     Clear
                   </a>
                 </h4>
@@ -290,6 +302,9 @@
 
               <div class="nine wide column" id="dc-prev-district-map">
                 <h4 class="ui blue header">Departure Districts Map&nbsp;
+                  <i class="grey question circle outline icon link content"
+                    data-content="Click on any district(s) to filter.">
+                  </i>
                   <a class="reset ui primary button mini" href="javascript:prevDistrictMap.filterAll(); dc.redrawAll();"
                     style="visibility: hidden">
                     Clear
@@ -314,8 +329,11 @@
 
               <div class="seven wide column" id="dc-curr-region-chart">
                 <h4 class="ui blue header">Arrival Regions&nbsp;
+                  <i class="grey question circle outline icon link content"
+                    data-content="Click on one or more bars to filter by reason(s).">
+                  </i>
                   <a class="reset ui primary button mini" href="javascript:currRegionChart.filterAll(); dc.redrawAll();"
-                    style="visibility: hidden">
+                    style="visibility: hidden" data-content="Clears filter(s) below.">
                     Clear
                   </a>
                 </h4>
@@ -324,8 +342,11 @@
 
               <div class="nine wide column" id="dc-curr-district-map">
                 <h4 class="ui blue header">Arrival Districts Map&nbsp;
+                  <i class="grey question circle outline icon link content"
+                    data-content="Click on any district(s) to filter.">
+                  </i>
                   <a class="reset ui primary button mini" href="javascript:currDistrictMap.filterAll(); dc.redrawAll();"
-                    style="visibility: hidden">
+                    style="visibility: hidden" data-content="Clears filter(s) below.">
                     Clear
                   </a>
                 </h4>
@@ -342,8 +363,8 @@
       </div>
 
     </div>
-    <div class="ui two column grid">
-      <div class="row">
+    <div class="row">
+      <div class="ui two column grid">
 
         <div class="two wide column">
           <div class="ui grey text">

@@ -196,7 +196,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       var minDate = keys[0]; 
       var maxDate =  dayOffset(monthOffset(keys[keys.length -1],1));
 
-      displaceMonthChart.height(160)
+      displaceMonthChart.height(165)
         .width($('#leftPanel').width())
         .margins({ top: 5, right:10, bottom: 60, left: 50 })
         .dimension(displaceMonth)
@@ -225,10 +225,11 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .yAxis().ticks(5);       
 
       displaceMonthChart.filterPrinter(function(filters){
-        var s = "Period: ";  
+        // var s = "Period: ";  
+        var s = "[ ";  
         var start = filters[0][0];
         var end = dayOffset(filters[0][1],-1);    // correct month rounding off 
-        s += dateFormat(start) + ' to ' + dateFormat(end);
+        s += dateFormat(start) + ' - ' + dateFormat(end) + " ]";
         return s;        
       });
 
@@ -287,7 +288,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       // }
 
       displaceWeekChart
-        .height(152)
+        .height(180)
         .width($('#leftPanel').width())     
         .margins({ top: 25, right: 50, bottom: 34, left: 50 }) 
         .title(function (d) {
@@ -371,8 +372,8 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       // configure displacement reason chart parameters
       displaceReasonChart
         .width($('#dc-displace-reason-chart').width())
-        .height(150)
-        .margins({ top: 0, right: 10, bottom: 40, left: 10 })
+        .height(130)
+        .margins({ top: 0, right: 10, bottom: 20, left: 10 })
         .dimension(displaceReason)
         .group(displaceReasonGroup)
         .valueAccessor(function (d) {
@@ -417,10 +418,12 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       displaceNeedChart
         .width($('#dc-displace-need-chart').width())
         // .height($('.text-section').height()-50)
-        .height(230)
-        .margins({ top: 0, right: 10, bottom: 40, left: 10 })
+        .height(260)
+        .margins({ top: 0, right: 10, bottom: 20, left: 10 })
         .dimension(displaceNeed)
-        .valueAccessor(function (d) { return d.value; })
+        .valueAccessor(function (d) { 
+          return d.value; 
+        })
         .group(displaceNeedGroup)
         .ordering(function (d) { return -d.value; })
         .on("filtered", getFiltersValues)
@@ -786,4 +789,15 @@ function rndFig(num) {
   return res;
 }
 
+// help popups
+$('.question')
+  .popup({
+    on: 'hover'
+  })
+;
 
+$('.ui.primary.button')
+  .popup({
+    on: 'hover'
+  })
+;
