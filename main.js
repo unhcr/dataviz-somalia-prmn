@@ -413,6 +413,9 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       var displaceNeedGroup = displaceNeed.group().reduceSum(function (d) {
         return d.tpeople;
       });
+      // var displaceNeedGroup = displaceNeed.group().reduceCount();
+
+      var arr = [];
 
       // configure current region chart parameters
       displaceNeedChart
@@ -422,7 +425,10 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .margins({ top: 0, right: 10, bottom: 20, left: 10 })
         .dimension(displaceNeed)
         .valueAccessor(function (d) { 
-          return d.value; 
+          return (d.value / peopleGroup.value() * 100)
+          // var percent = d.value/peopleGroup.value() * 100;
+          // if (percent > 100) percent = 0;
+          // return percent;
         })
         .group(displaceNeedGroup)
         .ordering(function (d) { return -d.value; })
@@ -431,20 +437,38 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         // .colors(d3.scale.ordinal().range(colorbrewer.Set2[6]))
         .colors('#338EC9')
         .label(function (d) {
-          return d.key;
+          // var percent;
+          // var totalPeopleSelect = peopleGroup.value();
+          // var needValue = d.value;
+          // var filters = displaceNeedChart.filters();          
+
+          // if (filters.length !== 0) {
+          //   filters.find(function(el){
+          //     if (el === d.key) {
+          //       percent = (needValue / totalPeopleSelect * 100).toFixed(1)
+          //     };
+          //   });
+          // } else {
+          //   percent = (needValue / totalPeopleSelect * 100).toFixed(1)
+          // }
+
+          // if (isNaN(percent)) percent = 0;
+          percent = (d.value / peopleGroup.value() * 100).toFixed(1)
+          return d.key + ' (' + d3.format(".1f")(percent) + '%)';
+
         })
         .title(function (d) {
-          // return d.key + ": " + d3.format(",")(d.value);
-          return '';
+          return d.key + ": " + d3.format(",")(d.value / peopleGroup.value() * 100);
+          // return '';
         })
         .elasticX(true)
         .xAxis().ticks(3);
 
-      displaceNeedChart.on('renderlet', function (chart) {
-        chart.selectAll(".row").call(barTip);
-        chart.selectAll(".row").on('mouseover', barTip.show)
-          .on('mouseout', barTip.hide);
-      });
+      // displaceNeedChart.on('renderlet', function (chart) {
+      //   chart.selectAll(".row").call(barTip);
+      //   chart.selectAll(".row").on('mouseover', barTip.show)
+      //     .on('mouseout', barTip.hide);
+      // });
       
       
 

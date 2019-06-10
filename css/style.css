@@ -287,3 +287,9 @@ td.dc-table-column._2
   }
   /* d3-tip (dc.css modifier) - end */
 
+/* help icon custom grey */
+.ui.header>.icon {
+    color: #99c6e4;
+    font-size: 1.3em;
+    margin-top: .2em;
+}
