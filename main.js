@@ -372,7 +372,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       // configure displacement reason chart parameters
       displaceReasonChart
         .width($('#dc-displace-reason-chart').width())
-        .height(130)
+        .height(150)
         .margins({ top: 0, right: 10, bottom: 20, left: 10 })
         .dimension(displaceReason)
         .group(displaceReasonGroup)
@@ -485,7 +485,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       prevRegionChart
         .width($('#dc-prev-region-chart').width())
         // .height($('.text-section').height()-50)
-        .height(380)
+        .height(390)
         .margins({ top: 0, right: 10, bottom: 20, left: 10 })
         .dimension(prevRegion)
         .valueAccessor(function (d) { return d.value; })
@@ -528,7 +528,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       currRegionChart
         .width($('#dc-curr-region-chart').width())
         // .height($('.text-section').height()-50)
-        .height(380)
+        .height(390)
         .margins({ top: 0, right: 10, bottom: 20, left: 10 })
         .dimension(currRegion)
         .valueAccessor(function (d) { return d.value; })
@@ -556,12 +556,12 @@ d3.csv("data/PRMNDataset.csv", function (data) {
 
 
       // create map dimension and group
-      var prevRegion = facts.dimension(function (d) {
-        return d.pregion;
-      });
-      var prevRegionGroup = prevRegion.group().reduceSum(function (d) {
-        return d.tpeople;
-      });
+      // var prevRegion = facts.dimension(function (d) {
+      //   return d.pregion;
+      // });
+      // var prevRegionGroup = prevRegion.group().reduceSum(function (d) {
+      //   return d.tpeople;
+      // });
 
       // Convert zipped shapefiles to GeoJSON with mapshaper (mapshaper.org).
       // Use d3.geoMercator projections and play around with the scale and 
