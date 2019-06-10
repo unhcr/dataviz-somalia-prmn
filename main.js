@@ -425,7 +425,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .margins({ top: 0, right: 10, bottom: 20, left: 10 })
         .dimension(displaceNeed)
         .valueAccessor(function (d) { 
-          return (d.value / peopleGroup.value() * 100)
+          return (d.value / peopleGroup.value() * 100);
           // var percent = d.value/peopleGroup.value() * 100;
           // if (percent > 100) percent = 0;
           // return percent;
@@ -453,12 +453,13 @@ d3.csv("data/PRMNDataset.csv", function (data) {
           // }
 
           // if (isNaN(percent)) percent = 0;
-          percent = (d.value / peopleGroup.value() * 100).toFixed(1)
+          percent = (d.value / peopleGroup.value() * 100).toFixed(2)
           return d.key + ' (' + d3.format(".1f")(percent) + '%)';
 
         })
         .title(function (d) {
-          return d.key + ": " + d3.format(",")(d.value / peopleGroup.value() * 100);
+          var percent = (d.value / peopleGroup.value() * 100).toFixed(2);
+          return d.key + ": " + d3.format(",")(percent) + '%';
           // return '';
         })
         .elasticX(true)
