@@ -1,4 +1,3 @@
-
 dc.config.defaultColors(d3.schemeCategory20c);
 //Create the dc.js chart objects and link to div
 
