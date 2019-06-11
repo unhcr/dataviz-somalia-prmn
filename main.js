@@ -198,7 +198,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
 
       displaceMonthChart.height(170)
         .width($('#leftPanel').width())
-        .margins({ top: 5, right:10, bottom: 60, left: 50 })
+        .margins({ top: 5, right: 6, bottom: 60, left: 50 })
         .dimension(displaceMonth)
         .group(displaceMonthGroup, "Year-Month")
         .valueAccessor(function (d) {
@@ -241,6 +241,9 @@ d3.csv("data/PRMNDataset.csv", function (data) {
 
       // Rotate x-axis labels
       displaceMonthChart.on('renderlet', function (chart) {
+        // move x axis slightly to the right
+        chart.selectAll("g.axis.x")
+          .attr('transform', "translate(58,110)");        
         chart.selectAll('g.x text')
           .attr('transform', 'translate(-10,10) rotate(270)')
           .style('text-anchor', 'end')
