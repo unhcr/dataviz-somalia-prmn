@@ -196,7 +196,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       var minDate = keys[0]; 
       var maxDate =  dayOffset(monthOffset(keys[keys.length -1],1));
 
-      displaceMonthChart.height(165)
+      displaceMonthChart.height(170)
         .width($('#leftPanel').width())
         .margins({ top: 5, right:10, bottom: 60, left: 50 })
         .dimension(displaceMonth)
@@ -422,13 +422,10 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .width($('#dc-displace-need-chart').width())
         // .height($('.text-section').height()-50)
         .height(260)
-        .margins({ top: 0, right: 10, bottom: 20, left: 10 })
+        .margins({ top: 0, right: 10, bottom: 0, left: 10 })
         .dimension(displaceNeed)
         .valueAccessor(function (d) { 
           return (d.value / peopleGroup.value() * 100);
-          // var percent = d.value/peopleGroup.value() * 100;
-          // if (percent > 100) percent = 0;
-          // return percent;
         })
         .group(displaceNeedGroup)
         .ordering(function (d) { return -d.value; })
@@ -437,38 +434,42 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         // .colors(d3.scale.ordinal().range(colorbrewer.Set2[6]))
         .colors('#338EC9')
         .label(function (d) {
-          // var percent;
-          // var totalPeopleSelect = peopleGroup.value();
-          // var needValue = d.value;
-          // var filters = displaceNeedChart.filters();          
+          var percent;
+          var totalPeopleSelect = peopleGroup.value();
+          var needValue = d.value;
+          var filters = displaceNeedChart.filters();          
 
-          // if (filters.length !== 0) {
-          //   filters.find(function(el){
-          //     if (el === d.key) {
-          //       percent = (needValue / totalPeopleSelect * 100).toFixed(1)
-          //     };
-          //   });
-          // } else {
-          //   percent = (needValue / totalPeopleSelect * 100).toFixed(1)
-          // }
+          function getPercent() {
+            return (needValue / totalPeopleSelect * 100).toFixed(0)
+          }
 
-          // if (isNaN(percent)) percent = 0;
-          percent = (d.value / peopleGroup.value() * 100).toFixed(2)
-          return d.key + ' (' + d3.format(".1f")(percent) + '%)';
+          if (filters.length !== 0) {
+            filters.find(function(el){
+              if (el === d.key) {
+                percent = getPercent()
+              };
+            });
+          } else {
+            percent = getPercent()
+          }
+
+          if (isNaN(percent)) percent = 0;
+          // percent = (d.value / peopleGroup.value() * 100).toFixed(0)
+          return d.key + ' | ' + d3.format(".0f")(percent) + '%';
 
         })
         .title(function (d) {
-          var percent = (d.value / peopleGroup.value() * 100).toFixed(2);
-          return d.key + ": " + d3.format(",")(percent) + '%';
-          // return '';
+          // var percent = (d.value / peopleGroup.value() * 100).toFixed(0);
+          // return d.key + ": " + d3.format(",")(percent) + '%';
+           return '';
         })
         .elasticX(true)
         .xAxis().ticks(3);
 
       // displaceNeedChart.on('renderlet', function (chart) {
-      //   chart.selectAll(".row").call(barTip);
-      //   chart.selectAll(".row").on('mouseover', barTip.show)
-      //     .on('mouseout', barTip.hide);
+      //   chart.selectAll(".row").call(percentBarTip);
+      //   chart.selectAll(".row").on('mouseover', percentBarTip.show)
+      //     .on('mouseout', percentBarTip.hide);
       // });
       
       
@@ -782,7 +783,7 @@ function setResizingSvg() {
 // Utilities
 // var uri = "https://unhcr.github.io/dataviz-somalia-prmn/index.html#reason=&month=&pregion=&pregionmap=&cregion=&cregionmap=&@UNHCRSom";
 
-// Utility to round figures
+// rounds figures
 function rndFig(num) {
   // Excel function:
   //=IF(C9<100,C9,IF(AND(C9>=100,C9<1000),ROUND(C9,-1),IF(AND(C9>=1000,C9<10000),ROUND(C9,-2),IF(C9>=10000,ROUND(C9,-3),0))))

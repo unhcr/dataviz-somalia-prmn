@@ -293,3 +293,6 @@ td.dc-table-column._2
     font-size: 1.3em;
     margin-top: .2em;
 }
+
+/* hide x axis for priority needs row chart */
+#dc-displace-need-chart svg g g.axis { display: none; }

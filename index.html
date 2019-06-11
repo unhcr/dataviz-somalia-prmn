@@ -127,7 +127,7 @@
         <div class="twelve wide column">
           <a class="ui primary button" style="float: right;"
             href="javascript:dc.filterAll(); dc.renderAll(); setResizingSvg(); displaceWeekChart.focus(0,53);"
-            data-content="Clears all filters for all charts and maps.">
+            data-content="Click to clear all charts and maps filters">
             Clear All Filters
           </a>
         </div>
@@ -142,14 +142,14 @@
           <div class="row chart-section">
             <!-- graph section -->
             <div class="row" id="dc-month-chart">
-              <h4 class="ui blue header">Monthly Displacements&nbsp;
+              <h4 class="ui blue header">Monthly Displacements
                 <span class="filter"></span>&nbsp;
                 <i class="fitted question circle outline icon link content"
-                  data-content="Click and drag (brush) on the chart to select month(s) to filter by.">
+                  data-content="Click and drag (brush) over the bars to filter by month(s)">
                 </i>&nbsp;
                 <a class="reset ui primary button mini"
                   href="javascript: displaceMonthChart.filterAll(); dc.redrawAll();" style="visibility: hidden"
-                  data-content="Clears filter below.">
+                  data-content="Click to clear chart filter(s)">
                   Clear
                 </a>
               </h4>
@@ -165,7 +165,7 @@
               <h4 class="ui blue header">Weekly Displacements&nbsp;
                 <span class="filter"></span>
                 <i class="fitted question circle outline icon link content"
-                  data-content="Hover over the legend below to distinctly view a year's trend.">
+                  data-content="Hover over (mouseover) the legend to view an year distinctly">
                 </i>&nbsp;
                 <a class="reset ui primary button mini"
                   href="javascript: displaceWeekChart.filterAll(); dc.redrawAll();" style="visibility: hidden">
@@ -181,11 +181,11 @@
                   <div id="dc-displace-reason-chart">
                     <h4 class="ui blue header">Reasons for Displacement&nbsp;
                       <i class="fitted question circle outline icon link content"
-                        data-content="Click on one or more bars to filter by reason(s).">
+                        data-content="Click on any bar(s) to filter by reason(s)">
                       </i>&nbsp;
                       <a class="reset ui primary button mini"
                         href="javascript: displaceReasonChart.filterAll(); dc.redrawAll();" style="visibility: hidden"
-                        data-content="Clears filter(s) below.">
+                        data-content="Click to clear chart filter(s)">
                         Clear
                       </a>
                     </h4>
@@ -223,11 +223,11 @@
                   <div id="dc-displace-need-chart">
                     <h4 class="ui blue header">Arrival Priority Needs (%)&nbsp;
                       <i class="fitted question circle outline icon link content"
-                        data-content="Click on one or more bars to filter by reason(s).">
+                        data-content="Click on any bar(s) to filter by arrival priority need(s)">
                       </i>&nbsp;
                       <a class="reset ui primary button mini"
                         href="javascript: displaceNeedChart.filterAll(); dc.redrawAll();" style="visibility: hidden"
-                        data-content="Clears filter(s) below.">
+                        data-content="Click to clear chart filter(s)">
                         Clear
                       </a>
                     </h4>
@@ -292,10 +292,10 @@
               <div class="seven wide column" id="dc-prev-region-chart">
                 <h4 class="ui blue header">Departure Regions&nbsp;
                   <i class="fitted question circle outline icon link content"
-                    data-content="Click on one or more bars to filter by reason(s).">
+                    data-content="Click on any bar(s) to filter by region(s)">
                   </i>&nbsp;
                   <a class="reset ui primary button mini" href="javascript:prevRegionChart.filterAll(); dc.redrawAll();"
-                    style="visibility: hidden" data-content="Clears filter(s) below.">
+                    style="visibility: hidden" data-content="Click to clear chart filter(s)">
                     Clear
                   </a>
                 </h4>
@@ -305,10 +305,10 @@
               <div class="nine wide column" id="dc-prev-district-map">
                 <h4 class="ui blue header">Departure Districts Map&nbsp;
                   <i class="fitted question circle outline icon link content"
-                    data-content="Click on any district(s) to filter.">
+                    data-content="Click on any area(s) to filter by district(s)">
                   </i>&nbsp;
                   <a class="reset ui primary button mini" href="javascript:prevDistrictMap.filterAll(); dc.redrawAll();"
-                    style="visibility: hidden">
+                    style="visibility: hidden" data-content="Click to clear map filter(s)">
                     Clear
                   </a>
                 </h4>
@@ -332,10 +332,10 @@
               <div class="seven wide column" id="dc-curr-region-chart">
                 <h4 class="ui blue header">Arrival Regions&nbsp;
                   <i class="fitted question circle outline icon link content"
-                    data-content="Click on one or more bars to filter by reason(s).">
+                    data-content="Click on any bar(s) to filter by region(s)">
                   </i>&nbsp;
                   <a class="reset ui primary button mini" href="javascript:currRegionChart.filterAll(); dc.redrawAll();"
-                    style="visibility: hidden" data-content="Clears filter(s) below.">
+                    style="visibility: hidden" data-content="Click to clear chart filter(s)">
                     Clear
                   </a>
                 </h4>
@@ -345,10 +345,10 @@
               <div class="nine wide column" id="dc-curr-district-map">
                 <h4 class="ui blue header">Arrival Districts Map&nbsp;
                   <i class="fitted question circle outline icon link content"
-                    data-content="Click on any district(s) to filter.">
+                    data-content="Click on any area(s) to filter by district(s)">
                   </i>&nbsp;
                   <a class="reset ui primary button mini" href="javascript:currDistrictMap.filterAll(); dc.redrawAll();"
-                    style="visibility: hidden" data-content="Clears filter(s) below.">
+                    style="visibility: hidden" data-content="Click to clear map filter(s)">
                     Clear
                   </a>
                 </h4>
