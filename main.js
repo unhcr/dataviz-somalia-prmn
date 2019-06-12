@@ -426,9 +426,6 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .height(260)
         .margins({ top: 0, right: 10, bottom: 0, left: 10 })
         .dimension(displaceNeed)
-        .valueAccessor(function (d) { 
-          return (d.value / peopleGroup.value() * 100);
-        })
         .group(displaceNeedGroup)
         .ordering(function (d) { return -d.value; })
         .on("filtered", getFiltersValues)
