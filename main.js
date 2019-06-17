@@ -507,7 +507,6 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .elasticX(true)
         .xAxis().ticks(3)
 
-
       prevRegionChart.on('renderlet', function (chart) {
         chart.selectAll(".row").call(barTip);
         chart.selectAll(".row").on('mouseover', barTip.show)
@@ -659,6 +658,13 @@ d3.csv("data/PRMNDataset.csv", function (data) {
           .on('mouseout', mapTip.hide);
       });
 
+      prevDistrictMap.on("preRender", function(chart){
+          chart.colorDomain(d3.extent(chart.group().all(), chart.valueAccessor()));
+      });
+      prevDistrictMap.on("preRedraw", function(chart){
+          chart.colorDomain(d3.extent(chart.group().all(), chart.valueAccessor()));
+      });
+
       // create map dimension and group
       // var currRegion = facts.dimension(function (d) {
       //   return d.cregion;
@@ -755,7 +761,12 @@ d3.csv("data/PRMNDataset.csv", function (data) {
           .on('mouseout', mapTip.hide);
       });
 
-
+      currDistrictMap.on("preRender", function(chart){
+          chart.colorDomain(d3.extent(chart.group().all(), chart.valueAccessor()));
+      });
+      currDistrictMap.on("preRedraw", function(chart){
+          chart.colorDomain(d3.extent(chart.group().all(), chart.valueAccessor()));
+      });
 
 
 
