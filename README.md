@@ -3,7 +3,7 @@
 
 https://unhcr.github.io/dataviz-somalia-prmn/index.html
 
-Developed using **dc.js**. Currently in process of style rebranding. 
+Developed using **dc.js**. 
 
 Thanks to:
 https://d3js.org/
