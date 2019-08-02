@@ -3,6 +3,8 @@ dc.config.defaultColors(d3.schemeCategory20c);
 
 var displaceTotalNumber = dc.numberDisplay("#dc-displace-total-number");
 
+var displaceYearSelect = dc.selectMenu("#dc-year-select");
+
 var displaceReasonChart = dc.rowChart("#dc-displace-reason-chart");
 var displaceNeedChart = dc.rowChart("#dc-displace-need-chart");
 
@@ -33,6 +35,7 @@ function getFiltersValues() {
     { name: 'cregion', value: currRegionChart.filters() },
     // { name: 'cregionmap', value: currRegionMap.filters() },
     { name: 'cdistrictmap', value: currDistrictMap.filters() },
+    { name: 'year', value: displaceYearSelect.filters() },
     { name: 'q', value: "q" }
 
   ];
@@ -48,7 +51,7 @@ function initFilters() {
   // Get hash values
   // var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([A-Za-z0-9,_\-\/\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
   // e.g. month="1987-12-24"
-  var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\d{4}-\d{2}-\d{2},\d{4}-\d{2}-\d{2}]*)&need=([A-Za-z0-9,_\-\/\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)&q=([A-Za-z0-9,_\-\/\s]*)$/;
+  var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\d{4}-\d{2}-\d{2},\d{4}-\d{2}-\d{2}]*)&need=([A-Za-z0-9,_\-\/\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)&year=([A-Za-z0-9,_\-\/\s]*)&q=([A-Za-z0-9,_\-\/\s]*)$/;
   // var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\d{4}-\d{2}-\d{2},\d{4}-\d{2}-\d{2}]*)&need=([A-Za-z0-9,_\-\/\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
   // var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\S\s,\S\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
   var parsed = parseHash.exec(decodeURIComponent(location.hash));
@@ -92,6 +95,7 @@ function initFilters() {
     filter(currRegionChart, 6);
     // filter(currRegionMap, 8);
     filter(currDistrictMap, 7);
+    filter(displaceYearSelect, 8);
   }
 }
 
@@ -176,6 +180,26 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .transitionDuration(500)
         .valueAccessor(function (d) { return rndFig(d); });
 
+      // configure displacement year dimension and group
+      var displaceYearDim = facts.dimension(function(d){
+        return d.yr;
+      });
+      // configure displacement year cbox parameters
+      displaceYearSelect
+        .dimension(displaceYearDim)
+        .group(displaceYearDim.group())
+        // .keyAccessor(function(d){
+        //     console.log(d.key.toUpperCase());
+        //     return d.key.toUpperCase();
+        // })
+        // .multiple(true)
+        // .numberVisible(14)
+        .controlsUseVisibility(true)
+        .on("filtered", getFiltersValues)
+        .title(function (d) {
+            return d.key;
+        });
+
       // configure displacement month dimension and group
       var displaceMonth = facts.dimension(function (d) {
         var months = d.monthend.split('\/');
@@ -193,9 +217,12 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       // Configure displacement month bar chart parameters
 
       // Get minimum and maximum date
-      var minDate = keys[0]; 
-      var maxDate =  dayOffset(monthOffset(keys[keys.length -1],1));
+      var minDate = new Date(2019, 0, 1);
+      var maxDate =  new Date(2019, 11, 31);
 
+      // var minDate = keys[0]; 
+      // var maxDate =  dayOffset(monthOffset(keys[keys.length -1],1));
+      console.log(minDate, maxDate)
       displaceMonthChart.height(170)
         .width($('#leftPanel').width())
         .margins({ top: 5, right: 6, bottom: 60, left: 50 })
@@ -237,7 +264,8 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .tickFormat(function (d) {
           return monthNameFormat(d);
         })
-        .ticks(keys.length);
+        .ticks(12);
+        // .ticks(keys.length);
 
       // Rotate x-axis labels
       displaceMonthChart.on('renderlet', function (chart) {

@@ -296,3 +296,8 @@ td.dc-table-column._2
 
 /* hide x axis for priority needs row chart */
 #dc-displace-need-chart svg g g.axis { display: none; }
+
+.scrolling {
+    height: 230px;
+    overflow-y: scroll;
+}
