@@ -304,3 +304,8 @@ a.reset.ui.primary.button.mini {
 .dc-chart text.y-axis-label {
     font-size: 11px;
 }
+
+/* year and month dc filter color */
+.dc-chart span.filter {
+    color: black;
+}

@@ -19,8 +19,8 @@ var displaceYearChart = dc.barChart("#dc-year-chart");
 var displaceMonthChart = dc.barChart("#dc-month-chart");
 var displaceWeekChart = dc.compositeChart("#dc-week-chart");
 
-// return current year
-var yearFilter = 0; //new Date().getFullYear();
+// return max year remains constant once max value is assigned
+var yearFilter = 0; 
 
 // Implement bookmarking chart filters status 
 // Serializing filters values in URL
@@ -49,8 +49,6 @@ function getFiltersValues() {
 function initFilters() {
   
   // Get hash values
-  // var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([A-Za-z0-9,_\-\/\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
-  // e.g. month="1987-12-24"
   var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\d{4}-\d{2}-\d{2},\d{4}-\d{2}-\d{2}]*)&need=([A-Za-z0-9,_\-\/\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)&year=([A-Za-z0-9,_\-\/\s]*)$/;
 
   var parsed = parseHash.exec(decodeURIComponent(location.hash));
@@ -86,8 +84,8 @@ function initFilters() {
     } else if (rank == 8) {
       var filterValues = parsed[rank].split(",");
 
-      yearFilter = filterValues[0] == "" ? yearFilter : Number(filterValues[0]);
-      chart.filter(yearFilter);
+      var filter = filterValues[0] == "" ? yearFilter : Number(filterValues[0]);
+      chart.filter(filter);
       getFiltersValues();
     } else {
       
@@ -175,8 +173,8 @@ var dayOffset = d3.timeDay.offset;
 
 var monthOffset = d3.timeMonth.offset;
 
-var rangeDate = function() {
-  var range = [new Date(yearFilter, 0, 1), new Date(yearFilter + 1, 0, 31)];
+var rangeDate = function(y) {
+  var range = [new Date(y, 0, 1), new Date(y + 1, 0, 31)];
   return range;
 }
 
@@ -244,10 +242,10 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .on("filtered", function(){
           var filter = displaceYearChart.filters()[0];
           // get filtered year 
-          yearFilter = filter == undefined ? yearFilter : filter;
+          filter = filter == undefined ? yearFilter : filter;
           
           // reset min and max date based on filtered year
-          displaceMonthChart.x(d3.scaleTime().domain(rangeDate(yearFilter)));
+          displaceMonthChart.x(d3.scaleTime().domain(rangeDate(filter)));
         })
         .title(function (d) {
           // return d3.format(",")(d.value);
@@ -338,7 +336,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .renderHorizontalGridLines(true)
         .controlsUseVisibility(true)
         .round(d3.timeMonth.round) 
-        .x(d3.scaleTime().domain(rangeDate()))
+        .x(d3.scaleTime().domain(rangeDate(yearFilter)))
         // .x(d3.scaleTime().domain([minDate, maxDate]))
         .xUnits(d3.timeMonths)
         .round(d3.timeMonth)
