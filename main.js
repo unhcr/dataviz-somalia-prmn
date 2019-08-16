@@ -15,8 +15,12 @@ var currRegionChart = dc.rowChart("#dc-curr-region-chart");
 var prevDistrictMap = dc.geoChoroplethChart("#dc-prev-district-map");
 var currDistrictMap = dc.geoChoroplethChart("#dc-curr-district-map");
 
+var displaceYearChart = dc.barChart("#dc-year-chart");
 var displaceMonthChart = dc.barChart("#dc-month-chart");
 var displaceWeekChart = dc.compositeChart("#dc-week-chart");
+
+// return current year
+var yearFilter = 0; //new Date().getFullYear();
 
 // Implement bookmarking chart filters status 
 // Serializing filters values in URL
@@ -24,7 +28,6 @@ function getFiltersValues() {
 
   var filters = [
     { name: 'reason', value: displaceReasonChart.filters() },
-    // { name: 'month', value: displaceMonthChart.filters()},
     { name: 'month', value: resetFilter(displaceMonthChart.filters()) },
     { name: 'need', value: displaceNeedChart.filters() },
     { name: 'pregion', value: prevRegionChart.filters() },
@@ -33,38 +36,44 @@ function getFiltersValues() {
     { name: 'cregion', value: currRegionChart.filters() },
     // { name: 'cregionmap', value: currRegionMap.filters() },
     { name: 'cdistrictmap', value: currDistrictMap.filters() },
-    { name: 'q', value: "q" }
+    { name: 'year', value: displaceYearChart.filters()}
 
   ];
 
   var recursiveEncoded = $.param(filters);
   location.hash = recursiveEncoded;
 
-
 }
 
 
 function initFilters() {
+  
   // Get hash values
   // var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([A-Za-z0-9,_\-\/\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
   // e.g. month="1987-12-24"
-  var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\d{4}-\d{2}-\d{2},\d{4}-\d{2}-\d{2}]*)&need=([A-Za-z0-9,_\-\/\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)&q=([A-Za-z0-9,_\-\/\s]*)$/;
-  // var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\d{4}-\d{2}-\d{2},\d{4}-\d{2}-\d{2}]*)&need=([A-Za-z0-9,_\-\/\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
-  // var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\S\s,\S\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pregionmap=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cregionmap=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)$/;
+  var parseHash = /^#reason=([A-Za-z0-9,_\-\/\s]*)&month=([\d{4}-\d{2}-\d{2},\d{4}-\d{2}-\d{2}]*)&need=([A-Za-z0-9,_\-\/\s]*)&pregion=([A-Za-z0-9,_\-\/\s]*)&pdistrictmap=([A-Za-z0-9,_\-\/\s]*)&cregion=([A-Za-z0-9,_\-\/\s]*)&cdistrictmap=([A-Za-z0-9,_\-\/\s]*)&year=([A-Za-z0-9,_\-\/\s]*)$/;
+
   var parsed = parseHash.exec(decodeURIComponent(location.hash));
 
-
   function filter(chart, rank) {  // for instance chart = sector_chart and rank in URL hash = 1
+
     // sector chart
     if (parsed[rank] == "") {
-      chart.filter(null);
-    } else if (rank == 2) {
-      var filterValues = parsed[rank].split(",");
+      
+      if (rank == 8) {
+        chart.filter(yearFilter);
+        getFiltersValues();
+      } else {
+        chart.filter(null);
+        getFiltersValues();
+      }
 
+    } else if (rank == 2) {
+
+      var filterValues = parsed[rank].split(",");
 
       var start = new Date(filterValues[0]);
       var end = new Date(filterValues[1]);
-
 
       // initialize date to midnight
       start.setHours(0, 0, 0, 0);
@@ -73,16 +82,25 @@ function initFilters() {
       var filter = dc.filters.RangedFilter(start, dayOffset(end, 1));
       // var filter = dc.filters.RangedFilter(new Date(2017,2,1), new Date(2017,2,31));              
       chart.filter(filter);
+      getFiltersValues();
+    } else if (rank == 8) {
+      var filterValues = parsed[rank].split(",");
+
+      yearFilter = filterValues[0] == "" ? yearFilter : Number(filterValues[0]);
+      chart.filter(yearFilter);
+      getFiltersValues();
     } else {
+      
       var filterValues = parsed[rank].split(",");
       for (var i = 0; i < filterValues.length; i++) {
         chart.filter(filterValues[i]);
-
       }
+      getFiltersValues();
     }
   }
 
   if (parsed) {
+    
     filter(displaceReasonChart, 1);
     filter(displaceMonthChart, 2);
     filter(displaceNeedChart, 3);
@@ -92,12 +110,20 @@ function initFilters() {
     filter(currRegionChart, 6);
     // filter(currRegionMap, 8);
     filter(currDistrictMap, 7);
+    filter(displaceYearChart, 8);
+  } else {
+    
+    // assign default year
+    displaceYearChart.filter(yearFilter);
+    getFiltersValues();
+
   }
 }
 
 var numberFormat = d3.format(",.0f");
 
 var dateFormat = d3.timeFormat("%d %b %Y");
+var yearFormat = d3.timeFormat("%Y");
 
 var monthNameFormat = d3.timeFormat("%b %Y");
 
@@ -113,10 +139,19 @@ var monthBarTip = d3.tip()
     return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + monthNameFormat(date) + "</span> | <span class='dc-tooltip-value'>" + numberFormat(rndFig(d.y)) + "</span></div>";
   });
 
+var yearBarTip = d3.tip()
+  .attr('class', 'd3-tip')
+  .offset([-5, 0])
+  .html(function (d) { 
+    return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + (d.data.key) + "</span> | <span class='dc-tooltip-value'>" + numberFormat(rndFig(d.data.value)) + "</span></div>"; 
+  });
+
 var barTip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([-5, 0])
-  .html(function (d) { return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + (d.key) + "</span> | <span class='dc-tooltip-value'>" + numberFormat(rndFig(d.value)) + "</span></div>"; });
+  .html(function (d) { 
+    return "<div class='dc-tooltip'><span class='dc-tooltip-title'>" + (d.key) + "</span> | <span class='dc-tooltip-value'>" + numberFormat(rndFig(d.value)) + "</span></div>"; 
+  });
 
 var lineTip = d3.tip()
   .attr('class', 'd3-tip')
@@ -140,6 +175,11 @@ var dayOffset = d3.timeDay.offset;
 
 var monthOffset = d3.timeMonth.offset;
 
+var rangeDate = function() {
+  var range = [new Date(yearFilter, 0, 1), new Date(yearFilter + 1, 0, 31)];
+  return range;
+}
+
 var resetFilter = function (filterValues) {
   if (filterValues.length == 0) return filterValues;
   var start = filterValues[0][0];
@@ -153,12 +193,13 @@ d3.csv("data/PRMNDataset.csv", function (data) {
   // Load data from JSON file
   d3.json("data/Som_Admbnda_Adm1_UNDP.json", function (regionJson) {
     d3.json("data/Som_Admbnda_Adm2_UNDP.json", function (districtJson) {
+
       // format our data
       data.forEach(function (d) {
         d.id = +d.id;
-        d.lyear = +d.lyear;
-        d.nmonth = +d.nmonth;
         d.tpeople = +d.tpeople;
+        d.yr = +d.yr;
+        if (yearFilter < d.yr) yearFilter = d.yr; 
         // d.yrmonthnum = +d.yrmonthnum;
       });
 
@@ -176,6 +217,78 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .transitionDuration(500)
         .valueAccessor(function (d) { return rndFig(d); });
 
+      // configure displacement year dimension and group
+      var displaceYear = facts.dimension(function (d) {
+        return d.yr;
+      });
+      var displaceYearGroup = displaceYear.group()
+        .reduceSum(function (d) {
+          return d.tpeople;
+        });
+
+      // Configure displacement year bar chart parameters
+      displaceYearChart.height(170)
+        .width($('#dc-year-chart').width())
+        .margins({ top: 5, right: 10, bottom: 60, left: 80 })
+        .dimension(displaceYear)
+        .group(displaceYearGroup, "Year")
+        .gap(1)
+        .ordinalColors(['#338EC9'])
+        .renderHorizontalGridLines(true)
+        .controlsUseVisibility(true)
+        .x(d3.scaleBand())
+        .xUnits(dc.units.ordinal)
+        .brushOn(false)
+        .elasticY(true)
+        .on("filtered", getFiltersValues)
+        .on("filtered", function(){
+          var filter = displaceYearChart.filters()[0];
+          // get filtered year 
+          yearFilter = filter == undefined ? yearFilter : filter;
+          
+          // reset min and max date based on filtered year
+          displaceMonthChart.x(d3.scaleTime().domain(rangeDate(yearFilter)));
+        })
+        .title(function (d) {
+          // return d3.format(",")(d.value);
+          return '';
+        })        
+        .yAxis().ticks(5);    
+
+      displaceYearChart.filterPrinter(function(filters){
+        return "[" + filters[0] + "]";
+      });
+
+      // single select
+      displaceYearChart.addFilterHandler(function(filters, filter) {return [filter];}); // this
+      // custom filter handler (no-op)
+      displaceYearChart.removeFilterHandler(function(filters, filter) {
+        return filters;
+        // return [filter]
+      });
+
+      // Rotate x-axis labels
+      displaceYearChart.on('renderlet', function (chart) {
+        // move x axis slightly to the right
+        chart.selectAll("g.axis.x")
+          .attr('transform', "translate(58,110)");        
+        chart.selectAll('g.x text')
+          .attr('transform', 'translate(10,10) rotate(270)')
+          .style('text-anchor', 'end')
+          .transition()
+          .duration(500)
+          .style('opacity', 1);
+
+        chart.selectAll('rect')
+          .attr('data-tooltip', 'hello');
+        
+        chart.selectAll(".bar").call(yearBarTip);
+        chart.selectAll(".bar").on('mouseover', yearBarTip.show)
+          .on('mouseout', yearBarTip.hide);
+
+      });
+
+
       // configure displacement month dimension and group
       var displaceMonth = facts.dimension(function (d) {
         var months = d.monthend.split('\/');
@@ -188,17 +301,30 @@ d3.csv("data/PRMNDataset.csv", function (data) {
           return d.tpeople;
         });
 
-      var keys = displaceMonthGroup.all().map(dc.pluck('key')).slice();
-
       // Configure displacement month bar chart parameters
 
       // Get minimum and maximum date
-      var minDate = keys[0]; 
-      var maxDate =  dayOffset(monthOffset(keys[keys.length -1],1));
+      // var minDate = new Date(2016, 0, 1);
+      // var maxDate =  new Date(2019 + 1, 2, 31);
+
+      // var keys = removeEmptyBins(displaceMonthGroup).all().map(dc.pluck('key')).slice();
+      // var minDate = keys[0]; 
+      // var maxDate =  dayOffset(monthOffset(keys[keys.length -1],1));
+      // console.log(minDate, maxDate)
+      // function removeEmptyBins(source_group) {
+      //     return {
+      //       all: () => {
+      //           return source_group.all().filter(function(d) {
+      //               // here your condition
+      //               return d.key !== null && d.key !== '' && d.value !== 0; // etc. 
+      //           });
+      //       }
+      //   };
+      // }
 
       displaceMonthChart.height(170)
-        .width($('#leftPanel').width())
-        .margins({ top: 5, right: 6, bottom: 60, left: 50 })
+        .width($('#dc-month-chart').width())
+        .margins({ top: 5, right: -25, bottom: 60, left: 50 })
         .dimension(displaceMonth)
         .group(displaceMonthGroup, "Year-Month")
         .valueAccessor(function (d) {
@@ -212,10 +338,12 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .renderHorizontalGridLines(true)
         .controlsUseVisibility(true)
         .round(d3.timeMonth.round) 
-        .x(d3.scaleTime().domain([minDate, maxDate]))
+        .x(d3.scaleTime().domain(rangeDate()))
+        // .x(d3.scaleTime().domain([minDate, maxDate]))
         .xUnits(d3.timeMonths)
         .round(d3.timeMonth)
         .brushOn(true)
+        // .elasticX(true)
         .elasticY(true)
         .on("filtered", getFiltersValues)
         .title(function (d) {
@@ -226,10 +354,10 @@ d3.csv("data/PRMNDataset.csv", function (data) {
 
       displaceMonthChart.filterPrinter(function(filters){
         // var s = "Period: ";  
-        var s = "[ ";  
+        var s = "[";  
         var start = filters[0][0];
         var end = dayOffset(filters[0][1],-1);    // correct month rounding off 
-        s += dateFormat(start) + ' - ' + dateFormat(end) + " ]";
+        s += dateFormat(start) + ' - ' + dateFormat(end) + "]";
         return s;        
       });
 
@@ -237,22 +365,21 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .tickFormat(function (d) {
           return monthNameFormat(d);
         })
-        .ticks(keys.length);
+        .ticks(12);
+        // .ticks(keys.length);
 
       // Rotate x-axis labels
       displaceMonthChart.on('renderlet', function (chart) {
         // move x axis slightly to the right
         chart.selectAll("g.axis.x")
-          .attr('transform', "translate(58,110)");        
+          .attr('transform', "translate(62,110)");               
+        
         chart.selectAll('g.x text')
-          .attr('transform', 'translate(-10,10) rotate(270)')
+          .attr('transform', 'translate(-5,10) rotate(270)')
           .style('text-anchor', 'end')
           .transition()
           .duration(500)
           .style('opacity', 1);
-
-        chart.selectAll('rect')
-          .attr('data-tooltip', 'hello');
 
         chart.selectAll(".bar").call(monthBarTip);
         chart.selectAll(".bar").on('mouseover', monthBarTip.show)
@@ -292,8 +419,8 @@ d3.csv("data/PRMNDataset.csv", function (data) {
 
       displaceWeekChart
         .height(180)
-        .width($('#leftPanel').width())     
-        .margins({ top: 25, right: 50, bottom: 34, left: 50 }) 
+        .width($('#dc-week-chart').width())     
+        .margins({ top: 15, right: 70, bottom: 35, left: 50 }) 
         .title(function (d) {
           // return "Week " + d.key + ": "
           //          + d3.format(",")(d.value);
@@ -346,6 +473,8 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .x(d3.scaleLinear().domain([0,53]))
         .elasticY(true) 
         .elasticX(false) 
+        .yAxisLabel("2019")
+        .rightYAxisLabel("2016 / 2017 / 2018")
         .yAxis().ticks(4);
 
       displaceWeekChart
@@ -424,8 +553,8 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       displaceNeedChart
         .width($('#dc-displace-need-chart').width())
         // .height($('.text-section').height()-50)
-        .height(260)
-        .margins({ top: 0, right: 10, bottom: 0, left: 10 })
+        .height(230)
+        .margins({ top: 0, right: 10, bottom: 30, left: 10 })
         .dimension(displaceNeed)
         .group(displaceNeedGroup)
         .ordering(function (d) { return -d.value; })
@@ -487,7 +616,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       prevRegionChart
         .width($('#dc-prev-region-chart').width())
         // .height($('.text-section').height()-50)
-        .height(390)
+        .height(400)
         .margins({ top: 0, right: 10, bottom: 20, left: 10 })
         .dimension(prevRegion)
         .valueAccessor(function (d) { return d.value; })
@@ -529,7 +658,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       currRegionChart
         .width($('#dc-curr-region-chart').width())
         // .height($('.text-section').height()-50)
-        .height(390)
+        .height(400)
         .margins({ top: 0, right: 10, bottom: 20, left: 10 })
         .dimension(currRegion)
         .valueAccessor(function (d) { return d.value; })
@@ -623,14 +752,14 @@ d3.csv("data/PRMNDataset.csv", function (data) {
           .range(['#f7ebec', '#efd7da', '#e8c3c8', '#e0afb5', '#d99ba3', '#d18791', '#c9737e', '#c25f6c', '#ba4b5a', '#b33848']);
       
       prevDistrictMap
-        .width($('#leftPanel').width())
+        .width($('#dc-prev-district-map').width())
         .height(380)
         .transitionDuration(1000)
         .dimension(prevDistrict)
         .group(prevDistrictGroup)
         .projection(d3.geoMercator()
           .scale(1490)
-          .translate([-1030, 320])
+          .translate([-1065, 320])
 
         )
         .keyAccessor(function (d) { return d.key; })
@@ -726,14 +855,14 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       .range(['#e5eef3', '#ccdde8', '#b2ccdc', '#99bbd1', '#7faac6', '#6699ba', '#4c88af', '#3277a3', '#196698', '#00568d']);
 
       currDistrictMap
-        .width($('#leftPanel').width())
+        .width($('#dc-curr-district-map').width())
         .height(370)
         .transitionDuration(1000)
         .dimension(currDistrict)
         .group(currDistrictGroup)
         .projection(d3.geoMercator()
           .scale(1490)
-          .translate([-1030, 320])
+          .translate([-1065, 320])
 
         )
         .keyAccessor(function (d) { return d.key; })
@@ -770,26 +899,26 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       });
 
 
-
+      
       // Render the charts
       dc.renderAll();
-
+      
       initFilters();
 
       dc.redrawAll();
 
-      setResizingSvg();
+      // setResizingSvg();
 
 
     });
   });
 });
 
-function setResizingSvg() {
-  // set resizing viewbox
+// function setResizingSvg() {
+//   // set resizing viewbox
 
-  // 
-}
+//   // 
+// }
 
 // Utilities
 // var uri = "https://unhcr.github.io/dataviz-somalia-prmn/index.html#reason=&month=&pregion=&pregionmap=&cregion=&cregionmap=&@UNHCRSom";
