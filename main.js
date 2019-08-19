@@ -226,7 +226,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
 
       // Configure displacement year bar chart parameters
       displaceYearChart.height(170)
-        .width($('#dc-year-chart').width())
+        .width($('#dc-year-chart').width() * 7/8 )
         .margins({ top: 5, right: 10, bottom: 60, left: 80 })
         .dimension(displaceYear)
         .group(displaceYearGroup, "Year")

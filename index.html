@@ -81,7 +81,7 @@
 
       <div class="three wide column">
         <div class="ui small statistic">
-          <div class="blue label">Total Displacements</div>
+          <div class="blue label">New Displacements</div>
           <div id="dc-displace-total-number" class="value nd"></div>
         </div>
       </div>
@@ -103,16 +103,16 @@
     </div>
   </div>
 
-  <div class="ui grid">
+  <div class="ui three column grid">
     <div class="row">
-      <div class="three wide column">
+      <div class="four wide column">
           <div id="dc-year-chart">
-              <h4 class="ui blue header">Yearly
+              <h4 class="ui blue header">By Year
                 <span class="filter"></span>&nbsp;
                 <i class="fitted question circle outline icon link content"
                   data-content="Click bar to select and filter by year">
                 </i>&nbsp;
-                <!-- <a class="reset ui primary button mini" href="javascript: displaceYearChart.filterAll(); dc.redrawAll();"
+                <!-- <a class="reset ui primary button mini" href="javascript: displaceYearChart.filter(yearFilter); dc.redrawAll();"
                   style="visibility: hidden" data-content="Click to clear chart filter(s)">
                   Clear
                 </a> -->
@@ -123,7 +123,7 @@
 
       <div class="five wide column">
         <div id="dc-month-chart">
-          <h4 class="ui blue header">Monthly
+          <h4 class="ui blue header">By Month
             <span class="filter"></span>&nbsp;
             <i class="fitted question circle outline icon link content"
               data-content="Click and drag (brush) over the bars to filter by month(s)">
@@ -137,9 +137,9 @@
         <!-- / monthly displacement -->
       </div>
     
-      <div class="eight wide column">
+      <div class="seven wide column">
         <div id="dc-week-chart">
-          <h4 class="ui blue header">Weekly&nbsp;
+          <h4 class="ui blue header">By Week&nbsp;
             <span class="filter"></span>
             <i class="fitted question circle outline icon link content"
               data-content="Hover over (mouseover) a specific year under the legend to have a distinct view">
@@ -189,41 +189,40 @@
         </div>
       </div>
 
-    <div class="five wide column">
-      <div class="ui two column grid">
-        <div class="column">
-          <div id="dc-prev-region-chart">
-            <h4 class="ui blue header">Departure Regions&nbsp;
-              <i class="fitted question circle outline icon link content"
-                data-content="Click on any bar(s) to filter by region(s)">
-              </i>&nbsp;
-              <!-- <br> -->
-              <a class="reset ui primary button mini" href="javascript:prevRegionChart.filterAll(); dc.redrawAll();"
-                style="visibility: hidden" data-content="Click to clear chart filter(s)">
-                Clear
-              </a>
-            </h4>
+      <div class="five wide column">
+        <div class="ui two column grid">
+          <div class="column">
+            <div id="dc-prev-region-chart">
+              <h4 class="ui blue header">Departure Regions&nbsp;
+                <i class="fitted question circle outline icon link content"
+                  data-content="Click on any bar(s) to filter by region(s)">
+                </i>&nbsp;
+                <!-- <br> -->
+                <a class="reset ui primary button mini" href="javascript:prevRegionChart.filterAll(); dc.redrawAll();"
+                  style="visibility: hidden" data-content="Click to clear chart filter(s)">
+                  Clear
+                </a>
+              </h4>
+            </div>
+            <!-- / departure region chart-->
           </div>
-          <!-- / departure region chart-->
-        </div>
-        <div class="column">
-          <div id="dc-curr-region-chart">
-            <h4 class="ui blue header">Arrival Regions&nbsp;
-              <i class="fitted question circle outline icon link content"
-                data-content="Click on any bar(s) to filter by region(s)">
-              </i>&nbsp;
-              <!-- <br> -->
-              <a class="reset ui primary button mini" href="javascript:currRegionChart.filterAll(); dc.redrawAll();"
-                style="visibility: hidden" data-content="Click to clear chart filter(s)">
-                Clear
-              </a>
-            </h4>
+          <div class="column">
+            <div id="dc-curr-region-chart">
+              <h4 class="ui blue header">Arrival Regions&nbsp;
+                <i class="fitted question circle outline icon link content"
+                  data-content="Click on any bar(s) to filter by region(s)">
+                </i>&nbsp;
+                <!-- <br> -->
+                <a class="reset ui primary button mini" href="javascript:currRegionChart.filterAll(); dc.redrawAll();"
+                  style="visibility: hidden" data-content="Click to clear chart filter(s)">
+                  Clear
+                </a>
+              </h4>
+            </div>
+            <!-- / arrival region chart -->
           </div>
-          <!-- / arrival region chart -->
         </div>
       </div>
-    </div>
-
 
       <div class="seven wide column">
         <div class="ui two column grid">
@@ -259,8 +258,6 @@
           </div>
         </div>
       </div>
-
-
     </div>
   </div>
   <!-- / ui grid -->
