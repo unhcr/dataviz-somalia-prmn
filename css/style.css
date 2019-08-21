@@ -37,8 +37,8 @@ h4 {
 .text-section {
     margin-top: 8px;
 }
-
 .tick line:not(.grid-line) {
+
   display: none;
 }
 
@@ -308,4 +308,10 @@ a.reset.ui.primary.button.mini {
 /* year and month dc filter color */
 .dc-chart span.filter {
     color: black;
+}
+
+/* map padding */
+div.ui.two.column.grid div.column.map-padding {
+    padding-left: 0;
+    padding-right: 0;
 }
