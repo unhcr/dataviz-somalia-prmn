@@ -321,8 +321,8 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       // }
 
       displaceMonthChart.height(170)
-        .width($('#dc-month-chart').width())
-        .margins({ top: 5, right: -25, bottom: 60, left: 50 })
+        .width($('#dc-month-chart').width() * 0.95)
+        .margins({ top: 5, right: -15, bottom: 60, left: 50 })
         .dimension(displaceMonth)
         .group(displaceMonthGroup, "Year-Month")
         .valueAccessor(function (d) {
@@ -373,7 +373,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
           .attr('transform', "translate(62,110)");               
         
         chart.selectAll('g.x text')
-          .attr('transform', 'translate(-5,10) rotate(270)')
+          .attr('transform', 'translate(-10, 10) rotate(270)')
           .style('text-anchor', 'end')
           .transition()
           .duration(500)

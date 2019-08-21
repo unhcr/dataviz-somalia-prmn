@@ -311,7 +311,17 @@ a.reset.ui.primary.button.mini {
 }
 
 /* map padding */
-div.ui.two.column.grid div.column.map-padding {
+#col-curr-district-map, #col-prev-district-map {
     padding-left: 0;
     padding-right: 0;
+}
+/* by week padding */
+/* div.ui.three.column.grid div.row div.seven.wide.column  */
+#col-week-chart {
+    padding-left: 0;
+    /* padding-right: 0; */
+}
+
+#dc-month-chart svg g g.axis.x g.tick:last-child text {
+    display: none;
 }
