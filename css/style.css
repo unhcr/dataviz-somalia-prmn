@@ -310,18 +310,17 @@ a.reset.ui.primary.button.mini {
     color: black;
 }
 
-/* map padding */
+/* remove left & right paddings for the curr and prev maps */
 #col-curr-district-map, #col-prev-district-map {
     padding-left: 0;
     padding-right: 0;
 }
-/* by week padding */
-/* div.ui.three.column.grid div.row div.seven.wide.column  */
+/* remove left padding only for the weekly line chart */
 #col-week-chart {
     padding-left: 0;
-    /* padding-right: 0; */
 }
 
+/* remove last text (Jan...) in x axis of the monthly bar chart */
 #dc-month-chart svg g g.axis.x g.tick:last-child text {
     display: none;
 }
