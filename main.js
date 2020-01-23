@@ -242,7 +242,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .on("filtered", function(){
           var filter = displaceYearChart.filters()[0];
           // get filtered year 
-          filter = filter == undefined ? yearFilter : filter;
+          filter = filter == undefined ? yearFilter : Number(filter);
           
           // reset min and max date based on filtered year
           displaceMonthChart.x(d3.scaleTime().domain(rangeDate(filter)));
