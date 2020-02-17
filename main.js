@@ -407,6 +407,10 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .reduceSum(function (d) {
           return +d.yr2019;
         });
+      var displaceWeekGroup5 = displaceWeek.group()
+        .reduceSum(function (d) {
+          return +d.yr2020;
+        });
 
       // displaceWeekChart helper function
       // function lineChartKey(d){
@@ -439,7 +443,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
             // .keyAccessor(function(d){
             //   return +d.key.substr(4,6);
             // })
-            .colors('#addd8e')  // green
+            .colors('#ffc04c')  // orange 
             .dashStyle([3,2])
             .group(displaceWeekGroup2, "2017")
             .useRightYAxis(true),
@@ -448,7 +452,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
             // .keyAccessor(function(d){
             //   return +d.key.substr(4,6);
             // })
-            .colors('#41b6c4') // purple
+            .colors('#addd8e') // green 
             .dashStyle([3,2])
             .group(displaceWeekGroup3, "2018")
             .useRightYAxis(true),
@@ -457,8 +461,17 @@ d3.csv("data/PRMNDataset.csv", function (data) {
             // .keyAccessor(function(d){
             //   return +d.key.substr(4,6);
             // })
-            .colors('#338EC9') // blue
+            .colors('#5ba4d3') // blue
+            .dashStyle([3,2])
             .group(displaceWeekGroup4, "2019")
+            .useRightYAxis(true),
+          dc.lineChart(displaceWeekChart)
+            .dimension(displaceWeek)
+            // .keyAccessor(function(d){
+            //   return +d.key.substr(4,6);
+            // })
+            .colors('#e7646a') // red e7646a 
+            .group(displaceWeekGroup5, "2020")
             // .useRightAxisGridLines(true)
           
         ]) 
@@ -471,8 +484,8 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .x(d3.scaleLinear().domain([0,53]))
         .elasticY(true) 
         .elasticX(false) 
-        .yAxisLabel("2019")
-        .rightYAxisLabel("2016 / 2017 / 2018")
+        .yAxisLabel("2020")
+        .rightYAxisLabel("2016...2019")
         .yAxis().ticks(4);
 
       displaceWeekChart
