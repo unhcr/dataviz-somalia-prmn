@@ -186,11 +186,42 @@ var resetFilter = function (filterValues) {
   return filter;
 }
 
+// spinner options
+var opts = {
+  lines: 10, // The number of lines to draw
+  length: 10, // The length of each line
+  width: 3, // The line thickness
+  radius: 10, // The radius of the inner circle
+  scale: 2, // Scales overall size of the spinner
+  corners: 0.5, // Corner roundness (0..1)
+  color: '#ff0000', // CSS color or array of colors
+  fadeColor: 'transparent', // CSS color or array of colors
+  speed: 1.9, // Rounds per second
+  rotate: 0, // The rotation offset
+  animation: 'spinner-line-fade-quick', // The CSS animation name for the lines
+  direction: 1, // 1: clockwise, -1: counterclockwise
+  zIndex: 2e9, // The z-index (defaults to 2000000000)
+  className: 'spinner', // The CSS class to assign to the spinner
+  top: '50%', // Top position relative to parent
+  left: '50%', // Left position relative to parent
+  shadow: '0 0 1px transparent', // Box-shadow for the lines
+  position: 'absolute' // Element positioning
+};
+
+// loader settings
+var target = document.getElementById('dc-curr-region-chart');
+
+// trigger loader
+var spinner = new Spinner(opts).spin(target);
+
 // Load data from CSV file
 d3.csv("data/PRMNDataset.csv", function (data) {
   // Load data from JSON file
   d3.json("data/Som_Admbnda_Adm1_UNDP.json", function (regionJson) {
     d3.json("data/Som_Admbnda_Adm2_UNDP.json", function (districtJson) {
+
+      // stop the loader
+      spinner.stop();
 
       // format our data
       data.forEach(function (d) {
