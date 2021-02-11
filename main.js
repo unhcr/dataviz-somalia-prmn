@@ -443,6 +443,11 @@ d3.csv("data/PRMNDataset.csv", function (data) {
           return +d.yr2020;
         });
 
+        var displaceWeekGroup6 = displaceWeek.group()
+        .reduceSum(function (d) {
+          return +d.yr2021;
+        });
+
       // displaceWeekChart helper function
       // function lineChartKey(d){
       //   // split yrweeknum into two
@@ -501,9 +506,18 @@ d3.csv("data/PRMNDataset.csv", function (data) {
             // .keyAccessor(function(d){
             //   return +d.key.substr(4,6);
             // })
-            .colors('#e7646a') // red e7646a 
+            .colors('#b07840') // brown 964b00 
+            .dashStyle([3,2])
             .group(displaceWeekGroup5, "2020")
-            // .useRightAxisGridLines(true)
+            .useRightYAxis(true),
+          dc.lineChart(displaceWeekChart)
+            .dimension(displaceWeek)
+            // .keyAccessor(function(d){
+            //   return +d.key.substr(4,6);
+            // })
+            .colors('#e7646a') // red e7646a 
+            .group(displaceWeekGroup6, "2021")
+            // .useRightYAxis(true)
           
         ]) 
         .legend(dc.legend().horizontal(true).x(0).y(0).gap(0))
