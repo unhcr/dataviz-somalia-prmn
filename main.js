@@ -256,13 +256,13 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         });
 
       // Configure displacement year bar chart parameters
-      displaceYearChart.height(170)
+      displaceYearChart.height(170) //170
         .width($('#dc-year-chart').width())
         .margins({ top: 5, right: 10, bottom: 60, left: 80 })
         .dimension(displaceYear)
         .group(displaceYearGroup, "Year")
         .gap(1)
-        .ordinalColors(['#338EC9'])
+        .ordinalColors(['#338EC9'])  //'#338EC9'
         .renderHorizontalGridLines(true)
         .controlsUseVisibility(true)
         .x(d3.scaleBand())
@@ -442,10 +442,14 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .reduceSum(function (d) {
           return +d.yr2020;
         });
-
         var displaceWeekGroup6 = displaceWeek.group()
         .reduceSum(function (d) {
           return +d.yr2021;
+        });
+
+        var displaceWeekGroup7 = displaceWeek.group()
+        .reduceSum(function (d) {
+          return +d.yr2022;
         });
 
       // displaceWeekChart helper function
@@ -456,7 +460,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
       // }
 
       displaceWeekChart
-        .height(180)
+        .height(180) //180
         .width($('#dc-week-chart').width())     
         .margins({ top: 15, right: 70, bottom: 35, left: 50 }) 
         .title(function (d) {
@@ -515,8 +519,17 @@ d3.csv("data/PRMNDataset.csv", function (data) {
             // .keyAccessor(function(d){
             //   return +d.key.substr(4,6);
             // })
-            .colors('#e7646a') // red e7646a 
+            .colors('#000000') // black #000000
+            .dashStyle([3,2])
             .group(displaceWeekGroup6, "2021")
+            .useRightYAxis(true),
+          dc.lineChart(displaceWeekChart)
+            .dimension(displaceWeek)
+            // .keyAccessor(function(d){
+            //   return +d.key.substr(4,6);
+            // })
+            .colors('#e7646a') // red e7646a 
+            .group(displaceWeekGroup7, "2022")
             // .useRightYAxis(true)
           
         ]) 
@@ -529,8 +542,8 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .x(d3.scaleLinear().domain([0,53]))
         .elasticY(true) 
         .elasticX(false) 
-        .yAxisLabel("2020")
-        .rightYAxisLabel("2016...2019")
+        .yAxisLabel("2021")
+        .rightYAxisLabel("2016...2020")
         .yAxis().ticks(4);
 
       displaceWeekChart
@@ -698,8 +711,6 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         chart.selectAll(".row").on('mouseover', barTip.show)
           .on('mouseout', barTip.hide);
       });
-
-
 
       // create current region dimension and group
       var currRegion = facts.dimension(function (d) {
