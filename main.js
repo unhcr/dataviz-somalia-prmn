@@ -452,6 +452,11 @@ d3.csv("data/PRMNDataset.csv", function (data) {
           return +d.yr2022;
         });
 
+        var displaceWeekGroup8 = displaceWeek.group()
+        .reduceSum(function (d) {
+          return +d.yr2023;
+        });
+      
       // displaceWeekChart helper function
       // function lineChartKey(d){
       //   // split yrweeknum into two
@@ -542,8 +547,8 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .x(d3.scaleLinear().domain([0,53]))
         .elasticY(true) 
         .elasticX(false) 
-        .yAxisLabel("2021")
-        .rightYAxisLabel("2016...2020")
+        .yAxisLabel("2023")
+        .rightYAxisLabel("2016...2023")
         .yAxis().ticks(4);
 
       displaceWeekChart
