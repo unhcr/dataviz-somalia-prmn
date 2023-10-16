@@ -535,8 +535,16 @@ d3.csv("data/PRMNDataset.csv", function (data) {
             // })
             .colors('#e7646a') // red e7646a 
             .group(displaceWeekGroup7, "2022")
+             .useRightYAxis(true),
+
+            dc.lineChart(displaceWeekChart)
+            .dimension(displaceWeek)
+            // .keyAccessor(function(d){
+            //   return +d.key.substr(4,6);
+            // })
+            .colors('#e7646a') // red e7646a 
+            .group(displaceWeekGroup8, "2023")
             // .useRightYAxis(true)
-          
         ]) 
         .legend(dc.legend().horizontal(true).x(0).y(0).gap(0))
         // .legend(dc.legend().x(370).y(5).itemHeight(13).gap(5))
