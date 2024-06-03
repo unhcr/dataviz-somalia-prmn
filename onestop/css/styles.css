@@ -1,0 +1,155 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: -5px;
+    background-color: #0072bc;
+    color: white;
+}
+
+.header .logo {
+    height: 40px;
+}
+
+.header h1 {
+    margin-left: 20px;
+}
+
+/* Sidebar Styles */
+.container {
+    display: flex;
+    height: calc(100% - 80px);
+}
+
+.sidebar {
+    width: 300px;
+    background-color: #18375F;
+    color: #edebea;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul .menu-title {
+    padding: 10px;
+    background-color: #0072bc;
+    color: white;
+}
+
+.sidebar ul .menu-item {
+    padding: 15px;
+    border-bottom: 1px solid #444;
+    cursor: pointer;
+    position: relative;
+    font-size: 13px;
+}
+
+.sidebar ul .menu-item > .menu-item-content {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul .menu-item > .menu-item-content a {
+    color: #edebea;
+    text-decoration: none;
+}
+
+.sidebar ul .menu-item:hover {
+    background-color: #575757;
+}
+
+.menu-icon {
+    margin-right: 10px;
+}
+
+.sub-menu {
+    display: none;
+    padding-left: 20px;
+}
+
+.sidebar ul .menu-item:hover .sub-menu {
+    display: block;
+}
+
+.sidebar ul .sub-menu li {
+    padding: 10px 0;
+    border-bottom: 1px solid #FFFFFF; /* Add separator between sub-menu items */
+	margin-left:50px;
+	
+}
+
+.sidebar ul .sub-menu li:last-child {
+    border-bottom: none; /* Remove separator for the last sub-menu item */
+}
+
+.sidebar ul .sub-menu li a {
+    color: #edebea;
+    text-decoration: none;
+    font-size: 12px;
+    display: flex;
+    align-items: center; /* Align icon and text vertically */
+}
+
+.sidebar ul .sub-menu li a:hover {
+    text-decoration: underline;
+    background-color: transparent; /* Ensure no background color on hover */
+}
+
+.submenu-icon {
+    width: 20px;
+    height: 10px;
+    margin-left: 5px; /* Adjust spacing between text and icon */
+    margin-right: 10px; /* Adjust spacing between icon and text */
+}
+
+.submenu-icon-powerbi {
+    width: 35px;
+    height: 10px;
+    margin-left: 5px; /* Adjust spacing between text and icon */
+    margin-right: 10px; /* Adjust spacing between icon and text */
+}
+
+
+
+/* Content Styles */
+.content {
+    flex-grow: 1;
+    background-color: #f1f1f1;
+    height: 100%;
+    overflow: auto;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .content {
+        height: calc(100% - 300px); /* Adjusted for sidebar height */
+    }
+}

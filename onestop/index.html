@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNHCR IM Products - One Stop</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <img src="assets/unhcrlogo.png" alt="UNHCR Logo" class="logo">
+        <h1>IM Products and Interactive Dashboards</h1>
+    </header>
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li class="menu-title">IM Products</li>
+                <li class="menu-item">
+                    <div class="menu-item-content">
+                        <img src="assets/Refugee.png" alt="CBI Icon" class="menu-icon">
+                        <a href="#">Refugees/Asylum Seekers/Returnees</a>
+                    </div>
+                    <ul class="sub-menu">
+					
+                        <li>
+                            <a href="#" onclick="loadPDF('products/dashboards/UNHCR Somalia Registered Refugees and Asylum-seekers Dashboard.pdf')">
+                                Overview
+                                <img src="assets/pdficon.png" alt="PDF Icon" class="submenu-icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="loadPowerBI('https://app.powerbi.com/view?r=eyJrIjoiODg4Yzk0NDItYmM1NC00YmQ3LWJjMmMtNjNjYWM0NzgxZGNlIiwidCI6ImU1YzM3OTgxLTY2NjQtNDEzNC04YTBjLTY1NDNkMmFmODBiZSIsImMiOjh9')">
+                                Person with Specific Needs
+                                <img src="assets/powerbiicon.png" alt="PDF Icon" class="submenu-icon-powerbi">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="loadPDF('products/dashboards/UNHCR Somalia Refugee Returnees Dashboard.pdf')">
+                                Returnees
+                                <img src="assets/pdficon.png" alt="PDF Icon" class="submenu-icon">
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <div class="menu-item-content">
+                        <img src="assets/cbi.png" alt="CBI Icon" class="menu-icon">
+                        <a href="#">Cash Based Intervention</a>
+                    </div>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="#" onclick="loadPDF('products/dashboards/cbi_Dashboard.pdf')">
+                                Dashboard
+                                <img src="assets/pdficon.png" alt="PDF Icon" class="submenu-icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="loadPDF('products/dashboards/cbi_Map.pdf')">
+                                Map
+                                <img src="assets/pdficon.png" alt="PDF Icon" class="submenu-icon">
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <div class="menu-item-content">
+                        <img src="assets/Shelter.png" alt="CBI Icon" class="menu-icon">
+                        <a href="#" onclick="loadPowerBI('https://app.powerbi.com/view?r=eyJrIjoiOTJhMGRlZGUtMmQ0Ny00MjE3LWFkYzMtYTg3ZWY2NzJjMjBjIiwidCI6ImU1YzM3OTgxLTY2NjQtNDEzNC04YTBjLTY1NDNkMmFmODBiZSIsImMiOjh9')">Shelter & NFI Response</a>
+						 <img src="assets/powerbiicon.png" alt="PDF Icon" class="submenu-icon-powerbi">
+                    </div>
+                </li>
+                <li class="menu-item">
+                    <div class="menu-item-content">
+                        <img src="assets/Protection.png" alt="CBI Icon" class="menu-icon">
+                        <a href="#">Protection/Displacement Monitoring</a>
+                    </div>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="#" onclick="loadPowerBI('https://app.powerbi.com/view?r=eyJrIjoiMzY1NWUzYTEtYTdkMi00Yzk4LTkzY2QtNzk3NjBiOTU2OWY0IiwidCI6ImU1YzM3OTgxLTY2NjQtNDEzNC04YTBjLTY1NDNkMmFmODBiZSIsImMiOjh9')">
+                                Vulnerability Assessment
+                                <img src="assets/powerbiicon.png" alt="PDF Icon" class="submenu-icon-powerbi">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="loadPowerBI('https://app.powerbi.com/view?r=eyJrIjoiZTQ0MmNmNDAtNzkyOS00OTc0LWE0Y2YtMjYwZTRmNDViZmQ5IiwidCI6ImU1YzM3OTgxLTY2NjQtNDEzNC04YTBjLTY1NDNkMmFmODBiZSIsImMiOjh9')">
+                                Protection Violations
+                                <img src="assets/powerbiicon.png" alt="PDF Icon" class="submenu-icon-powerbi">
+                            </a>
+                        </li>
+						<li>
+                            <a href="#" onclick="loadPDF('products/dashboards/UNHCR Somalia PRMN Internal Displacements Dashboard.pdf')">
+                                Displacement Monitoring (PSMN)
+                                <img src="assets/pdficon.png" alt="PDF Icon" class="submenu-icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="loadPDF('products/dashboards/UNHCR Somalia PRMN Displacement and Protection Information - Region Level Dashboard.pdf')">
+                                Protection/Displacement Information -Region Level (PSMN)
+                                <img src="assets/pdficon.png" alt="PDF Icon" class="submenu-icon">
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+				 <li class="menu-item">
+                    <div class="menu-item-content">
+                        <img src="assets/complaint.png" alt="CBI Icon" class="menu-icon">
+                        <a href="#">Complaint & Feedback Mechanism</a>
+                    </div>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="#" onclick="loadPowerBI('https://app.powerbi.com/view?r=eyJrIjoiMTJiODQ0YzktYzg3Yi00YTI1LTlkY2UtZDM3NmIyOWRlYzk1IiwidCI6ImU1YzM3OTgxLTY2NjQtNDEzNC04YTBjLTY1NDNkMmFmODBiZSIsImMiOjh9')">
+                                UNHCR - ICFM
+                                <img src="assets/powerbiicon.png" alt="PDF Icon" class="submenu-icon-powerbi">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="loadPowerBI('https://app.powerbi.com/view?r=eyJrIjoiNGFmZGU1NWQtNjliNi00ZDRmLWI2NzMtZjQ0YTJhNTZiODA5IiwidCI6ImU1YzM3OTgxLTY2NjQtNDEzNC04YTBjLTY1NDNkMmFmODBiZSIsImMiOjh9')">
+                                Somalia - Interoperable Aggregated CFM Model
+                                <img src="assets/powerbiicon.png" alt="PDF Icon" class="submenu-icon-powerbi">
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+				
+				<li class="menu-item">
+                    <div class="menu-item-content">
+                        <img src="assets/population.png" alt="CBI Icon" class="menu-icon">
+                        <a href="#">Population Information</a>
+                    </div>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="#" onclick="loadPDF('products/dashboards/UNHCR Somalia Population Dashboard.pdf')">
+                                Population Dashboard
+                                <img src="assets/pdficon.png" alt="PDF Icon" class="submenu-icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="loadPDF('products/dashboards/UNHCR Somalia Population Map.pdf')">
+                                Population Map
+                                <img src="assets/pdficon.png" alt="PDF Icon" class="submenu-icon">
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+				
+				<li class="menu-item">
+                    <div class="menu-item-content">
+                        <img src="assets/Alert.png" alt="CBI Icon" class="menu-icon">
+                        <a href="#">Flash Alerts</a>
+                    </div>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="#" onclick="loadPDF('products/flashalerts/UNHCR Somalia Flash Alert 1.pdf')">
+                                Alert 1
+                                <img src="assets/pdficon.png" alt="PDF Icon" class="submenu-icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="loadPDF('products/flashalerts/UNHCR Somalia Flash Alert 2.pdf')">
+                                Alert 2
+                                <img src="assets/pdficon.png" alt="PDF Icon" class="submenu-icon">
+                            </a>
+                        </li>
+						<li>
+						 <a href="#" onclick="loadPDF('products/flashalerts/UNHCR Somalia Flash Alert 3.pdf')">
+                                Alert 3
+                                <img src="assets/pdficon.png" alt="PDF Icon" class="submenu-icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="loadPDF('products/flashalerts/UNHCR Somalia Flash Alert 4.pdf')">
+                                Alert 4
+                                <img src="assets/pdficon.png" alt="PDF Icon" class="submenu-icon">
+                            </a>
+                        </li>
+						<li>
+						 <a href="#" onclick="loadPDF('products/flashalerts/UNHCR Somalia Flash Alert 5.pdf')">
+                                Alert 5
+                                <img src="assets/pdficon.png" alt="PDF Icon" class="submenu-icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="loadPDF('products/flashalerts/UNHCR Somalia Flash Alert 6.pdf')">
+                                Alert 6
+                                <img src="assets/pdficon.png" alt="PDF Icon" class="submenu-icon">
+                            </a>
+                        </li>
+						<li>
+						 <a href="#" onclick="loadPDF('products/flashalerts/UNHCR Somalia Flash Alert 7.pdf')">
+                                Alert 7
+                                <img src="assets/pdficon.png" alt="PDF Icon" class="submenu-icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="loadPDF('products/flashalerts/UNHCR Somalia Flash Alert 8.pdf')">
+                                Alert 8
+                                <img src="assets/pdficon.png" alt="PDF Icon" class="submenu-icon">
+                            </a>
+                        </li>
+						<li>
+                            <a href="#" onclick="loadPDF('products/flashalerts/UNHCR Somalia Flash Alert 9.pdf')">
+                                Alert 9
+                                <img src="assets/pdficon.png" alt="PDF Icon" class="submenu-icon">
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+				
+            </ul>
+        </nav>
+        <main class="content">
+            <iframe id="pdf-viewer" src="content.html" frameborder="0"></iframe>
+			
+        </main>
+    </div>
+    <script>
+        function loadPDF(pdfName) {
+            document.getElementById("pdf-viewer").src = pdfName;
+        }
+
+        function loadPowerBI(url) {
+            document.getElementById("pdf-viewer").src = url;
+        }
+    </script>
+</body>
+</html>
