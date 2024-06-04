@@ -1,3 +1,6 @@
+# IMPORTANT: We are switching UNHCR's GitHUB to the free tier #
+# Please contact thanos @ unhcr.org for info/dicussion #
+
 ## Somalia: Internal Displacement 
 #### Interactive data visualisation created by David Mugo, UNHCR Somalia
 
