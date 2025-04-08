@@ -457,12 +457,12 @@ d3.csv("data/PRMNDataset.csv", function (data) {
           return +d.yr2023;
         });
       
-        var displaceWeekGroup8 = displaceWeek.group()
+        var displaceWeekGroup9 = displaceWeek.group()
         .reduceSum(function (d) {
          return +d.yr2024;
         });
       
-        var displaceWeekGroup8 = displaceWeek.group()
+        var displaceWeekGroup10 = displaceWeek.group()
         .reduceSum(function (d) {
           return +d.yr2025;
         });
