@@ -570,7 +570,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .elasticY(true) 
         .elasticX(false) 
         .yAxisLabel("2023")
-        .rightYAxisLabel("2016...2026")
+        .rightYAxisLabel("2022...2026")
         .yAxis().ticks(4);
 
       displaceWeekChart
