@@ -569,7 +569,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .x(d3.scaleLinear().domain([0,53]))
         .elasticY(true) 
         .elasticX(false) 
-        .yAxisLabel("2023")
+        .yAxisLabel("2026")
         .rightYAxisLabel("2022...2026")
         .yAxis().ticks(4);
 
