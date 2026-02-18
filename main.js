@@ -466,11 +466,6 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .reduceSum(function (d) {
           return +d.yr2025;
         });
-
-      var displaceWeekGroup11 = displaceWeek.group()
-        .reduceSum(function (d) {
-          return +d.yr2026;
-        });
       
       // displaceWeekChart helper function
       // function lineChartKey(d){
@@ -570,7 +565,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
         .elasticY(true) 
         .elasticX(false) 
         .yAxisLabel("2023")
-        .rightYAxisLabel("2016...2026")
+        .rightYAxisLabel("2016...2023")
         .yAxis().ticks(4);
 
       displaceWeekChart
