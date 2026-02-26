@@ -551,7 +551,7 @@ d3.csv("data/PRMNDataset.csv", function (data) {
             .colors('#e7646a') // red e7646a 
             .group(displaceWeekGroup10, "2025")
              .useRightYAxis(true),
-            dc.lineChart(displaceWeekChart)
+          dc.lineChart(displaceWeekChart)
             .dimension(displaceWeek)
             // .keyAccessor(function(d){
             //   return +d.key.substr(4,6);
