@@ -3,4 +3,27 @@
 
 <iframe title="Protection & Solutions Monitoring Network - Somalia" width="100%" height="100%" src="https://app.powerbi.com/reportEmbed?reportId=39edf160-1c6d-4cf7-9fc5-d0fb3b095e6f&autoAuth=true&ctid=e5c37981-6664-4134-8a0c-6543d2af80be" frameborder="0" allowFullScreen="true"></iframe>
 
+let config = {
+    type: 'report',
+    tokenType: models.TokenType.Embed,
+    accessToken: accessToken,
+    embedUrl: embedUrl,
+    id: embedReportId,
+    permissions: models.Permissions.All,
+    settings: {
+        panes: {
+            filters: {
+                expanded: false,
+                visible: false // This hides the filter pane entirely
+            }
+        }
+    }
+};
+
+// Get a reference to the embedded report HTML element
+let reportContainer = $('#reportContainer')[0];
+
+// Embed the report and display it within the div container.
+let report = powerbi.embed(reportContainer, config);
+
 </html>
